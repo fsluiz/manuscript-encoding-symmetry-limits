@@ -41,8 +41,12 @@ Introduce the marked space
 \end{align}
 Starting at the marked particle $x$, list the occupied vertices in cyclic
 order and let $g_i$ be the number of vacant vertices after particle $i$.
-This gives a bijection between marked configurations and anchored weak
-compositions satisfying
+This gives a bijection
+\begin{equation}
+ (S,x)\longleftrightarrow(x,g),
+ \qquad x\in\mathbb Z_n,
+ \end{equation}
+between marked configurations and anchored weak compositions satisfying
 \begin{equation}
  g_i\geq0,\qquad \sum_{i=1}^kg_i=k,
  \qquad U(g)=\#\{i:g_i=0\}.
@@ -66,7 +70,9 @@ The product weight of a composition is
  \label{eq:app-zrp-weight}
 \end{equation}
 The irrelevant factor $\tau^{-k}$ shows that the pushforward of the marked
-law is exactly the stationary composition law.  In particular,
+law after dropping the anchor is exactly the stationary composition law:
+every unanchored composition $g$ has precisely $n$ anchored preimages, all
+with the same weight.  In particular,
 \begin{equation}
  \operatorname{Var}_{\pi_a}(f)
  =\operatorname{Var}_{\widehat\pi_a}(f)
@@ -180,10 +186,12 @@ uniformly chosen coordinate and resamples the remaining pair.  It is exactly
 the kernel of Lemma~\ref{lem:three-box-contraction}, not a rescaled version.
 
 The conditioned product measures above have the non-interference property
-required by the three-component argument.  With
+required by the three-component argument.  For $m=0$ the conditioned law is
+a point mass, contributes no conditional variance, and its gap is assigned
+the convention $+\infty$.  With
 \begin{equation}
  \underline\lambda_3
- =\inf_{m\geq0}\operatorname{gap}
+ =\inf_{m\geq1}\operatorname{gap}
  (-\mathcal L_{\rm HB}^{3,m}),
 \end{equation}
 the lower-bound form of the Caputo--Sasada recursion

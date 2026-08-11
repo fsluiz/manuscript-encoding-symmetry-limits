@@ -93,7 +93,7 @@ scalar root solve.  These figures are finite numerical diagnostics with
 residual-based degeneracy tests, not interval-certified bounds, and they are
 not used as an asymptotic theorem.
 
-\subsection{An exact crossing on the even-cycle family}
+\subsection{An exact multiplicity closure on the even-cycle family}
 
 The asymptotic witness is analytic.  Express minimum vertex cover on the
 even cycle $C_n$, $n=2k$, as set cover: bases are vertices, tasks are edges,
@@ -117,20 +117,28 @@ and vanishes exactly at
 At this point the Hamiltonian is diagonal up to a scalar.  All $2k!$
 ordered representatives of the two alternating covers are global ground
 states, whereas their normalized orbit is the unique ground vector in the
-$S_k\times D_n$ fixed space.  Assuming $\mu\geq\lambda$, the next fixed
-orbit violates at least one coverage constraint, and
+$S_k\times D_n$ fixed space.  Assuming $\mu\geq\lambda$, every other orbit
+has diagonal penalty at least $\lambda$.  This lower bound is attained: the
+distinct-base subset
+\begin{equation}
+ S_\star=\{1\}\cup\{2j:1\leq j\leq k-1\}
+\end{equation}
+has exactly one uncovered edge and no duplicate.  Its joint orbit state
+therefore lies exactly $\lambda s_c$ above the ground energy.  Consequently,
 \begin{align}
  g_0^{\rm global}(s_c)&=2k!,&
  g_0^{\rm sym}(s_c)&=1,\\
  \Delta_{\rm sym}(s_c)&=\lambda\frac{n-1}{2n-1}.
- \label{eq:cycle-dark-crossing-rewrite}
+ \label{eq:cycle-dark-closure-rewrite}
 \end{align}
 Thus the global multiplicity gap closes exactly while the joint-fixed gap
-is bounded below by a constant.  The crossing is dynamically dark for the
-uniform initial state and the symmetry-preserving path.
+is bounded below by a constant.  The multiplicity closure is dynamically
+dark for the uniform initial state and the symmetry-preserving path.  No
+transversality of the coincident branches is asserted here.
 
-Equation~\eqref{eq:cycle-dark-crossing-rewrite} controls the crossing point,
+Equation~\eqref{eq:cycle-dark-closure-rewrite} controls the closure point,
 not the minimum gap on every part of the linear path.  The next section
 introduces a different, explicit parent path on the same family and proves
 a uniform polynomial bound.  Keeping these statements separate avoids
-turning a pointwise crossing theorem into an unsupported adiabatic claim.
+turning a pointwise multiplicity-closure statement into an unsupported
+adiabatic claim.

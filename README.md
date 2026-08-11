@@ -11,7 +11,8 @@ The current manuscript contributes:
   cyclic space $\mathcal K_u$;
 - a sector-resolved Schur-complement localisation theorem containing the
   sector kinetic floor;
-- exact orbit quotients, symmetry-dark crossings, and a stability theorem;
+- exact orbit quotients, symmetry-dark crossings and multiplicity closures,
+  and a stability theorem;
 - an even-cycle parent path with endpoint cover probability
   $1-O(n^{-5})$ and a uniform accessible-gap certificate
   $\Omega(n^{-13})$; and
