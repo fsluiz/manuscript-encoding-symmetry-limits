@@ -1,0 +1,108 @@
+{
+  "aliases": [
+    "scpe3-n16m20s0"
+  ],
+  "instance_id": "scpe3-b16-t20-s0-v1",
+  "k_star": 3,
+  "n_B": 16,
+  "n_T": 20,
+  "n_optimal_cardinality_covers": 3,
+  "optimal_cardinality_covers": [
+    [
+      0,
+      1,
+      5
+    ],
+    [
+      0,
+      1,
+      7
+    ],
+    [
+      1,
+      5,
+      13
+    ]
+  ],
+  "payload": {
+    "incidence": [
+      "01011110110000110110",
+      "11110000001111101001",
+      "00001010101110010110",
+      "11110000010101010001",
+      "10101100110001001010",
+      "10101001110010001010",
+      "00101110000001100101",
+      "11011001010010100000",
+      "10100000101010111000",
+      "01101110000011000010",
+      "01110010010100011000",
+      "10101110000000100101",
+      "11001000010101001001",
+      "10100110000000010111",
+      "01010110110101100000",
+      "00101100011101001000"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "93df5d702fba4a5c9065d9f63bad5391d97ab76028abc11cc6bb550356c1162c",
+  "provenance": {
+    "extractor": "orlib_subextract.extract_subinstance@working-tree-2026-08-10",
+    "kind": "orlib_subinstance",
+    "parameters": {
+      "m_target": 20,
+      "n_target": 16,
+      "seed": 0
+    },
+    "parent_dimensions": {
+      "n_B": 500,
+      "n_T": 50
+    },
+    "parent_file": "orlib_instances/scpe3.txt",
+    "parent_sha256": "b314906d85d852a2dbff9b6b536b44720c22b7d0fc7039d37a722ed3f5ba700b",
+    "requested_n_T": 20,
+    "retained_n_T": 20,
+    "selected_parent_base_indices_zero_based": [
+      0,
+      1,
+      4,
+      19,
+      21,
+      33,
+      38,
+      49,
+      77,
+      94,
+      95,
+      117,
+      118,
+      131,
+      159,
+      200
+    ],
+    "selected_parent_task_indices_zero_based": [
+      0,
+      1,
+      2,
+      6,
+      9,
+      10,
+      16,
+      20,
+      21,
+      26,
+      27,
+      29,
+      32,
+      33,
+      38,
+      40,
+      43,
+      44,
+      46,
+      47
+    ]
+  },
+  "schema_version": 1,
+  "status": "legacy_only"
+}

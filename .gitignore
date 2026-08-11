@@ -1,0 +1,86 @@
+# This repository is an archival artifact.  Keep an explicit allowlist so
+# superseded experiments and local working notes cannot enter a public release
+# accidentally.
+/*
+
+# Repository metadata and documentation.
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/REPRODUCIBILITY.md
+!/CITATION.cff
+!/LICENSE
+!/LICENSES/
+!/LICENSES/*
+!/requirements-repro.txt
+
+# Current manuscript and self-contained class/bibliography.
+!/main_rewrite.tex
+!/main_rewrite.pdf
+!/refs.bib
+!/quantumarticle.cls
+
+# Current manuscript sections only.
+!/sections/
+/sections/*
+!/sections/sec_rewrite_intro.tex
+!/sections/sec_rewrite_framework.tex
+!/sections/sec_rewrite_localization.tex
+!/sections/sec_rewrite_gaps_nogo.tex
+!/sections/sec_rewrite_dark_crossings.tex
+!/sections/sec7_analytic_family.tex
+!/sections/sec_rewrite_outlook.tex
+!/sections/app_rewrite_gap_proofs.tex
+!/sections/generated_accessibility_tables.tex
+
+# Reproduction code and its direct local dependencies.
+!/code/
+/code/*
+!/code/reproduce_manuscript.sh
+!/code/freeze_instances.py
+!/code/instance_registry.py
+!/code/reconstruct_accessibility_table.py
+!/code/accessibility_prototype.py
+!/code/spectral_gap_study.py
+!/code/symmetry_analysis.py
+!/code/d4_sector_analysis.py
+!/code/catalyst_path_analysis.py
+!/code/cycle_family_exploration.py
+!/code/hard_core_parent_path.py
+!/code/mean_field_zrp_gap_audit.py
+!/code/orlib_parse.py
+!/code/orlib_subextract.py
+
+# Frozen registry and provenance.
+!/instances/
+/instances/*
+!/instances/README.md
+!/instances/manifest.json
+!/instances/frozen/
+/instances/frozen/*
+!/instances/frozen/*.json
+
+# Only OR-Library parents required to reconstruct the frozen registry.
+!/orlib_instances/
+/orlib_instances/*
+!/orlib_instances/scp41.txt
+!/orlib_instances/scpe1.txt
+!/orlib_instances/scpe2.txt
+!/orlib_instances/scpe3.txt
+!/orlib_instances/scpe4.txt
+!/orlib_instances/scpe5.txt
+
+# Machine-readable outputs used by the current manuscript.
+!/data/
+/data/*
+!/data/accessibility_table_reconstructed.json
+!/data/d4_sector_comparison.json
+!/data/catalyst_path_results.json
+!/data/hard_core_parent_path_results.json
+!/data/mean_field_zrp_gap_audit.json
+
+# Reproduction and provenance reports intended for the public artifact.
+!/reports/
+/reports/*
+!/reports/instance_audit.md
+!/reports/reproduction_full_2026-08-11.md

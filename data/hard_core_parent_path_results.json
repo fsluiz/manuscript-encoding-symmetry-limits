@@ -1,0 +1,974 @@
+{
+  "endpoint_energy_exponent": 7.0,
+  "path": "hard-core Johnson Metropolis parent in the D_n-fixed quotient",
+  "qualification": "primary analytic path; it changes the initial state from the product-register uniform state to the uniform injective/Dicke state; the uniform gap is proved analytically by zero-range comparison and a log-concave three-box coupling, not by the finite-size grid",
+  "results": [
+    {
+      "endpoint_cover_probability": 0.999978566950595,
+      "endpoint_gap": 0.1666702389181318,
+      "grid_gaps": [
+        {
+          "energy_exponent": 0.0,
+          "gap": 1.6666666666666663
+        },
+        {
+          "energy_exponent": 0.23333333333333334,
+          "gap": 1.0416650139927113
+        },
+        {
+          "energy_exponent": 0.4666666666666667,
+          "gap": 0.693947031679643
+        },
+        {
+          "energy_exponent": 0.7,
+          "gap": 0.4926582550624996
+        },
+        {
+          "energy_exponent": 0.9333333333333333,
+          "gap": 0.3721164509811016
+        },
+        {
+          "energy_exponent": 1.1666666666666667,
+          "gap": 0.29794941271158254
+        },
+        {
+          "energy_exponent": 1.4,
+          "gap": 0.25137231875024885
+        },
+        {
+          "energy_exponent": 1.6333333333333333,
+          "gap": 0.2216842735840185
+        },
+        {
+          "energy_exponent": 1.8666666666666667,
+          "gap": 0.2025624821371638
+        },
+        {
+          "energy_exponent": 2.1,
+          "gap": 0.190157353730086
+        },
+        {
+          "energy_exponent": 2.3333333333333335,
+          "gap": 0.182070208494936
+        },
+        {
+          "energy_exponent": 2.566666666666667,
+          "gap": 0.17678071177272695
+        },
+        {
+          "energy_exponent": 2.8,
+          "gap": 0.17331346788782315
+        },
+        {
+          "energy_exponent": 3.033333333333333,
+          "gap": 0.1710373955641897
+        },
+        {
+          "energy_exponent": 3.2666666666666666,
+          "gap": 0.16954182813857696
+        },
+        {
+          "energy_exponent": 3.5,
+          "gap": 0.16855849117098606
+        },
+        {
+          "energy_exponent": 3.7333333333333334,
+          "gap": 0.16791167453602698
+        },
+        {
+          "energy_exponent": 3.966666666666667,
+          "gap": 0.16748609542351356
+        },
+        {
+          "energy_exponent": 4.2,
+          "gap": 0.1672060305007804
+        },
+        {
+          "energy_exponent": 4.433333333333334,
+          "gap": 0.16702170332561914
+        },
+        {
+          "energy_exponent": 4.666666666666667,
+          "gap": 0.16690037717439712
+        },
+        {
+          "energy_exponent": 4.9,
+          "gap": 0.16682051481619745
+        },
+        {
+          "energy_exponent": 5.133333333333334,
+          "gap": 0.16676794399551112
+        },
+        {
+          "energy_exponent": 5.366666666666667,
+          "gap": 0.16673333753317618
+        },
+        {
+          "energy_exponent": 5.6,
+          "gap": 0.16671055635815232
+        },
+        {
+          "energy_exponent": 5.833333333333333,
+          "gap": 0.16669555953421197
+        },
+        {
+          "energy_exponent": 6.066666666666666,
+          "gap": 0.1666856870768233
+        },
+        {
+          "energy_exponent": 6.3,
+          "gap": 0.16667918797879058
+        },
+        {
+          "energy_exponent": 6.533333333333333,
+          "gap": 0.16667490957153028
+        },
+        {
+          "energy_exponent": 6.766666666666667,
+          "gap": 0.16667209305725397
+        },
+        {
+          "energy_exponent": 7.0,
+          "gap": 0.1666702389181318
+        }
+      ],
+      "hard_core_states": 20,
+      "initial_gap": 1.6666666666666663,
+      "joint_fixed_orbits": 3,
+      "k": 3,
+      "minimum_at_endpoint": true,
+      "minimum_grid_exponent": 7.0,
+      "minimum_grid_gap": 0.1666702389181318,
+      "n_B": 6
+    },
+    {
+      "endpoint_cover_probability": 0.9999942779827505,
+      "endpoint_gap": 0.08013807085268196,
+      "grid_gaps": [
+        {
+          "energy_exponent": 0.0,
+          "gap": 1.7499999999999996
+        },
+        {
+          "energy_exponent": 0.23333333333333334,
+          "gap": 0.9896364546182413
+        },
+        {
+          "energy_exponent": 0.4666666666666667,
+          "gap": 0.5641232233055707
+        },
+        {
+          "energy_exponent": 0.7,
+          "gap": 0.3468807046351516
+        },
+        {
+          "energy_exponent": 0.9333333333333333,
+          "gap": 0.23217456059250696
+        },
+        {
+          "energy_exponent": 1.1666666666666667,
+          "gap": 0.1690530517459115
+        },
+        {
+          "energy_exponent": 1.4,
+          "gap": 0.13308625156095846
+        },
+        {
+          "energy_exponent": 1.6333333333333333,
+          "gap": 0.11205169326356858
+        },
+        {
+          "energy_exponent": 1.8666666666666667,
+          "gap": 0.09952478070458053
+        },
+        {
+          "energy_exponent": 2.1,
+          "gap": 0.09197379116568943
+        },
+        {
+          "energy_exponent": 2.3333333333333335,
+          "gap": 0.08738645675062667
+        },
+        {
+          "energy_exponent": 2.566666666666667,
+          "gap": 0.08458570712559794
+        },
+        {
+          "energy_exponent": 2.8,
+          "gap": 0.08287039843492472
+        },
+        {
+          "energy_exponent": 3.033333333333333,
+          "gap": 0.08181782121133183
+        },
+        {
+          "energy_exponent": 3.2666666666666666,
+          "gap": 0.08117114202355201
+        },
+        {
+          "energy_exponent": 3.5,
+          "gap": 0.08077354110706807
+        },
+        {
+          "energy_exponent": 3.7333333333333334,
+          "gap": 0.0805289697345234
+        },
+        {
+          "energy_exponent": 3.966666666666667,
+          "gap": 0.08037848687273609
+        },
+        {
+          "energy_exponent": 4.2,
+          "gap": 0.0802858797547602
+        },
+        {
+          "energy_exponent": 4.433333333333334,
+          "gap": 0.08022888322001095
+        },
+        {
+          "energy_exponent": 4.666666666666667,
+          "gap": 0.08019380146349658
+        },
+        {
+          "energy_exponent": 4.9,
+          "gap": 0.08017220752118788
+        },
+        {
+          "energy_exponent": 5.133333333333334,
+          "gap": 0.08015891542550654
+        },
+        {
+          "energy_exponent": 5.366666666666667,
+          "gap": 0.08015073338357903
+        },
+        {
+          "energy_exponent": 5.6,
+          "gap": 0.08014569682279969
+        },
+        {
+          "energy_exponent": 5.833333333333333,
+          "gap": 0.08014259648507831
+        },
+        {
+          "energy_exponent": 6.066666666666666,
+          "gap": 0.08014068801437711
+        },
+        {
+          "energy_exponent": 6.3,
+          "gap": 0.08013951321703533
+        },
+        {
+          "energy_exponent": 6.533333333333333,
+          "gap": 0.08013879004602766
+        },
+        {
+          "energy_exponent": 6.766666666666667,
+          "gap": 0.0801383448826545
+        },
+        {
+          "energy_exponent": 7.0,
+          "gap": 0.08013807085268196
+        }
+      ],
+      "hard_core_states": 70,
+      "initial_gap": 1.7499999999999996,
+      "joint_fixed_orbits": 8,
+      "k": 4,
+      "minimum_at_endpoint": true,
+      "minimum_grid_exponent": 7.0,
+      "minimum_grid_gap": 0.08013807085268196,
+      "n_B": 8
+    },
+    {
+      "endpoint_cover_probability": 0.9999980000033998,
+      "endpoint_gap": 0.04586195828390213,
+      "grid_gaps": [
+        {
+          "energy_exponent": 0.0,
+          "gap": 1.8
+        },
+        {
+          "energy_exponent": 0.23333333333333334,
+          "gap": 0.9713670188713992
+        },
+        {
+          "energy_exponent": 0.4666666666666667,
+          "gap": 0.49545049347539827
+        },
+        {
+          "energy_exponent": 0.7,
+          "gap": 0.2715314796053009
+        },
+        {
+          "energy_exponent": 0.9333333333333333,
+          "gap": 0.16434357752660933
+        },
+        {
+          "energy_exponent": 1.1666666666666667,
+          "gap": 0.1103974911671917
+        },
+        {
+          "energy_exponent": 1.4,
+          "gap": 0.08194348294436188
+        },
+        {
+          "energy_exponent": 1.6333333333333333,
+          "gap": 0.06638444966063486
+        },
+        {
+          "energy_exponent": 1.8666666666666667,
+          "gap": 0.05766133034222994
+        },
+        {
+          "energy_exponent": 2.1,
+          "gap": 0.052690763360449755
+        },
+        {
+          "energy_exponent": 2.3333333333333335,
+          "gap": 0.04982969064021267
+        },
+        {
+          "energy_exponent": 2.566666666666667,
+          "gap": 0.048172712690464276
+        },
+        {
+          "energy_exponent": 2.8,
+          "gap": 0.04720955454984625
+        },
+        {
+          "energy_exponent": 3.033333333333333,
+          "gap": 0.046648478247288364
+        },
+        {
+          "energy_exponent": 3.2666666666666666,
+          "gap": 0.0463212114712534
+        },
+        {
+          "energy_exponent": 3.5,
+          "gap": 0.046130178595873136
+        },
+        {
+          "energy_exponent": 3.7333333333333334,
+          "gap": 0.0460186193840231
+        },
+        {
+          "energy_exponent": 3.966666666666667,
+          "gap": 0.045953454350287956
+        },
+        {
+          "energy_exponent": 4.2,
+          "gap": 0.04591538379268406
+        },
+        {
+          "energy_exponent": 4.433333333333334,
+          "gap": 0.045893140344981445
+        },
+        {
+          "energy_exponent": 4.666666666666667,
+          "gap": 0.04588014351828796
+        },
+        {
+          "energy_exponent": 4.9,
+          "gap": 0.04587254925551353
+        },
+        {
+          "energy_exponent": 5.133333333333334,
+          "gap": 0.04586811172298185
+        },
+        {
+          "energy_exponent": 5.366666666666667,
+          "gap": 0.04586551872641215
+        },
+        {
+          "energy_exponent": 5.6,
+          "gap": 0.04586400354392319
+        },
+        {
+          "energy_exponent": 5.833333333333333,
+          "gap": 0.04586311816441466
+        },
+        {
+          "energy_exponent": 6.066666666666666,
+          "gap": 0.04586260080199219
+        },
+        {
+          "energy_exponent": 6.3,
+          "gap": 0.04586229848621232
+        },
+        {
+          "energy_exponent": 6.533333333333333,
+          "gap": 0.04586212183075533
+        },
+        {
+          "energy_exponent": 6.766666666666667,
+          "gap": 0.04586201860371571
+        },
+        {
+          "energy_exponent": 7.0,
+          "gap": 0.04586195828390213
+        }
+      ],
+      "hard_core_states": 252,
+      "initial_gap": 1.8,
+      "joint_fixed_orbits": 16,
+      "k": 5,
+      "minimum_at_endpoint": true,
+      "minimum_grid_exponent": 7.0,
+      "minimum_grid_gap": 0.04586195828390213,
+      "n_B": 10
+    },
+    {
+      "endpoint_cover_probability": 0.9999991627556422,
+      "endpoint_gap": 0.029107362239266462,
+      "grid_gaps": [
+        {
+          "energy_exponent": 0.0,
+          "gap": 1.8333333333333337
+        },
+        {
+          "energy_exponent": 0.23333333333333334,
+          "gap": 0.9628974487574319
+        },
+        {
+          "energy_exponent": 0.4666666666666667,
+          "gap": 0.4535731478423581
+        },
+        {
+          "energy_exponent": 0.7,
+          "gap": 0.2259804004755597
+        },
+        {
+          "energy_exponent": 0.9333333333333333,
+          "gap": 0.12542044140363487
+        },
+        {
+          "energy_exponent": 1.1666666666666667,
+          "gap": 0.07848872811108257
+        },
+        {
+          "energy_exponent": 1.4,
+          "gap": 0.055298503058546083
+        },
+        {
+          "energy_exponent": 1.6333333333333333,
+          "gap": 0.04330928786406737
+        },
+        {
+          "energy_exponent": 1.8666666666666667,
+          "gap": 0.036913379295511396
+        },
+        {
+          "energy_exponent": 2.1,
+          "gap": 0.03343239708306666
+        },
+        {
+          "energy_exponent": 2.3333333333333335,
+          "gap": 0.031514811729195784
+        },
+        {
+          "energy_exponent": 2.566666666666667,
+          "gap": 0.030450955073658244
+        },
+        {
+          "energy_exponent": 2.8,
+          "gap": 0.02985833266273259
+        },
+        {
+          "energy_exponent": 3.033333333333333,
+          "gap": 0.029527448017515327
+        },
+        {
+          "energy_exponent": 3.2666666666666666,
+          "gap": 0.02934246079191207
+        },
+        {
+          "energy_exponent": 3.5,
+          "gap": 0.029238964307195366
+        },
+        {
+          "energy_exponent": 3.7333333333333334,
+          "gap": 0.029181036323977647
+        },
+        {
+          "energy_exponent": 3.966666666666667,
+          "gap": 0.029148605978584277
+        },
+        {
+          "energy_exponent": 4.2,
+          "gap": 0.029130447854300637
+        },
+        {
+          "energy_exponent": 4.433333333333334,
+          "gap": 0.029120280173444563
+        },
+        {
+          "energy_exponent": 4.666666666666667,
+          "gap": 0.029114586527219006
+        },
+        {
+          "energy_exponent": 4.9,
+          "gap": 0.02911139815557938
+        },
+        {
+          "energy_exponent": 5.133333333333334,
+          "gap": 0.02910961268403584
+        },
+        {
+          "energy_exponent": 5.366666666666667,
+          "gap": 0.029108612822114653
+        },
+        {
+          "energy_exponent": 5.6,
+          "gap": 0.029108052898400575
+        },
+        {
+          "energy_exponent": 5.833333333333333,
+          "gap": 0.029107739339836423
+        },
+        {
+          "energy_exponent": 6.066666666666666,
+          "gap": 0.029107563746102093
+        },
+        {
+          "energy_exponent": 6.3,
+          "gap": 0.02910746541301543
+        },
+        {
+          "energy_exponent": 6.533333333333333,
+          "gap": 0.02910741034613268
+        },
+        {
+          "energy_exponent": 6.766666666666667,
+          "gap": 0.02910737950847226
+        },
+        {
+          "energy_exponent": 7.0,
+          "gap": 0.029107362239266462
+        }
+      ],
+      "hard_core_states": 924,
+      "initial_gap": 1.8333333333333337,
+      "joint_fixed_orbits": 50,
+      "k": 6,
+      "minimum_at_endpoint": true,
+      "minimum_grid_exponent": 7.0,
+      "minimum_grid_gap": 0.029107362239266462,
+      "n_B": 12
+    },
+    {
+      "endpoint_cover_probability": 0.9999996015692052,
+      "endpoint_gap": 0.019796113451531882,
+      "grid_gaps": [
+        {
+          "energy_exponent": 0.0,
+          "gap": 1.857142857142859
+        },
+        {
+          "energy_exponent": 0.23333333333333334,
+          "gap": 0.9558383724413858
+        },
+        {
+          "energy_exponent": 0.4666666666666667,
+          "gap": 0.42567593567084866
+        },
+        {
+          "energy_exponent": 0.7,
+          "gap": 0.19567473512054046
+        },
+        {
+          "energy_exponent": 0.9333333333333333,
+          "gap": 0.10062959608173441
+        },
+        {
+          "energy_exponent": 1.1666666666666667,
+          "gap": 0.05909023615663054
+        },
+        {
+          "energy_exponent": 1.4,
+          "gap": 0.03970436143845539
+        },
+        {
+          "energy_exponent": 1.6333333333333333,
+          "gap": 0.0301582123586968
+        },
+        {
+          "energy_exponent": 1.8666666666666667,
+          "gap": 0.025277968288958817
+        },
+        {
+          "energy_exponent": 2.1,
+          "gap": 0.022723452823080043
+        },
+        {
+          "energy_exponent": 2.3333333333333335,
+          "gap": 0.021367538788058027
+        },
+        {
+          "energy_exponent": 2.566666666666667,
+          "gap": 0.020642107149917426
+        },
+        {
+          "energy_exponent": 2.8,
+          "gap": 0.020252280044178863
+        },
+        {
+          "energy_exponent": 3.033333333333333,
+          "gap": 0.02004229135762442
+        },
+        {
+          "energy_exponent": 3.2666666666666666,
+          "gap": 0.019929027643121662
+        },
+        {
+          "energy_exponent": 3.5,
+          "gap": 0.019867891845803884
+        },
+        {
+          "energy_exponent": 3.7333333333333334,
+          "gap": 0.01983488012446339
+        },
+        {
+          "energy_exponent": 3.966666666666667,
+          "gap": 0.019817050937717476
+        },
+        {
+          "energy_exponent": 4.2,
+          "gap": 0.019807420545614917
+        },
+        {
+          "energy_exponent": 4.433333333333334,
+          "gap": 0.019802218394953768
+        },
+        {
+          "energy_exponent": 4.666666666666667,
+          "gap": 0.019799408201540084
+        },
+        {
+          "energy_exponent": 4.9,
+          "gap": 0.019797890112519995
+        },
+        {
+          "energy_exponent": 5.133333333333334,
+          "gap": 0.01979707002075706
+        },
+        {
+          "energy_exponent": 5.366666666666667,
+          "gap": 0.019796626994037423
+        },
+        {
+          "energy_exponent": 5.6,
+          "gap": 0.01979638766322857
+        },
+        {
+          "energy_exponent": 5.833333333333333,
+          "gap": 0.01979625837232665
+        },
+        {
+          "energy_exponent": 6.066666666666666,
+          "gap": 0.01979618852695031
+        },
+        {
+          "energy_exponent": 6.3,
+          "gap": 0.019796150795146576
+        },
+        {
+          "energy_exponent": 6.533333333333333,
+          "gap": 0.019796130411702053
+        },
+        {
+          "energy_exponent": 6.766666666666667,
+          "gap": 0.019796119400173097
+        },
+        {
+          "energy_exponent": 7.0,
+          "gap": 0.019796113451531882
+        }
+      ],
+      "hard_core_states": 3432,
+      "initial_gap": 1.857142857142859,
+      "joint_fixed_orbits": 133,
+      "k": 7,
+      "minimum_at_endpoint": true,
+      "minimum_grid_exponent": 7.0,
+      "minimum_grid_gap": 0.019796113451531882,
+      "n_B": 14
+    },
+    {
+      "endpoint_cover_probability": 0.9999997913837786,
+      "endpoint_gap": 0.014150101332946162,
+      "grid_gaps": [
+        {
+          "energy_exponent": 0.0,
+          "gap": 1.874999999999999
+        },
+        {
+          "energy_exponent": 0.23333333333333334,
+          "gap": 0.9475695894347356
+        },
+        {
+          "energy_exponent": 0.4666666666666667,
+          "gap": 0.4058342986477495
+        },
+        {
+          "energy_exponent": 0.7,
+          "gap": 0.1741428936732603
+        },
+        {
+          "energy_exponent": 0.9333333333333333,
+          "gap": 0.08366858369265712
+        },
+        {
+          "energy_exponent": 1.1666666666666667,
+          "gap": 0.046360124833621744
+        },
+        {
+          "energy_exponent": 1.4,
+          "gap": 0.02981652705679218
+        },
+        {
+          "energy_exponent": 1.6333333333333333,
+          "gap": 0.022015886999771365
+        },
+        {
+          "energy_exponent": 1.8666666666666667,
+          "gap": 0.018174915372712826
+        },
+        {
+          "energy_exponent": 2.1,
+          "gap": 0.016231663892793555
+        },
+        {
+          "energy_exponent": 2.3333333333333335,
+          "gap": 0.015232936808797438
+        },
+        {
+          "energy_exponent": 2.566666666666667,
+          "gap": 0.014715153517146088
+        },
+        {
+          "energy_exponent": 2.8,
+          "gap": 0.014445447072159685
+        },
+        {
+          "energy_exponent": 3.033333333333333,
+          "gap": 0.014304608598239682
+        },
+        {
+          "energy_exponent": 3.2666666666666666,
+          "gap": 0.014230966662049422
+        },
+        {
+          "energy_exponent": 3.5,
+          "gap": 0.01419243382775145
+        },
+        {
+          "energy_exponent": 3.7333333333333334,
+          "gap": 0.014172264326680107
+        },
+        {
+          "energy_exponent": 3.966666666666667,
+          "gap": 0.014161704849245876
+        },
+        {
+          "energy_exponent": 4.2,
+          "gap": 0.014156176019386384
+        },
+        {
+          "energy_exponent": 4.433333333333334,
+          "gap": 0.014153281031003712
+        },
+        {
+          "energy_exponent": 4.666666666666667,
+          "gap": 0.014151765124670252
+        },
+        {
+          "energy_exponent": 4.9,
+          "gap": 0.014150971337340841
+        },
+        {
+          "energy_exponent": 5.133333333333334,
+          "gap": 0.014150555676383611
+        },
+        {
+          "energy_exponent": 5.366666666666667,
+          "gap": 0.014150338017690566
+        },
+        {
+          "energy_exponent": 5.6,
+          "gap": 0.014150224041613924
+        },
+        {
+          "energy_exponent": 5.833333333333333,
+          "gap": 0.014150164358447851
+        },
+        {
+          "energy_exponent": 6.066666666666666,
+          "gap": 0.01415013310555262
+        },
+        {
+          "energy_exponent": 6.3,
+          "gap": 0.014150116740071363
+        },
+        {
+          "energy_exponent": 6.533333333333333,
+          "gap": 0.014150108170335879
+        },
+        {
+          "energy_exponent": 6.766666666666667,
+          "gap": 0.014150103682820355
+        },
+        {
+          "energy_exponent": 7.0,
+          "gap": 0.014150101332946162
+        }
+      ],
+      "hard_core_states": 12870,
+      "initial_gap": 1.874999999999999,
+      "joint_fixed_orbits": 440,
+      "k": 8,
+      "minimum_at_endpoint": true,
+      "minimum_grid_exponent": 7.0,
+      "minimum_grid_gap": 0.014150101332946162,
+      "n_B": 16
+    },
+    {
+      "endpoint_cover_probability": 0.9999998823952349,
+      "endpoint_gap": 0.010502551442822857,
+      "grid_gaps": [
+        {
+          "energy_exponent": 0.0,
+          "gap": 1.8888888888888873
+        },
+        {
+          "energy_exponent": 0.23333333333333334,
+          "gap": 0.937915881658067
+        },
+        {
+          "energy_exponent": 0.4666666666666667,
+          "gap": 0.3909241432703451
+        },
+        {
+          "energy_exponent": 0.7,
+          "gap": 0.1580862350471198
+        },
+        {
+          "energy_exponent": 0.9333333333333333,
+          "gap": 0.07143946810768324
+        },
+        {
+          "energy_exponent": 1.1666666666666667,
+          "gap": 0.03752402126337348
+        },
+        {
+          "energy_exponent": 1.4,
+          "gap": 0.02316722551886767
+        },
+        {
+          "energy_exponent": 1.6333333333333333,
+          "gap": 0.01665905485276035
+        },
+        {
+          "energy_exponent": 1.8666666666666667,
+          "gap": 0.01356079631908636
+        },
+        {
+          "energy_exponent": 2.1,
+          "gap": 0.012040068399480713
+        },
+        {
+          "energy_exponent": 2.3333333333333335,
+          "gap": 0.011280488340755441
+        },
+        {
+          "energy_exponent": 2.566666666666667,
+          "gap": 0.01089747878696684
+        },
+        {
+          "energy_exponent": 2.8,
+          "gap": 0.01070338514947235
+        },
+        {
+          "energy_exponent": 3.033333333333333,
+          "gap": 0.010604771926652259
+        },
+        {
+          "energy_exponent": 3.2666666666666666,
+          "gap": 0.010554602897433032
+        },
+        {
+          "energy_exponent": 3.5,
+          "gap": 0.010529062282310599
+        },
+        {
+          "energy_exponent": 3.7333333333333334,
+          "gap": 0.010516055265697495
+        },
+        {
+          "energy_exponent": 3.966666666666667,
+          "gap": 0.010509430036694547
+        },
+        {
+          "energy_exponent": 4.2,
+          "gap": 0.010506055118331756
+        },
+        {
+          "energy_exponent": 4.433333333333334,
+          "gap": 0.010504335842274885
+        },
+        {
+          "energy_exponent": 4.666666666666667,
+          "gap": 0.010503459975340265
+        },
+        {
+          "energy_exponent": 4.9,
+          "gap": 0.010503013768904662
+        },
+        {
+          "energy_exponent": 5.133333333333334,
+          "gap": 0.010502786449678682
+        },
+        {
+          "energy_exponent": 5.366666666666667,
+          "gap": 0.01050267064186717
+        },
+        {
+          "energy_exponent": 5.6,
+          "gap": 0.010502611643467453
+        },
+        {
+          "energy_exponent": 5.833333333333333,
+          "gap": 0.010502581586655506
+        },
+        {
+          "energy_exponent": 6.066666666666666,
+          "gap": 0.010502566274164491
+        },
+        {
+          "energy_exponent": 6.3,
+          "gap": 0.010502558473188343
+        },
+        {
+          "energy_exponent": 6.533333333333333,
+          "gap": 0.010502554498970187
+        },
+        {
+          "energy_exponent": 6.766666666666667,
+          "gap": 0.010502552474297188
+        },
+        {
+          "energy_exponent": 7.0,
+          "gap": 0.010502551442822857
+        }
+      ],
+      "hard_core_states": 48620,
+      "initial_gap": 1.8888888888888873,
+      "joint_fixed_orbits": 1387,
+      "k": 9,
+      "minimum_at_endpoint": true,
+      "minimum_grid_exponent": 7.0,
+      "minimum_grid_gap": 0.010502551442822857,
+      "n_B": 18
+    }
+  ],
+  "schema_version": 1
+}

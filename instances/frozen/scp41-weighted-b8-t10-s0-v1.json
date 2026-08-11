@@ -1,0 +1,119 @@
+{
+  "aliases": [
+    "scp41-n8m10s0",
+    "scp41-n8m15s0"
+  ],
+  "instance_id": "scp41-weighted-b8-t10-s0-v1",
+  "k_star": 5,
+  "n_B": 8,
+  "n_T": 10,
+  "n_optimal_cardinality_covers": 4,
+  "optimal_cardinality_covers": [
+    [
+      0,
+      1,
+      3,
+      4,
+      5
+    ],
+    [
+      0,
+      1,
+      3,
+      4,
+      7
+    ],
+    [
+      1,
+      3,
+      4,
+      5,
+      6
+    ],
+    [
+      1,
+      3,
+      4,
+      6,
+      7
+    ]
+  ],
+  "payload": {
+    "costs": [
+      4,
+      7,
+      12,
+      33,
+      41,
+      72,
+      73,
+      77
+    ],
+    "incidence": [
+      "0010000010",
+      "0001000100",
+      "0001000011",
+      "1000000001",
+      "0000011000",
+      "0100100000",
+      "0010101010",
+      "0100100010"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "b499a05f742ae8c0db643ba045d1fa1e8bfb44adad786c4d08fb47bb72d1e346",
+  "provenance": {
+    "extractor": "orlib_subextract.extract_subinstance@working-tree-2026-08-10",
+    "kind": "orlib_weighted_subinstance",
+    "parameters": {
+      "m_target": 15,
+      "n_target": 8,
+      "seed": 0
+    },
+    "parent_dimensions": {
+      "n_B": 1000,
+      "n_T": 200
+    },
+    "parent_file": "orlib_instances/scp41.txt",
+    "parent_sha256": "85788fe18b2af8034fea25619a8ce0e8db1c870935854f73d9be4bb721ae445e",
+    "requested_n_T": 15,
+    "retained_n_T": 10,
+    "selected_parent_base_indices_zero_based": [
+      42,
+      82,
+      122,
+      327,
+      411,
+      709,
+      721,
+      769
+    ],
+    "selected_parent_task_indices_zero_based": [
+      3,
+      7,
+      34,
+      50,
+      58,
+      120,
+      127,
+      179,
+      194,
+      199
+    ]
+  },
+  "schema_version": 1,
+  "status": "legacy_only",
+  "weighted_optimum": {
+    "cost": 157,
+    "covers": [
+      [
+        0,
+        1,
+        3,
+        4,
+        5
+      ]
+    ],
+    "minimum_cardinality_among_optima": 5
+  }
+}

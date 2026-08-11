@@ -1,0 +1,54 @@
+{
+  "aliases": [
+    "grid_2x7"
+  ],
+  "instance_id": "grid-2x7-v1",
+  "k_star": 4,
+  "n_B": 14,
+  "n_T": 14,
+  "n_optimal_cardinality_covers": 2,
+  "optimal_cardinality_covers": [
+    [
+      0,
+      4,
+      9,
+      13
+    ],
+    [
+      2,
+      6,
+      7,
+      11
+    ]
+  ],
+  "payload": {
+    "incidence": [
+      "11000001000000",
+      "11100000100000",
+      "01110000010000",
+      "00111000001000",
+      "00011100000100",
+      "00001110000010",
+      "00000110000001",
+      "10000001100000",
+      "01000001110000",
+      "00100000111000",
+      "00010000011100",
+      "00001000001110",
+      "00000100000111",
+      "00000010000011"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "6bcc27b116d1cf575f4c8ff2eafd8ae0d120a91aa2780288daff86375d1a2ad5",
+  "provenance": {
+    "generator": "spectral_gap_study.grid_instance",
+    "kind": "generated_grid",
+    "parameters": {
+      "cols": 7,
+      "rows": 2
+    }
+  },
+  "schema_version": 1,
+  "status": "legacy_only"
+}

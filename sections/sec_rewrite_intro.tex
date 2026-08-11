@@ -1,0 +1,83 @@
+\section{Introduction}
+\label{sec:rewrite-intro}
+
+Symmetry block diagonalizes a Hamiltonian, but block diagonalization alone
+does not determine which eigenstates a protocol can occupy.  If an initial
+state is fixed by every preserved symmetry, evolution is confined to the
+joint fixed space.  Even that statement can be loose: the algebra generated
+by the endpoint Hamiltonians may act cyclically only on a proper subspace of
+the joint fixed space.  A small global gap can then describe a crossing that
+the protocol neither couples to nor detects.
+
+\paragraph{Relation to prior work.}
+Set Cover admits the usual one-binary-variable-per-base Ising formulation,
+and it also appears among the constrained examples motivating quantum
+alternating-operator ansatzes~\cite{Lucas2014,Hadfield2019}.  Separately,
+qubit-efficient variational encodings show that logarithmic or otherwise
+compressed register counts are not by themselves a novelty
+claim~\cite{TanEncoding2021,GlosKrawiecZimboras2022,Chancellor2019}.  Our
+multi-register address encoding belongs to this broad compact-encoding
+line; the contribution claimed here is spectral rather than a new qubit
+count.
+
+Classical objective symmetries can confine QAOA dynamics and impose equal
+measurement probabilities on symmetry-related strings
+\cite{ShaydulinHadfieldHoggSafro2021}.  Quantum walks on automorphism
+quotients likewise identify a smaller invariant evolution for suitable
+initial states~\cite{KroviBrun2007}, while Krylov methods use repeated
+generator action to identify a minimal dynamical subspace
+\cite{Saad1992}.  These ideas motivate, but do not identify with one another,
+the two spaces used below: the group-fixed orbit space and the generally
+smaller cyclic space of the full protocol algebra.
+
+Finally, symmetric discriminants of reversible Markov chains and annealing
+paths with Gibbs-amplitude ground states are established tools in quantum
+walk and quantum simulated-annealing constructions
+\cite{Szegedy2004,SommaBoixoBarnumKnill2008}.  Quantitative adiabatic
+statements require an isolated spectral band together with derivative and
+gap control~\cite{JansenRuskaiSeiler2007}.  We use the discriminant only to
+construct a rigorously gapped witness path and make no speedup claim.
+
+Minimum Set Cover (MSC) provides a concrete setting in which these three
+spaces differ.  A $k$-register encoding represents an ordered candidate by
+$k\lceil\log_2n_B\rceil$ address qubits.  Permuting the registers gives an
+$S_k$ action, while colour-preserving automorphisms of the incidence
+relation permute the base labels.  Register symmetry alone and a
+final-Hamiltonian sector gap are insufficient for an adiabatic or otherwise
+path-dependent statement: one must use the faithful joint action, the
+protocol's cyclic space, and the minimum isolation gap along an explicit
+path.
+
+This rewrite makes that distinction its central question.  Its main results
+are:
+\begin{enumerate}
+\item a representation-theoretic definition of the effective group
+$S_k\times G_B$, together with exact orbit quotients and a strict separation
+between the symmetry-allowed space $\mathcal H_{\rm sym}$ and the cyclic
+space $\mathcal K_u$;
+\item a sector-resolved localization theorem in which the separation from
+invalid states contains the kinetic floor of the chosen sector;
+\item a protocol-dependent taxonomy separating ground multiplicity, the
+gap above a manifold, the isolation gap of a tracked band, and the energy
+penalty caused by inaccessibility;
+\item finite and asymptotic examples of dynamically dark crossings, with a
+stability theorem for transverse symmetry-preserving perturbations; and
+\item an explicit parent path on an even-cycle family, with exact endpoint
+concentration and a uniform polynomial accessible-gap certificate obtained
+from a log-concave three-box coupling, together with a conditional
+polynomial-time adiabatic corollary.
+\end{enumerate}
+
+The last result is purposely about accessibility rather than computational
+advantage.  The controlled cycle family is classically easy, and the proven
+exponent is conservative.  Its role is to separate the gap question cleanly
+into symmetry, geometry, and kinetics, without inferring asymptotic behavior
+from finite-size data.
+
+Accordingly, neither orbit reduction, compact addressing, nor a Markov
+discriminant is claimed as new in isolation.  The new combination is the
+three-way separation of global, group-fixed, and protocol-cyclic spectra for
+a multi-register coverage Hamiltonian; the kinetic-floor localization bound
+inside a symmetry sector; and an analytic family in which an exact global
+inter-irrep crossing is dynamically dark while a distinct parent protocol
+has a uniformly polynomial cyclic-gap certificate.

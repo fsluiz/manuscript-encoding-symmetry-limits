@@ -1,0 +1,69 @@
+\section{Numerical protocol, scope, and outlook}
+\label{sec:rewrite-outlook}
+
+The numerical reconstruction follows the mathematical distinctions above.
+Inputs are frozen with instance identifiers and SHA-256 hashes.  Every
+headline gap is computed either in the full Hamiltonian or in an explicitly
+labelled exact orbit quotient; projected $PHP$, Löwdin, and full-Hamiltonian
+numbers are never placed in one unlabeled column.  A numerical degeneracy is
+accepted only relative to eigenpair residuals and matrix scale.  Inside a
+degenerate manifold, irrep content is obtained from
+\begin{equation}
+ \operatorname{rank}(P_0\Pi_{\alpha\beta}P_0),
+\end{equation}
+not by assigning labels to solver-dependent individual eigenvectors.
+
+\subsection{Frozen endpoint reconstruction}
+
+Tables~\ref{tab:finite-structure} and \ref{tab:finite-endpoints} implement
+this protocol on eleven frozen, unweighted instances.  Only the $2\times4$
+grid has nontrivial $G_B$ (namely $D_4$); all other rows nevertheless retain
+the $S_k$ reduction.  Five rows satisfy the strict inclusion
+$\mathcal K_u\subsetneq\mathcal H_{\rm sym}$, so cyclic inaccessibility is
+not merely a padding artefact.
+
+At the problem endpoint, every accessible ground state is rank one in the
+tested sample and
+\begin{equation}
+ p_{\rm opt}^{\min}\geq0.9944.
+\end{equation}
+Nine rows have $\delta_{\rm acc}>0$: their uniform symmetric protocol ends
+above the global ground energy.  In the other two rows,
+$\delta_{\rm acc}=0$ but the accessible excitation gap is orders of
+magnitude larger than the full gap.  Thus neither equality nor inequality
+of the endpoint ground energies determines which spectral gap is relevant.
+
+For the sparse full-space calculations, the central class sum of register
+transpositions separates every $S_k$ irrep for $k\leq5$.  The orbit of a
+lowest vector constructs its complete Specht multiplet; deflation then
+tests for further cospectral copies before $g_0^{\rm full}$ is assigned.
+For the grid row the two-dimensional global ground manifold is additionally
+the $E$ irrep of $D_4$, whereas the accessible branch is $A_1$.  At the
+analytic hopping-cancellation point, the joint-fixed ground rank agrees
+with the independently enumerated number of $G_B$-orbits of optimal covers
+in every row.  Hence the original linear path has a fixed-sector rank
+closure whenever this orbit count exceeds one.
+
+The largest orbit-invariance residual is below $5\times10^{-13}$, the
+largest cyclic-invariance residual below $2\times10^{-9}$, and all
+full-space eigenpair and class-sum residuals used for reported levels are
+stored in the machine-readable output.  The table values never combine
+projected $PHP$, Löwdin, and full-Hamiltonian estimates.
+
+\input{sections/generated_accessibility_tables}
+
+The theorem family establishes a qualitative separation, not a practical
+speedup.  Its cycle instances are classically solvable, Dicke-state
+preparation has a cost that must be counted, and the Gibbs parent endpoint
+is not the original problem Hamiltonian.  Likewise, the address count
+$k\lceil\log_2n_B\rceil$ is not a complete hardware resource estimate:
+incidence access, flags, ancillas, and gate depth belong to a separate
+implementation analysis.
+
+The next nontrivial question is stability: one would like a decorated family
+in which the classical cover structure is not immediate, while the joint
+orbit quotient, dark global branch, and polynomial accessible gap survive
+controlled symmetry-preserving perturbations.  The present contribution
+should be read as a rigorous theory of spectral relevance under joint
+symmetry, with an exactly controlled dark crossing, a polynomially gapped
+witness path, and reproducible finite-instance diagnostics.

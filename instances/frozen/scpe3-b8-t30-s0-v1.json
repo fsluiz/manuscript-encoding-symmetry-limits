@@ -1,0 +1,115 @@
+{
+  "aliases": [
+    "scpe3-n8m30s0"
+  ],
+  "instance_id": "scpe3-b8-t30-s0-v1",
+  "k_star": 5,
+  "n_B": 8,
+  "n_T": 30,
+  "n_optimal_cardinality_covers": 4,
+  "optimal_cardinality_covers": [
+    [
+      0,
+      1,
+      3,
+      4,
+      6
+    ],
+    [
+      0,
+      2,
+      3,
+      4,
+      6
+    ],
+    [
+      1,
+      3,
+      4,
+      5,
+      6
+    ],
+    [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "payload": {
+    "incidence": [
+      "010010101001011000000011010101",
+      "000000001000110011101101010101",
+      "110000011000010000100111001101",
+      "000001010111001110001011001001",
+      "111011010000111011010010000010",
+      "010011110000110000101000101000",
+      "010101010000000001101001110001",
+      "011010011000001110100010100000"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "efa65316413a09128ac287260a6be9b0b0c375c18b00e2f3d0defe35402ec8b2",
+  "provenance": {
+    "extractor": "orlib_subextract.extract_subinstance@working-tree-2026-08-10",
+    "kind": "orlib_subinstance",
+    "parameters": {
+      "m_target": 30,
+      "n_target": 8,
+      "seed": 0
+    },
+    "parent_dimensions": {
+      "n_B": 500,
+      "n_T": 50
+    },
+    "parent_file": "orlib_instances/scpe3.txt",
+    "parent_sha256": "b314906d85d852a2dbff9b6b536b44720c22b7d0fc7039d37a722ed3f5ba700b",
+    "requested_n_T": 30,
+    "retained_n_T": 30,
+    "selected_parent_base_indices_zero_based": [
+      0,
+      3,
+      7,
+      8,
+      19,
+      42,
+      46,
+      95
+    ],
+    "selected_parent_task_indices_zero_based": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      7,
+      11,
+      14,
+      16,
+      17,
+      20,
+      21,
+      23,
+      24,
+      26,
+      28,
+      29,
+      33,
+      34,
+      36,
+      37,
+      39,
+      40,
+      41,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ]
+  },
+  "schema_version": 1,
+  "status": "candidate_primary"
+}

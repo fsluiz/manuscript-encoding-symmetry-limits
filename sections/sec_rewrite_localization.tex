@@ -1,0 +1,78 @@
+\section{Sector-resolved localization}
+\label{sec:rewrite-localization}
+
+Let $P$ project onto the span of computational-basis tuples that use
+distinct bases and cover every task, and put $Q=I-P$.  Write
+$V=\lambda H_{\rm cov}+\mu H_{\rm excl}$,
+$m=\min\{\lambda,\mu\}$, and $\kappa=k/(n_B-1)$.  Then $VP=0$ and the
+complete-graph normalization gives
+\begin{equation}
+ QH_{\rm prob}Q\geq(m-\kappa)Q.
+ \label{eq:q-lower-rewrite}
+\end{equation}
+
+The global localization statement cannot be copied verbatim into an
+arbitrary sector.  A projected cover is a superposition of computational
+covers and can have nonzero kinetic expectation.  The missing term is the
+sector's kinetic floor.
+
+\begin{proposition}[Sector localization]
+\label{prop:sector-localization-rewrite}
+Let $\Pi_\gamma$ be a symmetry-sector projector commuting with
+$H_{\rm prob}$, $H_{\rm walk}$, $V$, and $P$, and suppose
+$P_\gamma=P\Pi_\gamma\ne0$.  Define
+\begin{align}
+ Q_\gamma&=Q\Pi_\gamma,&
+ B_\gamma&=Q_\gamma H_{\rm walk}P_\gamma,\\
+ \eta_\gamma&=\lambda_{\min}\!\left(
+ P_\gamma H_{\rm walk}P_\gamma|_{\Ran P_\gamma}\right).
+\end{align}
+Let $E_0^\gamma$ be the lowest energy in the sector and
+\begin{equation}
+ \Gamma_\gamma=\lambda_{\min}(Q_\gamma H_{\rm prob}Q_\gamma)-E_0^\gamma.
+\end{equation}
+If $\Gamma_\gamma>0$, every normalized sector ground state $\psi_\gamma$
+satisfies
+\begin{equation}
+ 1-\langle\psi_\gamma|P|\psi_\gamma\rangle
+ \leq\frac{\|B_\gamma\|^2}
+ {\Gamma_\gamma^2+\|B_\gamma\|^2}.
+ \label{eq:sector-bound-rewrite}
+\end{equation}
+Moreover,
+\begin{equation}
+ \Gamma_\gamma\geq m-\kappa-\eta_\gamma,
+ \label{eq:sector-separation-rewrite}
+\end{equation}
+so the right-hand side of Eq.~\eqref{eq:sector-bound-rewrite} remains valid
+with $\Gamma_\gamma$ replaced by
+$g_\gamma=m-\kappa-\eta_\gamma>0$.
+\end{proposition}
+
+\begin{proof}
+The variational principle applied inside $\Ran\Pi_\gamma$ gives
+$E_0^\gamma\leq\eta_\gamma$.  Combining this with
+Eq.~\eqref{eq:q-lower-rewrite} proves
+Eq.~\eqref{eq:sector-separation-rewrite}.  For a sector ground vector, write
+$p=P_\gamma\psi_\gamma$ and $q=Q_\gamma\psi_\gamma$.  The projected
+eigenvalue equation is
+\begin{equation}
+ (Q_\gamma H_{\rm prob}Q_\gamma-E_0^\gamma)q=-B_\gamma p.
+\end{equation}
+The inverse on the left has norm at most $\Gamma_\gamma^{-1}$, hence
+$\|q\|\leq\|B_\gamma\|\|p\|/\Gamma_\gamma$.  Using
+$\|p\|^2+\|q\|^2=1$ gives Eq.~\eqref{eq:sector-bound-rewrite}.
+\end{proof}
+
+This statement certifies the solution content of the lowest-energy state
+within a sector.  It does not say that the ground vector has exact support on
+$\Ran P$: for finite penalties Eq.~\eqref{eq:sector-bound-rewrite} controls,
+rather than eliminates, leakage.  Exact support occurs only in an infinite
+penalty limit or in special decoupled cases.
+
+There is also a cyclic-space caveat.  The projector onto $\mathcal K_u$ need
+not commute with $P$, so $P\Pi_{\mathcal K}$ need not be an orthogonal
+projector.  Proposition~\ref{prop:sector-localization-rewrite} must be used
+for genuine symmetry sectors; cyclic-space solution probability is then
+evaluated directly or bounded through a separately constructed commuting
+projector.

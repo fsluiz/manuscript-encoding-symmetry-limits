@@ -1,0 +1,280 @@
+% Analytically controlled family and an exact accessible-gap reduction.
+
+\section{An analytically controlled family}
+\label{sec:analytic-family}
+
+The distinction between a global gap and a dynamically accessible gap is not
+only a finite-instance effect.  We now give an even-cycle family for which
+the symmetry reduction, the solution manifold, and an entire
+parent-Hamiltonian path can be controlled.  The purpose of the family is a
+separation theorem, not a claim that vertex cover on a cycle is classically
+difficult.
+
+\subsection{Even-cycle set cover and its joint symmetry}
+
+Let the bases be the vertices of the even cycle $C_n$, $n=2k$, and let the
+tasks be its edges.  Base $b$ covers the two edges incident on $b$.  A
+$k$-subset $S\subset\mathbb Z_n$ is therefore a cover precisely when it is
+one of the two alternating subsets.  The two solutions are exchanged by a
+one-site rotation and form one orbit of the incidence automorphism group
+$D_n$.
+
+We work in the injective, register-symmetric subspace, with basis
+$\{\ket S:|S|=k\}$.  Equivalently, this is the symmetric Dicke embedding of
+the hard-core sector of the original registers.  Define
+\begin{equation}
+ U(S)=\#\{i\in\mathbb Z_n:i\notin S,\ i+1\notin S\}.
+ \label{eq:cycle-energy}
+\end{equation}
+At half filling, $U(S)$ is also the number of adjacent occupied pairs.  Thus
+$U=0$ exactly on the two minimum covers.
+
+For $a\geq0$, consider the continuous-time Metropolis generator with a
+Johnson-graph proposal,
+\begin{equation}
+ q_a(S,T)=\frac1n
+ \min\{1,n^{-a[U(T)-U(S)]}\},
+ \qquad |S\mathbin\triangle T|=2,
+ \label{eq:johnson-metropolis}
+\end{equation}
+and $q_a(S,T)=0$ otherwise.  Its reversible measure is
+\begin{equation}
+ \pi_a(S)=Z_a^{-1}n^{-aU(S)}.
+ \label{eq:cycle-gibbs}
+\end{equation}
+The symmetric-discriminant construction is standard for reversible Markov
+chains and Gibbs-amplitude ground states
+\cite{Szegedy2004,SommaBoixoBarnumKnill2008}.  Here $H_a$ has diagonal
+$\sum_Tq_a(S,T)$ and off-diagonal entries
+\begin{align}
+ \langle T|H_a|S\rangle
+ &=-\sqrt{q_a(S,T)q_a(T,S)}\\
+ &=-\frac1n n^{-a|U(T)-U(S)|/2}.
+ \label{eq:cycle-parent}
+\end{align}
+It is frustration free and has the known ground state
+\begin{equation}
+ \ket{\psi_a}=Z_a^{-1/2}\sum_{|S|=k}n^{-aU(S)/2}\ket S.
+ \label{eq:cycle-parent-ground}
+\end{equation}
+At $a=0$, this is the Dicke state
+$\ket{J_{n,k}}=\binom nk^{-1/2}\sum_{|S|=k}\ket S$, and the parent
+Hamiltonian $H_{a=0}$ is exactly the Johnson-graph Laplacian at rate $1/n$.
+It should not be confused with the restriction of $H_{\rm init}$ from
+Eq.~\eqref{eq:hinit-rewrite}, which agrees with a Johnson Laplacian only up
+to an additive constant after projection to the injective subspace.  The
+whole parent path commutes with $D_n$.
+
+This protocol has its own generator algebra and cyclic space, distinct from
+Eq.~\eqref{eq:ku-rewrite}:
+\begin{align}
+ \mathfrak A_{\rm par}
+ &=\operatorname{alg}^{*}\!\left(\{H_a:0\leq a\leq7\}\cup\{I\}\right),\\
+ \mathcal K_J^{\rm par}
+ &=\mathfrak A_{\rm par}\ket{J_{n,k}}.
+ \label{eq:parent-cyclic-space}
+\end{align}
+Let $\mathcal H^{D_n}$ denote the $D_n$-fixed subspace of the half-filled
+hard-core space and define
+\begin{equation}
+ \Delta_{\rm par}^{\rm cyc}(a)
+ =\operatorname{gap}\!\left(H_a|_{\mathcal K_J^{\rm par}}\right).
+ \label{eq:parent-cyclic-gap}
+\end{equation}
+
+\begin{proposition}[Cyclic accessibility of the parent path]
+\label{prop:parent-cyclic-accessibility}
+For every even $n=2k\geq6$ and $0\leq a\leq7$,
+\begin{enumerate}
+ \item $\mathcal K_J^{\rm par}$ is a common reducing subspace for the
+ family $\{H_a\}_{0\leq a\leq7}$ and
+ $\mathcal K_J^{\rm par}\subseteq\mathcal H^{D_n}$;
+ \item the unique ground state $\ket{\psi_a}$ belongs to
+ $\mathcal K_J^{\rm par}$; and
+ \item
+ \begin{equation}
+  \Delta_{\rm par}^{\rm cyc}(a)\geq\Delta_{D_n}(a).
+  \label{eq:parent-cyclic-fixed-comparison}
+ \end{equation}
+\end{enumerate}
+Thus a lower bound proved in the $D_n$-fixed space is also a lower-bound
+certificate for the dynamically accessible gap of this parent protocol.
+\end{proposition}
+
+\begin{proof}
+Because $\mathfrak A_{\rm par}$ is a unital star-algebra,
+$\mathfrak A_{\rm par}\ket{J_{n,k}}$ is invariant under every element of
+the algebra and its adjoint, hence is reducing.  Every $H_a$ commutes with
+$D_n$, and $\ket{J_{n,k}}$ is $D_n$-fixed, which proves the first item.
+
+All Metropolis rates in Eq.~\eqref{eq:johnson-metropolis} are positive on
+the connected Johnson graph.  The zero eigenvalue of $H_a$ is consequently
+simple, with ground vector given by Eq.~\eqref{eq:cycle-parent-ground}.  In
+finite dimension its spectral projector
+$P_a=\ket{\psi_a}\!\bra{\psi_a}$ is a polynomial in $H_a$ and therefore
+belongs to $\mathfrak A_{\rm par}$.  Positivity of both vectors gives
+\begin{equation}
+ \langle\psi_a|J_{n,k}\rangle>0,
+\end{equation}
+so $P_a\ket{J_{n,k}}$ is a nonzero multiple of $\ket{\psi_a}$ and the
+second item follows.  Finally, both restrictions have this same unique
+ground state, while
+$\mathcal K_J^{\rm par}\subseteq\mathcal H^{D_n}$.  Rayleigh--Ritz
+minimization over the smaller orthogonal complement proves
+Eq.~\eqref{eq:parent-cyclic-fixed-comparison}.
+\end{proof}
+
+The number of configurations at energy $u$ is
+\begin{equation}
+ N_u=\frac{n}{k-u}\binom{k-1}{u}^2,
+ \qquad 0\leq u<k.
+ \label{eq:cycle-shell-count}
+\end{equation}
+This follows by decomposing the occupied and vacant sites into the same
+number $k-u$ of positive cyclic runs.  At $a_f=7$, the $u=1$ contribution is
+$N_1n^{-7}=n(k-1)n^{-7}=O(n^{-5})$.  Moreover, consecutive terms
+$N_un^{-7u}$ have ratio at most $2k^2n^{-7}=O(n^{-5})$.  Hence
+Eqs.~\eqref{eq:cycle-gibbs} and \eqref{eq:cycle-shell-count} imply
+\begin{equation}
+ 1-\langle\psi_{a_f}|\Pi_{U=0}|\psi_{a_f}\rangle
+ =O(n^{-5}).
+ \label{eq:cycle-endpoint-concentration}
+\end{equation}
+
+\subsection{A uniform accessible-gap theorem}
+
+We first separate the cycle geometry from the zero-range kinetics.
+
+\begin{proposition}[Zero-range reduction]
+\label{prop:cycle-zrp-reduction}
+For every even $n=2k\geq6$ and every $a\geq0$, the gap of $H_a$ in the
+$D_n$-fixed space obeys
+\begin{equation}
+ \Delta_{D_n}(a)
+ \geq \frac{2}{n}[1-\cos(2\pi/k)]
+ \operatorname{gap}\operatorname{ZRP}(K_k,r_a,k),
+ \label{eq:cycle-zrp-reduction}
+\end{equation}
+where $r_a(0)=0$, $r_a(1)=n^{-a}$, $r_a(j)=1$ for $j\geq2$, and $K_k$
+is the uniform mean-field kernel on the $k$ boxes.  Consequently, any
+uniform polynomial lower bound for this mean-field gap gives a uniform
+polynomial accessible-gap certificate for the parent path.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Marking an occupied site identifies $D_n$-invariant subset observables
+isometrically with cyclic-and-reflection-invariant observables on weak
+compositions $g_1+\cdots+g_k=k$.  Adjacent subset moves dominate a zero-range
+chain with cycle geometry, physical prefactor $2/n$, and rates
+$r_a(1)=n^{-a}$ and $r_a(j)=1$ for $j\geq2$.  The Hermon--Salez Dirichlet-form
+comparison then contributes the one-particle factor
+$1-\cos(2\pi/k)$.  Appendix~\ref{app:normalized-gap-proof} proves the
+isometry, rate domination, and every normalization factor.
+\end{proof}
+
+\begin{lemma}[Three-box heat-bath contraction]
+\label{lem:three-box-contraction}
+Let $a_0=\tau$, $a_j=1$ for $j\geq1$, with $0<\tau\leq1$.  On weak
+compositions of any total $m$ into three boxes, let one heat-bath step keep
+one uniformly chosen coordinate and resample the other two from their
+conditional product law.  The continuous-time generator $\mathcal L^*_{3,m}$
+obtained by subtracting the identity has gap at least $1/3$.
+\end{lemma}
+
+\begin{proof}
+The log-concave coupling and its normalization are proved in
+Appendix~\ref{app:three-box-proof}.
+\end{proof}
+
+\begin{proposition}[Uniform accessible gap]
+\label{prop:cycle-uniform-gap}
+For every even $n=2k\geq6$ and every $a\geq0$,
+\begin{align}
+ \operatorname{gap}\operatorname{ZRP}(K_k,r_a,k)
+ &\geq 2n^{-a}k^{-3},
+ \label{eq:mean-field-bound}\\
+ \Delta_{D_n}(a)&\geq1024\,n^{-(a+6)}.
+ \label{eq:uniform-accessible-gap}
+\end{align}
+Consequently, along $0\leq a\leq7$,
+$\min_a\Delta_{D_n}(a)\geq1024\,n^{-13}$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+With the normalization stated in Appendix~\ref{app:heat-bath-recursion},
+the Caputo--Sasada recursion and Lemma~\ref{lem:three-box-contraction} give
+heat-bath gap at least $1/k$.  A conditional two-box comparison gives gap
+at least $\tau/k^2$, while the decomposition of the mean-field generator
+contributes the factor $2/k$.  Consequently
+\begin{equation}
+ \operatorname{gap}\operatorname{ZRP}(K_k,r_a,k)
+ \geq2(\tau/k^2)(1/k)=2\tau k^{-3}.
+\end{equation}
+Combining this with Proposition~\ref{prop:cycle-zrp-reduction},
+$1-\cos(2\pi/k)\geq8/k^2$, and $k=n/2$ gives
+$1024\,n^{-(a+6)}$.  Appendix~\ref{app:mean-field-comparison} supplies the
+complete Dirichlet-form calculation.
+\end{proof}
+
+The gap theorem can be converted into an adiabatic statement in the
+abstract Hamiltonian-evolution model.  This does not by itself supply a
+gate-level implementation of the path.
+
+\begin{corollary}[Conditional adiabatic preparation]
+\label{cor:cycle-adiabatic-preparation}
+Let $a(s)=7s$, $0\leq s\leq1$, and evolve from
+$\ket{J_{n,k}}$ under $H_{a(s)}$ for total time $T$.  There is a universal
+constant $C>0$ such that, for every $0<\epsilon<1$, the sufficient condition
+\begin{equation}
+ T\geq C\epsilon^{-1}n^{41}(\log n)^2
+ \label{eq:cycle-adiabatic-runtime}
+\end{equation}
+produces a final state at distance $O(\epsilon)$ from
+$\ket{\psi_7}$, up to phase.  Its cover probability is therefore
+$1-O(n^{-5})-O(\epsilon)$.  This runtime excludes the costs of preparing the
+Dicke state and realizing or simulating $H_{a(s)}$.
+\end{corollary}
+
+\begin{proof}
+A Johnson move removes one selected cycle vertex and inserts one unselected
+vertex, so $|U(T)-U(S)|\leq2$.  Each subset has
+$k(n-k)=k^2$ Johnson neighbours.  Differentiating the matrix elements in
+Eqs.~\eqref{eq:johnson-metropolis} and \eqref{eq:cycle-parent}, and bounding
+the operator norm by the maximum absolute row sum, gives constants
+$c_1,c_2$ independent of $n$ such that
+\begin{equation}
+ \|\partial_sH_{7s}\|\leq c_1n\log n,
+ \qquad
+ \|\partial_s^2H_{7s}\|\leq c_2n(\log n)^2.
+ \label{eq:cycle-parent-derivative-bounds}
+\end{equation}
+Proposition~\ref{prop:parent-cyclic-accessibility} and
+Eq.~\eqref{eq:uniform-accessible-gap} give a simple ground state and minimum
+cyclic gap at least $1024n^{-13}$.  Substitution into a quantitative
+gapped adiabatic bound~\cite{JansenRuskaiSeiler2007} yields contributions of
+orders $n^{27}\log n$, $n^{27}(\log n)^2$, and
+$n^{41}(\log n)^2$, divided by $T$.  The last dominates and proves
+Eq.~\eqref{eq:cycle-adiabatic-runtime}.  The final measurement statement
+follows from Eq.~\eqref{eq:cycle-endpoint-concentration} and continuity of
+measurement probabilities in state distance.
+\end{proof}
+
+Exact $D_n$-orbit quotients for
+$n=6,8,\ldots,18$ place the minimum of a 31-point grid at $a=7$.  The
+endpoint gaps decrease from $0.166670$ at $n=6$ to $0.0105026$ at $n=18$;
+the intermediate values are in the archived data table.  They behave much
+like $n^{-2}$ on these sizes.  This is evidence about the tested grid, not a
+scaling theorem; Proposition~\ref{prop:cycle-uniform-gap} supplies the
+uniform certificate but is deliberately non-sharp.
+
+The path also clarifies what is and is not inherited from the original
+multi-register Hamiltonian.  Its endpoint ground state has the same
+solution-producing measurement objective, but the initial ground state is
+the injective Dicke state rather than the product-register uniform state,
+and the endpoint is the frustration-free Gibbs parent $H_{a_f}$ rather than
+the original $H_{\mathrm{prob}}$.  No interpolation between these two
+endpoints is assumed.  The exact dark crossing of the original linear
+interpolation and the uniformly polynomially gapped parent path are
+therefore complementary statements
+about the same symmetric instance family, not two descriptions of one
+protocol.

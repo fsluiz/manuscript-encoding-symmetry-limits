@@ -1,0 +1,54 @@
+Dual-license notice
+===================
+
+Copyright (c) 2026 Fabrício de Souza Luiz
+
+This repository contains software, research data, documentation, and a
+manuscript. Different parts are licensed as follows.
+
+1. Original software
+--------------------
+
+The original source code in `code/` is licensed under the MIT License
+(SPDX-License-Identifier: MIT). The full notice is in
+`LICENSES/MIT.txt`.
+
+2. Original data and documentation
+----------------------------------
+
+Except for the third-party material identified below, the original research
+data, generated numerical outputs, figures, manuscript source, manuscript
+PDF, reports, notes, and documentation are licensed under the Creative
+Commons Attribution 4.0 International Public License
+(SPDX-License-Identifier: CC-BY-4.0). The license notice and canonical legal
+code link are in `LICENSES/CC-BY-4.0.txt`.
+
+When reusing CC BY 4.0 material, please attribute:
+
+    Fabrício de Souza Luiz, "Joint symmetry and dynamical accessibility in
+    compact Hamiltonian encodings of set cover" (2026).
+
+Please also cite the associated article and the version-specific archival DOI
+when available, and indicate whether the material was modified.
+
+3. Third-party material and exceptions
+--------------------------------------
+
+The licenses above apply only to rights held by the repository author. They
+do not relicense third-party material:
+
+- `quantumarticle.cls` is copyright its stated authors and is distributed
+  under the LaTeX Project Public License, version 1.3c or later, as specified
+  in its file header.
+- Files in `orlib_instances/` originate from J. E. Beasley's OR-Library and
+  retain the terms and provenance of that source.
+- In `instances/frozen/scp*.json` and `instances/frozen/scpe*.json`, the
+  project-authored selection indices, hashes, provenance metadata,
+  annotations, and computed optima are covered by CC BY 4.0 to the extent
+  copyright or database rights subsist in them. The underlying OR-Library
+  incidence and cost values are not relicensed by this repository.
+- Bibliographic metadata, cited works, and any other material carrying its
+  own notice remain subject to their respective terms.
+
+Where an individual file carries a different explicit license or copyright
+notice, that file-level notice controls.

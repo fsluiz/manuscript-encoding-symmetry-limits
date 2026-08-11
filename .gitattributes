@@ -1,0 +1,6 @@
+# Preserve third-party benchmark bytes exactly; their source format contains
+# intentional trailing spaces and is checked by SHA-256 during reproduction.
+orlib_instances/*.txt -whitespace
+
+# Prevent line-ending or textual-diff transformations of the compiled paper.
+*.pdf binary

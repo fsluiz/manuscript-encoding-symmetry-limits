@@ -1,0 +1,259 @@
+{
+  "D4": {
+    "order": 8,
+    "projector_completeness_residual": 2.220446049250313e-16,
+    "reflection_generator": [
+      0,
+      5,
+      2,
+      7,
+      4,
+      1,
+      6,
+      3
+    ],
+    "rotation_generator": [
+      3,
+      6,
+      1,
+      4,
+      7,
+      2,
+      5,
+      0
+    ]
+  },
+  "conclusion_rule": "An alternative initial irrep can target the final global ground sector, but an adiabatic rank-one/rank-d guarantee still fails if its ground rank increases at s_cancel.",
+  "dimensions": {
+    "S_k_trivial": 120,
+    "full_valid": 512
+  },
+  "instance_id": "grid-2x4-v1",
+  "parameters": {
+    "k": 3,
+    "lambda": 5.0,
+    "mu": 10.0,
+    "nu": 50.0
+  },
+  "payload_sha256": "662a99dbb6d86cc84838a440228c22e1daed574935891b44f582050a5a147c5d",
+  "schema_version": 1,
+  "scope": "D4 isotypic comparison inside the S_k-trivial sector",
+  "sector_results": {
+    "A1": {
+      "cover_subspace_rank": 2,
+      "final_is_global_ground_sector": false,
+      "irrep_dimension": 1,
+      "isotypic_rank": 22,
+      "multiplicity": 22,
+      "path_points": {
+        "s0": {
+          "E0": 9.71445146547012e-17,
+          "excitation_gap": 1.0000000000000018,
+          "ground_cover_probability_max": 0.14062500000000003,
+          "ground_cover_probability_min": 0.14062500000000003,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 4.1403339717045194e-15,
+          "threshold": 1.7893603516368266e-13
+        },
+        "s1": {
+          "E0": -0.03953943322589759,
+          "excitation_gap": 0.31460780380627557,
+          "ground_cover_probability_max": 0.9943950436892763,
+          "ground_cover_probability_min": 0.9943950436892763,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 4.8163962349058335e-14,
+          "threshold": 2.1708685553824816e-12
+        },
+        "s_cancel": {
+          "E0": 1.3999999999999968,
+          "excitation_gap": 2.333333333333333,
+          "ground_cover_probability_max": 1.0000000000000009,
+          "ground_cover_probability_min": 1.0000000000000002,
+          "ground_rank": 2,
+          "max_eigenpair_residual": 1.7094526788164277e-14,
+          "threshold": 8.039812176593213e-13
+        }
+      },
+      "projector_idempotence_residual": 4.440892098500627e-16,
+      "simple_ground_gap_diagnostic": {
+        "at_s": 0.4666666666666667,
+        "minimum_E1_minus_E0": 0.0,
+        "qualification": "exact degeneracy at one or more audited path points",
+        "rank_one_at_all_three_exact_points": false
+      }
+    },
+    "A2": {
+      "cover_subspace_rank": 1,
+      "final_is_global_ground_sector": false,
+      "irrep_dimension": 1,
+      "isotypic_rank": 8,
+      "multiplicity": 8,
+      "path_points": {
+        "s0": {
+          "E0": 2.0,
+          "excitation_gap": 0.9999999999999987,
+          "ground_cover_probability_max": 0.12500000000000017,
+          "ground_cover_probability_min": 0.12500000000000017,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 2.0385827876854517e-15,
+          "threshold": 9.486598780291995e-14
+        },
+        "s1": {
+          "E0": -0.2999816079596654,
+          "excitation_gap": 4.87141017938824,
+          "ground_cover_probability_max": 0.9978075152366885,
+          "ground_cover_probability_min": 0.9978075152366885,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 1.6523042952752145e-14,
+          "threshold": 7.726472466660023e-13
+        },
+        "s_cancel": {
+          "E0": 1.4000000000000001,
+          "excitation_gap": 2.333333333333332,
+          "ground_cover_probability_max": 1.0000000000000007,
+          "ground_cover_probability_min": 1.0000000000000007,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 7.498642027507298e-15,
+          "threshold": 3.579733378540335e-13
+        }
+      },
+      "projector_idempotence_residual": 4.4408920985006257e-16,
+      "simple_ground_gap_diagnostic": {
+        "at_s": 0.08133097469968138,
+        "grid_points": 2001,
+        "minimum_E1_minus_E0": 0.45738521192469506,
+        "qualification": "scale-aware endpoint checks plus numerical one-dimensional minimization; not interval arithmetic",
+        "rank_one_at_all_three_exact_points": true
+      }
+    },
+    "B1": {
+      "cover_subspace_rank": 2,
+      "final_is_global_ground_sector": false,
+      "irrep_dimension": 1,
+      "isotypic_rank": 22,
+      "multiplicity": 22,
+      "path_points": {
+        "s0": {
+          "E0": 0.9999999999999989,
+          "excitation_gap": 1.0000000000000007,
+          "ground_cover_probability_max": 0.20942381620988804,
+          "ground_cover_probability_min": 0.009326183790111776,
+          "ground_rank": 2,
+          "max_eigenpair_residual": 4.165788808131994e-15,
+          "threshold": 1.7995422862078166e-13
+        },
+        "s1": {
+          "E0": -0.16766179405537543,
+          "excitation_gap": 0.36138722212313856,
+          "ground_cover_probability_max": 0.9965363454180705,
+          "ground_cover_probability_min": 0.9965363454180705,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 4.743152435660214e-14,
+          "threshold": 2.141570746916438e-12
+        },
+        "s_cancel": {
+          "E0": 1.399999999999999,
+          "excitation_gap": 2.33333333333333,
+          "ground_cover_probability_max": 1.0000000000000004,
+          "ground_cover_probability_min": 0.999999999999999,
+          "ground_rank": 2,
+          "max_eigenpair_residual": 2.3101232461060844e-14,
+          "threshold": 1.044249444575184e-12
+        }
+      },
+      "projector_idempotence_residual": 4.440892098500627e-16,
+      "simple_ground_gap_diagnostic": {
+        "at_s": 0.0,
+        "minimum_E1_minus_E0": 0.0,
+        "qualification": "exact degeneracy at one or more audited path points",
+        "rank_one_at_all_three_exact_points": false
+      }
+    },
+    "B2": {
+      "cover_subspace_rank": 1,
+      "final_is_global_ground_sector": false,
+      "irrep_dimension": 1,
+      "isotypic_rank": 8,
+      "multiplicity": 8,
+      "path_points": {
+        "s0": {
+          "E0": 1.9999999999999996,
+          "excitation_gap": 0.9999999999999987,
+          "ground_cover_probability_max": 0.3749999999999996,
+          "ground_cover_probability_min": -1.3885324976233704e-17,
+          "ground_rank": 3,
+          "max_eigenpair_residual": 2.831068712794149e-15,
+          "threshold": 1.2656542480726787e-13
+        },
+        "s1": {
+          "E0": -0.02359724067452522,
+          "excitation_gap": 4.745079548475888,
+          "ground_cover_probability_max": 0.9969206021159981,
+          "ground_cover_probability_min": 0.9969206021159981,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 1.1568775749669383e-14,
+          "threshold": 5.744765698160624e-13
+        },
+        "s_cancel": {
+          "E0": 1.4000000000000004,
+          "excitation_gap": 2.333333333333332,
+          "ground_cover_probability_max": 1.0000000000000007,
+          "ground_cover_probability_min": 1.0000000000000007,
+          "ground_rank": 1,
+          "max_eigenpair_residual": 1.0506373594362808e-14,
+          "threshold": 4.782826005282539e-13
+        }
+      },
+      "projector_idempotence_residual": 4.4408920985006257e-16,
+      "simple_ground_gap_diagnostic": {
+        "at_s": 0.0,
+        "minimum_E1_minus_E0": 0.0,
+        "qualification": "exact degeneracy at one or more audited path points",
+        "rank_one_at_all_three_exact_points": false
+      }
+    },
+    "E": {
+      "cover_subspace_rank": 6,
+      "final_is_global_ground_sector": true,
+      "irrep_dimension": 2,
+      "isotypic_rank": 60,
+      "multiplicity": 30,
+      "path_points": {
+        "s0": {
+          "E0": 0.9999999999999993,
+          "excitation_gap": 0.9999999999999967,
+          "ground_cover_probability_max": 0.18750000000000014,
+          "ground_cover_probability_min": 0.031249999999999972,
+          "ground_rank": 4,
+          "max_eigenpair_residual": 6.06736644782235e-15,
+          "threshold": 2.560173342083959e-13
+        },
+        "s1": {
+          "E0": -0.31045844661545996,
+          "excitation_gap": 0.1419728285645142,
+          "ground_cover_probability_max": 0.9964257246679786,
+          "ground_cover_probability_min": 0.9964257246679779,
+          "ground_rank": 2,
+          "max_eigenpair_residual": 5.584673210047485e-14,
+          "threshold": 2.478178923831219e-12
+        },
+        "s_cancel": {
+          "E0": 1.3999999999999937,
+          "excitation_gap": 2.3333333333333326,
+          "ground_cover_probability_max": 1.0000000000000009,
+          "ground_cover_probability_min": 0.9999999999999991,
+          "ground_rank": 6,
+          "max_eigenpair_residual": 2.753423889774346e-14,
+          "threshold": 1.2215697020424887e-12
+        }
+      },
+      "projector_idempotence_residual": 2.220446049250314e-16,
+      "simple_ground_gap_diagnostic": {
+        "at_s": 0.0,
+        "minimum_E1_minus_E0": 0.0,
+        "qualification": "exact degeneracy at one or more audited path points",
+        "rank_one_at_all_three_exact_points": false
+      }
+    }
+  }
+}

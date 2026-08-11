@@ -1,0 +1,76 @@
+\section{Protocol-dependent gaps and conditional no-go statements}
+\label{sec:rewrite-gaps}
+
+For an invariant space $\mathcal L$, let $P_0^{\mathcal L}(s)$ be the
+ground projector of $H(s)|_{\mathcal L}$ and
+$g_0^{\mathcal L}(s)=\operatorname{rank}P_0^{\mathcal L}(s)$.  Ordering
+eigenvalues with multiplicity, we keep separate
+\begin{align}
+ \delta_{\rm mult}^{\mathcal L}(s)
+ &=E_1^{\mathcal L}(s)-E_0^{\mathcal L}(s),\\
+ \Delta_{\rm exc}^{\mathcal L}(s)
+ &=E_{g_0^{\mathcal L}(s)}^{\mathcal L}(s)-E_0^{\mathcal L}(s).
+ \label{eq:two-gaps-rewrite}
+\end{align}
+The first vanishes whenever the ground state is degenerate; the second is
+the excitation gap above the whole manifold.  A Schur multiplicity or an
+exact coincidence between irreps is therefore not called a gap closure when
+Eq.~\eqref{eq:two-gaps-rewrite}'s second quantity stays positive.
+
+The nested spaces in Eq.~\eqref{eq:nested-spaces-rewrite} define energies
+$E_0$, $E_0^{\rm sym}$, and $E_0^{\mathcal K}$ and the accessibility costs
+\begin{align}
+ \delta_{\rm sym}&=E_0^{\rm sym}-E_0,&
+ \delta_{\rm cyc}&=E_0^{\mathcal K}-E_0^{\rm sym},\\
+ \delta_{\rm acc}&=E_0^{\mathcal K}-E_0
+ =\delta_{\rm sym}+\delta_{\rm cyc}.
+ \label{eq:accessibility-cost-rewrite}
+\end{align}
+A positive $\delta_{\rm acc}$ says that the protocol follows a globally
+excited branch.  That branch can nevertheless have high cover probability.
+
+For adiabatic evolution, the relevant object is an isolated spectral band,
+not merely the first distinct final eigenvalue
+\cite{JansenRuskaiSeiler2007}.  Let
+$P_{\rm track}(s)\subset\mathcal K_u$ be a continuous isolated spectral
+projector containing the initial ground state.  Define
+\begin{multline}
+ \Delta_{\rm ad}(s)=\operatorname{dist}\!\left(
+ \spec H_{\rm track}(s),\right.\\
+ \left.\spec H_{\mathcal K_u}(s)
+ \setminus\spec H_{\rm track}(s)\right).
+ \label{eq:adiabatic-gap-rewrite}
+\end{multline}
+An isolated continuous projector has constant rank.  If its intended rank
+changes, an isolation gap has closed and a nondegenerate adiabatic formula
+cannot simply be continued through that point.
+
+\paragraph{What fixed-Hamiltonian evolution does not prove.}
+
+For a time-independent Hamiltonian $H=\sum_jE_jP_j$, unitary evolution
+preserves every energy-eigenspace population,
+\begin{equation}
+ \|P_j\psi(t)\|^2=\|P_j\psi(0)\|^2.
+ \label{eq:eigenpopulation-rewrite}
+\end{equation}
+This rules out closed-system relaxation to a different eigenstate and fixes
+the diagonal ensemble.  It does \emph{not} imply that the probability of a
+computationally marked subspace is constant: interference between distinct
+energies can create transient concentration.  A finite time scan cannot
+prove that no later time does better.
+
+The statement is also initial-state dependent.  A solution eigenstate used
+as the initial state already has unit solution population; a state with
+appropriate coherences can reach a marked subspace transiently.  The exact
+symmetry obstruction is narrower and stronger:
+\begin{lemma}[Symmetry-conditioned inaccessibility]
+If $[H(t),\Pi_\gamma]=0$ for every $t$ and
+$\Pi_\gamma\psi(0)=\psi(0)$, then
+$\Pi_\gamma\psi(t)=\psi(t)$ for all $t$.  Any target vector orthogonal to
+$\Ran\Pi_\gamma$ has exactly zero transition amplitude.
+\end{lemma}
+Thus changing the initial state to one adapted to another irrep, or adding a
+generator with nonzero inter-sector matrix elements, changes the accessible
+spectrum and can evade the obstruction.  This is why our no-go claims are
+always indexed by an initial state, a generator algebra, and the symmetries
+preserved by the full path.

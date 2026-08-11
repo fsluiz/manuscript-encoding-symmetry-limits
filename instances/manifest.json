@@ -1,0 +1,326 @@
+{
+  "policy": "Future numerical claims must cite an instance_id and payload_sha256 from this manifest.",
+  "records": [
+    {
+      "file_sha256": "22cdb82c50bb363361970f979dd271a91fb5a903a420477465da9412fa82fe41",
+      "instance_id": "grid-2x4-v1",
+      "k_star": 3,
+      "n_B": 8,
+      "n_T": 8,
+      "path": "instances/frozen/grid-2x4-v1.json",
+      "payload_sha256": "662a99dbb6d86cc84838a440228c22e1daed574935891b44f582050a5a147c5d",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "654c0ddbed19e840099fea434182860f3af2f486985f297cd7cef60d222b5921",
+      "instance_id": "grid-2x5-v1",
+      "k_star": 3,
+      "n_B": 10,
+      "n_T": 10,
+      "path": "instances/frozen/grid-2x5-v1.json",
+      "payload_sha256": "b2099bfbf7400bb14a684e246687fbcaeb58149ef7f09618cecf8b15778d968d",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "7df2fdec53296dc433c2a591ee72384554a80fd53fa02baebe8426d5a60cf391",
+      "instance_id": "grid-2x6-v1",
+      "k_star": 4,
+      "n_B": 12,
+      "n_T": 12,
+      "path": "instances/frozen/grid-2x6-v1.json",
+      "payload_sha256": "153b5993aac1a790fbdbe55a55a11b211cf1ca49461f90f2eb9789828e91137c",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "3d9ac631fb0553ec818b8de8da6a790c8027fa872ea77f58fce2f7bcfb0eb50d",
+      "instance_id": "grid-2x7-v1",
+      "k_star": 4,
+      "n_B": 14,
+      "n_T": 14,
+      "path": "instances/frozen/grid-2x7-v1.json",
+      "payload_sha256": "6bcc27b116d1cf575f4c8ff2eafd8ae0d120a91aa2780288daff86375d1a2ad5",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "71540c43bf79f117b7a3eef0fdfdb75bc631990881fad4089c85c0210f8a20af",
+      "instance_id": "grid-3x3-v1",
+      "k_star": 3,
+      "n_B": 9,
+      "n_T": 9,
+      "path": "instances/frozen/grid-3x3-v1.json",
+      "payload_sha256": "3b54a59be562301102d2703b3adaaba3e241e460a62a75c04ebcec30d42034af",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "bd3394a378792d8d22c7d38b5862224c7823d15b6a146f7b6ed1b2946d620d2a",
+      "instance_id": "grid-3x4-v1",
+      "k_star": 4,
+      "n_B": 12,
+      "n_T": 12,
+      "path": "instances/frozen/grid-3x4-v1.json",
+      "payload_sha256": "28ac354e8f50269c7bc396a18b7e56a725209013898fbc9eddd6cf480a36c062",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "c8bcaf63c10d662b48c49407bb4cd4e50fcc98bb7129c523f85f43da614b62c3",
+      "instance_id": "grid-3x5-v1",
+      "k_star": 4,
+      "n_B": 15,
+      "n_T": 15,
+      "path": "instances/frozen/grid-3x5-v1.json",
+      "payload_sha256": "9b2bab69700164184eab718db8d0251fb836e2074abeb6126ff40fac1aeacdf4",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "9bb35a30d53a37808e24ae1eb298fd22266f2cb38aaad48ef6082e5f1232e964",
+      "instance_id": "grid-4x4-v1",
+      "k_star": 4,
+      "n_B": 16,
+      "n_T": 16,
+      "path": "instances/frozen/grid-4x4-v1.json",
+      "payload_sha256": "42b3de4cd9af09ac432ee7289d1662562960ed47d4f7f9fe1563c7a1860ec89c",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "dd07a6fbebc760327f069940df8cfd47331993ce585522c976adcd199e2ced01",
+      "instance_id": "random-b7-t7-p45-s014-v1",
+      "k_star": 4,
+      "n_B": 7,
+      "n_T": 7,
+      "path": "instances/frozen/random-b7-t7-p45-s014-v1.json",
+      "payload_sha256": "70197cc0d63c9f530991d5f505efe5a725112bc332b229245ccf4906dac63442",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "d0c1cd05ba44bff614566e24d5a51882cf150acb822ef6b1fb9cc7dda3bc9ed6",
+      "instance_id": "random-b8-t7-p30-s019-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 7,
+      "path": "instances/frozen/random-b8-t7-p30-s019-v1.json",
+      "payload_sha256": "a6defba9d2da3112f7ff3ec9e24ea2d899a0a6e27927916f189dceb5cb01c5e4",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "4e12dde5516a85216145b5748b5a5f68482e01da0f96b12bed515cdc2c4e7fb1",
+      "instance_id": "random-b8-t7-p50-s000-v1",
+      "k_star": 3,
+      "n_B": 8,
+      "n_T": 7,
+      "path": "instances/frozen/random-b8-t7-p50-s000-v1.json",
+      "payload_sha256": "4070c425359dc1c41deaf9d551b5bc58c20ff30abdc01d2e7d27645279aa235e",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "eff8f445a9acf19c8755b2455f26717643943d363ae41d3c922d9c5bad81790a",
+      "instance_id": "random-b8-t7-p50-s002-v1",
+      "k_star": 3,
+      "n_B": 8,
+      "n_T": 7,
+      "path": "instances/frozen/random-b8-t7-p50-s002-v1.json",
+      "payload_sha256": "2c14b4da242024bcf62509417c80cebc5c225ec3769b7ed2f78094decef77e39",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "4ca24b78a6b198f2af55465e98aa74e3d72d1571dcfe9ba4b76b602c6a20dd06",
+      "instance_id": "random-b8-t7-p50-s004-v1",
+      "k_star": 3,
+      "n_B": 8,
+      "n_T": 7,
+      "path": "instances/frozen/random-b8-t7-p50-s004-v1.json",
+      "payload_sha256": "6dfb76b7813d7a297a59ff7377d1233375ff1640595aa31bb23e817c540fbf2b",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "9551e11a0e93565742de7cf3640dbbee148c248d897d07719294e35c8ccc0dff",
+      "instance_id": "random-b8-t8-p22-s001-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 8,
+      "path": "instances/frozen/random-b8-t8-p22-s001-v1.json",
+      "payload_sha256": "3109e3b982cc04218896828fdd33c4cdb959127e033e2c6ef49c72b0516758ef",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "2484b1ba3eeea97903627462816a3be73b94f20ac651e619f87c998a90adae22",
+      "instance_id": "random-b8-t8-p22-s004-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 8,
+      "path": "instances/frozen/random-b8-t8-p22-s004-v1.json",
+      "payload_sha256": "b954b778fbc4314082b4a85a2e6f2e88a64be940a5b5e39d7a96c9b5dea3311f",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "cd966587a3402f99cad89973670e97eeb8a1daeac2692f0fb5f1d5ad82dc1261",
+      "instance_id": "random-b8-t8-p22-s009-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 8,
+      "path": "instances/frozen/random-b8-t8-p22-s009-v1.json",
+      "payload_sha256": "d566f1d70e9e351c37d0a88e2add8ebcaf23c938052bff4d48ee5feea2527a71",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "c3a985639fd295454f81719b23d9035379bc7d1397587a1a0a78d70a90d9e50d",
+      "instance_id": "random-b8-t8-p42-s009-v1",
+      "k_star": 4,
+      "n_B": 8,
+      "n_T": 8,
+      "path": "instances/frozen/random-b8-t8-p42-s009-v1.json",
+      "payload_sha256": "1b9ad1bd8dce94def627326942f12acd01ffa91d58618c25fb2b5f83a86cf3c3",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "cc6afe3164577fdf8c8a54fa8bea5721e3712a1a4300126c976a286ee3665355",
+      "instance_id": "random-b8-t8-p42-s014-v1",
+      "k_star": 4,
+      "n_B": 8,
+      "n_T": 8,
+      "path": "instances/frozen/random-b8-t8-p42-s014-v1.json",
+      "payload_sha256": "18a0b3806a7b0df1b278a70cec092c6f72512026436105dac46994859136e4aa",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "74c78ad0efa503205d1750851e5642a41aa26146e9d36af91b63a7e6f722880b",
+      "instance_id": "scp41-weighted-b8-t10-s0-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 10,
+      "path": "instances/frozen/scp41-weighted-b8-t10-s0-v1.json",
+      "payload_sha256": "b499a05f742ae8c0db643ba045d1fa1e8bfb44adad786c4d08fb47bb72d1e346",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "5d21f574be0feb7d477a0cf5bceae9f8a1f692df61a0fc67b354125db737acc3",
+      "instance_id": "scpe1-b16-t20-s0-v1",
+      "k_star": 3,
+      "n_B": 16,
+      "n_T": 20,
+      "path": "instances/frozen/scpe1-b16-t20-s0-v1.json",
+      "payload_sha256": "97af37ce2cfc38a2a10bb52382c0a3b0bc20390335f431e662e40420ff79da56",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "68d518f5b0cd4a4ee598c724580765046d0a5c6fb01e377bea87a15a69f64a30",
+      "instance_id": "scpe1-b8-t20-s0-v1",
+      "k_star": 4,
+      "n_B": 8,
+      "n_T": 20,
+      "path": "instances/frozen/scpe1-b8-t20-s0-v1.json",
+      "payload_sha256": "fb8bb96d53181586105b67dca446d502318b3bd00acf2ca4eb901f9dc57131e0",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "316810c97009bbdf777f113d5710dbb07e5495ec207f1ae340e4e83eef9de408",
+      "instance_id": "scpe1-b8-t30-s0-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 30,
+      "path": "instances/frozen/scpe1-b8-t30-s0-v1.json",
+      "payload_sha256": "8713960484f56292cac2e8b3cf9eacaa6b34ddf79e86e80cf52109bc59683c86",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "f3b7e89b62afc5f367373c661b71e34f255310305778a8102b8fd6838cb74281",
+      "instance_id": "scpe2-b16-t20-s0-v1",
+      "k_star": 3,
+      "n_B": 16,
+      "n_T": 20,
+      "path": "instances/frozen/scpe2-b16-t20-s0-v1.json",
+      "payload_sha256": "00f3d2db3db40909a54fd0a886087343c1e4eef11d05edcec5a5472a9eff7b53",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "49e390d64b54ee713b1b015d97426b3995a69cfbe84f29dd1a1843237296c9c9",
+      "instance_id": "scpe2-b8-t20-s0-v1",
+      "k_star": 4,
+      "n_B": 8,
+      "n_T": 20,
+      "path": "instances/frozen/scpe2-b8-t20-s0-v1.json",
+      "payload_sha256": "dc6ae8ffa2a9956d9ccd6f1520f51daa4e46bbf0cc67564bd8cb6e17a0cea7f7",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "7eb9b69ed8f9eeeb7bb7b269c534abae9aff4d60e52beefe6d829e462e9253da",
+      "instance_id": "scpe2-b8-t30-s0-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 30,
+      "path": "instances/frozen/scpe2-b8-t30-s0-v1.json",
+      "payload_sha256": "11ab5d33546d30f437af5e2840bfeda5c4e9cf913c5f511c7e839ae3e9663eb8",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "9051c97288cac85130921283c809071d3093d440e5a342adc22875bbc950be6d",
+      "instance_id": "scpe3-b16-t20-s0-v1",
+      "k_star": 3,
+      "n_B": 16,
+      "n_T": 20,
+      "path": "instances/frozen/scpe3-b16-t20-s0-v1.json",
+      "payload_sha256": "93df5d702fba4a5c9065d9f63bad5391d97ab76028abc11cc6bb550356c1162c",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "477e11fb0881ac69c323c2f6510deb561b8c973d7e55d91640b42134f557f5f6",
+      "instance_id": "scpe3-b8-t20-s0-v1",
+      "k_star": 3,
+      "n_B": 8,
+      "n_T": 20,
+      "path": "instances/frozen/scpe3-b8-t20-s0-v1.json",
+      "payload_sha256": "83cacaeed67f981843c1254d2a901f5248198a588fa874f34960004f43efb051",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "8d6e24e04edca95bdd592688d36892cd04b9f2432082d3fd4d6c7b8dfbce8be6",
+      "instance_id": "scpe3-b8-t30-s0-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 30,
+      "path": "instances/frozen/scpe3-b8-t30-s0-v1.json",
+      "payload_sha256": "efa65316413a09128ac287260a6be9b0b0c375c18b00e2f3d0defe35402ec8b2",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "712be72f0e3d7dcd20f969f20f204b7b37f40f3a6826a0e4f87260f38c2cc993",
+      "instance_id": "scpe4-b16-t20-s0-v1",
+      "k_star": 3,
+      "n_B": 16,
+      "n_T": 20,
+      "path": "instances/frozen/scpe4-b16-t20-s0-v1.json",
+      "payload_sha256": "e910d66e7a8774b6b60c22ccd30b88152dc8bdb399fac757a1a3b98b19ac8fcf",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "fe54002a4218614ff34aedc2db637036e5a49c27908ee6375a52aae7d5d922b2",
+      "instance_id": "scpe4-b8-t29-s0-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 29,
+      "path": "instances/frozen/scpe4-b8-t29-s0-v1.json",
+      "payload_sha256": "7b439e341169e756be266e19f953ab6a3ddf6da693fc6de7172181d61bccd58a",
+      "status": "candidate_primary"
+    },
+    {
+      "file_sha256": "4cd84f6a2c38f4ae0ce00809a0f4437bd433abbe434aa560d8776407959bdb88",
+      "instance_id": "scpe5-b16-t20-s0-v1",
+      "k_star": 3,
+      "n_B": 16,
+      "n_T": 20,
+      "path": "instances/frozen/scpe5-b16-t20-s0-v1.json",
+      "payload_sha256": "78078282ceafb0406720955a2416ac7945b717ae732b1b70065203c67da3cdd7",
+      "status": "legacy_only"
+    },
+    {
+      "file_sha256": "1f51ab7e3cd87329fe64525df95a54498de1a53b234b9ed10c853da2e2fca859",
+      "instance_id": "scpe5-b8-t30-s0-v1",
+      "k_star": 5,
+      "n_B": 8,
+      "n_T": 30,
+      "path": "instances/frozen/scpe5-b8-t30-s0-v1.json",
+      "payload_sha256": "d4c71a4c6bacde6f569383c41168216ec9162136656b128820f3e5665e048a44",
+      "status": "candidate_primary"
+    }
+  ],
+  "schema_version": 1
+}

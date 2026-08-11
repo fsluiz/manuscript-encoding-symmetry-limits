@@ -1,0 +1,53 @@
+{
+  "aliases": [
+    "rand_nB8_nT7_p30_s019"
+  ],
+  "instance_id": "random-b8-t7-p30-s019-v1",
+  "k_star": 5,
+  "n_B": 8,
+  "n_T": 7,
+  "n_optimal_cardinality_covers": 2,
+  "optimal_cardinality_covers": [
+    [
+      0,
+      3,
+      4,
+      5,
+      7
+    ],
+    [
+      0,
+      3,
+      4,
+      6,
+      7
+    ]
+  ],
+  "payload": {
+    "incidence": [
+      "0011000",
+      "0001000",
+      "0000001",
+      "1000000",
+      "0001100",
+      "0000010",
+      "0001011",
+      "0100001"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "a6defba9d2da3112f7ff3ec9e24ea2d899a0a6e27927916f189dceb5cb01c5e4",
+  "provenance": {
+    "generator": "spectral_gap_study.random_msc_instance",
+    "kind": "generated_random",
+    "parameters": {
+      "n_B": 8,
+      "n_T": 7,
+      "p": 0.3,
+      "seed": 19
+    },
+    "rng": "numpy.random.default_rng"
+  },
+  "schema_version": 1,
+  "status": "legacy_only"
+}

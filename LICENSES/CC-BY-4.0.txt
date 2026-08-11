@@ -1,0 +1,30 @@
+Creative Commons Attribution 4.0 International
+================================================
+
+Copyright (c) 2026 Fabrício de Souza Luiz
+
+Except for the third-party material identified in the repository's top-level
+`LICENSE` file, the original data and documentation covered by that notice
+are licensed under the Creative Commons Attribution 4.0 International Public
+License (CC BY 4.0; SPDX-License-Identifier: CC-BY-4.0).
+
+Canonical license URL:
+https://creativecommons.org/licenses/by/4.0/
+
+Full legal code:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to share and adapt the licensed material for any purpose,
+including commercially, provided that you give appropriate credit, provide a
+link to the license, indicate whether changes were made, and do not impose
+additional legal or technological restrictions. This paragraph is only a
+summary; the legal code at the canonical URL governs the license.
+
+Requested attribution:
+
+    Fabrício de Souza Luiz, "Joint symmetry and dynamical accessibility in
+    compact Hamiltonian encodings of set cover" (2026), licensed under
+    CC BY 4.0.
+
+Please include the associated article citation and version-specific archival
+DOI when available.

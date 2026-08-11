@@ -1,0 +1,128 @@
+{
+  "aliases": [
+    "scpe5-n16m20s0"
+  ],
+  "instance_id": "scpe5-b16-t20-s0-v1",
+  "k_star": 3,
+  "n_B": 16,
+  "n_T": 20,
+  "n_optimal_cardinality_covers": 7,
+  "optimal_cardinality_covers": [
+    [
+      0,
+      4,
+      6
+    ],
+    [
+      0,
+      6,
+      10
+    ],
+    [
+      1,
+      3,
+      15
+    ],
+    [
+      3,
+      5,
+      15
+    ],
+    [
+      3,
+      10,
+      15
+    ],
+    [
+      4,
+      5,
+      11
+    ],
+    [
+      4,
+      8,
+      11
+    ]
+  ],
+  "payload": {
+    "incidence": [
+      "00011000101101000111",
+      "10000101011001100010",
+      "10111001100000010101",
+      "00001010100110010111",
+      "11001111010010000001",
+      "10100101011000110100",
+      "00100010010001111100",
+      "00000111100100110001",
+      "01100001001100110101",
+      "00011100011000110010",
+      "11000101101010001010",
+      "00010010100111001110",
+      "00110111000110100000",
+      "00100111110100000001",
+      "01100100101010010001",
+      "01110000010001101010"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "78078282ceafb0406720955a2416ac7945b717ae732b1b70065203c67da3cdd7",
+  "provenance": {
+    "extractor": "orlib_subextract.extract_subinstance@working-tree-2026-08-10",
+    "kind": "orlib_subinstance",
+    "parameters": {
+      "m_target": 20,
+      "n_target": 16,
+      "seed": 0
+    },
+    "parent_dimensions": {
+      "n_B": 500,
+      "n_T": 50
+    },
+    "parent_file": "orlib_instances/scpe5.txt",
+    "parent_sha256": "c45d19716391da9500acbc6f36ea76efbbc48407aee681723140538c95acdf38",
+    "requested_n_T": 20,
+    "retained_n_T": 20,
+    "selected_parent_base_indices_zero_based": [
+      6,
+      11,
+      13,
+      23,
+      27,
+      28,
+      30,
+      34,
+      48,
+      65,
+      73,
+      88,
+      121,
+      126,
+      139,
+      193
+    ],
+    "selected_parent_task_indices_zero_based": [
+      0,
+      1,
+      2,
+      6,
+      9,
+      10,
+      16,
+      20,
+      21,
+      26,
+      27,
+      29,
+      32,
+      33,
+      38,
+      40,
+      43,
+      44,
+      46,
+      47
+    ]
+  },
+  "schema_version": 1,
+  "status": "legacy_only"
+}

@@ -1,0 +1,348 @@
+{
+  "mean_field_zero_range": [
+    {
+      "analytic_lower_bound": 0.25,
+      "boxes_and_particles": 2,
+      "gap": 0.4999999999999999,
+      "gap_to_analytic_bound_ratio": 1.9999999999999996,
+      "tau": 1.0
+    },
+    {
+      "analytic_lower_bound": 0.07407407407407407,
+      "boxes_and_particles": 3,
+      "gap": 0.36259027383853465,
+      "gap_to_analytic_bound_ratio": 4.894968696820218,
+      "tau": 1.0
+    },
+    {
+      "analytic_lower_bound": 0.03125,
+      "boxes_and_particles": 4,
+      "gap": 0.29915440929630904,
+      "gap_to_analytic_bound_ratio": 9.57294109748189,
+      "tau": 1.0
+    },
+    {
+      "analytic_lower_bound": 0.016,
+      "boxes_and_particles": 5,
+      "gap": 0.26209438356115994,
+      "gap_to_analytic_bound_ratio": 16.380898972572496,
+      "tau": 1.0
+    },
+    {
+      "analytic_lower_bound": 0.009259259259259259,
+      "boxes_and_particles": 6,
+      "gap": 0.23752763029953167,
+      "gap_to_analytic_bound_ratio": 25.652984072349422,
+      "tau": 1.0
+    },
+    {
+      "analytic_lower_bound": 0.0058309037900874635,
+      "boxes_and_particles": 7,
+      "gap": 0.21990962773759556,
+      "gap_to_analytic_bound_ratio": 37.71450115699764,
+      "tau": 1.0
+    },
+    {
+      "analytic_lower_bound": 0.00390625,
+      "boxes_and_particles": 8,
+      "gap": 0.20657869047578506,
+      "gap_to_analytic_bound_ratio": 52.884144761800975,
+      "tau": 1.0
+    },
+    {
+      "analytic_lower_bound": 0.025,
+      "boxes_and_particles": 2,
+      "gap": 0.49999999999999994,
+      "gap_to_analytic_bound_ratio": 19.999999999999996,
+      "tau": 0.1
+    },
+    {
+      "analytic_lower_bound": 0.007407407407407408,
+      "boxes_and_particles": 3,
+      "gap": 0.38984897800521706,
+      "gap_to_analytic_bound_ratio": 52.6296120307043,
+      "tau": 0.1
+    },
+    {
+      "analytic_lower_bound": 0.003125,
+      "boxes_and_particles": 4,
+      "gap": 0.34480661435862636,
+      "gap_to_analytic_bound_ratio": 110.33811659476044,
+      "tau": 0.1
+    },
+    {
+      "analytic_lower_bound": 0.0016,
+      "boxes_and_particles": 5,
+      "gap": 0.32405036046453384,
+      "gap_to_analytic_bound_ratio": 202.53147529033365,
+      "tau": 0.1
+    },
+    {
+      "analytic_lower_bound": 0.000925925925925926,
+      "boxes_and_particles": 6,
+      "gap": 0.3137610808177124,
+      "gap_to_analytic_bound_ratio": 338.8619672831294,
+      "tau": 0.1
+    },
+    {
+      "analytic_lower_bound": 0.0005830903790087463,
+      "boxes_and_particles": 7,
+      "gap": 0.30827984698674293,
+      "gap_to_analytic_bound_ratio": 528.6999375822642,
+      "tau": 0.1
+    },
+    {
+      "analytic_lower_bound": 0.000390625,
+      "boxes_and_particles": 8,
+      "gap": 0.3051025102751759,
+      "gap_to_analytic_bound_ratio": 781.0624263044502,
+      "tau": 0.1
+    },
+    {
+      "analytic_lower_bound": 0.00025,
+      "boxes_and_particles": 2,
+      "gap": 0.49999999999999994,
+      "gap_to_analytic_bound_ratio": 1999.9999999999998,
+      "tau": 0.001
+    },
+    {
+      "analytic_lower_bound": 7.407407407407407e-05,
+      "boxes_and_particles": 3,
+      "gap": 0.3339991649150059,
+      "gap_to_analytic_bound_ratio": 4508.98872635258,
+      "tau": 0.001
+    },
+    {
+      "analytic_lower_bound": 3.125e-05,
+      "boxes_and_particles": 4,
+      "gap": 0.25112355451323926,
+      "gap_to_analytic_bound_ratio": 8035.953744423656,
+      "tau": 0.001
+    },
+    {
+      "analytic_lower_bound": 1.6e-05,
+      "boxes_and_particles": 5,
+      "gap": 0.20152476353311174,
+      "gap_to_analytic_bound_ratio": 12595.297720819484,
+      "tau": 0.001
+    },
+    {
+      "analytic_lower_bound": 9.259259259259259e-06,
+      "boxes_and_particles": 6,
+      "gap": 0.16856728605751473,
+      "gap_to_analytic_bound_ratio": 18205.266894211592,
+      "tau": 0.001
+    },
+    {
+      "analytic_lower_bound": 5.830903790087464e-06,
+      "boxes_and_particles": 7,
+      "gap": 0.14511959725650253,
+      "gap_to_analytic_bound_ratio": 24888.010929490185,
+      "tau": 0.001
+    },
+    {
+      "analytic_lower_bound": 3.90625e-06,
+      "boxes_and_particles": 8,
+      "gap": 0.12761545108965305,
+      "gap_to_analytic_bound_ratio": 32669.55547895118,
+      "tau": 0.001
+    },
+    {
+      "analytic_lower_bound": 2.5e-08,
+      "boxes_and_particles": 2,
+      "gap": 0.49999999999999994,
+      "gap_to_analytic_bound_ratio": 20000000.0,
+      "tau": 1e-07
+    },
+    {
+      "analytic_lower_bound": 7.407407407407407e-09,
+      "boxes_and_particles": 3,
+      "gap": 0.3333333999999916,
+      "gap_to_analytic_bound_ratio": 45000008.99999887,
+      "tau": 1e-07
+    },
+    {
+      "analytic_lower_bound": 3.125e-09,
+      "boxes_and_particles": 4,
+      "gap": 0.25000011249998527,
+      "gap_to_analytic_bound_ratio": 80000035.99999529,
+      "tau": 1e-07
+    },
+    {
+      "analytic_lower_bound": 1.5999999999999999e-09,
+      "boxes_and_particles": 5,
+      "gap": 0.20000015272724744,
+      "gap_to_analytic_bound_ratio": 125000095.45452966,
+      "tau": 1e-07
+    },
+    {
+      "analytic_lower_bound": 9.259259259259259e-10,
+      "boxes_and_particles": 6,
+      "gap": 0.1666668571428159,
+      "gap_to_analytic_bound_ratio": 180000205.71424118,
+      "tau": 1e-07
+    },
+    {
+      "analytic_lower_bound": 5.830903790087463e-10,
+      "boxes_and_particles": 7,
+      "gap": 0.14285736974783533,
+      "gap_to_analytic_bound_ratio": 245000389.11753762,
+      "tau": 1e-07
+    },
+    {
+      "analytic_lower_bound": 3.90625e-10,
+      "boxes_and_particles": 8,
+      "gap": 0.12500026249990506,
+      "gap_to_analytic_bound_ratio": 320000671.999757,
+      "tau": 1e-07
+    }
+  ],
+  "qualification": "finite-size audit only; the all-total gap theorem is proved separately by Efron monotonicity, bounded split coupling, and Caputo--Sasada recursion",
+  "schema_version": 1,
+  "three_box": [
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.33333333333333415,
+        "mu_min": -0.5000000000000007,
+        "three_box_heat_bath_gap": 0.4444444444444439,
+        "total": 59
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.33333333333333415,
+        "mu_min": -0.5000000000000007,
+        "three_box_heat_bath_gap": 0.4444444444444439,
+        "total": 59
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 1.0
+    },
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.33439852187940744,
+        "mu_min": -0.5,
+        "three_box_heat_bath_gap": 0.4437343187470617,
+        "total": 7
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.33439852187940744,
+        "mu_min": -0.5,
+        "three_box_heat_bath_gap": 0.4437343187470617,
+        "total": 7
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 0.3
+    },
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.3885369610317411,
+        "mu_min": -0.49999999999999956,
+        "three_box_heat_bath_gap": 0.4076420259788393,
+        "total": 3
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.3885369610317411,
+        "mu_min": -0.49999999999999956,
+        "three_box_heat_bath_gap": 0.4076420259788393,
+        "total": 3
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 0.1
+    },
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.4588575714131453,
+        "mu_min": -0.49999999999999994,
+        "three_box_heat_bath_gap": 0.3607616190579031,
+        "total": 3
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.4588575714131453,
+        "mu_min": -0.49999999999999994,
+        "three_box_heat_bath_gap": 0.3607616190579031,
+        "total": 3
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 0.03
+    },
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.4854426313167363,
+        "mu_min": -0.5,
+        "three_box_heat_bath_gap": 0.3430382457888424,
+        "total": 3
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.4854426313167363,
+        "mu_min": -0.5,
+        "three_box_heat_bath_gap": 0.3430382457888424,
+        "total": 3
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 0.01
+    },
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.4985044925134625,
+        "mu_min": -0.5000000000000002,
+        "three_box_heat_bath_gap": 0.3343303383243583,
+        "total": 3
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.4985044925134625,
+        "mu_min": -0.5000000000000002,
+        "three_box_heat_bath_gap": 0.3343303383243583,
+        "total": 3
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 0.001
+    },
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.49998500044999244,
+        "mu_min": -0.4999999999999997,
+        "three_box_heat_bath_gap": 0.3333433330333384,
+        "total": 3
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.49998500044999244,
+        "mu_min": -0.4999999999999997,
+        "three_box_heat_bath_gap": 0.3333433330333384,
+        "total": 3
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 1e-05
+    },
+    {
+      "largest_nonconstant_positive_eigenvalue": {
+        "mu_max_nonconstant": 0.49999985000004515,
+        "mu_min": -0.49999999999999994,
+        "three_box_heat_bath_gap": 0.3333334333333033,
+        "total": 3
+      },
+      "max_total_checked": 80,
+      "smallest_three_box_heat_bath_gap": {
+        "mu_max_nonconstant": 0.49999985000004515,
+        "mu_min": -0.49999999999999994,
+        "three_box_heat_bath_gap": 0.3333334333333033,
+        "total": 3
+      },
+      "target_gap_lower_bound": 0.3333333333333333,
+      "target_mu_upper_bound": 0.5,
+      "tau": 1e-07
+    }
+  ]
+}

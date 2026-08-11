@@ -1,0 +1,95 @@
+{
+  "aliases": [
+    "scpe2-n8m20s0"
+  ],
+  "instance_id": "scpe2-b8-t20-s0-v1",
+  "k_star": 4,
+  "n_B": 8,
+  "n_T": 20,
+  "n_optimal_cardinality_covers": 3,
+  "optimal_cardinality_covers": [
+    [
+      1,
+      2,
+      4,
+      5
+    ],
+    [
+      1,
+      4,
+      5,
+      7
+    ],
+    [
+      2,
+      4,
+      5,
+      6
+    ]
+  ],
+  "payload": {
+    "incidence": [
+      "00011011100000101100",
+      "00011000101001100101",
+      "00011101011011101010",
+      "01001001010100010011",
+      "00100010110101011000",
+      "11010100101000101010",
+      "01010101101000001101",
+      "01000001110110011000"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "dc6ae8ffa2a9956d9ccd6f1520f51daa4e46bbf0cc67564bd8cb6e17a0cea7f7",
+  "provenance": {
+    "extractor": "orlib_subextract.extract_subinstance@working-tree-2026-08-10",
+    "kind": "orlib_subinstance",
+    "parameters": {
+      "m_target": 20,
+      "n_target": 8,
+      "seed": 0
+    },
+    "parent_dimensions": {
+      "n_B": 500,
+      "n_T": 50
+    },
+    "parent_file": "orlib_instances/scpe2.txt",
+    "parent_sha256": "4f8cc3b46794583980f3ba8a0d1ba4ec8a7ce8e0e08553caa4c49f7221d41c8c",
+    "requested_n_T": 20,
+    "retained_n_T": 20,
+    "selected_parent_base_indices_zero_based": [
+      10,
+      19,
+      23,
+      68,
+      80,
+      135,
+      140,
+      205
+    ],
+    "selected_parent_task_indices_zero_based": [
+      0,
+      1,
+      2,
+      6,
+      9,
+      10,
+      16,
+      20,
+      21,
+      26,
+      27,
+      29,
+      32,
+      33,
+      38,
+      40,
+      43,
+      44,
+      46,
+      47
+    ]
+  },
+  "schema_version": 1,
+  "status": "candidate_primary"
+}

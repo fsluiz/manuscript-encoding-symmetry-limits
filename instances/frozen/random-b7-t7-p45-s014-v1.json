@@ -1,0 +1,62 @@
+{
+  "aliases": [
+    "rand_nB7_nT7_p45_s014"
+  ],
+  "instance_id": "random-b7-t7-p45-s014-v1",
+  "k_star": 4,
+  "n_B": 7,
+  "n_T": 7,
+  "n_optimal_cardinality_covers": 4,
+  "optimal_cardinality_covers": [
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      3,
+      5,
+      6
+    ],
+    [
+      1,
+      4,
+      5,
+      6
+    ],
+    [
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "payload": {
+    "incidence": [
+      "0100000",
+      "0000100",
+      "1010010",
+      "0010110",
+      "1100000",
+      "1010011",
+      "1001000"
+    ],
+    "matrix_convention": "bases_by_tasks"
+  },
+  "payload_sha256": "70197cc0d63c9f530991d5f505efe5a725112bc332b229245ccf4906dac63442",
+  "provenance": {
+    "generator": "spectral_gap_study.random_msc_instance",
+    "kind": "generated_random",
+    "parameters": {
+      "n_B": 7,
+      "n_T": 7,
+      "p": 0.45,
+      "seed": 14
+    },
+    "rng": "numpy.random.default_rng"
+  },
+  "schema_version": 1,
+  "status": "legacy_only"
+}

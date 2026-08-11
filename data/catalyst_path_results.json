@@ -1,0 +1,105 @@
+{
+  "catalyst": {
+    "definition": "C2 = -sum_{r<s} W_r W_s",
+    "endpoint_term_norms": {
+      "s0": 0.0,
+      "s1": 0.0
+    },
+    "envelope": "4 gamma s(1-s)",
+    "preserves": [
+      "S_k",
+      "G_B"
+    ],
+    "selected_gamma": 2.0
+  },
+  "dimensions": {
+    "A1_joint_fixed": 22,
+    "full_valid": 512
+  },
+  "instance_id": "grid-2x4-v1",
+  "parameters": {
+    "k": 3,
+    "lambda": 5.0,
+    "mu": 10.0,
+    "nu": 50.0
+  },
+  "payload_sha256": "662a99dbb6d86cc84838a440228c22e1daed574935891b44f582050a5a147c5d",
+  "robustness_grid": [
+    {
+      "at_s": 0.4666666666666667,
+      "gamma": 0.0,
+      "gap_at_uncatalysed_cancellation_s": 0.0,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.0
+    },
+    {
+      "at_s": 0.4902791335657809,
+      "gamma": 0.05,
+      "gap_at_uncatalysed_cancellation_s": 0.019771569525068422,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.0019731771678879184
+    },
+    {
+      "at_s": 0.5137324643044285,
+      "gamma": 0.1,
+      "gap_at_uncatalysed_cancellation_s": 0.041048671625476985,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.004032438515482628
+    },
+    {
+      "at_s": 0.559120996577742,
+      "gamma": 0.2,
+      "gap_at_uncatalysed_cancellation_s": 0.08864073509072723,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.008241564549564817
+    },
+    {
+      "at_s": 0.672004615141666,
+      "gamma": 0.5,
+      "gap_at_uncatalysed_cancellation_s": 0.2822950990237034,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.019556480469336668
+    },
+    {
+      "at_s": 0.7828193232148494,
+      "gamma": 1.0,
+      "gap_at_uncatalysed_cancellation_s": 0.8395068933743317,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.03134183917152367
+    },
+    {
+      "at_s": 0.8745867192948333,
+      "gamma": 2.0,
+      "gap_at_uncatalysed_cancellation_s": 2.779181916822325,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.04141024233229984
+    },
+    {
+      "at_s": 0.9455488884008216,
+      "gamma": 5.0,
+      "gap_at_uncatalysed_cancellation_s": 10.417183195090095,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.04933991502395493
+    }
+  ],
+  "schema_version": 1,
+  "scope": "finite D4 catalyst diagnostic; no asymptotic or interval-certified gap bound",
+  "selected_path": {
+    "global_A1_vs_nontrivial_crossings": [
+      {
+        "A1_gap": 0.25813582917695693,
+        "branch_difference": -6.2450045135165055e-15,
+        "cross_sector_derivative_coupling_norm": 4.650370983961795e-14,
+        "energy": 0.23262142416461568,
+        "s": 0.806453941930387
+      }
+    ],
+    "minimum_A1_gap": {
+      "at_s": 0.8745867192948333,
+      "gamma": 2.0,
+      "gap_at_uncatalysed_cancellation_s": 2.779181916822325,
+      "grid_points": 2001,
+      "minimum_A1_gap": 0.04141024233229984
+    }
+  }
+}

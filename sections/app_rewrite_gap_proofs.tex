@@ -1,0 +1,285 @@
+\section{Normalized comparison proof for the parent-path gap}
+\label{app:normalized-gap-proof}
+
+This appendix fixes the generator convention used in
+Propositions~\ref{prop:cycle-zrp-reduction} and
+\ref{prop:cycle-uniform-gap} and records each comparison factor.  For a
+reversible generator $\mathcal L$ with stationary law $\nu$, write
+\begin{align}
+ \mathcal E_{\mathcal L}(f,f)
+ &=-\langle f,\mathcal Lf\rangle_\nu,\\
+ \operatorname{gap}(-\mathcal L)
+ &=\inf_{\operatorname{Var}_\nu(f)>0}
+ \frac{\mathcal E_{\mathcal L}(f,f)}
+ {\operatorname{Var}_\nu(f)}.
+ \label{eq:app-dirichlet-convention}
+\end{align}
+
+\subsection{Marked configurations and the cycle zero-range chain}
+\label{app:marked-zrp}
+
+Put $\tau=n^{-a}$ and let
+$\Omega_{n,k}=\{S\subset\mathbb Z_n:|S|=k\}$.  The Markov generator whose
+symmetric discriminant is $H_a$ has rates from
+Eq.~\eqref{eq:johnson-metropolis} and stationary law
+$\pi_a(S)\propto\tau^{U(S)}$.  If $D_{\pi_a}$ is diagonal with entries
+$\pi_a(S)$, then
+\begin{equation}
+ H_a=-D_{\pi_a}^{1/2}\mathcal Q_aD_{\pi_a}^{-1/2}.
+ \label{eq:app-discriminant-similarity}
+\end{equation}
+The unitary map
+$f\mapsto\sum_S\sqrt{\pi_a(S)}f(S)\ket S$ intertwines the $D_n$ actions.
+Thus the gap of $H_a$ in the fixed space is the Poincar\'e constant of
+$\mathcal Q_a$ on $D_n$-invariant observables.
+
+Introduce the marked space
+\begin{align}
+ \widehat\Omega_{n,k}
+ &=\{(S,x):S\in\Omega_{n,k},\ x\in S\},\\
+ \widehat\pi_a(S,x)&=\frac{\pi_a(S)}{k}.
+\end{align}
+Starting at the marked particle $x$, list the occupied vertices in cyclic
+order and let $g_i$ be the number of vacant vertices after particle $i$.
+This gives a bijection between marked configurations and anchored weak
+compositions satisfying
+\begin{equation}
+ g_i\geq0,\qquad \sum_{i=1}^kg_i=k,
+ \qquad U(g)=\#\{i:g_i=0\}.
+ \label{eq:app-gap-composition}
+\end{equation}
+Changing the marked particle cyclically shifts $g$, while rotating or
+reflecting the subset changes only the anchor and the dihedral orientation.
+Consequently a $D_n$-invariant observable $f(S)$ lifts to a
+cyclic-and-reflection-invariant observable $F(g)$.
+
+Define
+\begin{equation}
+ r_a(0)=0,qquad r_a(1)=\tau,qquad r_a(j)=1\quad(j\geq2).
+ \label{eq:app-zrp-rates}
+\end{equation}
+The product weight of a composition is
+\begin{equation}
+ \prod_{i=1}^k\prod_{j=1}^{g_i}r_a(j)^{-1}
+ =\tau^{-\#\{i:g_i>0\}}
+ =\tau^{-k}\tau^{U(g)}.
+ \label{eq:app-zrp-weight}
+\end{equation}
+The irrelevant factor $\tau^{-k}$ shows that the pushforward of the marked
+law is exactly the stationary composition law.  In particular,
+\begin{equation}
+ \operatorname{Var}_{\pi_a}(f)
+ =\operatorname{Var}_{\widehat\pi_a}(f)
+ =\operatorname{Var}_{\nu_a}(F).
+ \label{eq:app-variance-isometry}
+\end{equation}
+
+Let $P_{C_k}(i,j)=1/2$ when $j=i\pm1\pmod k$ and zero otherwise.  We use the
+Hermon--Salez convention
+\begin{equation}
+ (\mathcal L_{P,r}F)(g)
+ =\sum_{i,j}r(g_i)P(i,j)
+ [F(g-e_i+e_j)-F(g)].
+ \label{eq:app-zrp-generator}
+\end{equation}
+Multiplication by $2/n$ makes every oriented cycle transfer occur at rate
+$r_a(g_i)/n$.  Such a transfer is an adjacent Johnson move.  If $g_i=1$
+and the receiving box is positive, it creates one new zero and has the
+Metropolis rate $\tau/n$; if the receiving box is zero, its Metropolis rate
+is $1/n\geq\tau/n$.  For $g_i\geq2$, the move does not increase $U$ and
+both rates equal $1/n$.  Hence the full Johnson Dirichlet form dominates
+the local form and, under the lift above,
+\begin{equation}
+ \mathcal E_{\mathcal Q_a}(f,f)
+ \geq\frac2n
+ \mathcal E_{\operatorname{ZRP}(P_{C_k},r_a,k)}(F,F).
+ \label{eq:app-local-domination}
+\end{equation}
+The equality of variances is exact; the inequality comes only from dropping
+nonlocal Johnson edges and, in one local case, lowering a Metropolis rate.
+
+Let $K_k(i,j)=1/k$.  The Hermon--Salez comparison theorem
+\cite{HermonSalez2019} states at the level of Dirichlet forms that
+\begin{multline}
+ \mathcal E_{\operatorname{ZRP}(P_{C_k},r_a,k)}(F,F)\\
+ \geq[1-\cos(2\pi/k)]
+ \mathcal E_{\operatorname{ZRP}(K_k,r_a,k)}(F,F),
+ \label{eq:app-hermon-salez}
+\end{multline}
+because $1-\cos(2\pi/k)$ is the Poincar\'e constant of $P_{C_k}$ and that
+of $K_k$ is one.  Restricting the variational problem to dihedral-invariant
+$F$ can only increase its infimum.  Equations
+\eqref{eq:app-variance-isometry}--\eqref{eq:app-hermon-salez} prove
+Eq.~\eqref{eq:cycle-zrp-reduction} with its factor $2/n$.
+
+\subsection{Three-box contraction}
+\label{app:three-box-proof}
+
+Set $a_0=\tau$ and $a_j=1$ for $j\geq1$.  For $0<z<1$, the probability
+sequence $p_z(j)\propto a_jz^j$ is log-concave: the only nontrivial
+inequality is $a_1^2\geq a_0a_2$, which is precisely $\tau\leq1$.
+Conditioning two independent variables with this law to have sum $s$
+removes the factor $z^s$ and gives
+\begin{equation}
+ \nu_s(u)=\frac{a_u a_{s-u}}
+ {\sum_{v=0}^s a_v a_{s-v}},
+ \qquad0\leq u\leq s.
+ \label{eq:app-split-law}
+\end{equation}
+The discrete Efron monotonicity theorem~\cite{Efron1965} implies that
+$U_s\sim\nu_s$ is stochastically nondecreasing in $s$.  Symmetry under
+$u\mapsto s-u$ gives, for $t=s+d$,
+\begin{equation}
+ U_s\preceq_{\rm st}U_t\preceq_{\rm st}U_s+d.
+ \label{eq:app-bounded-stochastic-order}
+\end{equation}
+The common-quantile coupling therefore obeys
+$0\leq U_t-U_s\leq d$ almost surely.  The two increments in the coupled
+splits are $U_t-U_s$ and $d-(U_t-U_s)$, so both are nonnegative.
+
+On the three-box state space use
+$d_1(x,y)=\frac12\sum_i|x_i-y_i|$.  Couple two heat-bath steps by holding
+the same uniformly selected coordinate $i$.  The two resampled pair totals
+differ by $d=|x_i-y_i|$, and the coupling above gives pairwise
+$\ell^1$ distance $d$.  Together with the held-coordinate distance, the
+post-update $d_1$ distance is at most $|x_i-y_i|$.  Thus the discrete
+heat-bath kernel $\mathsf P$ satisfies
+\begin{equation}
+ W_{1,d_1}(\mathsf P(x,\cdot),\mathsf P(y,\cdot))
+ \leq\frac13\sum_i|x_i-y_i|=\frac23d_1(x,y).
+ \label{eq:app-three-box-wasserstein}
+\end{equation}
+It follows that
+$\operatorname{Lip}(\mathsf Pf)\leq(2/3)\operatorname{Lip}(f)$.  Every
+nonconstant eigenfunction on this finite metric space has positive
+Lipschitz seminorm, so all nonconstant eigenvalues of the reversible kernel
+have absolute value at most $2/3$.  Therefore
+$\mathcal L^*_{3,m}=\mathsf P-I$ has gap at least $1/3$, uniformly in the
+conserved total $m$.  This proves
+Lemma~\ref{lem:three-box-contraction}.
+
+\subsection{Caputo--Sasada recursion with the present normalization}
+\label{app:heat-bath-recursion}
+
+For $N$ boxes and conserved total $m$, let
+\begin{align}
+ \Omega_{N,m}
+ &=\{g\in\mathbb Z_{\geq0}^{N}:\textstyle\sum_i g_i=m\},\\
+ \nu_{N,m}(g)&=Z_{N,m}^{-1}\prod_{i=1}^{N}a_{g_i}.
+\end{align}
+Let $E_{ij}$ denote conditional expectation under $\nu_{N,m}$ given all
+coordinates outside the unordered pair $\{i,j\}$.  The complete-graph
+pair heat-bath generator is normalized as
+\begin{equation}
+ \mathcal L_{\rm HB}^{N,m}
+ =\frac1N\sum_{1\leq i<j\leq N}(E_{ij}-I).
+ \label{eq:app-heat-bath-generator}
+\end{equation}
+For $N=3$, the discrete kernel $I+\mathcal L_{\rm HB}^{3,m}$ keeps one
+uniformly chosen coordinate and resamples the remaining pair.  It is exactly
+the kernel of Lemma~\ref{lem:three-box-contraction}, not a rescaled version.
+
+The conditioned product measures above have the non-interference property
+required by the three-component argument.  With
+\begin{equation}
+ \underline\lambda_3
+ =\inf_{m\geq0}\operatorname{gap}
+ (-\mathcal L_{\rm HB}^{3,m}),
+\end{equation}
+the lower-bound form of the Caputo--Sasada recursion
+\cite{Caputo2008,Sasada2013}, in the normalization
+\eqref{eq:app-heat-bath-generator}, is
+\begin{equation}
+ \operatorname{gap}(-\mathcal L_{\rm HB}^{N,m})
+ \geq(3\underline\lambda_3-1)
+ \left(1-\frac2N\right)+\frac1N.
+ \label{eq:app-caputo-sasada-recursion}
+\end{equation}
+Lemma~\ref{lem:three-box-contraction} gives
+$\underline\lambda_3\geq1/3$.  The first term on the right of
+Eq.~\eqref{eq:app-caputo-sasada-recursion} is therefore nonnegative, and
+\begin{equation}
+ \operatorname{gap}(-\mathcal L_{\rm HB}^{N,m})\geq\frac1N
+ \label{eq:app-heat-bath-gap}
+\end{equation}
+for every conserved total.  In the application below, $N=m=k$.
+
+\subsection{Conditional two-box comparison}
+\label{app:mean-field-comparison}
+
+For the mean-field kernel $K_k(i,j)=1/k$, decompose its zero-range generator
+into unordered pairs:
+\begin{equation}
+ \mathcal L_{\operatorname{ZRP}(K_k,r_a,m)}
+ =\frac2k\sum_{1\leq i<j\leq k}\mathcal L_{ij}^{(2)}.
+ \label{eq:app-mean-field-pair-decomposition}
+\end{equation}
+Here $\mathcal L_{ij}^{(2)}$ is the conditional two-box zero-range generator
+with kernel $K_2$, whose two rows are $(1/2,1/2)$.  Thus a unit leaves either
+member of the pair toward the other at rate $r_a/2$.  The prefactor $2/k$
+in Eq.~\eqref{eq:app-mean-field-pair-decomposition} converts this to the
+mean-field rate $r_a/k$.
+
+Condition on pair total $s$.  For $s\geq2$, the stationary weights on
+$\{0,\ldots,s\}$ are $\tau$ at the two endpoints and one in the interior,
+with
+\begin{equation}
+ Z_s=s-1+2\tau.
+\end{equation}
+Every nearest-neighbour edge conductance of
+$\mathcal L_{ij}^{(2)}$ is at least $\tau/(2Z_s)$.  For the canonical path
+between $u<v$, Cauchy--Schwarz gives a factor $v-u\leq s$.  For every edge,
+the stationary masses on its two sides have product at most $1/4$.
+Consequently
+\begin{equation}
+ \operatorname{Var}_{\nu_s}(f)
+ \leq\frac{s}{4}\sum_{u=0}^{s-1}[f(u+1)-f(u)]^2
+ \leq\frac{sZ_s}{2\tau}\mathcal E_s(f,f).
+ \label{eq:app-pair-poincare}
+\end{equation}
+The conditional pair gap is at least
+\begin{equation}
+ \frac{2\tau}{sZ_s}
+ \geq\frac{2\tau}{s(s+1)}
+ \geq\frac{\tau}{k^2},
+ \qquad 1\leq s\leq k;
+ \label{eq:app-pair-gap}
+\end{equation}
+for $s=1$ it equals $\tau$, and $s=0$ has no conditional variance.
+
+Let $\mathcal E_{\rm HB}$ be the form of
+Eq.~\eqref{eq:app-heat-bath-generator}.  Applying
+Eq.~\eqref{eq:app-pair-gap} conditionally in every pair and using
+Eq.~\eqref{eq:app-mean-field-pair-decomposition} gives, with
+$\mathcal V_{ij}(f)$ denoting the expected conditional variance outside
+$\{i,j\}$,
+\begin{align}
+ \mathcal E_{\operatorname{ZRP}(K_k,r_a,k)}(f,f)
+ &\geq\frac2k\frac{\tau}{k^2}
+ \sum_{i<j}\mathcal V_{ij}(f)
+ \\
+ &=\frac{2\tau}{k^2}\mathcal E_{\rm HB}(f,f).
+ \label{eq:app-zrp-heat-bath-form-comparison}
+\end{align}
+Combining this with Eq.~\eqref{eq:app-heat-bath-gap} yields
+\begin{equation}
+ \operatorname{gap}\operatorname{ZRP}(K_k,r_a,k)
+ \geq\frac{2\tau}{k^2}\frac1k
+ =2\tau k^{-3}.
+ \label{eq:app-mean-field-gap-final}
+\end{equation}
+This displays separately the pair-selection factor $2/k$, the conditional
+pair estimate $\tau/k^2$, and the heat-bath gap $1/k$.
+
+Finally, for $k\geq3$,
+$1-\cos(2\pi/k)\geq8/k^2$.  Substitution of
+Eq.~\eqref{eq:app-mean-field-gap-final} into
+Eq.~\eqref{eq:cycle-zrp-reduction} gives
+\begin{equation}
+ \Delta_{D_n}(a)
+ \geq\frac2n\frac8{k^2}\frac{2\tau}{k^3}
+ =\frac{32\tau}{nk^5}
+ =1024\,n^{-(a+6)},
+\end{equation}
+because $k=n/2$ and $\tau=n^{-a}$.  This completes the proof of
+Proposition~\ref{prop:cycle-uniform-gap}.

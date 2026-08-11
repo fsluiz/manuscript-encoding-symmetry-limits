@@ -1,0 +1,136 @@
+\section{Dark crossings in exact symmetry quotients}
+\label{sec:rewrite-crossings}
+
+If $\Pi_a$ and $\Pi_b$ project onto inequivalent irreps of a symmetry
+preserved by the entire path, then
+\begin{equation}
+ \Pi_a\,\partial_sH(s)\,\Pi_b=0.
+ \label{eq:dark-coupling-rewrite}
+\end{equation}
+An equality of the two branch energies is therefore a global crossing but
+not an avoided crossing seen by a state confined to either block.
+
+This phenomenon is stable within the symmetry-preserving class; it is not
+restricted to exactly solvable diagonal cancellation points.
+
+\begin{theorem}[Stability of a transverse dark crossing]
+\label{thm:dark-crossing-stability}
+Let $H_\varepsilon(s)=H(s)+\varepsilon V(s)$ be a continuously
+differentiable finite-dimensional path, and let $\Pi_a,\Pi_b$ project onto
+inequivalent symmetry sectors.  Suppose every $H_\varepsilon(s)$ commutes
+with both projectors.  Assume that near $(s_\star,0)$ the two restricted
+blocks have simple isolated eigenvalue branches $E_a(s,\varepsilon)$ and
+$E_b(s,\varepsilon)$ such that
+\begin{equation}
+ E_a(s_\star,0)=E_b(s_\star,0),
+ \qquad
+ \partial_s(E_a-E_b)(s_\star,0)\ne0.
+ \label{eq:transverse-dark-hypothesis}
+\end{equation}
+Then, for all sufficiently small $|\varepsilon|$, there is a unique nearby
+$s_\star(\varepsilon)=s_\star+O(\varepsilon)$ at which the two branches
+cross exactly, and
+\begin{equation}
+ \Pi_a\partial_sH_\varepsilon(s)\Pi_b=0.
+\end{equation}
+If the $a$ branch is separated from the rest of its block by at least
+$\Delta_\star>0$ throughout a neighbourhood of $s_\star$ at
+$\varepsilon=0$, then its isolation gap remains at least
+$\Delta_\star/2$ whenever
+$|\varepsilon|\sup_s\|V(s)\|\leq\Delta_\star/4$ and the perturbed crossing
+stays in that neighbourhood.
+\end{theorem}
+
+\begin{proof}
+Simple isolated eigenvalues of a differentiable Hermitian family define
+differentiable local branches.  Apply the implicit-function theorem to
+$F(s,\varepsilon)=E_a(s,\varepsilon)-E_b(s,\varepsilon)$ and use
+Eq.~\eqref{eq:transverse-dark-hypothesis}.  Commutation with the symmetry
+projectors makes every inter-sector matrix element vanish, so the equality
+cannot become an avoided crossing.  Finally, Weyl's bound moves each
+eigenvalue of the $a$ block by at most
+$|\varepsilon|\|V(s)\|$; an internal spectral distance can therefore shrink
+by at most twice this quantity, proving the stated gap bound.
+\end{proof}
+
+\subsection{A finite joint-symmetry audit}
+
+For the frozen $2\times4$ incidence instance with $k=3$, the faithful base
+group is $G_B\simeq D_4$ and the $S_3\times D_4$ fixed quotient has dimension
+$22$, compared with $512$ in the valid ordered space.  Cyclic closure from
+$\ket u$ also has dimension $22$; this equality is an output of the closure
+calculation, not an assumption based on symmetry.  The orbit-isometry,
+endpoint-invariance, and cyclic-invariance residuals are below
+$10^{-13}$.
+
+The uncatalysed linear path has a cancellation point at $s=7/15$ where the
+fixed-space ground rank becomes two.  Thus this example is also a warning:
+joint symmetry alone does not guarantee a nonzero accessible rank-one gap.
+For this finite diagnostic, let
+\begin{equation}
+ W=\frac{\bm 1\bm 1^{\mathsf T}-I}{n_B-1},
+ \qquad
+ C_2=-\sum_{1\leq r<t\leq k}W^{(r)}W^{(t)},
+ \label{eq:d4-catalyst-operator}
+\end{equation}
+and use the endpoint-preserving path
+\begin{equation}
+ H_\gamma(s)=(1-s)H_{\rm init}+sH_{\rm prob}
+ +4\gamma s(1-s)C_2.
+ \label{eq:d4-catalyst-path}
+\end{equation}
+The operator $C_2$ commutes with both $S_k$ and $G_B$, and its envelope
+vanishes at $s=0,1$.  We set $\gamma=2$.  This catalyst moves the remaining
+global crossing to $s\simeq0.806454$.  At that point the two branches belong
+to different $D_4$ irreps,
+Eq.~\eqref{eq:dark-coupling-rewrite} has residual
+$4.7\times10^{-14}$, and the $D_4$-trivial gap is approximately $0.258$.
+The trivial-sector gap was evaluated on a uniform 2001-point grid and then
+locally minimized within every grid bracket; its minimum is $0.0414$ at
+$s\simeq0.874587$.  The crossing between the trivial floor and the
+orthogonal-complement floor was bracketed on 401 points and refined by a
+scalar root solve.  These figures are finite numerical diagnostics with
+residual-based degeneracy tests, not interval-certified bounds, and they are
+not used as an asymptotic theorem.
+
+\subsection{An exact crossing on the even-cycle family}
+
+The asymptotic witness is analytic.  Express minimum vertex cover on the
+even cycle $C_n$, $n=2k$, as set cover: bases are vertices, tasks are edges,
+and each base covers its two incident edges.  The only minimum covers are
+the two alternating subsets, which form one orbit of $D_n$.
+
+Consider the original ordered-register linear path
+\begin{equation}
+ H(s)=(1-s)H_{\rm init}+sH_{\rm prob}.
+ \label{eq:cycle-linear-rewrite}
+\end{equation}
+The off-diagonal coefficient of each single-register complete-graph move is
+\begin{equation}
+ -\frac{1-s}{n}+\frac{s}{n-1},
+\end{equation}
+and vanishes exactly at
+\begin{equation}
+ s_c=\frac{n-1}{2n-1}.
+ \label{eq:cycle-cancel-rewrite}
+\end{equation}
+At this point the Hamiltonian is diagonal up to a scalar.  All $2k!$
+ordered representatives of the two alternating covers are global ground
+states, whereas their normalized orbit is the unique ground vector in the
+$S_k\times D_n$ fixed space.  Assuming $\mu\geq\lambda$, the next fixed
+orbit violates at least one coverage constraint, and
+\begin{align}
+ g_0^{\rm global}(s_c)&=2k!,&
+ g_0^{\rm sym}(s_c)&=1,\\
+ \Delta_{\rm sym}(s_c)&=\lambda\frac{n-1}{2n-1}.
+ \label{eq:cycle-dark-crossing-rewrite}
+\end{align}
+Thus the global multiplicity gap closes exactly while the joint-fixed gap
+is bounded below by a constant.  The crossing is dynamically dark for the
+uniform initial state and the symmetry-preserving path.
+
+Equation~\eqref{eq:cycle-dark-crossing-rewrite} controls the crossing point,
+not the minimum gap on every part of the linear path.  The next section
+introduces a different, explicit parent path on the same family and proves
+a uniform polynomial bound.  Keeping these statements separate avoids
+turning a pointwise crossing theorem into an unsupported adiabatic claim.
