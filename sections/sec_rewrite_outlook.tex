@@ -16,7 +16,10 @@ not by assigning labels to solver-dependent individual eigenvectors.
 \subsection{Frozen endpoint reconstruction}
 
 Tables~\ref{tab:finite-structure} and \ref{tab:finite-endpoints} implement
-this protocol on eleven frozen, unweighted instances.  Only the $2\times4$
+this protocol on eleven frozen, unweighted instances.  Eight rows are
+subinstances extracted from the OR-Library Set Cover benchmarks
+\cite{Beasley1990,ORLib}; their parent indices, extraction metadata, and
+SHA-256 hashes are stored in the instance registry.  Only the $2\times4$
 grid has nontrivial $G_B$ (namely $D_4$); all other rows nevertheless retain
 the $S_k$ reduction.  Five rows satisfy the strict inclusion
 $\mathcal K_u\subsetneq\mathcal H_{\rm sym}$, so cyclic inaccessibility is

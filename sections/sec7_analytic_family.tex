@@ -222,9 +222,11 @@ gate-level implementation of the path.
 
 \begin{corollary}[Conditional adiabatic preparation]
 \label{cor:cycle-adiabatic-preparation}
-Let $a(s)=7s$, $0\leq s\leq1$, and evolve from
-$\ket{J_{n,k}}$ under $H_{a(s)}$ for total time $T$.  There is a universal
-constant $C>0$ such that, for every $0<\epsilon<1$, the sufficient condition
+In the abstract Hamiltonian-access model, let $a(s)=7s$, $0\leq s\leq1$,
+and evolve from $\ket{J_{n,k}}$ under the restricted path
+$H_{a(s)}|_{\mathcal K_J^{\rm par}}$ for total time $T$.  There is a
+universal constant $C>0$ such that, for every $0<\epsilon<1$, the sufficient
+condition
 \begin{equation}
  T\geq C\epsilon^{-1}n^{41}(\log n)^2
  \label{eq:cycle-adiabatic-runtime}
@@ -250,8 +252,11 @@ $c_1,c_2$ independent of $n$ such that
 \end{equation}
 Proposition~\ref{prop:parent-cyclic-accessibility} and
 Eq.~\eqref{eq:uniform-accessible-gap} give a simple ground state and minimum
-cyclic gap at least $1024n^{-13}$.  Substitution into a quantitative
-gapped adiabatic bound~\cite{JansenRuskaiSeiler2007} yields contributions of
+cyclic gap at least $1024n^{-13}$.  Apply the quantitative gapped adiabatic
+bound~\cite{JansenRuskaiSeiler2007} to
+$H_{7s}|_{\mathcal K_J^{\rm par}}$; restriction cannot increase either
+derivative norm in Eq.~\eqref{eq:cycle-parent-derivative-bounds}.  This yields
+contributions of
 orders $n^{27}\log n$, $n^{27}(\log n)^2$, and
 $n^{41}(\log n)^2$, divided by $T$.  The last dominates and proves
 Eq.~\eqref{eq:cycle-adiabatic-runtime}.  The final measurement statement
