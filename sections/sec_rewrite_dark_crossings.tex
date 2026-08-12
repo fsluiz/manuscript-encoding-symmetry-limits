@@ -41,32 +41,25 @@ $|\varepsilon|\sup_s\|V(s)\|\leq\Delta_\star/4$ and the perturbed crossing
 stays in that neighbourhood.
 \end{theorem}
 
-\begin{proof}
-Simple isolated eigenvalues of a differentiable Hermitian family define
-differentiable local branches.  Apply the implicit-function theorem to
-$F(s,\varepsilon)=E_a(s,\varepsilon)-E_b(s,\varepsilon)$ and use
-Eq.~\eqref{eq:transverse-dark-hypothesis}.  Commutation with the symmetry
-projectors makes every inter-sector matrix element vanish, so the equality
-cannot become an avoided crossing.  Finally, Weyl's bound moves each
-eigenvalue of the $a$ block by at most
-$|\varepsilon|\|V(s)\|$; an internal spectral distance can therefore shrink
-by at most twice this quantity, proving the stated gap bound.
-\end{proof}
+\paragraph{Proof idea.}
+The implicit-function theorem preserves a transverse equality of the two
+restricted eigenvalue branches.  Symmetry keeps all inter-sector matrix
+elements zero, so the equality cannot turn into an avoided crossing, while
+Weyl's bound controls the isolation gap inside either block.  The complete
+proof is in Appendix~\ref{app:dark-stability}.
 
 \subsection{A finite joint-symmetry audit}
 
-For the frozen $2\times4$ incidence instance with $k=3$, the faithful base
-group is $G_B\simeq D_4$ and the $S_3\times D_4$ fixed quotient has dimension
-$22$, compared with $512$ in the valid ordered space.  Cyclic closure from
-$\ket u$ also has dimension $22$; this equality is an output of the closure
-calculation, not an assumption based on symmetry.  The orbit-isometry,
-endpoint-invariance, and cyclic-invariance residuals are below
-$10^{-13}$.
+For a frozen $2\times4$ incidence instance with $k=3$,
+$G_B\simeq D_4$ and the $S_3\times D_4$ fixed quotient has dimension $22$,
+compared with $512$ in the valid ordered space.  Cyclic closure from
+$\ket u$ also has dimension $22$, as determined independently by the
+generator algebra.  The uncatalysed path has a fixed-space rank closure at
+$s=7/15$, showing that joint symmetry alone does not guarantee a rank-one
+accessible gap.
 
-The uncatalysed linear path has a cancellation point at $s=7/15$ where the
-fixed-space ground rank becomes two.  Thus this example is also a warning:
-joint symmetry alone does not guarantee a nonzero accessible rank-one gap.
-For this finite diagnostic, let
+As a finite illustration of a dark crossing away from the cancellation
+point, define
 \begin{equation}
  W=\frac{\bm 1\bm 1^{\mathsf T}-I}{n_B-1},
  \qquad
@@ -80,18 +73,11 @@ and use the endpoint-preserving path
  \label{eq:d4-catalyst-path}
 \end{equation}
 The operator $C_2$ commutes with both $S_k$ and $G_B$, and its envelope
-vanishes at $s=0,1$.  We set $\gamma=2$.  This catalyst moves the remaining
-global crossing to $s\simeq0.806454$.  At that point the two branches belong
-to different $D_4$ irreps,
-Eq.~\eqref{eq:dark-coupling-rewrite} has residual
-$4.7\times10^{-14}$, and the $D_4$-trivial gap is approximately $0.258$.
-The trivial-sector gap was evaluated on a uniform 2001-point grid and then
-locally minimized within every grid bracket; its minimum is $0.0414$ at
-$s\simeq0.874587$.  The crossing between the trivial floor and the
-orthogonal-complement floor was bracketed on 401 points and refined by a
-scalar root solve.  These figures are finite numerical diagnostics with
-residual-based degeneracy tests, not interval-certified bounds, and they are
-not used as an asymptotic theorem.
+vanishes at $s=0,1$.  At $\gamma=2$, a crossing between different $D_4$
+irreps occurs at $s\simeq0.806454$, while the $D_4$-trivial gap there is
+approximately $0.258$.  This diagnostic is not used in the asymptotic
+theorem.  Appendix~\ref{app:d4-catalyst} specifies its numerical protocol,
+minimum-gap scan, and residuals.
 
 \subsection{An exact multiplicity closure on the even-cycle family}
 

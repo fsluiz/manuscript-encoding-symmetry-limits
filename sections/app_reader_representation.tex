@@ -1,0 +1,45 @@
+\section{Joint representation and orbit quotient}
+\label{app:joint-representation}
+
+The incidence automorphism group $G_A$ acts on the address Hilbert space
+only through its base projection.  If
+$\rho(\pi_B,\pi_T)=\pi_B$, then elements with $\pi_B=\mathrm{id}$ form the
+kernel, and the faithfully represented group is
+$G_B\simeq G_A/\ker\rho$.  Since the $S_k$ register action commutes with the
+$G_B$ base action, complete reducibility gives
+\begin{equation}
+ \mathcal H_{\rm valid}\simeq
+ \bigoplus_{\alpha,\beta}
+ V_\alpha^{S_k}\otimes V_\beta^{G_B}otimes
+ \mathcal M_{\alpha\beta}.
+ \label{eq:app-joint-decomposition}
+\end{equation}
+Every invariant Hamiltonian lies in the commutant and hence has the form in
+Eq.~\eqref{eq:commutant-rewrite}.  The identity factors generate Schur
+multiplicities; equality of eigenvalues belonging to different
+$(\alpha,\beta)$ blocks is not enforced by this statement.
+
+For completeness, let $\mathcal O$ and $\mathcal O'$ be computational-basis
+orbits of the joint action and choose $x\in\mathcal O$.  Invariance gives
+\begin{align}
+ \langle\mathcal O'|H|\mathcal O\rangle
+ &=\frac{1}{\sqrt{|\mathcal O||\mathcal O'|}}
+ \sum_{x'\in\mathcal O}\sum_{y\in\mathcal O'}H_{yx'}\\
+ &=\sqrt{\frac{|\mathcal O|}{|\mathcal O'|}}
+ \sum_{y\in\mathcal O'}H_{yx},
+\end{align}
+which proves Eq.~\eqref{eq:orbit-quotient-rewrite}.  The orbit states are
+therefore an exact orthonormal basis of the fixed space, not an effective
+approximation.
+
+After quotienting by register permutations, basis vectors are weak
+multisets of size $k$ over the bases.  If $g\in G_B$ has $c_\ell(g)$ cycles
+of length $\ell$, the trace of $g$ on
+$\operatorname{Sym}^k(\mathbb C^{n_B})$ is the coefficient
+\begin{equation}
+ [z^k]\prod_{\ell\geq1}(1-z^\ell)^{-c_\ell(g)}.
+\end{equation}
+Averaging this character over $G_B$ projects onto the trivial irrep and
+gives Eq.~\eqref{eq:burnside-rewrite}.  This counts
+$\mathcal H_{\rm sym}$ only.  Whether $\ket u$ is cyclic for the restricted
+endpoint algebra is a separate closure calculation.

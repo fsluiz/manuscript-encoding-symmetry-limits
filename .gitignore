@@ -31,6 +31,11 @@
 !/sections/sec7_analytic_family.tex
 !/sections/sec_rewrite_outlook.tex
 !/sections/app_rewrite_gap_proofs.tex
+!/sections/app_reader_localization.tex
+!/sections/app_reader_representation.tex
+!/sections/app_reader_crossings.tex
+!/sections/app_reader_parent.tex
+!/sections/app_reader_numerics.tex
 !/sections/generated_accessibility_tables.tex
 
 # Reproduction code and its direct local dependencies.

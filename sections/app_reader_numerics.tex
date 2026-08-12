@@ -1,0 +1,39 @@
+\section{Numerical protocol and full tables}
+\label{app:numerical-protocol}
+
+Inputs are frozen with identifiers and SHA-256 hashes.  Every reported gap
+is computed either in the full Hamiltonian or in an explicitly labelled
+exact orbit quotient; projected $PHP$, L\"owdin, and full-Hamiltonian values
+are never combined in one unlabeled column.  Numerical degeneracy is accepted
+only relative to eigenpair residuals and matrix scale.  Inside a degenerate
+manifold, irrep content is obtained from
+\begin{equation}
+ \operatorname{rank}(P_0\Pi_{\alpha\beta}P_0),
+\end{equation}
+not by assigning labels to solver-dependent individual eigenvectors.
+
+For sparse full-space calculations, the central class sum of register
+transpositions separates every $S_k$ irrep for $k\leq5$.  The orbit of a
+lowest vector constructs its complete Specht multiplet; deflation then tests
+for further cospectral copies before $g_0^{\rm full}$ is assigned.  For the
+grid row, the two-dimensional global ground manifold is the $E$ irrep of
+$D_4$, whereas the accessible branch is $A_1$.  At the analytic
+hopping-cancellation point, the joint-fixed ground rank agrees with the
+independently enumerated number of $G_B$-orbits of optimal covers in every
+row.
+
+The largest orbit-invariance residual is below $5\times10^{-13}$, the
+largest cyclic-invariance residual below $2\times10^{-9}$, and every
+full-space eigenpair and class-sum residual used below is stored in the
+machine-readable output.  Eight rows are subinstances extracted from the
+OR-Library Set Cover benchmarks~\cite{Beasley1990,ORLib}; parent indices,
+extraction metadata, and hashes are stored in the instance registry.
+
+\input{sections/generated_accessibility_tables}
+
+For the parent family, exact $D_n$-orbit quotients for
+$n=6,8,\ldots,18$ place the minimum of a 31-point grid at $a=7$.  Endpoint
+gaps decrease from $0.166670$ at $n=6$ to $0.0105026$ at $n=18$ and look
+approximately quadratic on these sizes.  This is finite-grid evidence, not
+a scaling inference; Proposition~\ref{prop:cycle-uniform-gap} supplies the
+uniform certificate.

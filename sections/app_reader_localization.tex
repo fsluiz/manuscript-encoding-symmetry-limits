@@ -1,0 +1,40 @@
+\section{Proof of sector localization}
+\label{app:sector-localization}
+
+We prove Proposition~\ref{prop:sector-localization-rewrite} and record why
+its sector hypothesis cannot be silently replaced by cyclic restriction.
+The variational principle applied inside $\Ran\Pi_\gamma$ gives
+$E_0^\gamma\leq\eta_\gamma$.  Combining this with
+Eq.~\eqref{eq:q-lower-rewrite} yields
+\begin{equation}
+ \Gamma_\gamma\geq m-\kappa-\eta_\gamma,
+\end{equation}
+which is Eq.~\eqref{eq:sector-separation-rewrite}.
+
+For a normalized sector ground vector, write
+$p=P_\gamma\psi_\gamma$ and $q=Q_\gamma\psi_\gamma$.  Since $P$, $Q$,
+and $\Pi_\gamma$ commute, these are orthogonal components and the lower
+block of the eigenvalue equation is
+\begin{equation}
+ (Q_\gamma H_{\rm prob}Q_\gamma-E_0^\gamma)q=-B_\gamma p.
+ \label{eq:app-sector-block}
+\end{equation}
+If $Q_\gamma=0$, then $q=0$ identically.  Otherwise positivity of
+$\Gamma_\gamma$ makes the compressed operator on the left invertible with
+inverse norm at most $\Gamma_\gamma^{-1}$.  Therefore
+\begin{equation}
+ \|q\|\leq\frac{\|B_\gamma\|}{\Gamma_\gamma}\|p\|.
+\end{equation}
+Using $\|p\|^2+\|q\|^2=1$ and solving for $\|q\|^2$ gives
+Eq.~\eqref{eq:sector-bound-rewrite}.  Replacing $\Gamma_\gamma$ by the
+positive lower bound $m-\kappa-\eta_\gamma$ weakens the right-hand side and
+proves the stated certificate.
+
+For finite penalties, the proposition controls rather than eliminates
+leakage; exact support on covers requires an infinite-penalty limit or a
+special decoupling.  Moreover, the projector onto $\mathcal K_u$ need not
+commute with $P$, so $P\Pi_{\mathcal K}$ need not be an orthogonal
+projector.  The proposition therefore applies directly to genuine
+commuting symmetry sectors.  Cyclic-space solution probability must be
+evaluated directly or bounded with a separately constructed commuting
+projector.

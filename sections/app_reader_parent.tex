@@ -1,0 +1,61 @@
+\section{Parent cyclic space and endpoint concentration}
+
+\subsection{Cyclic accessibility}
+\label{app:parent-accessibility}
+
+We prove Proposition~\ref{prop:parent-cyclic-accessibility}.  Because
+$\mathfrak A_{\rm par}$ is a unital star-algebra,
+$\mathfrak A_{\rm par}\ket{J_{n,k}}$ is invariant under every element of
+the algebra and its adjoint, hence is reducing.  Every $H_a$ commutes with
+$D_n$, and $\ket{J_{n,k}}$ is $D_n$-fixed, proving the first item.
+
+All rates in Eq.~\eqref{eq:johnson-metropolis} are positive on the connected
+Johnson graph.  The zero eigenvalue of $H_a$ is consequently simple, with
+ground vector Eq.~\eqref{eq:cycle-parent-ground}.  In finite dimension its
+spectral projector $P_a=\ket{\psi_a}\!\bra{\psi_a}$ is a polynomial in
+$H_a$ and belongs to $\mathfrak A_{\rm par}$.  Positivity gives
+$\langle\psi_a|J_{n,k}\rangle>0$, so
+$P_a\ket{J_{n,k}}$ is a nonzero multiple of $\ket{\psi_a}$.  Finally, both
+restrictions have this unique ground state, while
+$\mathcal K_J^{\rm par}\subseteq\mathcal H^{D_n}$.  Rayleigh--Ritz
+minimization over the smaller orthogonal complement proves
+Eq.~\eqref{eq:parent-cyclic-fixed-comparison}.
+
+\subsection{Endpoint concentration}
+\label{app:parent-concentration}
+
+At energy $u$, occupied and vacant vertices decompose into the same number
+$k-u$ of positive cyclic runs.  Choosing the marked start and the two run
+compositions gives
+\begin{equation}
+ N_u=\frac{n}{k-u}\binom{k-1}{u}^2,
+ \qquad0\leq u<k,
+\end{equation}
+which is Eq.~\eqref{eq:cycle-shell-count}.  At $a_f=7$, the $u=1$
+contribution is $N_1n^{-7}=n(k-1)n^{-7}=O(n^{-5})$.  Consecutive terms
+$N_un^{-7u}$ have ratio at most $2k^2n^{-7}=O(n^{-5})$.  Summing the
+resulting geometric tail proves
+Eq.~\eqref{eq:cycle-endpoint-concentration}.
+
+\subsection{Adiabatic derivative bounds}
+\label{app:parent-adiabatic}
+
+A Johnson move removes one selected cycle vertex and inserts one unselected
+vertex, so $|U(T)-U(S)|\leq2$, and each subset has
+$k(n-k)=k^2$ neighbours.  Differentiating the matrix elements in
+Eqs.~\eqref{eq:johnson-metropolis} and \eqref{eq:cycle-parent}, then bounding
+the operator norm by the maximum absolute row sum, gives
+Eq.~\eqref{eq:cycle-parent-derivative-bounds} with constants independent of
+$n$.  Proposition~\ref{prop:parent-cyclic-accessibility} and
+Eq.~\eqref{eq:uniform-accessible-gap} give a simple ground state and minimum
+cyclic gap at least $1024n^{-13}$.
+
+Apply the quantitative gapped adiabatic bound
+\cite{JansenRuskaiSeiler2007} to
+$H_{7s}|_{\mathcal K_J^{\rm par}}$; restriction cannot increase either
+derivative norm.  The three contributions scale as
+$n^{27}\log n$, $n^{27}(\log n)^2$, and
+$n^{41}(\log n)^2$, divided by $T$.  The last dominates and proves
+Eq.~\eqref{eq:cycle-adiabatic-runtime}.  The final measurement statement
+follows from Eq.~\eqref{eq:cycle-endpoint-concentration} and continuity of
+measurement probabilities in state distance.

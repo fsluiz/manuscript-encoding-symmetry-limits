@@ -1,4 +1,4 @@
-\section{Sector-resolved localization}
+\section{Sector localization and relevant gaps}
 \label{sec:rewrite-localization}
 
 Let $P$ project onto the span of computational-basis tuples that use
@@ -52,20 +52,18 @@ with $\Gamma_\gamma$ replaced by
 $g_\gamma=m-\kappa-\eta_\gamma>0$.
 \end{proposition}
 
-\begin{proof}
-The variational principle applied inside $\Ran\Pi_\gamma$ gives
-$E_0^\gamma\leq\eta_\gamma$.  Combining this with
-Eq.~\eqref{eq:q-lower-rewrite} proves
-Eq.~\eqref{eq:sector-separation-rewrite}.  For a sector ground vector, write
-$p=P_\gamma\psi_\gamma$ and $q=Q_\gamma\psi_\gamma$.  The projected
-eigenvalue equation is
+\paragraph{Proof idea.}
+The two inputs are the invalid-state floor and the sector variational bound,
 \begin{equation}
- (Q_\gamma H_{\rm prob}Q_\gamma-E_0^\gamma)q=-B_\gamma p.
+ Q_\gamma H_{\rm prob}Q_\gamma\geq(m-\kappa)Q_\gamma,
+ \qquad E_0^\gamma\leq\eta_\gamma.
 \end{equation}
-The inverse on the left has norm at most $\Gamma_\gamma^{-1}$, hence
-$\|q\|\leq\|B_\gamma\|\|p\|/\Gamma_\gamma$.  Using
-$\|p\|^2+\|q\|^2=1$ gives Eq.~\eqref{eq:sector-bound-rewrite}.
-\end{proof}
+Writing $p=P_\gamma\psi_\gamma$ and $q=Q_\gamma\psi_\gamma$, the lower
+block of the eigenvalue equation is
+$(Q_\gamma H_{\rm prob}Q_\gamma-E_0^\gamma)q=-B_\gamma p$.
+The resolvent norm is at most $\Gamma_\gamma^{-1}$, and normalization gives
+Eq.~\eqref{eq:sector-bound-rewrite}.  Appendix~\ref{app:sector-localization}
+gives the full proof and the cyclic-space caveat.
 
 This statement certifies the solution content of the lowest-energy state
 within a sector.  It does not say that the ground vector has exact support on
@@ -73,9 +71,6 @@ $\Ran P$: for finite penalties Eq.~\eqref{eq:sector-bound-rewrite} controls,
 rather than eliminates, leakage.  Exact support occurs only in an infinite
 penalty limit or in special decoupled cases.
 
-There is also a cyclic-space caveat.  The projector onto $\mathcal K_u$ need
-not commute with $P$, so $P\Pi_{\mathcal K}$ need not be an orthogonal
-projector.  Proposition~\ref{prop:sector-localization-rewrite} must be used
-for genuine symmetry sectors; cyclic-space solution probability is then
-evaluated directly or bounded through a separately constructed commuting
-projector.
+The theorem applies to genuine commuting symmetry sectors.  A cyclic
+projector need not commute with $P$, so cyclic-space solution probability is
+evaluated directly or through a separately constructed commuting projector.

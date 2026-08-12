@@ -49,18 +49,16 @@ represented symmetry is
 \end{equation}
 Every term in Eqs.~\eqref{eq:hprob-rewrite} and \eqref{eq:hinit-rewrite}
 commutes with $G$.  Consequently
-\begin{align}
- \mathcal H_{\rm valid}
- &\simeq\bigoplus_{\alpha,\beta}
- V_\alpha^{S_k}\otimes V_\beta^{G_B}
- \otimes\mathcal M_{\alpha\beta},\\
- H&\simeq\bigoplus_{\alpha,\beta}
+\begin{equation}
+ H\simeq\bigoplus_{\alpha,\beta}
  I_{V_\alpha}\otimes I_{V_\beta}
  \otimes h_{\alpha\beta}.
  \label{eq:commutant-rewrite}
-\end{align}
-The second identity is the source of Schur multiplicities; an equality of
-eigenvalues belonging to different blocks is a separate phenomenon.
+\end{equation}
+This is the source of Schur multiplicities; an equality of eigenvalues in
+different blocks is a separate phenomenon.  The full representation and
+the role of the kernel of $G_A$ are detailed in
+Appendix~\ref{app:joint-representation}.
 
 \subsection{Allowed space versus accessible space}
 
@@ -93,6 +91,54 @@ and in general
 The first inclusion can be strict; padding makes it strict automatically if
 one defines the symmetry on the full qubit space.
 
+Figure~\ref{fig:accessible-spectrum} summarizes the two distinctions used
+throughout the paper.  Group invariance identifies an allowed space, while
+the initial state and generator algebra select the smaller cyclic space.
+An eigenvalue coincidence in another irrep may then close the global
+multiplicity gap without closing the isolation gap seen by the protocol.
+
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[font=\small,>=Latex]
+  \node[draw,rounded corners,minimum width=6.0cm,minimum height=3.1cm]
+        (valid) {};
+  \node[draw,rounded corners,fill=blue!5,minimum width=4.7cm,
+        minimum height=2.1cm] (sym) at ([yshift=-0.25cm]valid.center) {};
+  \node[draw,rounded corners,fill=blue!14,minimum width=2.9cm,
+        minimum height=1.05cm] (cyc) at ([yshift=-0.25cm]sym.center) {};
+  \node[anchor=north west] at ([xshift=0.12cm,yshift=-0.12cm]valid.north west)
+        {\bfseries(a) $\mathcal H_{\rm valid}$};
+  \node[anchor=north west] at ([xshift=0.12cm,yshift=-0.12cm]sym.north west)
+        {$\mathcal H_{\rm sym}$};
+  \node at (cyc.center) {$\mathcal K_u$};
+  \node[align=center,below=0.12cm of valid]
+        {symmetry allows $\mathcal H_{\rm sym}$;\\the protocol generates $\mathcal K_u$};
+
+  \begin{scope}[xshift=8.0cm,yshift=-0.15cm]
+    \draw[->] (0,0) -- (5.2,0) node[right] {$s$};
+    \draw[->] (0,0) -- (0,3.2) node[left] {energy};
+    \node[anchor=west] at (1.0,3.35) {\bfseries(b) Dark global crossing};
+    \draw[very thick,blue] (0.25,0.55) .. controls (2.0,0.75) and
+          (3.5,1.10) .. (4.85,1.25) node[right,blue] {$\gamma$};
+    \draw[very thick,blue,dashed] (0.25,2.55) .. controls (2.0,2.35) and
+          (3.5,2.25) .. (4.85,2.15);
+    \draw[very thick,red!75!black] (0.25,2.35) .. controls (1.8,1.65) and
+          (3.2,0.75) .. (4.85,0.25) node[right,red!75!black] {$\gamma'$};
+    \fill (3.05,1.00) circle (1.7pt);
+    \draw[<->,blue] (2.25,0.86) -- (2.25,2.30)
+          node[midway,right,align=left] {$\Delta_{\rm ad}>0$\\inside $\mathcal K_u$};
+    \node[align=center,below=0.12cm] at (2.7,0)
+          {different irreps do not hybridize};
+  \end{scope}
+\end{tikzpicture}
+\caption{Protocol-dependent spectral relevance.  (a) The joint-fixed space
+is only symmetry allowed; the cyclic space also depends on the initial state
+and generated algebra.  (b) A branch in another irrep can cross the followed
+branch and close a global multiplicity gap while the tracked band remains
+isolated within the cyclic space.}
+\label{fig:accessible-spectrum}
+\end{figure*}
+
 \subsection{Exact orbit quotient}
 
 Orbit quotients of symmetry-confined quantum walks are established
@@ -117,4 +163,5 @@ The sum is independent of the representative.  Burnside's lemma gives
 \end{equation}
 where $c_\ell(g)$ counts length-$\ell$ cycles in the base action.  Orbit
 states need not span $\mathcal K_u$ minimally; cyclic closure must be tested
-separately.
+separately.  Appendix~\ref{app:joint-representation} derives
+Eq.~\eqref{eq:burnside-rewrite} from the joint action.

@@ -1,60 +1,45 @@
-\section{Numerical protocol and finite-instance reconstruction}
+\section{Numerical illustration and limitations}
 \label{sec:numerical-reconstruction}
 
-The numerical reconstruction follows the mathematical distinctions above.
-Inputs are frozen with instance identifiers and SHA-256 hashes.  Every
-headline gap is computed either in the full Hamiltonian or in an explicitly
-labelled exact orbit quotient; projected $PHP$, Löwdin, and full-Hamiltonian
-numbers are never placed in one unlabeled column.  A numerical degeneracy is
-accepted only relative to eigenpair residuals and matrix scale.  Inside a
-degenerate manifold, irrep content is obtained from
-\begin{equation}
- \operatorname{rank}(P_0\Pi_{\alpha\beta}P_0),
-\end{equation}
-not by assigning labels to solver-dependent individual eigenvectors.
+Table~\ref{tab:representative-endpoints} shows three representative endpoint
+behaviours.  The grid illustrates a nontrivial joint group and a global
+ground sector inaccessible from the uniform state.  The random row shows
+the strict inclusion $\mathcal K_u\subsetneq\mathcal H_{\rm sym}$ without
+padding or base automorphisms.  The final row has zero accessibility cost
+but an accessible excitation gap hundreds of times larger than the full
+gap.  Hence neither equality nor inequality of endpoint ground energies
+identifies the dynamically relevant gap.
 
-Tables~\ref{tab:finite-structure} and \ref{tab:finite-endpoints} implement
-this protocol on eleven frozen, unweighted instances.  Eight rows are
-subinstances extracted from the OR-Library Set Cover benchmarks
-\cite{Beasley1990,ORLib}; their parent indices, extraction metadata, and
-SHA-256 hashes are stored in the instance registry.  Only the $2\times4$
-grid has nontrivial $G_B$ (namely $D_4$); all other rows nevertheless retain
-the $S_k$ reduction.  Five rows satisfy the strict inclusion
-$\mathcal K_u\subsetneq\mathcal H_{\rm sym}$, so cyclic inaccessibility is
-not merely a padding artefact.
+\begin{table*}[t]
+\centering
+\caption{Representative problem-endpoint reconstructions.  Dimensions and
+spectra are computed in the physical full Hamiltonian and exact cyclic
+restriction.  The complete eleven-instance audit is in
+Appendix~\ref{app:numerical-protocol}.}
+\label{tab:representative-endpoints}
+\small
+\begin{tabular}{lrrrrrr}
+\hline
+instance & $\dim\mathcal H_{\rm sym}$ & $\dim\mathcal K_u$ &
+$\Delta_{\rm full}$ & $\delta_{\rm acc}$ & $\Delta_{\rm acc}$ &
+$p_{\rm opt}^{\min}$\\
+\hline
+grid-2x4 & 22 & 22 & 0.000382 & 0.271 & 0.315 & 0.9944\\
+rnd-b8-t7-p50-s002 & 120 & 101 & 0.0563 & 0.0581 & 0.128 & 0.9986\\
+scpe1-b8-t30 & 792 & 792 & 0.00591 & 0 & 4.87 & 0.9949\\
+\hline
+\end{tabular}
+\end{table*}
 
-At the problem endpoint, every accessible ground state is rank one in the
-tested sample and
-\begin{equation}
- p_{\rm opt}^{\min}\geq0.9944.
-\end{equation}
-Nine rows have $\delta_{\rm acc}>0$: their uniform symmetric protocol ends
-above the global ground energy.  In the other two rows,
-$\delta_{\rm acc}=0$ but the accessible excitation gap is orders of
-magnitude larger than the full gap.  Thus neither equality nor inequality
-of the endpoint ground energies determines which spectral gap is relevant.
+Across all eleven frozen instances, five have
+$\mathcal K_u\subsetneq\mathcal H_{\rm sym}$, nine have
+$\delta_{\rm acc}>0$, and every accessible endpoint ground state is rank
+one with $p_{\rm opt}^{\min}\geq0.9944$.  These are finite diagnostics, not
+scaling evidence.  Appendix~\ref{app:numerical-protocol} gives the full
+tables, residual-based degeneracy rule, irrep classification, and
+OR-Library provenance.
 
-For the sparse full-space calculations, the central class sum of register
-transpositions separates every $S_k$ irrep for $k\leq5$.  The orbit of a
-lowest vector constructs its complete Specht multiplet; deflation then
-tests for further cospectral copies before $g_0^{\rm full}$ is assigned.
-For the grid row the two-dimensional global ground manifold is additionally
-the $E$ irrep of $D_4$, whereas the accessible branch is $A_1$.  At the
-analytic hopping-cancellation point, the joint-fixed ground rank agrees
-with the independently enumerated number of $G_B$-orbits of optimal covers
-in every row.  Hence the original linear path has a fixed-sector rank
-closure whenever this orbit count exceeds one.
-
-The largest orbit-invariance residual is below $5\times10^{-13}$, the
-largest cyclic-invariance residual below $2\times10^{-9}$, and all
-full-space eigenpair and class-sum residuals used for reported levels are
-stored in the machine-readable output.  The table values never combine
-projected $PHP$, Löwdin, and full-Hamiltonian estimates.
-
-\input{sections/generated_accessibility_tables}
-
-\clearpage
-\section{Conclusion}
+\section{Discussion and conclusion}
 \label{sec:rewrite-conclusion}
 
 For a fixed initial state and a symmetry-preserving interpolation, the
@@ -80,10 +65,16 @@ runtime in the abstract Hamiltonian-access model.
 
 These results establish a structural separation, not a practical quantum
 speedup.  The cycle instances are classically solvable, Dicke-state
-preparation has a cost that must be counted, the Gibbs parent endpoint is not
-the original problem Hamiltonian, and the address count
-$k\lceil\log_2n_B\rceil$ is not a complete hardware resource estimate.  A
-natural next step is a decorated family whose classical cover structure is
-nontrivial while its joint orbit quotient, dark global branch, and
+preparation has a cost that must be counted, and the Gibbs parent endpoint is
+not the original problem Hamiltonian.  Likewise, the address count
+$k\lceil\log_2n_B\rceil$ is not a complete hardware resource estimate:
+incidence access, flags, ancillas, and gate depth require a separate
+implementation analysis.
+
+A natural next step is a decorated family whose classical cover structure
+is nontrivial while its joint orbit quotient, dark global branch, and
 polynomial accessible gap remain stable under controlled
-symmetry-preserving perturbations.
+symmetry-preserving perturbations.  More broadly, spectral claims for
+symmetric Hamiltonian algorithms should identify not only a Hamiltonian and
+its global gap, but also the initial state, preserved symmetry, generated
+cyclic space, and isolated band actually followed by the protocol.
