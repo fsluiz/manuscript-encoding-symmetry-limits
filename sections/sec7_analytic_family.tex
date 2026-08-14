@@ -101,14 +101,10 @@ Thus a lower bound proved in the $D_n$-fixed space is also a lower-bound
 certificate for the dynamically accessible gap of this parent protocol.
 \end{proposition}
 
-\paragraph{Proof idea.}
-The cyclic subspace of a unital star-algebra is reducing.  Positivity and
-connectedness give a simple ground state; its projector is a polynomial in
-$H_a$ and maps the Dicke state to a nonzero multiple of $\ket{\psi_a}$.
-Rayleigh--Ritz on
-$\mathcal K_J^{\rm par}\subseteq\mathcal H^{D_n}$ then gives
-Eq.~\eqref{eq:parent-cyclic-fixed-comparison}.  Appendix~\ref{app:parent-accessibility}
-contains the full argument.
+Physically, the protocol explores no more than the $D_n$-fixed sector, and
+restricting further to its true cyclic space cannot introduce an excitation
+below the fixed-sector gap when the unique ground state is shared.  The full
+argument is in Appendix~\ref{app:parent-accessibility}.
 
 The number of configurations at energy $u$ is
 \begin{equation}
@@ -145,16 +141,12 @@ uniform polynomial lower bound for this mean-field gap gives a uniform
 polynomial accessible-gap certificate for the parent path.
 \end{proposition}
 
-\begin{proof}[Proof sketch]
-Marking an occupied site identifies $D_n$-invariant subset observables
-isometrically with cyclic-and-reflection-invariant observables on weak
-compositions $g_1+\cdots+g_k=k$.  Adjacent subset moves dominate a zero-range
-chain with cycle geometry, physical prefactor $2/n$, and rates
-$r_a(1)=n^{-a}$ and $r_a(j)=1$ for $j\geq2$.  The Hermon--Salez Dirichlet-form
-comparison then contributes the one-particle factor
-$1-\cos(2\pi/k)$.  Appendix~\ref{app:normalized-gap-proof} proves the
-isometry, rate domination, and every normalization factor.
-\end{proof}
+The factors in Eq.~\eqref{eq:cycle-zrp-reduction} have distinct physical
+origins: $2/n$ is the update-rate normalization, $1-\cos(2\pi/k)$ is the
+long-wavelength transport cost of the cycle, and the zero-range gap measures
+the remaining occupation-redistribution bottleneck.  The exact isometry,
+rate comparison, and normalization are proved in
+Appendix~\ref{app:normalized-gap-proof}.
 
 \begin{proposition}[Uniform accessible gap]
 \label{prop:cycle-uniform-gap}
@@ -170,21 +162,11 @@ Consequently, along $0\leq a\leq7$,
 $\min_a\Delta_{D_n}(a)\geq1024\,n^{-13}$.
 \end{proposition}
 
-\paragraph{Proof architecture.}
-Writing
-$\Delta_{\rm ZRP}(a)=\operatorname{gap}\operatorname{ZRP}(K_k,r_a,k)$,
-the full comparison is the single chain
-\begin{multline}
- \Delta_{\rm par}^{\rm cyc}(a)\geq\Delta_{D_n}(a)\\
- \geq\frac2n\left[1-\cos\left(\frac{2\pi}{k}\right)\right]
- \Delta_{\rm ZRP}(a)\\
- \geq1024\,n^{-(a+6)}.
- \label{eq:gap-proof-architecture}
-\end{multline}
-The first step is cyclic accessibility; the second separates cycle geometry
-from zero-range kinetics; and the third combines a three-box log-concave
-coupling, the Caputo--Sasada recursion, and a conditional two-box comparison.
-Appendix~\ref{app:normalized-gap-proof} proves every normalization factor.
+Physically, the polynomial bound accumulates three conservative costs:
+normalized subset updates, long-wavelength transport around the cycle, and
+redistribution of vacancies between effective boxes.  Its exponent is a
+certificate, not a prediction of the finite-size gap scaling.  The complete
+comparison is in Appendix~\ref{app:normalized-gap-proof}.
 
 The gap theorem can be converted into an adiabatic statement in the
 abstract Hamiltonian-evolution model.  This does not by itself supply a
@@ -207,25 +189,12 @@ $1-O(n^{-5})-O(\epsilon)$.  This runtime excludes the costs of preparing the
 Dicke state and realizing or simulating $H_{a(s)}$.
 \end{corollary}
 
-\paragraph{Proof idea.}
-Since a Johnson move changes $U$ by at most two, differentiating
-Eqs.~\eqref{eq:johnson-metropolis} and \eqref{eq:cycle-parent} gives
-\begin{equation}
- \|\partial_sH_{7s}\|\leq c_1n\log n,
- \qquad
- \|\partial_s^2H_{7s}\|\leq c_2n(\log n)^2.
- \label{eq:cycle-parent-derivative-bounds}
-\end{equation}
-Proposition~\ref{prop:parent-cyclic-accessibility} and
-Eq.~\eqref{eq:uniform-accessible-gap} give a simple ground state and minimum
-cyclic gap at least $1024n^{-13}$.  Apply the quantitative gapped adiabatic
-bound~\cite{JansenRuskaiSeiler2007} to
-$H_{7s}|_{\mathcal K_J^{\rm par}}$; restriction cannot increase either
-derivative norm in Eq.~\eqref{eq:cycle-parent-derivative-bounds}.  This yields
-contributions of
-orders $n^{27}\log n$, $n^{27}(\log n)^2$, and
-$n^{41}(\log n)^2$, divided by $T$.  The last dominates.  The complete
-derivative and measurement argument is in Appendix~\ref{app:parent-adiabatic}.
+Physically, the polynomial cyclic gap prevents dark global crossings from
+setting the preparation time of this protocol.  The large runtime exponent
+instead reflects deliberately conservative derivative and inverse-gap
+bounds and does not include Hamiltonian-simulation or state-preparation
+costs.  The complete adiabatic and measurement estimates are in
+Appendix~\ref{app:parent-adiabatic}.
 
 Exact $D_n$-orbit quotients for $n=6,8,\ldots,18$ show finite-size gaps much
 larger than the conservative theorem, but are not used to infer scaling.

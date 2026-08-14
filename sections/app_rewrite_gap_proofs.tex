@@ -300,4 +300,14 @@ Eq.~\eqref{eq:cycle-zrp-reduction} gives
  =1024\,n^{-(a+6)},
 \end{equation}
 because $k=n/2$ and $\tau=n^{-a}$.  This completes the proof of
-Proposition~\ref{prop:cycle-uniform-gap}.
+Proposition~\ref{prop:cycle-uniform-gap}.  Writing
+$\Delta_{\rm ZRP}(a)=\operatorname{gap}\operatorname{ZRP}(K_k,r_a,k)$
+and also using cyclic accessibility, the complete protocol-level comparison
+is
+\begin{multline}
+ \Delta_{\rm par}^{\rm cyc}(a)\geq\Delta_{D_n}(a)\\
+ \geq\frac2n\left[1-\cos\left(\frac{2\pi}{k}\right)\right]
+ \Delta_{\rm ZRP}(a)\\
+ \geq1024\,n^{-(a+6)}.
+ \label{eq:gap-proof-architecture}
+\end{multline}

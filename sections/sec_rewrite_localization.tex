@@ -22,8 +22,8 @@ Let $\Pi_\gamma$ be a symmetry-sector projector commuting with
 $H_{\rm prob}$, $H_{\rm walk}$, $V$, and $P$, and suppose
 $P_\gamma=P\Pi_\gamma\ne0$.  Define
 \begin{align}
- Q_\gamma&=Q\Pi_\gamma,&
- B_\gamma&=Q_\gamma H_{\rm walk}P_\gamma,\\
+ Q_\gamma&=Q\Pi_\gamma,\quad\quad
+ B_\gamma=Q_\gamma H_{\rm walk}P_\gamma,\\
  \eta_\gamma&=\lambda_{\min}\!\left(
  P_\gamma H_{\rm walk}P_\gamma|_{\Ran P_\gamma}\right).
 \end{align}
@@ -52,18 +52,12 @@ with $\Gamma_\gamma$ replaced by
 $g_\gamma=m-\kappa-\eta_\gamma>0$.
 \end{proposition}
 
-\paragraph{Proof idea.}
-The two inputs are the invalid-state floor and the sector variational bound,
-\begin{equation}
- Q_\gamma H_{\rm prob}Q_\gamma\geq(m-\kappa)Q_\gamma,
- \qquad E_0^\gamma\leq\eta_\gamma.
-\end{equation}
-Writing $p=P_\gamma\psi_\gamma$ and $q=Q_\gamma\psi_\gamma$, the lower
-block of the eigenvalue equation is
-$(Q_\gamma H_{\rm prob}Q_\gamma-E_0^\gamma)q=-B_\gamma p$.
-The resolvent norm is at most $\Gamma_\gamma^{-1}$, and normalization gives
-Eq.~\eqref{eq:sector-bound-rewrite}.  Appendix~\ref{app:sector-localization}
-gives the full proof and the cyclic-space caveat.
+Physically, the certificate compares the energetic separation
+$\Gamma_\gamma$ protecting the feasible sector with the coupling
+$\|B_\gamma\|$ that leaks amplitude into invalid states.  The kinetic floor
+$\eta_\gamma$ accounts for delocalization within the chosen symmetry sector.
+The full proof and the cyclic-space caveat are in
+Appendix~\ref{app:sector-localization}.
 
 This statement certifies the solution content of the lowest-energy state
 within a sector.  It does not say that the ground vector has exact support on
