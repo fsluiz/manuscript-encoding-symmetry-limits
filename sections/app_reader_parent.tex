@@ -44,14 +44,14 @@ A Johnson move removes one selected cycle vertex and inserts one unselected
 vertex, so $|U(T)-U(S)|\leq2$, and each subset has
 $k(n-k)=k^2$ neighbours.  Differentiating the matrix elements in
 Eqs.~\eqref{eq:johnson-metropolis} and \eqref{eq:cycle-parent}, then bounding
-the operator norm by the maximum absolute row sum, gives
+the operator norm by the maximum absolute row sum, gives, for constants
+$c_1,c_2>0$ independent of $n$,
 \begin{equation}
  \|\partial_sH_{7s}\|\leq c_1n\log n,
  \qquad
  \|\partial_s^2H_{7s}\|\leq c_2n(\log n)^2,
  \label{eq:cycle-parent-derivative-bounds}
 \end{equation}
-with constants independent of $n$.
 Proposition~\ref{prop:parent-cyclic-accessibility} and
 Eq.~\eqref{eq:uniform-accessible-gap} give a simple ground state and minimum
 cyclic gap at least $1024n^{-13}$.

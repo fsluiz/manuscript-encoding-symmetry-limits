@@ -1,9 +1,10 @@
 \section{Encoding, joint symmetry, and cyclic accessibility}
 \label{sec:rewrite-framework}
 
-Let $A\in\{0,1\}^{n_B\times n_T}$ be the incidence matrix, with
-$A_{bt}=1$ when base $b$ covers task $t$.  We first work in the physical
-address space
+Let $n_B$ and $n_T$ be the numbers of bases and tasks, respectively, and
+fix a positive integer $k$ of address registers.  The incidence matrix is
+$A\in\{0,1\}^{n_B\times n_T}$, with $A_{bt}=1$ when base $b$ covers task
+$t$.  We first work in the physical address space
 \begin{equation}
  \mathcal H_{\rm valid}=(\mathbb C^{n_B})^{\otimes k};
  \label{eq:valid-space-rewrite}
@@ -11,58 +12,109 @@ address space
 the embedding into $2^{\lceil\log_2n_B\rceil}$ levels and its dynamically
 disconnected padding block are implementation details.
 
-For a basis tuple $\boldsymbol b=(b_1,\ldots,b_k)$, let $U(\boldsymbol b)$
-be the number of uncovered tasks and $D(\boldsymbol b)$ the number of equal
-register pairs.  The problem Hamiltonian is
+Write $\ket{\boldsymbol b}=\ket{b_1}\otimes\cdots\otimes\ket{b_k}$ for a
+computational-basis tuple.  Its numbers of uncovered tasks and repeated
+base pairs are
+\begin{align}
+ U(\boldsymbol b)
+ &=\sum_{t=1}^{n_T}\prod_{r=1}^k(1-A_{b_r,t}),\\
+ D(\boldsymbol b)
+ &=\sum_{1\leq r<s\leq k}\mathbf 1[b_r=b_s],
+\end{align}
+respectively, where $\mathbf 1[\cdot]$ is the indicator of the enclosed
+condition.  Let $\ket e=\sum_{b=1}^{n_B}\ket b$ and let $I_B$ be the
+identity on one address register.  The normalized complete-graph hopping
+matrix and its $k$-register lift are
+\begin{equation}
+ W=\frac{\ket e\!\bra e-I_B}{n_B-1},
+ \qquad
+ H_{\rm walk}=\sum_{r=1}^k W^{(r)},
+ \label{eq:walk-definition}
+\end{equation}
+where $W^{(r)}$ acts as $W$ on register $r$ and as the identity on all
+others.  Define the diagonal penalty operators
+\begin{equation}
+ H_{\rm cov}=\sum_{\boldsymbol b}U(\boldsymbol b)
+ \ket{\boldsymbol b}\!\bra{\boldsymbol b},
+ \qquad
+ H_{\rm excl}=\sum_{\boldsymbol b}D(\boldsymbol b)
+ \ket{\boldsymbol b}\!\bra{\boldsymbol b}.
+ \label{eq:penalty-definitions}
+\end{equation}
+Both sums run over all $n_B^k$ computational-basis tuples.
+For positive penalty energies $\lambda$ and $\mu$, the problem Hamiltonian
+is
 \begin{equation}
  H_{\rm prob}=H_{\rm walk}+\lambda H_{\rm cov}+\mu H_{\rm excl},
  \label{eq:hprob-rewrite}
 \end{equation}
-where the last two terms are diagonal with eigenvalues $U$ and $D$.  The
-single-register complete-graph walk is normalized by $1/(n_B-1)$.  An
-explicit initial Hamiltonian used for the linear interpolation is
+so $\lambda U(\boldsymbol b)+\mu D(\boldsymbol b)$ is the total diagonal
+penalty of $\ket{\boldsymbol b}$.  An explicit initial Hamiltonian is
 \begin{equation}
- H_{\rm init}=\sum_{r=1}^k\bigl(I-\ket{u_B}\!\bra{u_B}\bigr)_r,
+ H_{\rm init}=\sum_{r=1}^k\bigl(I_B-\ket{u_B}\!\bra{u_B}\bigr)_r,
  \qquad
  \ket{u_B}=n_B^{-1/2}\sum_{b=1}^{n_B}\ket b,
  \label{eq:hinit-rewrite}
 \end{equation}
 with unique ground state $\ket u=\ket{u_B}^{\otimes k}$ and initial gap one.
+The original linear interpolation is parameterized by $s\in[0,1]$ as
+\begin{equation}
+ H(s)=(1-s)H_{\rm init}+sH_{\rm prob}.
+ \label{eq:cycle-linear-rewrite}
+\end{equation}
 
 \subsection{The faithfully represented group}
 
 The colour-preserving incidence automorphism group is
 \begin{equation}
- G_A=\{(\pi_B,\pi_T):A_{\pi_B(b),\pi_T(t)}=A_{bt}\}.
+ \begin{split}
+ G_A=\{(\pi_B,\pi_T)\in {}&S_{n_B}\times S_{n_T}:\\
+ &A_{\pi_B(b),\pi_T(t)}=A_{bt}\ \text{for all }b,t\},
+ \end{split}
 \end{equation}
+where $S_d$ denotes the symmetric group on $d$ labels.
 Only its base component acts on Eq.~\eqref{eq:valid-space-rewrite}.  We
 therefore use the effective group
 \begin{equation}
  G_B=\operatorname{pr}_B(G_A)\simeq G_A/\ker\rho,
  \qquad \rho(\pi_B,\pi_T)=\pi_B,
+ \label{eq:faithful-base-group}
 \end{equation}
-rather than treating a possibly non-faithful $G_A$ representation as if all
-its irreps could occur.  The register and base actions commute, so the
+where $\operatorname{pr}_B$ projects an automorphism onto its base
+permutation and $\ker\rho$ contains the automorphisms acting trivially on
+all bases.  Thus $G_B$ is the faithfully represented base group.  The
+register and base actions commute, so the
 represented symmetry is
 \begin{equation}
  G=S_k\times G_B.
 \end{equation}
 Every term in Eqs.~\eqref{eq:hprob-rewrite} and \eqref{eq:hinit-rewrite}
-commutes with $G$.  Consequently
-\begin{equation}
- H\simeq\bigoplus_{\alpha,\beta}
- I_{V_\alpha}\otimes I_{V_\beta}
- \otimes h_{\alpha\beta}.
+commutes with $G$.  Consequently, any Hamiltonian $H$ commuting with $G$
+has the block structure
+\begin{align}
+ \mathcal H_{\rm valid}
+ &\simeq\bigoplus_{\alpha,\beta}
+ V_\alpha^{S_k}\otimes V_\beta^{G_B}\otimes\mathcal M_{\alpha\beta},\\
+ H&\simeq\bigoplus_{\alpha,\beta}
+ I_{V_\alpha}\otimes I_{V_\beta}\otimes h_{\alpha\beta}.
  \label{eq:commutant-rewrite}
-\end{equation}
-This is the source of Schur multiplicities; an equality of eigenvalues in
+\end{align}
+Here $\alpha$ and $\beta$ label irreducible representations of $S_k$ and
+$G_B$; the spaces $V_\alpha^{S_k}$ and $V_\beta^{G_B}$ carry those
+representations; $\mathcal M_{\alpha\beta}$ is their multiplicity space;
+and $h_{\alpha\beta}$ is the reduced action on that space.  The symbols
+$I_{V_\alpha}$ and
+$I_{V_\beta}$ denote the corresponding identities.  This is the source of
+Schur multiplicities; an equality of eigenvalues in
 different blocks is a separate phenomenon.  The full representation and
 the role of the kernel of $G_A$ are detailed in
 Appendix~\ref{app:joint-representation}.
 
 \subsection{Allowed space versus accessible space}
 
-The joint fixed projector and its range are
+Let $U_\sigma$ permute the $k$ registers according to $\sigma\in S_k$, and
+let $V_g$ apply the base permutation $g\in G_B$ in every register.  The
+joint fixed projector and its range are
 \begin{align}
  \Pi_{\rm sym}
  &=\left(\frac1{k!}\sum_{\sigma\in S_k}U_\sigma\right)
@@ -72,15 +124,16 @@ The joint fixed projector and its range are
 \end{align}
 This is the symmetry-allowed invariant space, not automatically the space
 filled by the protocol.  Let
-$\mathfrak A=\operatorname{alg}^*(H_{\rm init},H_{\rm prob},I)$ be the unital
-star-algebra generated by the endpoints.  The dynamically accessible
-cyclic space is
-\begin{align}
- \mathcal K_u&=\mathfrak A\ket u\\
- &=\operatorname{span}\{A_m\cdots A_1\ket u:\
- A_i\in\{H_{\rm init},H_{\rm prob}\}\}.
+$\mathfrak A=\operatorname{alg}^*(H_{\rm init},H_{\rm prob},I)$ be the
+smallest unital algebra containing the endpoints and closed under adjoints;
+here $I$ is the identity on $\mathcal H_{\rm valid}$.  The dynamically
+accessible cyclic space is
+\begin{multline}
+ \mathcal K_u=\mathfrak A\ket u\\
+ =\operatorname{span}\{X_\ell\cdots X_1\ket u:\
+ X_i\in\{H_{\rm init},H_{\rm prob}\},\ \ell\geq0\}.
  \label{eq:ku-rewrite}
-\end{align}
+\end{multline}
 It is the smallest common reducing subspace that contains the initial state,
 and in general
 \begin{equation}
@@ -133,7 +186,8 @@ multiplicity gap without closing the isolation gap seen by the protocol.
 \end{tikzpicture}
 \caption{Protocol-dependent spectral relevance.  (a) The joint-fixed space
 is only symmetry allowed; the cyclic space also depends on the initial state
-and generated algebra.  (b) A branch in another irrep can cross the followed
+and generated algebra.  (b) The labels $\gamma$ and $\gamma'$ denote
+inequivalent symmetry sectors.  A branch in the latter can cross the followed
 branch and close a global multiplicity gap while the tracked band remains
 isolated within the cyclic space.}
 \label{fig:accessible-spectrum}
@@ -147,21 +201,25 @@ the exact Hamiltonian matrix elements relevant to the present encoding.
 For a $G$-orbit $\mathcal O$ in the computational basis, define
 $\ket{\mathcal O}=|\mathcal O|^{-1/2}\sum_{x\in\mathcal O}\ket x$.
 These orbit states are an orthonormal basis of $\mathcal H_{\rm sym}$.  If
-$H$ is invariant and $x\in\mathcal O$, then
+$H$ is invariant, $x\in\mathcal O$, and
+$H_{yx}:=\langle y|H|x\rangle$, then
 \begin{equation}
  \langle\mathcal O'|H|\mathcal O\rangle
  =\sqrt{\frac{|\mathcal O|}{|\mathcal O'|}}
  \sum_{y\in\mathcal O'}H_{yx}.
  \label{eq:orbit-quotient-rewrite}
 \end{equation}
-The sum is independent of the representative.  Burnside's lemma gives
+The sum is independent of the representative.  The orbit-counting
+(Burnside) lemma~\cite{Burnside1911} gives
 \begin{equation}
  \dim\mathcal H_{\rm sym}
  =\frac1{|G_B|}\sum_{g\in G_B}[z^k]
  \prod_{\ell\geq1}(1-z^\ell)^{-c_\ell(g)},
  \label{eq:burnside-rewrite}
 \end{equation}
-where $c_\ell(g)$ counts length-$\ell$ cycles in the base action.  Orbit
+where $G_B$ is the faithful base group in
+Eq.~\eqref{eq:faithful-base-group}, $[z^k]$ extracts the coefficient of
+$z^k$, and $c_\ell(g)$ counts length-$\ell$ cycles in the base action.  Orbit
 states need not span $\mathcal K_u$ minimally; cyclic closure must be tested
 separately.  Appendix~\ref{app:joint-representation} derives
 Eq.~\eqref{eq:burnside-rewrite} from the joint action.

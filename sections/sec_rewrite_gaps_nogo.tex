@@ -3,8 +3,9 @@
 
 For an invariant space $\mathcal L$, let $P_0^{\mathcal L}(s)$ be the
 ground projector of $H(s)|_{\mathcal L}$ and
-$g_0^{\mathcal L}(s)=\operatorname{rank}P_0^{\mathcal L}(s)$.  Ordering
-eigenvalues with multiplicity, we keep separate
+$g_0^{\mathcal L}(s)=\operatorname{rank}P_0^{\mathcal L}(s)$.  Write the
+eigenvalues of the restriction, ordered with multiplicity, as
+$E_0^{\mathcal L}(s)\leq E_1^{\mathcal L}(s)\leq\cdots$.  We keep separate
 \begin{align}
  \delta_{\rm mult}^{\mathcal L}(s)
  &=E_1^{\mathcal L}(s)-E_0^{\mathcal L}(s),\\
@@ -17,8 +18,10 @@ the excitation gap above the whole manifold.  A Schur multiplicity or an
 exact coincidence between irreps is therefore not called a gap closure when
 Eq.~\eqref{eq:two-gaps-rewrite}'s second quantity stays positive.
 
-The nested spaces in Eq.~\eqref{eq:nested-spaces-rewrite} define energies
-$E_0$, $E_0^{\rm sym}$, and $E_0^{\mathcal K}$ and the accessibility costs
+Let $E_0$, $E_0^{\rm sym}$, and $E_0^{\mathcal K}$ be the ground energies
+of $H(s)$ on $\mathcal H_{\rm valid}$, $\mathcal H_{\rm sym}$, and
+$\mathcal K_u$, respectively, at a common value of $s$.  The nested spaces
+in Eq.~\eqref{eq:nested-spaces-rewrite} define the accessibility costs
 \begin{align}
  \delta_{\rm sym}&=E_0^{\rm sym}-E_0,\quad\quad
  \delta_{\rm cyc}=E_0^{\mathcal K}-E_0^{\rm sym},\\
@@ -32,8 +35,12 @@ excited branch.  That branch can nevertheless have high cover probability.
 For adiabatic evolution, the relevant object is an isolated spectral band,
 not merely the first distinct final eigenvalue
 \cite{JansenRuskaiSeiler2007}.  Let
-$P_{\rm track}(s)\subset\mathcal K_u$ be a continuous isolated spectral
-projector containing the initial ground state.  Define
+$P_{\rm track}(s)$ be a continuous isolated spectral projector on
+$\mathcal K_u$ whose range contains the initial ground state.  Set
+$H_{\mathcal K_u}(s)=H(s)|_{\mathcal K_u}$ and let
+$H_{\rm track}(s)$ be the compression of $H_{\mathcal K_u}(s)$ to
+$\Ran P_{\rm track}(s)$.  For finite real sets $A,B$, write
+$\operatorname{dist}(A,B)=\min_{a\in A,b\in B}|a-b|$.  Define
 \begin{multline}
  \Delta_{\rm ad}(s)=\operatorname{dist}\!\left(
  \spec H_{\rm track}(s),\right.\\
@@ -45,10 +52,9 @@ An isolated continuous projector has constant rank.  If its intended rank
 changes, an isolation gap has closed and a nondegenerate adiabatic formula
 cannot simply be continued through that point.
 
-\begin{table}[t]
+The four quantities have the following physical meanings:
+\begin{center}
 \centering
-\caption{Spectral quantities kept distinct in this work.}
-\label{tab:gap-taxonomy}
 \small
 \begin{tabular}{lp{0.62\columnwidth}}
 \hline
@@ -63,12 +69,13 @@ $\Delta_{\rm ad}$ & isolation of the spectral band followed inside that
 space\\
 \hline
 \end{tabular}
-\end{table}
+\end{center}
 
 \paragraph{What fixed-Hamiltonian evolution does not prove.}
 
-For a time-independent Hamiltonian $H=\sum_jE_jP_j$, unitary evolution
-preserves every energy-eigenspace population,
+For a time-independent Hamiltonian $H=\sum_jE_jP_j$, where $P_j$ projects
+onto the eigenspace of the distinct energy $E_j$, unitary evolution from
+$\psi(0)$ preserves every energy-eigenspace population,
 \begin{equation}
  \|P_j\psi(t)\|^2=\|P_j\psi(0)\|^2.
  \label{eq:eigenpopulation-rewrite}

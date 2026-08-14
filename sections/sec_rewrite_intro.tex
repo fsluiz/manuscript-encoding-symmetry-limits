@@ -19,8 +19,9 @@ multi-register address encoding belongs to this broad compact-encoding
 line; the contribution claimed here is spectral rather than a new qubit
 count.
 
-Classical objective symmetries can confine QAOA dynamics and impose equal
-measurement probabilities on symmetry-related strings
+Classical objective symmetries can confine quantum approximate optimization
+algorithm (QAOA) dynamics and impose equal measurement probabilities on
+symmetry-related strings
 \cite{ShaydulinHadfieldHoggSafro2021}.  Quantum walks on automorphism
 quotients likewise identify a smaller invariant evolution for suitable
 initial states~\cite{KroviBrun2007}, while Krylov methods use repeated
@@ -38,10 +39,11 @@ gap control~\cite{JansenRuskaiSeiler2007}.  We use the discriminant only to
 construct a rigorously gapped witness path and make no speedup claim.
 
 Minimum Set Cover (MSC) provides a concrete setting in which these three
-spaces differ.  A $k$-register encoding represents an ordered candidate by
-$k\lceil\log_2n_B\rceil$ address qubits.  Permuting the registers gives an
-$S_k$ action, while colour-preserving automorphisms of the incidence
-relation permute the base labels.  Register symmetry alone and a
+spaces differ.  With $n_B$ candidate bases, a $k$-register encoding
+represents an ordered candidate by $k\lceil\log_2n_B\rceil$ address qubits.
+Permuting the registers gives an action of the symmetric group $S_k$, while
+colour-preserving automorphisms of the incidence relation permute the base
+labels.  Register symmetry alone and a
 final-Hamiltonian sector gap are insufficient for an adiabatic or otherwise
 path-dependent statement: one must use the faithful joint action, the
 protocol's cyclic space, and the minimum isolation gap along an explicit
@@ -72,3 +74,13 @@ claimed as new in isolation.  The contribution is their use in a single
 protocol-dependent theory that separates global, group-fixed, and cyclic
 spectra and proves that these distinctions persist in an analytically
 controlled family.
+
+We use the following notation throughout.  For an operator $X$,
+$\Ran X$ and $\spec X$ denote its range and spectrum.  The symbol
+$\|\cdot\|$ denotes the Hilbert-space norm on vectors and the induced
+operator norm on operators.  The gap of a finite-dimensional Hermitian
+operator is the distance from its lowest eigenspace to the next distinct
+eigenvalue; $\lambda_{\min}(X|_{\mathcal L})$ is the lowest eigenvalue of
+the compression of $X$ to $\mathcal L$.  For positive $g$, the notation
+$f=O(g)$ means $|f|\leq Cg$ for a constant $C>0$ independent of the
+asymptotic variable in the stated limit.

@@ -6,11 +6,18 @@ is computed either in the full Hamiltonian or in an explicitly labelled
 exact orbit quotient; projected $PHP$, L\"owdin, and full-Hamiltonian values
 are never combined in one unlabeled column.  Numerical degeneracy is accepted
 only relative to eigenpair residuals and matrix scale.  Inside a degenerate
-manifold, irrep content is obtained from
+manifold, let $P_0$ denote its spectral projector and let
+$\Pi_{\alpha\beta}$ project onto the joint irrep labelled by
+$(\alpha,\beta)$.  The irrep content is obtained from
 \begin{equation}
  \operatorname{rank}(P_0\Pi_{\alpha\beta}P_0),
 \end{equation}
 not by assigning labels to solver-dependent individual eigenvectors.
+
+In the tables below, $g_0^{\rm full}$ and $g_0^{\rm acc}$ are the ranks of
+the ground projectors on $\mathcal H_{\rm valid}$ and $\mathcal K_u$,
+respectively.  A partition in square brackets labels the corresponding
+$S_k$ irrep.
 
 For sparse full-space calculations, the central class sum of register
 transpositions separates every $S_k$ irrep for $k\leq5$.  The orbit of a

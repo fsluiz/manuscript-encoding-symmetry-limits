@@ -17,7 +17,7 @@ reversible generator $\mathcal L$ with stationary law $\nu$, write
 
 \begin{lemma}[Three-box heat-bath contraction]
 \label{lem:three-box-contraction}
-Let $a_0=\tau$, $a_j=1$ for $j\geq1$, with $0<\tau\leq1$.  On weak
+Let $w_0=\tau$, $w_j=1$ for $j\geq1$, with $0<\tau\leq1$.  On weak
 compositions of any total $m$ into three boxes, let one heat-bath step keep
 one uniformly chosen coordinate and resample the other two from their
 conditional product law.  The continuous-time generator
@@ -29,10 +29,11 @@ $1/3$.
 \label{app:marked-zrp}
 
 Put $\tau=n^{-a}$ and let
-$\Omega_{n,k}=\{S\subset\mathbb Z_n:|S|=k\}$.  The Markov generator whose
-symmetric discriminant is $H_a$ has rates from
+$\Omega_{n,k}=\{S\subset\mathbb Z_n:|S|=k\}$.  Let $\mathcal Q_a$ denote
+the Markov generator with the rates in
 Eq.~\eqref{eq:johnson-metropolis} and stationary law
-$\pi_a(S)\propto\tau^{U(S)}$.  If $D_{\pi_a}$ is diagonal with entries
+$\pi_a(S)\propto\tau^{U(S)}$; its symmetric discriminant is $H_a$.  If
+$D_{\pi_a}$ is diagonal with entries
 $\pi_a(S)$, then
 \begin{equation}
  H_a=-D_{\pi_a}^{1/2}\mathcal Q_aD_{\pi_a}^{-1/2}.
@@ -79,7 +80,9 @@ The product weight of a composition is
  =\tau^{-k}\tau^{U(g)}.
  \label{eq:app-zrp-weight}
 \end{equation}
-The irrelevant factor $\tau^{-k}$ shows that the pushforward of the marked
+Let $\nu_a$ be the probability law on weak compositions obtained by
+normalizing this product weight.  The irrelevant factor $\tau^{-k}$ shows
+that the pushforward of the marked
 law after dropping the anchor is exactly the stationary composition law:
 every unanchored composition $g$ has precisely $n$ anchored preimages, all
 with the same weight.  In particular,
@@ -90,14 +93,16 @@ with the same weight.  In particular,
  \label{eq:app-variance-isometry}
 \end{equation}
 
-Let $P_{C_k}(i,j)=1/2$ when $j=i\pm1\pmod k$ and zero otherwise.  We use the
-Hermon--Salez convention
+Let $P_{C_k}(i,j)=1/2$ when $j=i\pm1\pmod k$ and zero otherwise, and let
+$e_i$ be the $i$th coordinate vector.  We use the Hermon--Salez convention
 \begin{equation}
  (\mathcal L_{P,r}F)(g)
  =\sum_{i,j}r(g_i)P(i,j)
  [F(g-e_i+e_j)-F(g)].
  \label{eq:app-zrp-generator}
 \end{equation}
+The notation $\operatorname{ZRP}(P,r,k)$ below denotes the zero-range generator
+$\mathcal L_{P,r}$ restricted to configurations with $k$ particles.
 Multiplication by $2/n$ makes every oriented cycle transfer occur at rate
 $r_a(g_i)/n$.  Such a transfer is an adjacent Johnson move.  If $g_i=1$
 and the receiving box is positive, it creates one new zero and has the
@@ -131,19 +136,20 @@ Eq.~\eqref{eq:cycle-zrp-reduction} with its factor $2/n$.
 \subsection{Three-box contraction}
 \label{app:three-box-proof}
 
-Set $a_0=\tau$ and $a_j=1$ for $j\geq1$.  For $0<z<1$, the probability
-sequence $p_z(j)\propto a_jz^j$ is log-concave: the only nontrivial
-inequality is $a_1^2\geq a_0a_2$, which is precisely $\tau\leq1$.
+Set $w_0=\tau$ and $w_j=1$ for $j\geq1$.  For $0<z<1$, the probability
+sequence $p_z(j)\propto w_jz^j$ is log-concave: the only nontrivial
+inequality is $w_1^2\geq w_0w_2$, which is precisely $\tau\leq1$.
 Conditioning two independent variables with this law to have sum $s$
 removes the factor $z^s$ and gives
 \begin{equation}
- \nu_s(u)=\frac{a_u a_{s-u}}
- {\sum_{v=0}^s a_v a_{s-v}},
+ \nu_s(u)=\frac{w_u w_{s-u}}
+ {\sum_{v=0}^s w_v w_{s-v}},
  \qquad0\leq u\leq s.
  \label{eq:app-split-law}
 \end{equation}
 The discrete Efron monotonicity theorem~\cite{Efron1965} implies that
-$U_s\sim\nu_s$ is stochastically nondecreasing in $s$.  Symmetry under
+$U_s\sim\nu_s$ is stochastically nondecreasing in $s$.  Write
+$\preceq_{\rm st}$ for stochastic domination.  Symmetry under
 $u\mapsto s-u$ gives, for $t=s+d$,
 \begin{equation}
  U_s\preceq_{\rm st}U_t\preceq_{\rm st}U_s+d.
@@ -158,15 +164,17 @@ $d_1(x,y)=\frac12\sum_i|x_i-y_i|$.  Couple two heat-bath steps by holding
 the same uniformly selected coordinate $i$.  The two resampled pair totals
 differ by $d=|x_i-y_i|$, and the coupling above gives pairwise
 $\ell^1$ distance $d$.  Together with the held-coordinate distance, the
-post-update $d_1$ distance is at most $|x_i-y_i|$.  Thus the discrete
-heat-bath kernel $\mathsf P$ satisfies
+post-update $d_1$ distance is at most $|x_i-y_i|$.  Let $W_{1,d_1}$ denote
+the $1$-Wasserstein distance induced by $d_1$.  Thus the discrete heat-bath
+kernel $\mathsf P$ satisfies
 \begin{equation}
  W_{1,d_1}(\mathsf P(x,\cdot),\mathsf P(y,\cdot))
  \leq\frac13\sum_i|x_i-y_i|=\frac23d_1(x,y).
  \label{eq:app-three-box-wasserstein}
 \end{equation}
-It follows that
-$\operatorname{Lip}(\mathsf Pf)\leq(2/3)\operatorname{Lip}(f)$.  Every
+For a function $f$, let $\operatorname{Lip}(f)
+=\sup_{x\ne y}|f(x)-f(y)|/d_1(x,y)$ be its Lipschitz seminorm.  It follows
+that $\operatorname{Lip}(\mathsf Pf)\leq(2/3)\operatorname{Lip}(f)$.  Every
 nonconstant eigenfunction on this finite metric space has positive
 Lipschitz seminorm, so all nonconstant eigenvalues of the reversible kernel
 have absolute value at most $2/3$.  Therefore
@@ -181,8 +189,9 @@ For $N$ boxes and conserved total $m$, let
 \begin{align}
  \Omega_{N,m}
  &=\{g\in\mathbb Z_{\geq0}^{N}:\textstyle\sum_i g_i=m\},\\
- \nu_{N,m}(g)&=Z_{N,m}^{-1}\prod_{i=1}^{N}a_{g_i}.
+ \nu_{N,m}(g)&=Z_{N,m}^{-1}\prod_{i=1}^{N}w_{g_i}.
 \end{align}
+Here $Z_{N,m}$ is the normalizing partition function.
 Let $E_{ij}$ denote conditional expectation under $\nu_{N,m}$ given all
 coordinates outside the unordered pair $\{i,j\}$.  The complete-graph
 pair heat-bath generator is normalized as
@@ -248,7 +257,8 @@ Every nearest-neighbour edge conductance of
 $\mathcal L_{ij}^{(2)}$ is at least $\tau/(2Z_s)$.  For the canonical path
 between $u<v$, Cauchy--Schwarz gives a factor $v-u\leq s$.  For every edge,
 the stationary masses on its two sides have product at most $1/4$.
-Consequently
+Let $\mathcal E_s$ be the Dirichlet form of this conditional two-box
+generator.  Consequently
 \begin{equation}
  \operatorname{Var}_{\nu_s}(f)
  \leq\frac{s}{4}\sum_{u=0}^{s-1}[f(u+1)-f(u)]^2

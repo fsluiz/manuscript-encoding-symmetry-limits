@@ -9,6 +9,22 @@ padding or base automorphisms.  The final row has zero accessibility cost
 but an accessible excitation gap hundreds of times larger than the full
 gap.  Hence neither equality nor inequality of endpoint ground energies
 identifies the dynamically relevant gap.
+All finite-instance Hamiltonians reported here and in
+Appendix~\ref{app:numerical-protocol} use the penalty energies $\lambda=5$
+and $\mu=10$ in
+Eq.~\eqref{eq:hprob-rewrite}.
+
+At the problem endpoint $H_{\rm prob}$, write $\Delta_{\rm full}$ for the
+excitation gap on $\mathcal H_{\rm valid}$ and $\Delta_{\rm acc}$ for the
+excitation gap on $\mathcal K_u$.  If $\mathcal G_{\rm acc}$ is the
+accessible ground eigenspace, define its worst-case cover probability by
+\begin{equation}
+ p_{\rm opt}^{\min}
+ =\min_{\substack{\psi\in\mathcal G_{\rm acc}\\\|\psi\|=1}}
+ \langle\psi|P|\psi\rangle,
+\end{equation}
+where $P$ is the feasible-cover projector from
+Section~\ref{sec:rewrite-localization}.
 
 \begin{table*}[t]
 \centering
@@ -60,8 +76,9 @@ irreducible sectors that are dark to the symmetric protocol.  On the
 even-cycle family, the original interpolation has an exact global
 multiplicity closure while the joint-fixed excitation gap remains constant.
 A distinct Johnson/Metropolis parent path has a uniformly polynomial cyclic
-gap, $\Omega(n^{-13})$, and consequently a conditional polynomial adiabatic
-runtime in the abstract Hamiltonian-access model.
+gap bounded below by $1024\,n^{-13}$ along the path, and consequently a
+conditional polynomial adiabatic runtime in the abstract
+Hamiltonian-access model.
 
 These results establish a structural separation, not a practical quantum
 speedup.  The cycle instances are classically solvable, Dicke-state

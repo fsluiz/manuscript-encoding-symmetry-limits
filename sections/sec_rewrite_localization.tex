@@ -4,8 +4,11 @@
 Let $P$ project onto the span of computational-basis tuples that use
 distinct bases and cover every task, and put $Q=I-P$.  Write
 $V=\lambda H_{\rm cov}+\mu H_{\rm excl}$,
-$m=\min\{\lambda,\mu\}$, and $\kappa=k/(n_B-1)$.  Then $VP=0$ and the
-complete-graph normalization gives
+$m=\min\{\lambda,\mu\}$ for the minimum single-constraint penalty, and
+$\kappa=k/(n_B-1)$ for the magnitude of the lowest possible $k$-register
+walk energy.  Here $k$ is the register count fixed in
+Section~\ref{sec:rewrite-framework}.  Then $VP=0$ and the complete-graph
+normalization gives
 \begin{equation}
  QH_{\rm prob}Q\geq(m-\kappa)Q.
  \label{eq:q-lower-rewrite}
@@ -18,9 +21,12 @@ sector's kinetic floor.
 
 \begin{proposition}[Sector localization]
 \label{prop:sector-localization-rewrite}
-Let $\Pi_\gamma$ be a symmetry-sector projector commuting with
+Let $\gamma$ label a symmetry sector and let $\Pi_\gamma$ be its projector,
+commuting with
 $H_{\rm prob}$, $H_{\rm walk}$, $V$, and $P$, and suppose
-$P_\gamma=P\Pi_\gamma\ne0$.  Define
+$P_\gamma=P\Pi_\gamma\ne0$.  Define the invalid-sector projector
+$Q_\gamma$, the feasible-to-invalid coupling $B_\gamma$, and the sector
+kinetic floor $\eta_\gamma$ by
 \begin{align}
  Q_\gamma&=Q\Pi_\gamma,\quad\quad
  B_\gamma=Q_\gamma H_{\rm walk}P_\gamma,\\
