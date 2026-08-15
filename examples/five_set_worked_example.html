@@ -147,7 +147,7 @@
 <body>
 <header>
   <h1>Exemplo completo: cinco conjuntos, simetria conjunta e acessibilidade</h1>
-  <p>Aplicação detalhada do Hamiltoniano do artigo a uma instância mínima de Set Cover. O documento distingue o espaço físico, o embedding com padding, os setores de \(S_2\), o quotient Hamiltonian e o espaço cíclico do protocolo.</p>
+  <p>Aplicação detalhada do Hamiltoniano do artigo a uma instância mínima de Set Cover. O documento distingue o espaço físico, os setores de \(S_2\), o quotient Hamiltonian e o espaço cíclico do protocolo.</p>
 </header>
 
 <main>
@@ -157,7 +157,7 @@
       <li><a href="#instance">Instância e solução ótima</a></li>
       <li><a href="#physical">Espaço físico</a></li>
       <li><a href="#hamiltonian">Hamiltoniano completo</a></li>
-      <li><a href="#padding">Embedding e padding</a></li>
+      <li><a href="#k-choice">Escolha de \(k\)</a></li>
       <li><a href="#group">Grupo e representação</a></li>
       <li><a href="#quotient">Quociente por órbitas</a></li>
       <li><a href="#cyclic">Espaço cíclico</a></li>
@@ -171,7 +171,7 @@
 
   <section id="instance">
     <h2>1. Instância e solução ótima</h2>
-    <p>Assumimos que a expressão fornecida para o quinto conjunto significa \(B_5=\{t_2,t_5\}\). O universo e os cinco conjuntos são</p>
+    <p>Com \(B_5=\{t_2,t_5\}\), o universo e os cinco conjuntos são</p>
     \[
       T=\{t_1,t_2,t_3,t_4,t_5,t_6\},
     \]
@@ -202,7 +202,7 @@
 
   <section id="physical">
     <h2>2. Espaço físico e estado inicial</h2>
-    <p>Usando \(k=2\) registradores e trabalhando primeiro sem padding,</p>
+    <p>Usando \(k=2\) registradores no espaço físico do artigo,</p>
     \[
       \mathcal H_{\rm valid}=\mathbb C^5\otimes\mathbb C^5,
       \qquad \dim\mathcal H_{\rm valid}=25.
@@ -332,31 +332,45 @@
     <div class="matrix-wrap" id="full-matrix" aria-live="polite"></div>
   </section>
 
-  <section id="padding">
-    <h2>4. Embedding em qubits e o retorno de \(H_{\rm inv}\)</h2>
-    <p>Com cinco bases, cada registrador requer \(q=\lceil\log_2 5\rceil=3\) qubits e possui \(d=8\) estados. Os rótulos \(6,7,8\) são padding. No espaço de 64 dimensões, defina</p>
+  <section id="k-choice">
+    <h2>4. O que acontece quando \(k\neq k^\star\)?</h2>
+    <p>O Hamiltoniano físico do artigo pode ser definido para qualquer número positivo de registradores, sem introduzir estados auxiliares:</p>
     \[
-      \Pi_{\rm pad}=\operatorname{diag}(0,0,0,0,0,1,1,1),
+      \mathcal H_{\rm valid}^{(k)}=(\mathbb C^5)^{\otimes k},
+      \qquad
+      H_{\rm excl}^{(k)}=
+      \sum_{1\le r&lt;s\le k}\sum_{a=1}^{5}
+      (\ket a\!\bra a)_r(\ket a\!\bra a)_s.
     \]
+    <p>Identidades nos registradores não exibidos estão implícitas. Para um \(k\) fixo, o projetor sobre os covers válidos e sem repetições é</p>
     \[
-      H_{\rm inv}=\Pi_{\rm pad}\otimes I_8+I_8\otimes\Pi_{\rm pad}.
+      P_k=\sum_{\boldsymbol b:\,U(\boldsymbol b)=D(\boldsymbol b)=0}
+      \ket{\boldsymbol b}\!\bra{\boldsymbol b},
     \]
-    <p>O Hamiltoniano implementado em qubits pode ser escrito como</p>
+    <p>onde \(U(\boldsymbol b)\) conta as tarefas não cobertas e \(D(\boldsymbol b)\) conta os pares de registradores repetidos.</p>
+
+    <h3>4.1 Um valor pequeno demais: \(k=1\)</h3>
+    <p>Nenhuma base cobre o universo. De fato, os números de tarefas não cobertas por \(B_1,\ldots,B_5\) são</p>
     \[
-      H_{\rm prob}^{(8)}=
-      H_{\rm walk}^{(8)}+\lambda H_{\rm cov}^{(8)}
-      +\mu H_{\rm excl}^{(8)}+\nu H_{\rm inv},
+      (4,3,4,3,4).
     \]
-    <p>onde \(W^{(8)}=W\oplus0_3\), cada \(C_t\) é estendido com três zeros e</p>
+    <p>Logo \(P_1=0\). O Hamiltoniano continua bem definido, e a diagonal de \(H_{\rm cov}\) ainda distingue os melhores <em>near-covers</em>, mas não existe estado-solução nesse espaço. Em particular, a proposição de localização setorial não pode ser usada como certificado de solução, pois sua hipótese \(P_\gamma\neq0\) falha em todos os setores.</p>
+
+    <h3>4.2 O menor valor viável: \(k=2=k^\star\)</h3>
+    <p>Este é o caso desenvolvido no restante do exemplo. Há um único cover não ordenado, \(\{B_2,B_4\}\), representado pelos dois estados ordenados \(\ket{2,4}\) e \(\ket{4,2}\). Portanto \(P_2\neq0\), e a existência de uma solução para \(k=2\), juntamente com a inexistência para \(k=1\), certifica \(k^\star=2\).</p>
+
+    <h3>4.3 Um valor maior que o ótimo: \(k=3\)</h3>
+    <p>Há quatro covers não ordenados com três bases distintas:</p>
     \[
-      H_{\rm excl}^{(8)}=\sum_{a=1}^{5}\ket{a,a}\!\bra{a,a}.
+    \begin{aligned}
+      &\{B_1,B_2,B_4\},\qquad \{B_1,B_3,B_4\},\\
+      &\{B_2,B_3,B_4\},\qquad \{B_2,B_4,B_5\}.
+    \end{aligned}
     \]
-    <p>Com \(\nu=50\), qualquer estado contendo padding recebe ao menos essa penalidade. Entretanto, no bloco físico</p>
-    \[
-      H_{\rm inv}|_{\mathcal H_{\rm valid}}=0.
-    \]
+    <p>Eles geram \(4\times3!=24\) estados ordenados, de modo que \(P_3\neq0\). Contudo, resolver apenas o Hamiltoniano com \(k=3\) demonstra a existência de um cover de cardinalidade três, não que três seja a cardinalidade mínima.</p>
+
     <div class="callout warning">
-      <strong>Preparação importa.</strong> O estado \(\ket+^{\otimes6}\) tem probabilidade válida apenas \((5/8)^2=25/64\); os outros \(39/64\) já estão no padding. Como \(W^{(8)}\) não conecta os blocos, \(H_{\rm inv}\) eleva sua energia, mas não remove essa população numa evolução fixa. O estado \(\ket{u_B}^{\otimes2}\) evita o problema desde o início.
+      <strong>O papel de \(k\).</strong> Este é um encoding de viabilidade com cardinalidade fixa. Para determinar \(k^\star\), é necessário comparar valores de \(k\), por exemplo diminuindo \(k\) até que o subespaço viável desapareça, ou acrescentar um mecanismo explícito de custo/cardinalidade. Se existe um cover de tamanho \(k^\star\), então, para \(k^\star\le k\le5\), ele pode ser estendido por bases ainda não usadas; por isso a viabilidade para um único \(k>k^\star\) não prova optimalidade. Escolhemos \(k=2\) porque é o menor valor viável e mantém a matriz completa em dimensão \(5^2=25\).
     </div>
   </section>
 
