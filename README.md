@@ -32,6 +32,9 @@ made.
 - `orlib_instances/` — only the OR-Library parent files needed to reconstruct
   the frozen registry;
 - `data/` — the five machine-readable outputs used by the current manuscript;
+- `examples/` — a standalone MathJax worked example that expands a five-set
+  Hamiltonian and applies the symmetry, cyclic-accessibility, localisation,
+  and gap analysis;
 - `reports/` — provenance and full-reproduction audit reports; and
 - `REPRODUCIBILITY.md` — pinned environment and command-level instructions.
 

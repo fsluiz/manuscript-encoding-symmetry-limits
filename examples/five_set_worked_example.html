@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exemplo completo: cinco conjuntos, simetria e acessibilidade</title>
+  <meta name="description" content="Exemplo autocontido do Hamiltoniano compacto de Set Cover, seus setores de simetria e o espaço dinamicamente acessível.">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        macros: {
+          ket: ['\\lvert #1\\rangle', 1],
+          bra: ['\\langle #1\\rvert', 1],
+          braket: ['\\langle #1\\rangle', 1],
+          Ran: '\\operatorname{Ran}',
+          spec: '\\operatorname{spec}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #586575;
+      --line: #d8dee7;
+      --paper: #ffffff;
+      --wash: #f5f7fa;
+      --blue: #2457a6;
+      --blue-wash: #eaf1fb;
+      --red: #9f2f2f;
+      --green: #1d6b4f;
+      --amber: #8a5b00;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--wash);
+      font: 17px/1.62 Georgia, "Times New Roman", serif;
+    }
+    header {
+      padding: 3.5rem max(1.2rem, calc((100vw - 1080px)/2));
+      color: white;
+      background: linear-gradient(125deg, #17335f, #2457a6 65%, #3374bd);
+    }
+    header h1 { max-width: 920px; margin: 0 0 .7rem; line-height: 1.12; }
+    header p { max-width: 850px; margin: 0; color: #e8f0ff; }
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 5rem;
+      background: var(--paper);
+      box-shadow: 0 0 28px rgba(23, 32, 42, .08);
+    }
+    nav {
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--wash);
+    }
+    nav strong { display: block; margin-bottom: .35rem; }
+    nav ol { columns: 2; margin: .3rem 0 0; padding-left: 1.4rem; }
+    nav a { color: var(--blue); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    h2 { margin-top: 2.7rem; padding-bottom: .25rem; border-bottom: 2px solid var(--line); }
+    h3 { margin-top: 2rem; color: #213c67; }
+    h4 { margin-bottom: .3rem; }
+    p { margin: .75rem 0; }
+    code, pre, .mono { font-family: "SFMono-Regular", Consolas, monospace; }
+    .callout {
+      margin: 1.2rem 0;
+      padding: .9rem 1.1rem;
+      border-left: 5px solid var(--blue);
+      background: var(--blue-wash);
+    }
+    .callout.warning { border-color: var(--amber); background: #fff8e7; }
+    .callout.result { border-color: var(--green); background: #edf8f3; }
+    .callout.limit { border-color: var(--red); background: #fff0f0; }
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+    .card {
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fff;
+    }
+    .card h3, .card h4 { margin-top: 0; }
+    table {
+      border-collapse: collapse;
+      margin: 1rem auto;
+      font-family: system-ui, sans-serif;
+      font-size: .9rem;
+    }
+    th, td { border: 1px solid var(--line); padding: .42rem .58rem; text-align: center; }
+    th { background: #edf1f6; font-weight: 650; }
+    tr:nth-child(even) td { background: #fafbfd; }
+    .matrix-wrap {
+      max-width: 100%;
+      overflow: auto;
+      margin: 1rem 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+    .matrix-wrap table { margin: 0; font-size: .72rem; white-space: nowrap; }
+    .matrix-wrap th, .matrix-wrap td { min-width: 3.2rem; padding: .28rem .35rem; }
+    .matrix-wrap th:first-child { position: sticky; left: 0; z-index: 2; }
+    .matrix-wrap td:first-child { position: sticky; left: 0; background: #edf1f6; font-weight: 650; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      align-items: center;
+      margin: 1rem 0;
+      font-family: system-ui, sans-serif;
+    }
+    select, button {
+      padding: .48rem .7rem;
+      border: 1px solid #aeb8c5;
+      border-radius: 6px;
+      background: white;
+      color: var(--ink);
+    }
+    button { cursor: pointer; background: var(--blue); color: white; border-color: var(--blue); }
+    details { margin: 1rem 0; border: 1px solid var(--line); border-radius: 8px; padding: .7rem .9rem; }
+    summary { cursor: pointer; font-family: system-ui, sans-serif; font-weight: 650; color: #213c67; }
+    .small { color: var(--muted); font-size: .9rem; }
+    .nowrap { white-space: nowrap; }
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    @media (max-width: 760px) {
+      nav ol { columns: 1; }
+      .grid-two { grid-template-columns: 1fr; }
+      body { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Exemplo completo: cinco conjuntos, simetria conjunta e acessibilidade</h1>
+  <p>Aplicação detalhada do Hamiltoniano do artigo a uma instância mínima de Set Cover. O documento distingue o espaço físico, o embedding com padding, os setores de \(S_2\), o quotient Hamiltonian e o espaço cíclico do protocolo.</p>
+</header>
+
+<main>
+  <nav aria-label="Sumário">
+    <strong>Conteúdo</strong>
+    <ol>
+      <li><a href="#instance">Instância e solução ótima</a></li>
+      <li><a href="#physical">Espaço físico</a></li>
+      <li><a href="#hamiltonian">Hamiltoniano completo</a></li>
+      <li><a href="#padding">Embedding e padding</a></li>
+      <li><a href="#group">Grupo e representação</a></li>
+      <li><a href="#quotient">Quociente por órbitas</a></li>
+      <li><a href="#cyclic">Espaço cíclico</a></li>
+      <li><a href="#localization">Localização setorial</a></li>
+      <li><a href="#gaps">Gaps e acessibilidade</a></li>
+      <li><a href="#closure">Multiplicity closure escura</a></li>
+      <li><a href="#nogo">No-go condicionado</a></li>
+      <li><a href="#scope">Escopo dos demais teoremas</a></li>
+    </ol>
+  </nav>
+
+  <section id="instance">
+    <h2>1. Instância e solução ótima</h2>
+    <p>Assumimos que a expressão fornecida para o quinto conjunto significa \(B_5=\{t_2,t_5\}\). O universo e os cinco conjuntos são</p>
+    \[
+      T=\{t_1,t_2,t_3,t_4,t_5,t_6\},
+    \]
+    \[
+    \begin{aligned}
+      B_1&=\{t_1,t_2\}, & B_2&=\{t_1,t_2,t_3\},\\
+      B_3&=\{t_3,t_6\}, & B_4&=\{t_4,t_5,t_6\},\\
+      B_5&=\{t_2,t_5\}.&&
+    \end{aligned}
+    \]
+    <p>A matriz de incidência, com bases nas linhas e tarefas nas colunas, é</p>
+    \[
+    A=\begin{pmatrix}
+      1&1&0&0&0&0\\
+      1&1&1&0&0&0\\
+      0&0&1&0&0&1\\
+      0&0&0&1&1&1\\
+      0&1&0&0&1&0
+    \end{pmatrix}.
+    \]
+    <div class="callout result">
+      <strong>Solução.</strong> Nenhum conjunto cobre sozinho as seis tarefas, enquanto
+      \(B_2\cup B_4=T\). Logo \(k^\star=2\), e a única solução não ordenada é
+      \(\{B_2,B_4\}\). No encoding ordenado existem os dois representantes
+      \(\ket{2,4}\) e \(\ket{4,2}\).
+    </div>
+  </section>
+
+  <section id="physical">
+    <h2>2. Espaço físico e estado inicial</h2>
+    <p>Usando \(k=2\) registradores e trabalhando primeiro sem padding,</p>
+    \[
+      \mathcal H_{\rm valid}=\mathbb C^5\otimes\mathbb C^5,
+      \qquad \dim\mathcal H_{\rm valid}=25.
+    \]
+    <p>A base é ordenada lexicograficamente como \(\ket{1,1},\ket{1,2},\ldots,\ket{5,5}\). O estado uniforme válido e o Hamiltoniano inicial são</p>
+    \[
+      \ket{u_B}=\frac1{\sqrt5}\sum_{a=1}^{5}\ket a,
+      \qquad \ket u=\ket{u_B}^{\otimes2},
+    \]
+    \[
+      H_{\rm init}=h_0\otimes I_5+I_5\otimes h_0,
+      \qquad h_0=I_5-\ket{u_B}\!\bra{u_B}
+      =\frac15\begin{pmatrix}
+      4&-1&-1&-1&-1\\
+      -1&4&-1&-1&-1\\
+      -1&-1&4&-1&-1\\
+      -1&-1&-1&4&-1\\
+      -1&-1&-1&-1&4
+      \end{pmatrix}.
+    \]
+    <p>O ground state de \(H_{\rm init}\) é único e igual a \(\ket u\); seu gap é um.</p>
+  </section>
+
+  <section id="hamiltonian">
+    <h2>3. Hamiltoniano completo no espaço físico</h2>
+    <p>Adotamos os valores usados nos exemplos finitos do artigo,</p>
+    \[
+      \lambda=5,\qquad \mu=10,
+    \]
+    <p>mas preservamos \(\lambda\) e \(\mu\) simbolicamente nas definições.</p>
+
+    <h3>3.1 Hopping</h3>
+    \[
+      H_{\rm walk}=W\otimes I_5+I_5\otimes W,
+      \qquad
+      W=\frac14\begin{pmatrix}
+      0&1&1&1&1\\
+      1&0&1&1&1\\
+      1&1&0&1&1\\
+      1&1&1&0&1\\
+      1&1&1&1&0
+      \end{pmatrix}.
+    \]
+
+    <h3>3.2 Cobertura</h3>
+    <p>Para cada tarefa, seja \(C_t=\operatorname{diag}(A_{1t},\ldots,A_{5t})\). Explicitamente,</p>
+    \[
+    \begin{aligned}
+      C_1&=\operatorname{diag}(1,1,0,0,0),&
+      C_2&=\operatorname{diag}(1,1,0,0,1),\\
+      C_3&=\operatorname{diag}(0,1,1,0,0),&
+      C_4&=\operatorname{diag}(0,0,0,1,0),\\
+      C_5&=\operatorname{diag}(0,0,0,1,1),&
+      C_6&=\operatorname{diag}(0,0,1,1,0).
+    \end{aligned}
+    \]
+    <p>Assim, todos os seis termos do Hamiltoniano de cobertura são</p>
+    \[
+    \begin{aligned}
+      H_{\rm cov}={}&(I_5-C_1)\otimes(I_5-C_1)
+      +(I_5-C_2)\otimes(I_5-C_2)\\
+      &+(I_5-C_3)\otimes(I_5-C_3)
+      +(I_5-C_4)\otimes(I_5-C_4)\\
+      &+(I_5-C_5)\otimes(I_5-C_5)
+      +(I_5-C_6)\otimes(I_5-C_6).
+    \end{aligned}
+    \]
+    <p>Seu autovalor sobre \(\ket{a,b}\) é o número \(U(a,b)\) de tarefas não cobertas:</p>
+    <div id="u-table"></div>
+
+    <h3>3.3 Exclusão</h3>
+    <p>Como há dois registradores, a penalidade de repetição contém exatamente um teste de igualdade:</p>
+    \[
+      D(a,b)=\mathbf1[a=b],
+      \qquad
+      H_{\rm excl}=\sum_{a=1}^{5}\ket{a,a}\!\bra{a,a}.
+    \]
+    <p>Portanto \(D(a,b)=1\) quando os dois registradores contêm a mesma base e zero quando são diferentes.</p>
+
+    <h3>3.4 Penalidade diagonal e operador total</h3>
+    \[
+      V=\lambda H_{\rm cov}+\mu H_{\rm excl},
+      \qquad
+      H_{\rm prob}=H_{\rm walk}+V.
+    \]
+    <p>A diagonal completa de \(V\), organizada pelas duas posições do registrador, é</p>
+    \[
+    V_{ab}=\begin{pmatrix}
+    4\lambda+\mu&3\lambda&2\lambda&\lambda&3\lambda\\
+    3\lambda&3\lambda+\mu&2\lambda&0&2\lambda\\
+    2\lambda&2\lambda&4\lambda+\mu&2\lambda&2\lambda\\
+    \lambda&0&2\lambda&3\lambda+\mu&2\lambda\\
+    3\lambda&2\lambda&2\lambda&2\lambda&4\lambda+\mu
+    \end{pmatrix}.
+    \]
+    <p>Para \((\lambda,\mu)=(5,10)\),</p>
+    \[
+    V_{ab}=\begin{pmatrix}
+    30&15&10&5&15\\
+    15&25&10&0&10\\
+    10&10&30&10&10\\
+    5&0&10&25&10\\
+    15&10&10&10&30
+    \end{pmatrix}.
+    \]
+    <p>Todos os \(25^2\) elementos do Hamiltoniano ficam determinados pela expressão</p>
+    \[
+    \begin{aligned}
+    \langle a,b|H_{\rm prob}|c,d\rangle
+    ={}&[\lambda U(a,b)+\mu\mathbf1[a=b]]\,\delta_{ac}\delta_{bd}\\
+    &+\frac14(1-\delta_{ac})\delta_{bd}
+    +\frac14\delta_{ac}(1-\delta_{bd}).
+    \end{aligned}
+    \]
+    <div class="callout">
+      A tabela expansível abaixo materializa a matriz completa \(25\times25\). Ela também permite alternar para \(H_{\rm init}\) e para o Hamiltoniano da interpolação no ponto de cancelamento.
+    </div>
+    <div class="controls">
+      <label for="matrix-kind">Matriz:</label>
+      <select id="matrix-kind">
+        <option value="problem">H_prob, λ=5, μ=10</option>
+        <option value="initial">H_init</option>
+        <option value="cancel">H(s_c), s_c=4/9</option>
+      </select>
+      <button type="button" id="render-matrix">Atualizar</button>
+    </div>
+    <div class="matrix-wrap" id="full-matrix" aria-live="polite"></div>
+  </section>
+
+  <section id="padding">
+    <h2>4. Embedding em qubits e o retorno de \(H_{\rm inv}\)</h2>
+    <p>Com cinco bases, cada registrador requer \(q=\lceil\log_2 5\rceil=3\) qubits e possui \(d=8\) estados. Os rótulos \(6,7,8\) são padding. No espaço de 64 dimensões, defina</p>
+    \[
+      \Pi_{\rm pad}=\operatorname{diag}(0,0,0,0,0,1,1,1),
+    \]
+    \[
+      H_{\rm inv}=\Pi_{\rm pad}\otimes I_8+I_8\otimes\Pi_{\rm pad}.
+    \]
+    <p>O Hamiltoniano implementado em qubits pode ser escrito como</p>
+    \[
+      H_{\rm prob}^{(8)}=
+      H_{\rm walk}^{(8)}+\lambda H_{\rm cov}^{(8)}
+      +\mu H_{\rm excl}^{(8)}+\nu H_{\rm inv},
+    \]
+    <p>onde \(W^{(8)}=W\oplus0_3\), cada \(C_t\) é estendido com três zeros e</p>
+    \[
+      H_{\rm excl}^{(8)}=\sum_{a=1}^{5}\ket{a,a}\!\bra{a,a}.
+    \]
+    <p>Com \(\nu=50\), qualquer estado contendo padding recebe ao menos essa penalidade. Entretanto, no bloco físico</p>
+    \[
+      H_{\rm inv}|_{\mathcal H_{\rm valid}}=0.
+    \]
+    <div class="callout warning">
+      <strong>Preparação importa.</strong> O estado \(\ket+^{\otimes6}\) tem probabilidade válida apenas \((5/8)^2=25/64\); os outros \(39/64\) já estão no padding. Como \(W^{(8)}\) não conecta os blocos, \(H_{\rm inv}\) eleva sua energia, mas não remove essa população numa evolução fixa. O estado \(\ket{u_B}^{\otimes2}\) evita o problema desde o início.
+    </div>
+  </section>
+
+  <section id="group">
+    <h2>5. Grupo efetivo e decomposição da representação</h2>
+    <h3>5.1 Automorfismos da incidência</h3>
+    <p>Se \(S_d\) denota o grupo simétrico em \(d\) rótulos, o grupo de automorfismos que preserva as duas classes do grafo bipartido é</p>
+    \[
+      G_A=\{(\pi_B,\pi_T)\in S_5\times S_6:
+      A_{\pi_B(b),\pi_T(t)}=A_{bt}\ \text{ para todo }b,t\}.
+    \]
+    <p>Nesta instância, \(G_A\) contém apenas a identidade. Uma forma de ver isso é:</p>
+    <ol>
+      <li>\(t_4\) é a única tarefa de grau um, logo é fixa;</li>
+      <li>sua única base vizinha, \(B_4\), é fixa;</li>
+      <li>as tarefas \(t_5\) e \(t_6\) não podem ser trocadas, pois seus outros vizinhos \(B_5\) e \(B_3\) se ligam, respectivamente, a tarefas de graus diferentes;</li>
+      <li>isso fixa sucessivamente \(B_3,B_5,t_2,t_3,B_2,t_1,B_1\).</li>
+    </ol>
+    \[
+      \rho(\pi_B,\pi_T)=\pi_B,
+      \qquad
+      G_A=\{e\},
+      \qquad
+      G_B=\operatorname{pr}_B(G_A)\simeq G_A/\ker\rho=\{e\}.
+    \]
+    <p>Assim, a única simetria não trivial representada é a troca dos registradores:</p>
+    \[
+      G=S_2,\qquad R(\tau)\ket{a,b}=\ket{b,a}.
+    \]
+
+    <h3>5.2 Setores trivial e sinal</h3>
+    \[
+      \Pi_+=\frac{I+R(\tau)}2,
+      \qquad
+      \Pi_-=\frac{I-R(\tau)}2.
+    \]
+    \[
+      \mathcal H_{\rm valid}
+      =\operatorname{Sym}^2(\mathbb C^5)
+      \oplus\wedge^2(\mathbb C^5),
+      \qquad 25=15+10.
+    \]
+    <p>Em linguagem de irreps de \(S_2\),</p>
+    \[
+      H_{\rm prob}\simeq h_{[2]}\oplus h_{[1,1]}.
+    \]
+    <p>O estado inicial pertence ao setor trivial \([2]\). Logo</p>
+    \[
+      \mathcal H_{\rm sym}=\operatorname{Ran}\Pi_+
+      =\operatorname{Sym}^2(\mathbb C^5).
+    \]
+    <p>A contagem de Burnside produz o mesmo resultado: a identidade fixa 25 tuplas e a troca fixa as cinco tuplas diagonais, portanto</p>
+    \[
+      \dim\mathcal H_{\rm sym}
+      =\frac12(25+5)=15,
+      \qquad
+      \dim\operatorname{Ran}\Pi_-=\frac12(25-5)=10.
+    \]
+  </section>
+
+  <section id="quotient">
+    <h2>6. Base de órbitas e quotient Hamiltonian</h2>
+    <p>Uma base ortonormal do setor simétrico é</p>
+    \[
+      \ket{a,a}_+=\ket{a,a},
+      \qquad
+      \ket{a,b}_+=\frac{\ket{a,b}+\ket{b,a}}{\sqrt2}quad(a&lt;b).
+    \]
+    <p>Ela contém cinco estados diagonais e dez estados fora da diagonal. Para órbitas \(\mathcal O,\mathcal O'\), defina \(H_{yx}=\langle y|H|x\rangle\). O quociente exato obedece</p>
+    \[
+      \langle\mathcal O'|H|\mathcal O\rangle
+      =\sqrt{\frac{|\mathcal O|}{|\mathcal O'|}}
+      \sum_{y\in\mathcal O'}H_{yx},
+      \qquad x\in\mathcal O.
+    \]
+    <details>
+      <summary>Mostrar o quotient Hamiltonian simétrico 15×15 para H_prob</summary>
+      <p class="small">Valores numéricos para \(\lambda=5,\mu=10\); a construção usa a isometria exata das órbitas.</p>
+      <div class="matrix-wrap" id="symmetric-quotient"></div>
+    </details>
+    <details>
+      <summary>Mostrar o bloco antissimétrico 10×10</summary>
+      <div class="matrix-wrap" id="antisymmetric-block"></div>
+    </details>
+  </section>
+
+  <section id="cyclic">
+    <h2>7. Espaço dinamicamente acessível</h2>
+    <p>Se \(\operatorname{alg}^{*}\) denota a menor álgebra unital, fechada por adjuntos, que contém seus argumentos, o espaço cíclico do caminho original é</p>
+    \[
+      \mathcal K_u
+      =\operatorname{alg}^{*}(H_{\rm init},H_{\rm prob},I)\ket u.
+    \]
+    <p>O fechamento exato, feito sobre os racionais e radicais da base de órbitas, cresce como</p>
+    \[
+      1\longrightarrow2\longrightarrow4\longrightarrow7
+      \longrightarrow12\longrightarrow14\longrightarrow14.
+    \]
+    <div class="callout result">
+      \[
+        \dim\mathcal K_u=14
+        \quad&lt;\quad
+        \dim\mathcal H_{\rm sym}=15
+        \quad&lt;\quad
+        \dim\mathcal H_{\rm valid}=25.
+      \]
+      Portanto, o exemplo realiza estritamente as duas inclusões conceituais do artigo, mesmo com \(G_B\) trivial.
+    </div>
+    <p>A única direção simétrica ausente de \(\mathcal K_u\) é</p>
+    \[
+      \ket z=\frac12\bigl(
+      \ket{2,3}_+-\ket{2,5}_+-\ket{3,4}_++\ket{4,5}_+
+      \bigr).
+    \]
+    <p>Ela é um autovetor comum dos dois endpoints:</p>
+    \[
+      H_{\rm init}\ket z=2\ket z,
+      \qquad
+      H_{\rm walk}\ket z=-\frac12\ket z,
+      \qquad
+      H_{\rm prob}\ket z=\frac{19}{2}\ket z.
+    \]
+    <p>Como \(\langle z|u\rangle=0\), nenhuma palavra nos endpoints produz essa componente.</p>
+  </section>
+
+  <section id="localization">
+    <h2>8. Aplicação da localização setorial</h2>
+    <p>O projetor sobre covers válidos e distintos é</p>
+    \[
+      P=\ket{2,4}\!\bra{2,4}+\ket{4,2}\!\bra{4,2},
+      \qquad Q=I-P.
+    \]
+    <p>Com \(m=\min\{\lambda,\mu\}=5\) e</p>
+    \[
+      \kappa=\frac{k}{n_B-1}=\frac24=\frac12,
+    \]
+    <p>temos o bound de operadores</p>
+    \[
+      QH_{\rm prob}Q\geq\frac92Q.
+    \]
+    <p>Os vetores de cover adaptados aos dois setores são</p>
+    \[
+      \ket{c_+}=\frac{\ket{2,4}+\ket{4,2}}{\sqrt2},
+      \qquad
+      \ket{c_-}=\frac{\ket{2,4}-\ket{4,2}}{\sqrt2}.
+    \]
+    <p>Em cada setor, \(P_\pm=\ket{c_\pm}\!\bra{c_\pm}\), \(Q_\pm=Q\Pi_\pm\),</p>
+    \[
+      B_\pm=Q_\pm H_{\rm walk}P_\pm,
+      \qquad
+      \eta_\pm=\lambda_{\min}
+      (P_\pm H_{\rm walk}P_\pm|_{\Ran P_\pm})=0.
+    \]
+    <p>Para um setor geral \(\gamma\), a separação comprimida é</p>
+    \[
+      \Gamma_\gamma=
+      \lambda_{\min}
+      (Q_\gamma H_{\rm prob}Q_\gamma|_{\Ran Q_\gamma})-E_0^\gamma.
+    \]
+    <p>A proposição de localização setorial afirma que, se \(\Gamma_\gamma&gt;0\), todo ground state setorial normalizado satisfaz</p>
+    \[
+      1-\langle\psi_\gamma|P|\psi_\gamma\rangle
+      \leq
+      \frac{\|B_\gamma\|^2}
+      {\Gamma_\gamma^2+\|B_\gamma\|^2},
+      \qquad
+      \Gamma_\gamma\geq m-\kappa-\eta_\gamma.
+    \]
+    <table>
+      <thead><tr><th>setor</th><th>\(\|B_\gamma\|^2\)</th><th>\(E_0^\gamma\)</th><th>\(\Gamma_\gamma\)</th><th>\(p_{\rm cov}\) real</th></tr></thead>
+      <tbody>
+        <tr><td>\(+\), trivial</td><td>\(5/8\)</td><td>−0.0470871568</td><td>4.9919094143</td><td>0.9952811240</td></tr>
+        <tr><td>\(-\), sinal</td><td>\(3/8\)</td><td>−0.0402747535</td><td>4.9915377125</td><td>0.9951081936</td></tr>
+      </tbody>
+    </table>
+    <p>O certificado que usa apenas \(g_\gamma=m-\kappa-\eta_\gamma=9/2\) fornece</p>
+    \[
+      1-p_+\leq\frac{5/8}{(9/2)^2+5/8}=\frac5{167}\simeq0.02994,
+    \]
+    \[
+      1-p_-\leq\frac{3/8}{(9/2)^2+3/8}=\frac1{55}\simeq0.01818.
+    \]
+    <p>Usando as separações comprimidas \(\Gamma_\pm\), os limites melhoram para 0.02447 e 0.01483. Os leakages reais, aproximadamente 0.00472 e 0.00489, são menores que ambos os certificados. Isso também mostra por que não se deve afirmar suporte exato em covers para penalidades finitas.</p>
+  </section>
+
+  <section id="gaps">
+    <h2>9. Espectros global, simétrico e cíclico</h2>
+    <p>Se \(E_0^{\mathcal L}\leq E_1^{\mathcal L}\leq\cdots\) são os autovalores de \(H|_{\mathcal L}\), contados com multiplicidade, e \(g_0^{\mathcal L}\) é o rank do projetor fundamental, distinguimos</p>
+    \[
+      \delta_{\rm mult}^{\mathcal L}=E_1^{\mathcal L}-E_0^{\mathcal L},
+      \qquad
+      \Delta_{\rm exc}^{\mathcal L}
+      =E_{g_0^{\mathcal L}}^{\mathcal L}-E_0^{\mathcal L}.
+    \]
+    <p>Também escrevemos \(\delta_{\rm acc}=E_0^{\mathcal K_u}-E_0\). Para uma branch isolada dentro de \(\mathcal K_u\), \(\Delta_{\rm ad}\) denota sua distância espectral ao restante de \(H|_{\mathcal K_u}\). Finalmente, \(p_{\rm cov}=\langle\psi|P|\psi\rangle\).</p>
+    <p>No endpoint \(H_{\rm prob}\), diagonalização densa reproduz:</p>
+    <table>
+      <thead><tr><th>espaço</th><th>dimensão</th><th>\(E_0\)</th><th>\(g_0\)</th><th>gap de excitação</th><th>\(p_{\rm cov}\)</th></tr></thead>
+      <tbody>
+        <tr><td>\(\mathcal H_{\rm valid}\)</td><td>25</td><td>−0.0470871568</td><td>1</td><td>0.00681240336</td><td>0.9952811240</td></tr>
+        <tr><td>\(\mathcal H_{\rm sym}\)</td><td>15</td><td>−0.0470871568</td><td>1</td><td>5.00133699365</td><td>0.9952811240</td></tr>
+        <tr><td>\(\mathcal K_u\)</td><td>14</td><td>−0.0470871568</td><td>1</td><td>5.00133699365</td><td>0.9952811240</td></tr>
+        <tr><td>setor sinal</td><td>10</td><td>−0.0402747535</td><td>1</td><td>5.00203166065</td><td>0.9951081936</td></tr>
+      </tbody>
+    </table>
+    <p>Logo, no endpoint,</p>
+    \[
+      \delta_{\rm sym}=0,
+      \qquad \delta_{\rm cyc}=0,
+      \qquad \delta_{\rm acc}=0.
+    \]
+    <p>O ground state global está em \(\mathcal K_u\), mas o primeiro estado excitado global pertence ao setor sinal e é escuro para o protocolo. Por isso</p>
+    \[
+      \Delta_{\rm full}\simeq 6.81\times10^{-3},
+      \qquad
+      \Delta_{\rm acc}\simeq5.00134.
+    \]
+    <p>Ao longo da restrição cíclica do caminho linear, a menor separação da branch fundamental é numericamente</p>
+    \[
+      \min_{s\in[0,1]}\Delta_{\rm ad}(s)
+      \simeq0.65052109
+      \quad\text{em}\quad s\simeq0.10125693.
+    \]
+    <p class="small">Esse último valor é um diagnóstico de diagonalização, não um bound intervalar ou um teorema assintótico.</p>
+  </section>
+
+  <section id="closure">
+    <h2>10. Multiplicity closure global dinamicamente escura</h2>
+    <p>Considere a interpolação</p>
+    \[
+      H(s)=(1-s)H_{\rm init}+sH_{\rm prob}.
+    \]
+    <p>O coeficiente de qualquer hopping que altera um único registrador é</p>
+    \[
+      -\frac{1-s}{5}+\frac{s}{4},
+    \]
+    <p>que se anula em</p>
+    \[
+      s_c=\frac49.
+    \]
+    <p>Nesse ponto, o Hamiltoniano é exatamente</p>
+    \[
+      H(s_c)=\frac89I_{25}+\frac49V.
+    \]
+    <p>Os dois representantes ordenados da solução são ground states:</p>
+    \[
+      E_0(s_c)=\frac89,
+      \qquad
+      g_0^{\rm global}(s_c)=2.
+    \]
+    <p>No setor simétrico existe apenas \(\ket{c_+}\), enquanto \(\ket{c_-}\) está no setor sinal:</p>
+    \[
+      g_0^{\rm sym}(s_c)=1,
+      \qquad
+      \Delta_{\rm sym}(s_c)=\Delta_{\rm cyc}(s_c)
+      =\lambda s_c=\frac{20}{9}.
+    \]
+    \[
+      \delta_{\rm mult}^{\rm global}(s_c)=0,
+      \qquad
+      \Delta_{\rm exc}^{\rm global}(s_c)=\frac{20}{9}.
+    \]
+    <div class="callout result">
+      O multiplicity gap global fecha, mas a branch seguida desde \(\ket u\) permanece isolada dentro de \(\mathcal K_u\). O estado \(\ket{c_-}\) é dinamicamente escuro porque pertence a outro irrep de \(S_2\).
+    </div>
+    <p>A regra de seleção é exata:</p>
+    \[
+      \Pi_+\,\partial_sH(s)\,\Pi_-=0.
+    \]
+    <div class="callout limit">
+      <strong>O teorema de estabilidade transversal não se aplica diretamente a este ponto.</strong> As duas branches têm a mesma inclinação,
+      \[
+        \partial_s(E_+-E_-)|_{s_c}=0,
+      \]
+      portanto a hipótese de transversalidade falha. O exemplo demonstra uma multiplicity closure escura exata, mas não a persistência garantida pelo teorema da função implícita.
+    </div>
+    <p>O teorema geral do artigo considera \(H_\varepsilon(s)=H(s)+\varepsilon R(s)\), preservando os setores, e exige duas branches simples e isoladas em setores diferentes com</p>
+    \[
+      \partial_s(E_a-E_b)(s_\star,0)\ne0.
+    \]
+    <p>Sob uma perturbação pequena que preserve a simetria, o teorema da função implícita desloca esse crossing transversal sem transformá-lo em avoided crossing, enquanto o bound de Weyl protege o gap interno do bloco. Aqui a última condição de transversalidade é precisamente a que falta.</p>
+  </section>
+
+  <section id="nogo">
+    <h2>11. No-go condicionado ao estado inicial e à simetria</h2>
+    <p>Para evolução sob um Hamiltoniano fixo \(H=\sum_jE_jP_j\),</p>
+    \[
+      \|P_j\psi(t)\|^2=\|P_j\psi(0)\|^2.
+    \]
+    <p>Isso conserva populações na eigenbasis, mas não torna constante a probabilidade de cobertura, pois diferentes energias podem interferir no subespaço marcado.</p>
+    <p>A obstrução de simetria é mais forte. Se \(U(t)\) denota o propagador, então, como \(\Pi_+\ket u=\ket u\) e todo o caminho comuta com \(\Pi_+\),</p>
+    \[
+      \langle c_-|U(t)|u\rangle=0
+    \]
+    <p>para qualquer evolução que preserve \(S_2\). Entretanto \(\ket{c_+}\) é acessível, de modo que o espaço de covers inteiro não é inacessível. Preparar um estado antissimétrico ou introduzir um gerador que quebre a troca dos registradores altera o espaço acessível.</p>
+  </section>
+
+  <section id="scope">
+    <h2>12. O que pode e o que não pode ser transferido para esta instância</h2>
+    <div class="grid-two">
+      <div class="card">
+        <h3>Aplica-se diretamente</h3>
+        <ul>
+          <li>grupo efetivamente representado;</li>
+          <li>decomposição em setores de \(S_2\);</li>
+          <li>orbit quotient exato;</li>
+          <li>distinção \(\mathcal K_u\subsetneq\mathcal H_{\rm sym}\);</li>
+          <li>localização setorial com \(\eta_\gamma\);</li>
+          <li>taxonomia dos gaps e custos de acessibilidade;</li>
+          <li>seleção por simetria e no-go condicionado;</li>
+          <li>multiplicity closure global escura.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Não se aplica automaticamente</h3>
+        <ul>
+          <li>o teorema de estabilidade transversal, pois a closure não é transversal;</li>
+          <li>o parent path Johnson/Metropolis da família cíclica;</li>
+          <li>a redução a zero-range process;</li>
+          <li>o bound assintótico \(1024n^{-13}\);</li>
+          <li>o corolário adiabático da família \(C_{2k}\).</li>
+        </ul>
+      </div>
+    </div>
+    <p>Os quatro últimos resultados dependem da geometria especial dos ciclos pares e não devem ser inferidos a partir desta instância de cinco bases.</p>
+  </section>
+
+  <section>
+    <h2>13. Síntese</h2>
+    \[
+      \boxed{
+      \dim\mathcal K_u=14
+      <\dim\mathcal H_{\rm sym}=15
+      <\dim\mathcal H_{\rm valid}=25
+      }
+    \]
+    <p>A instância possui uma única solução não ordenada, mas dois representantes ordenados. A troca dos registradores separa esses representantes nas combinações simétrica e antissimétrica. A dinâmica uniforme acessa somente a primeira. O gap global pode, portanto, ser governado por uma branch que o protocolo não alcança, enquanto o gap cíclico permanece grande.</p>
+  </section>
+
+  <footer>
+    <p>Documento de apoio ao manuscrito. As matrizes são geradas localmente pelo JavaScript abaixo; MathJax é carregado pelo CDN oficial recomendado na documentação do projeto.</p>
+  </footer>
+</main>
+
+<script>
+  'use strict';
+
+  const baseSets = [
+    new Set([1, 2]),
+    new Set([1, 2, 3]),
+    new Set([3, 6]),
+    new Set([4, 5, 6]),
+    new Set([2, 5])
+  ];
+  const n = 5;
+  const lambda = 5;
+  const mu = 10;
+
+  function uncovered(a, b) {
+    const union = new Set([...baseSets[a], ...baseSets[b]]);
+    return 6 - union.size;
+  }
+
+  function tableFromArray(rowLabels, colLabels, values, caption) {
+    const table = document.createElement('table');
+    if (caption) {
+      const cap = document.createElement('caption');
+      cap.textContent = caption;
+      table.appendChild(cap);
+    }
+    const thead = document.createElement('thead');
+    const hr = document.createElement('tr');
+    const corner = document.createElement('th');
+    corner.textContent = '';
+    hr.appendChild(corner);
+    colLabels.forEach(label => {
+      const th = document.createElement('th');
+      th.textContent = label;
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    const tbody = document.createElement('tbody');
+    values.forEach((row, i) => {
+      const tr = document.createElement('tr');
+      const th = document.createElement('th');
+      th.textContent = rowLabels[i];
+      tr.appendChild(th);
+      row.forEach(value => {
+        const td = document.createElement('td');
+        td.textContent = value;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    return table;
+  }
+
+  function gcd(a, b) {
+    a = Math.abs(a); b = Math.abs(b);
+    while (b) [a, b] = [b, a % b];
+    return a || 1;
+  }
+
+  function fraction(num, den) {
+    if (num === 0) return '0';
+    const g = gcd(num, den);
+    num /= g; den /= g;
+    if (den === 1) return String(num);
+    return `${num}/${den}`;
+  }
+
+  const states = [];
+  for (let a = 0; a < n; a++) {
+    for (let b = 0; b < n; b++) states.push([a, b]);
+  }
+  const stateLabels = states.map(([a, b]) => `|${a + 1},${b + 1}⟩`);
+
+  function hProblem(a, b, c, d) {
+    if (a === c && b === d) return lambda * uncovered(a, b) + mu * Number(a === b);
+    if ((a !== c && b === d) || (a === c && b !== d)) return 0.25;
+    return 0;
+  }
+
+  function hInitial(a, b, c, d) {
+    if (a === c && b === d) return 8 / 5;
+    if ((a !== c && b === d) || (a === c && b !== d)) return -1 / 5;
+    return 0;
+  }
+
+  function matrixNumeric(kind) {
+    const sc = 4 / 9;
+    return states.map(([a, b]) => states.map(([c, d]) => {
+      if (kind === 'problem') return hProblem(a, b, c, d);
+      if (kind === 'initial') return hInitial(a, b, c, d);
+      return (1 - sc) * hInitial(a, b, c, d) + sc * hProblem(a, b, c, d);
+    }));
+  }
+
+  function matrixDisplay(kind, value, row) {
+    if (Math.abs(value) < 1e-12) return '0';
+    if (kind === 'problem') {
+      if (Math.abs(value - .25) < 1e-12) return '1/4';
+      return String(Math.round(value));
+    }
+    if (kind === 'initial') {
+      if (Math.abs(value - 1.6) < 1e-12) return '8/5';
+      if (Math.abs(value + .2) < 1e-12) return '−1/5';
+    }
+    if (kind === 'cancel') {
+      const [a, b] = states[row];
+      const v = lambda * uncovered(a, b) + mu * Number(a === b);
+      return fraction(8 + 4 * v, 9);
+    }
+    return value.toFixed(5).replace(/0+$/, '').replace(/\.$/, '');
+  }
+
+  function renderFullMatrix() {
+    const kind = document.getElementById('matrix-kind').value;
+    const raw = matrixNumeric(kind);
+    const values = raw.map((row, i) => row.map(value => matrixDisplay(kind, value, i)));
+    const holder = document.getElementById('full-matrix');
+    holder.replaceChildren(tableFromArray(stateLabels, stateLabels, values));
+  }
+
+  function orbitColumns(sign) {
+    const columns = [];
+    const labels = [];
+    for (let a = 0; a < n; a++) {
+      for (let b = sign > 0 ? a : a + 1; b < n; b++) {
+        const vector = new Array(25).fill(0);
+        if (a === b) {
+          vector[5 * a + b] = 1;
+        } else {
+          vector[5 * a + b] = 1 / Math.sqrt(2);
+          vector[5 * b + a] = sign / Math.sqrt(2);
+        }
+        columns.push(vector);
+        labels.push(`${sign > 0 ? '+' : '−'}|${a + 1},${b + 1}⟩`);
+      }
+    }
+    return {columns, labels};
+  }
+
+  function quotientMatrix(columns, full) {
+    const q = columns.length;
+    const out = Array.from({length: q}, () => new Array(q).fill(0));
+    for (let i = 0; i < q; i++) {
+      for (let j = 0; j < q; j++) {
+        let value = 0;
+        for (let x = 0; x < 25; x++) {
+          if (columns[i][x] === 0) continue;
+          for (let y = 0; y < 25; y++) {
+            if (columns[j][y] !== 0) value += columns[i][x] * full[x][y] * columns[j][y];
+          }
+        }
+        out[i][j] = Math.abs(value) < 5e-13 ? '0' : value.toFixed(6).replace(/0+$/, '').replace(/\.$/, '');
+      }
+    }
+    return out;
+  }
+
+  function renderBlocks() {
+    const full = matrixNumeric('problem');
+    const plus = orbitColumns(1);
+    const minus = orbitColumns(-1);
+    document.getElementById('symmetric-quotient').replaceChildren(
+      tableFromArray(plus.labels, plus.labels, quotientMatrix(plus.columns, full))
+    );
+    document.getElementById('antisymmetric-block').replaceChildren(
+      tableFromArray(minus.labels, minus.labels, quotientMatrix(minus.columns, full))
+    );
+  }
+
+  function renderUncovered() {
+    const labels = ['B₁', 'B₂', 'B₃', 'B₄', 'B₅'];
+    const values = Array.from({length: n}, (_, a) =>
+      Array.from({length: n}, (_, b) => String(uncovered(a, b)))
+    );
+    document.getElementById('u-table').replaceChildren(
+      tableFromArray(labels, labels, values, 'U(a,b): número de tarefas não cobertas')
+    );
+  }
+
+  document.getElementById('render-matrix').addEventListener('click', renderFullMatrix);
+  renderUncovered();
+  renderFullMatrix();
+  renderBlocks();
+</script>
+</body>
+</html>

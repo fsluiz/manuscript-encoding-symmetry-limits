@@ -14,6 +14,11 @@
 !/LICENSES/*
 !/requirements-repro.txt
 
+# Self-contained worked examples accompanying the manuscript.
+!/examples/
+/examples/*
+!/examples/five_set_worked_example.html
+
 # Current manuscript and self-contained class/bibliography.
 !/main_rewrite.tex
 !/main_rewrite.pdf
