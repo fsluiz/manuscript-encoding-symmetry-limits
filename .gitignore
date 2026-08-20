@@ -58,6 +58,8 @@
 !/code/cycle_family_exploration.py
 !/code/hard_core_parent_path.py
 !/code/mean_field_zrp_gap_audit.py
+!/code/orbit_cyclic.py
+!/code/orbit_cyclic_audit.py
 !/code/orlib_parse.py
 !/code/orlib_subextract.py
 
@@ -88,6 +90,7 @@
 !/data/catalyst_path_results.json
 !/data/hard_core_parent_path_results.json
 !/data/mean_field_zrp_gap_audit.json
+!/data/orbit_cyclic_audit.json
 
 # Reproduction and provenance reports intended for the public artifact.
 !/reports/

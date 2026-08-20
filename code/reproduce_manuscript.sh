@@ -16,6 +16,7 @@ python3 code/freeze_instances.py --check
 
 if [[ "${repro_mode}" == "--full" ]]; then
   python3 code/reconstruct_accessibility_table.py
+  python3 code/orbit_cyclic_audit.py --write
 fi
 
 python3 code/d4_sector_analysis.py

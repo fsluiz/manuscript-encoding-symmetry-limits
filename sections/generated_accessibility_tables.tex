@@ -10,7 +10,7 @@ instance & $k$ & $|G_B|$ & $\dim\mathcal H_{\rm valid}$ & $\dim\mathcal H_{\rm s
 \hline
 grid-2x4 & 3 & 8 & 512 & 22 & 22 & 2\\
 rnd-b8-t7-p50-s002 & 3 & 1 & 512 & 120 & 101 & 12\\
-rnd-b8-t8-p42-s014 & 4 & 1 & 4096 & 330 & 326 & 7\\
+rnd-b8-t8-p42-s014 & 4 & 1 & 4096 & 330 & 324 & 7\\
 scpe1-b8-t20 & 4 & 1 & 4096 & 330 & 328 & 8\\
 scpe1-b8-t30 & 5 & 1 & 32768 & 792 & 792 & 1\\
 scpe2-b8-t20 & 4 & 1 & 4096 & 330 & 328 & 3\\
@@ -25,24 +25,24 @@ scpe5-b8-t30 & 5 & 1 & 32768 & 792 & 792 & 2\\
 
 \begin{table*}[t]
 \centering
-\caption{Problem-endpoint spectra reconstructed from the full Hamiltonian and the exact cyclic restriction. Here $\Delta$ is the gap above the entire ground manifold, and $p_{\rm opt}^{\min}$ is minimized over normalized accessible ground states. The last column is the joint-fixed ground rank at the analytic hopping-cancellation point.}
+\caption{Problem-endpoint spectra reconstructed from the full Hamiltonian and the exact joint-fixed and cyclic restrictions. Here $\Delta$ is the gap above the entire ground manifold, $\delta_{\rm sym}=E_0^{\rm sym}-E_0^{\rm full}$, $\delta_{\rm cyc}=E_0^{\mathcal K}-E_0^{\rm sym}$, and $p_{\rm opt}^{\min}$ is minimized over normalized cyclic ground states. The symmetric and cyclic endpoint ground states are unique in every row; the last column is the joint-fixed ground rank at the hopping-cancellation point.}
 \label{tab:finite-endpoints}
 \small
-\begin{tabular}{llrrrrrrr}
+\begin{tabular}{llrrrrrrrr}
 \hline
-instance & ground $S_k$ content & $g_0^{\rm full}$ & $\Delta_{\rm full}$ & $\delta_{\rm acc}$ & $g_0^{\rm acc}$ & $\Delta_{\rm acc}$ & $p_{\rm opt}^{\min}$ & $g_0^{\rm sym}(s_c)$\\
+instance & ground $S_k$ content & $g_0^{\rm full}$ & $\Delta_{\rm full}$ & $\delta_{\rm sym}$ & $\delta_{\rm cyc}$ & $\Delta_{\rm sym}$ & $\Delta_{\rm cyc}$ & $p_{\rm opt}^{\min}$ & $g_0^{\rm sym}(s_c)$\\
 \hline
-grid-2x4 & $2[3]$ & 2 & 0.000382 & 0.271 & 1 & 0.315 & 0.9944 & 2\\
-rnd-b8-t7-p50-s002 & $[3]\oplus2[2,1]\oplus[1,1,1]$ & 6 & 0.0563 & 0.0581 & 1 & 0.128 & 0.9986 & 12\\
-rnd-b8-t8-p42-s014 & $[2,1,1]$ & 3 & 0.000327 & 0.0274 & 1 & 0.0297 & 0.9955 & 7\\
-scpe1-b8-t20 & $[1,1,1,1]$ & 1 & 0.000539 & 0.0103 & 1 & 0.00178 & 0.9983 & 8\\
-scpe1-b8-t30 & $[5]$ & 1 & 0.00591 & 0 & 1 & 4.87 & 0.9949 & 1\\
-scpe2-b8-t20 & $[2,1,1]$ & 3 & 0.00137 & 0.00674 & 1 & 0.18 & 0.9966 & 3\\
-scpe2-b8-t30 & $[1,1,1,1,1]$ & 1 & 0.00118 & 0.0316 & 1 & 0.0829 & 0.9982 & 8\\
-scpe3-b8-t20 & $[2,1]$ & 2 & 0.000658 & 0.00499 & 1 & 0.256 & 0.9969 & 2\\
-scpe3-b8-t30 & $[3,1,1]$ & 6 & 0.000434 & 0.00864 & 1 & 0.247 & 0.9985 & 4\\
-scpe4-b8-t29 & $[5]$ & 1 & 0.00608 & 0 & 1 & 4.8 & 0.9945 & 1\\
-scpe5-b8-t30 & $[4,1]$ & 4 & 0.00306 & 0.00749 & 1 & 0.242 & 0.9962 & 2\\
+grid-2x4 & $2[3]$ & 2 & 0.000382 & 0.271 & 0 & 0.315 & 0.315 & 0.9944 & 2\\
+rnd-b8-t7-p50-s002 & $[3]\oplus2[2,1]\oplus[1,1,1]$ & 6 & 0.0563 & 0 & 0.0581 & 0.0581 & 0.128 & 0.9986 & 12\\
+rnd-b8-t8-p42-s014 & $[2,1,1]$ & 3 & 0.000327 & 0.0274 & 0 & 0.0297 & 0.0297 & 0.9955 & 7\\
+scpe1-b8-t20 & $[1,1,1,1]$ & 1 & 0.000539 & 0.0103 & 0 & 0.00178 & 0.00178 & 0.9983 & 8\\
+scpe1-b8-t30 & $[5]$ & 1 & 0.00591 & 0 & 0 & 4.87 & 4.87 & 0.9949 & 1\\
+scpe2-b8-t20 & $[2,1,1]$ & 3 & 0.00137 & 0.00674 & 0 & 0.18 & 0.18 & 0.9966 & 3\\
+scpe2-b8-t30 & $[1,1,1,1,1]$ & 1 & 0.00118 & 0.0316 & 0 & 0.0829 & 0.0829 & 0.9982 & 8\\
+scpe3-b8-t20 & $[2,1]$ & 2 & 0.000658 & 0.00499 & 0 & 0.256 & 0.256 & 0.9969 & 2\\
+scpe3-b8-t30 & $[3,1,1]$ & 6 & 0.000434 & 0.00864 & 0 & 0.247 & 0.247 & 0.9985 & 4\\
+scpe4-b8-t29 & $[5]$ & 1 & 0.00608 & 0 & 0 & 4.8 & 4.8 & 0.9945 & 1\\
+scpe5-b8-t30 & $[4,1]$ & 4 & 0.00306 & 0.00749 & 0 & 0.242 & 0.242 & 0.9962 & 2\\
 \hline
 \end{tabular}
 \end{table*}

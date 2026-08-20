@@ -42,6 +42,7 @@ hash.
 | Manuscript result | Command | Machine-readable output |
 |---|---|---|
 | Tables 1 and 2 | `python3 code/reconstruct_accessibility_table.py` | `data/accessibility_table_reconstructed.json`, `sections/generated_accessibility_tables.tex` |
+| Shell-resolved cyclic-space audit | `python3 code/orbit_cyclic_audit.py --write` | `data/orbit_cyclic_audit.json` |
 | Finite joint-symmetry audit | `python3 code/d4_sector_analysis.py` | `data/d4_sector_comparison.json` |
 | Endpoint-vanishing catalyst | `python3 code/catalyst_path_analysis.py` | `data/catalyst_path_results.json` |
 | Exact even-cycle quotients | `python3 code/hard_core_parent_path.py` | `data/hard_core_parent_path_results.json` |
@@ -76,7 +77,7 @@ pdflatex -interaction=nonstopmode -halt-on-error main_rewrite.tex
 ```
 
 The archived release must contain the generated PDF, all frozen inputs, the
-five current output JSON files listed above, the generated table source, and
+six current output JSON files listed above, the generated table source, and
 the exact source revision. It must also retain the top-level dual-license
 notice and both files in `LICENSES/`. The GitHub release tag and
 version-specific Zenodo DOI must be recorded in the final Code and data

@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+import scipy.linalg as sla
 import scipy.sparse as sp
 import scipy.sparse.linalg as spla
 
@@ -31,6 +32,7 @@ from accessibility_prototype import (
     single_uniform_driver,
 )
 from instance_registry import load_instance, primary_instance_ids
+from orbit_cyclic import penalty_on_orbits, shell_cyclic_basis
 from spectral_gap_study import build_hamiltonian, _decode_bases
 from symmetry_analysis import find_base_automorphisms
 
@@ -47,41 +49,6 @@ def matrix_scale(H: sp.spmatrix | np.ndarray) -> float:
     if sp.issparse(H):
         return float(np.asarray(abs(H).sum(axis=1)).max(initial=0.0))
     return float(np.linalg.norm(H, ord=np.inf))
-
-
-def cyclic_basis(
-    generators: list[np.ndarray],
-    initial: np.ndarray,
-    relative_tol: float = 1e-10,
-) -> tuple[np.ndarray, list[int]]:
-    """Close a cyclic space by incrementally expanding only its frontier.
-
-    If Q_j is already invariant under all generators on every column added
-    before the latest frontier, only the latest columns can add directions at
-    step j+1. Double orthogonalisation controls roundoff; the small SVD acts
-    on the frontier residual rather than on the entire accumulated candidate
-    matrix.
-    """
-    basis = initial[:, None] / np.linalg.norm(initial)
-    frontier = basis
-    dimensions = [1]
-    while frontier.shape[1]:
-        candidates = np.column_stack([generator @ frontier for generator in generators])
-        for _ in range(2):
-            candidates -= basis @ (basis.T @ candidates)
-        left, singular, _ = np.linalg.svd(candidates, full_matrices=False)
-        if singular.size == 0:
-            break
-        threshold = relative_tol * max(1.0, float(singular[0]))
-        added = int(np.sum(singular > threshold))
-        if added == 0:
-            break
-        frontier = left[:, :added]
-        basis = np.column_stack([basis, frontier])
-        dimensions.append(int(basis.shape[1]))
-        if basis.shape[1] == basis.shape[0]:
-            break
-    return basis, dimensions
 
 
 def residual_level_summary(
@@ -604,7 +571,7 @@ def cover_orbit_count(
 
 
 def clean_nonnegative(value: float, tolerance: float) -> float:
-    if value < 0 and abs(value) <= tolerance:
+    if abs(value) <= tolerance:
         return 0.0
     return value
 
@@ -629,9 +596,20 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
     Hpq = quotient(Hprob, isometry)
     print(f"  quotient: {dim} -> {len(orbits)}", flush=True)
 
+    identity_q = np.eye(len(orbits))
+    transport_q = n_b * (k * identity_q - H0q)
+    walk_q = (transport_q - k * identity_q) / (n_b - 1)
+    penalties = penalty_on_orbits(A, k, orbits, LAM, MU)
+    potential_identity_residual = float(
+        np.linalg.norm(Hpq - walk_q - np.diag(penalties), ord=2)
+    )
+
     uniform = np.ones(dim, dtype=float) / math.sqrt(dim)
     uniform_q = np.asarray(isometry.T @ uniform).ravel()
-    cyclic, growth = cyclic_basis([H0q, Hpq], uniform_q)
+    cyclic, cyclic_audit = shell_cyclic_basis(
+        transport_q, penalties, uniform_q, relative_tol=1e-11
+    )
+    growth = cyclic_audit["growth"]
     print(f"  cyclic closure: {growth}", flush=True)
     cyclic_residuals = {
         "H0": float(np.linalg.norm((np.eye(len(orbits)) - cyclic @ cyclic.T) @ H0q @ cyclic, ord=2)),
@@ -684,6 +662,20 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
         )
 
     Hacc = cyclic.T @ Hpq @ cyclic
+    sym_values, sym_vectors, sym_residuals = eigensystem(Hpq)
+    sym_summary = residual_level_summary(
+        sym_values, sym_residuals, matrix_scale(Hpq)
+    )
+    sym_rank = int(sym_summary["ground_rank"])
+    sym_pmin, sym_pmax = ground_projector_probability(
+        sym_vectors, sym_rank, orbit_cover
+    )
+    sym_summary["cover_probability_min"] = sym_pmin
+    sym_summary["cover_probability_max"] = sym_pmax
+    sym_summary["max_ground_residual"] = float(sym_residuals[:sym_rank].max())
+    sym_summary["max_reported_residual"] = float(sym_residuals.max())
+    sym_summary["solver"] = "exact joint orbit quotient + numpy.linalg.eigh"
+
     acc_values, acc_vectors, acc_residuals = eigensystem(Hacc)
     acc_summary = residual_level_summary(acc_values, acc_residuals, matrix_scale(Hacc))
     acc_rank = int(acc_summary["ground_rank"])
@@ -707,8 +699,52 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
         float(acc_summary["E0"] - full_summary["E0"]),
         float(energy_tolerance),
     )
+    symmetry_tolerance = RESIDUAL_FACTOR * (
+        full_summary["max_ground_residual"]
+        + sym_summary["max_ground_residual"]
+        + np.finfo(float).eps
+        * max(full_summary["scale_bound"], sym_summary["scale_bound"], 1.0)
+    )
+    cyclic_tolerance = RESIDUAL_FACTOR * (
+        sym_summary["max_ground_residual"]
+        + acc_summary["max_ground_residual"]
+        + np.finfo(float).eps
+        * max(sym_summary["scale_bound"], acc_summary["scale_bound"], 1.0)
+    )
+    delta_symmetry = clean_nonnegative(
+        float(sym_summary["E0"] - full_summary["E0"]),
+        float(symmetry_tolerance),
+    )
+    delta_cyclic = clean_nonnegative(
+        float(acc_summary["E0"] - sym_summary["E0"]),
+        float(cyclic_tolerance),
+    )
 
     cancellation_s = (n_b - 1) / (2 * n_b - 1)
+    path_grid = np.unique(
+        np.concatenate(
+            [np.linspace(0.0, cancellation_s, 5), np.linspace(cancellation_s, 1.0, 6)]
+        )
+    )
+    path_costs = []
+    for path_s in path_grid:
+        h_sym_s = (1.0 - path_s) * H0q + path_s * Hpq
+        h_cyclic_s = cyclic.T @ h_sym_s @ cyclic
+        e_sym = float(
+            sla.eigh(h_sym_s, eigvals_only=True, subset_by_index=[0, 0])[0]
+        )
+        e_cyclic = float(
+            sla.eigh(h_cyclic_s, eigvals_only=True, subset_by_index=[0, 0])[0]
+        )
+        path_costs.append(
+            {
+                "s": float(path_s),
+                "E0_symmetric": e_sym,
+                "E0_cyclic": e_cyclic,
+                "delta_cyclic": float(e_cyclic - e_sym),
+            }
+        )
+
     Hcancel = (1 - cancellation_s) * H0q + cancellation_s * Hpq
     cancel_values, _, cancel_residuals = eigensystem(Hcancel)
     cancel_summary = residual_level_summary(
@@ -756,12 +792,25 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
             ),
             "quotient_invariance_residual": quotient_residuals,
             "cyclic_invariance_residual": cyclic_residuals,
+            "potential_identity_residual": potential_identity_residual,
+            "shell_cyclic_closure": cyclic_audit,
         },
         "problem_endpoint": {
             "full": full_summary,
+            "symmetric": sym_summary,
             "accessible": acc_summary,
+            "delta_symmetry": delta_symmetry,
+            "delta_symmetry_tolerance": float(symmetry_tolerance),
+            "delta_cyclic": delta_cyclic,
+            "delta_cyclic_tolerance": float(cyclic_tolerance),
             "delta_accessible": delta_accessible,
             "delta_accessible_tolerance": float(energy_tolerance),
+        },
+        "linear_path_cyclic_cost": {
+            "grid": path_costs,
+            "max_abs_delta_at_or_below_cancellation": float(
+                max(abs(point["delta_cyclic"]) for point in path_costs if point["s"] <= cancellation_s)
+            ),
         },
         "linear_path_cancellation": {
             "s": cancellation_s,
@@ -828,16 +877,19 @@ def render_tables(rows: list[dict[str, Any]]) -> str:
         r"\begin{table*}[t]",
         r"\centering",
         r"\caption{Problem-endpoint spectra reconstructed from the full Hamiltonian "
-        r"and the exact cyclic restriction. Here $\Delta$ is the gap above the "
-        r"entire ground manifold, and $p_{\rm opt}^{\min}$ is minimized over "
-        r"normalized accessible ground states. The last column is the joint-fixed "
-        r"ground rank at the analytic hopping-cancellation point.}",
+        r"and the exact joint-fixed and cyclic restrictions. Here $\Delta$ is the "
+        r"gap above the entire ground manifold, $\delta_{\rm sym}=E_0^{\rm sym}-E_0^{\rm full}$, "
+        r"$\delta_{\rm cyc}=E_0^{\mathcal K}-E_0^{\rm sym}$, and "
+        r"$p_{\rm opt}^{\min}$ is minimized over normalized cyclic ground states. "
+        r"The symmetric and cyclic endpoint ground states are unique in every row; "
+        r"the last column is the joint-fixed ground rank at the hopping-cancellation point.}",
         r"\label{tab:finite-endpoints}",
         r"\small",
-        r"\begin{tabular}{llrrrrrrr}",
+        r"\begin{tabular}{llrrrrrrrr}",
         r"\hline",
-        r"instance & ground $S_k$ content & $g_0^{\rm full}$ & $\Delta_{\rm full}$ & $\delta_{\rm acc}$ & "
-        r"$g_0^{\rm acc}$ & $\Delta_{\rm acc}$ & $p_{\rm opt}^{\min}$ & "
+        r"instance & ground $S_k$ content & $g_0^{\rm full}$ & $\Delta_{\rm full}$ & "
+        r"$\delta_{\rm sym}$ & $\delta_{\rm cyc}$ & $\Delta_{\rm sym}$ & "
+        r"$\Delta_{\rm cyc}$ & $p_{\rm opt}^{\min}$ & "
         r"$g_0^{\rm sym}(s_c)$\\",
         r"\hline",
     ])
@@ -851,8 +903,10 @@ def render_tables(rows: list[dict[str, Any]]) -> str:
             f"{latex_partition_content(full['ground_irreps'])} & "
             f"{full['ground_rank']} & "
             f"{fmt_float(full['excitation_gap'])} & "
-            f"{fmt_float(endpoint['delta_accessible'])} & "
-            f"{acc['ground_rank']} & {fmt_float(acc['excitation_gap'])} & "
+            f"{fmt_float(endpoint['delta_symmetry'])} & "
+            f"{fmt_float(endpoint['delta_cyclic'])} & "
+            f"{fmt_float(endpoint['symmetric']['excitation_gap'])} & "
+            f"{fmt_float(acc['excitation_gap'])} & "
             f"{acc['cover_probability_min']:.4f} & {cancel['ground_rank']}\\\\"
         )
     lines.extend([

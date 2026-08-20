@@ -55,7 +55,8 @@ bash code/reproduce_manuscript.sh --full
 ```
 
 The full command verifies all 32 frozen records, reconstructs the 11 primary
-finite-instance rows, regenerates the four auxiliary numerical audits and
+finite-instance rows, independently audits the shell-resolved cyclic closure,
+regenerates the four other auxiliary numerical audits and
 LaTeX tables, and compiles the manuscript. A faster structural test is:
 
 ```bash
@@ -72,6 +73,7 @@ The current manuscript uses these machine-readable outputs:
 | Result | Program | Output |
 |---|---|---|
 | Finite structural and endpoint tables | `code/reconstruct_accessibility_table.py` | `data/accessibility_table_reconstructed.json` |
+| Independent shell-resolved cyclic closure | `code/orbit_cyclic_audit.py` | `data/orbit_cyclic_audit.json` |
 | $D_4$ sector audit | `code/d4_sector_analysis.py` | `data/d4_sector_comparison.json` |
 | Endpoint-vanishing catalyst | `code/catalyst_path_analysis.py` | `data/catalyst_path_results.json` |
 | Even-cycle orbit quotients | `code/hard_core_parent_path.py` | `data/hard_core_parent_path_results.json` |
