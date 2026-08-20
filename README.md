@@ -1,21 +1,21 @@
-# Joint symmetry and dynamical accessibility in compact Hamiltonian encodings of set cover
+# Orbit-resolved spectra and dynamical accessibility in multi-register covering Hamiltonians
 
-Reproducibility artifact for a theory-centred study of which part of a compact
-Minimum Set Cover Hamiltonian spectrum is dynamically relevant when the
+Reproducibility artifact for a theory-centred study of which part of a
+multi-register covering-Hamiltonian spectrum is dynamically relevant when the
 initial state and interpolation preserve joint symmetries.
 
 The current manuscript contributes:
 
-- the effective group $S_k\times G_B$ and the distinction between the
-  symmetry-allowed space $\mathcal H_{\rm sym}$ and the protocol-generated
-  cyclic space $\mathcal K_u$;
+- orbit-invariant penalties, P\'olya--Redfield counts, the exact joint orbit
+  quotient, and the distinction between $\mathcal H_{\rm sym}$ and the
+  protocol-generated cyclic space $\mathcal K_u$;
 - a sector-resolved Schur-complement localisation theorem containing the
   sector kinetic floor;
-- exact orbit quotients, symmetry-dark crossings and multiplicity closures,
-  and a stability theorem;
+- an orbit-resolved hopping-cancellation theorem and a separate stability
+  theorem for transverse symmetry-dark crossings;
 - an even-cycle parent path with endpoint cover probability
-  $1-O(n^{-5})$ and a uniform accessible-gap certificate
-  $\Omega(n^{-13})$; and
+  $1-O(n^{-5})$ and the explicit uniform accessible-gap lower bound
+  $1024n^{-13}$; and
 - a frozen 11-instance reconstruction using full Hamiltonians,
   residual-aware degeneracy tests, and exact cyclic restrictions.
 
@@ -31,7 +31,7 @@ made.
 - `instances/` — immutable, hashed input registry;
 - `orlib_instances/` — only the OR-Library parent files needed to reconstruct
   the frozen registry;
-- `data/` — the five machine-readable outputs used by the current manuscript;
+- `data/` — the six machine-readable outputs used by the current manuscript;
 - `examples/` — a standalone MathJax worked example that expands a five-set
   Hamiltonian and applies the symmetry, cyclic-accessibility, localisation,
   and gap analysis;

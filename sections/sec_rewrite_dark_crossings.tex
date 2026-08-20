@@ -10,19 +10,100 @@ preserved by the entire path, then
 An equality of the two branch energies is therefore a global crossing but
 not an avoided crossing seen by a state confined to either block.
 
-This phenomenon is stable within the symmetry-preserving class; it is not
-restricted to exactly solvable diagonal cancellation points.
+Two distinct mechanisms must be separated.  First, the chosen retained-walk
+interpolation has an exactly diagonal point at which register-permutation
+multiplicities appear simultaneously.  Second, an isolated pair of
+transverse branches can cross between inequivalent irreps.  Only the latter
+mechanism is covered by the stability theorem below.
+
+\subsection{Orbit-resolved spectrum at hopping cancellation}
+
+The identities in Eq.~\eqref{eq:app-two-generator-identities} give
+\begin{align}
+ H(s)&=a(s)I+c(s)M+sV,\\
+ a(s)&=k\left(1-s-\frac{s}{n_B-1}\right),
+ \label{eq:path-transport-decomposition}
+\end{align}
+where $c(s)$ is defined in Eq.~\eqref{eq:hopping-coefficient}.  Its unique
+zero is
+\begin{equation}
+ s_c=\frac{n_B-1}{2n_B-1}.
+ \label{eq:cycle-cancel-rewrite}
+\end{equation}
+
+\begin{theorem}[Orbit-resolved cancellation spectrum]
+\label{thm:orbit-resolved-cancellation}
+At $s=s_c$,
+\begin{equation}
+ H(s_c)=s_c(kI+V).
+ \label{eq:cancellation-identity}
+\end{equation}
+Let $\varphi_1<\cdots<\varphi_p$ be the distinct orbit-potential values.
+Then the distinct spectra on $\mathcal H_{\rm addr}$,
+$\mathcal H_{\rm sym}$, and $\mathcal K_u$ are all
+\begin{equation}
+ \{s_c(k+\varphi_j):1\leq j\leq p\}.
+ \label{eq:cancellation-levels}
+\end{equation}
+In particular, their ground energies and excitation gaps agree at $s_c$;
+if $p>1$,
+\begin{equation}
+ \Delta_{\rm exc}(s_c)=s_c(\varphi_2-\varphi_1).
+ \label{eq:cancellation-gap}
+\end{equation}
+
+Assume that at least one exact-$k$ cover with distinct bases exists.  Let
+$N_F$ be the number of such base subsets and let $\mathcal N_F$ be the
+number of their $G_B$-orbits.  Then $\varphi_1=0$ and
+\begin{align}
+ g_0^{\rm addr}(s_c)&=k!N_F,&
+ g_0^{\rm sym}(s_c)&=\mathcal N_F,\\
+ 1&\leq g_0^{\mathcal K}(s_c)\leq\mathcal N_F.
+ \label{eq:cancellation-ranks}
+\end{align}
+When $k=k^\star$, these are minimum-cover counts; otherwise they count
+feasible exact-$k$ covers.
+\end{theorem}
+
+At cancellation, and only there along this path, the potential separation
+between orbit sites is exactly a spectral separation.  For $s<s_c$ the full
+Hamiltonian is an irreducible stoquastic matrix and has a unique ground
+state, whereas Eq.~\eqref{eq:cancellation-ranks} is degenerate for every
+feasible instance with $k\geq2$.  The resulting global multiplicity closure
+contains nontrivial $S_k$ components that are dark to the uniform state.
+The symmetric ground space can itself be degenerate when
+$\mathcal N_F>1$, so only a cover-transitive instance
+($\mathcal N_F=1$) has a unique fixed-sector solution orbit.
+
+The interior cancellation is a feature of the endpoint choice
+$H_{\rm prob}=H_{\rm walk}+V$.  We retain the walk because this endpoint is
+a cost-dressed continuous-time search Hamiltonian rather than a purely
+classical cost operator.  For the conventional diagonal endpoint $V$, the
+path $(1-s)H_{\rm init}+sV$ has hopping coefficient $-(1-s)/n_B$, which
+vanishes only at $s=1$.  The orbit-resolved diagonal spectrum and its
+permutation multiplicities still occur at that endpoint, but there is no
+interior cancellation point.  We therefore do not present the closure as a
+path-independent property of adiabatic Set Cover.
+
+\subsection{Transverse dark crossings}
+
+Unlike the simultaneous diagonal closure, a transverse inter-sector
+crossing is locally stable within the symmetry-preserving class.  We use
+standard differentiable perturbation theory for isolated Hermitian
+branches~\cite{Kato1995}.
 
 \begin{theorem}[Stability of a transverse dark crossing]
 \label{thm:dark-crossing-stability}
-Let $H_\varepsilon(s)=H(s)+\varepsilon R(s)$ be a continuously
-differentiable finite-dimensional path, where $\varepsilon\in\mathbb R$ is
+Let $H_\varepsilon(s)=H(s)+\varepsilon R(s)$ be a finite-dimensional
+Hermitian family that is continuously differentiable jointly in
+$(s,\varepsilon)$, where $\varepsilon\in\mathbb R$ is
 the perturbation strength and $R(s)$ is Hermitian.  Let $\Pi_a,\Pi_b$
 project onto
 inequivalent symmetry sectors.  Suppose every $H_\varepsilon(s)$ commutes
 with both projectors.  Assume that near $(s_\star,0)$ the two restricted
-blocks have simple isolated eigenvalue branches $E_a(s,\varepsilon)$ and
-$E_b(s,\varepsilon)$ such that
+blocks have isolated differentiable reduced eigenvalue branches
+$E_a(s,\varepsilon)$ and $E_b(s,\varepsilon)$, simple on their multiplicity
+spaces but possibly carrying symmetry-enforced Schur multiplicity, such that
 \begin{equation}
  E_a(s_\star,0)=E_b(s_\star,0),
  \qquad
@@ -31,10 +112,7 @@ $E_b(s,\varepsilon)$ such that
 \end{equation}
 Then, for all sufficiently small $|\varepsilon|$, there is a unique nearby
 $s_\star(\varepsilon)=s_\star+O(|\varepsilon|)$ at which the two branches
-cross exactly, and
-\begin{equation}
- \Pi_a\partial_sH_\varepsilon(s)\Pi_b=0.
-\end{equation}
+cross exactly.
 If the $a$ branch is separated from the rest of its block by at least
 $\Delta_\star>0$ throughout a neighbourhood of $s_\star$ at
 $\varepsilon=0$, then its isolation gap remains at least
@@ -50,11 +128,12 @@ stability argument is in Appendix~\ref{app:dark-stability}.
 
 \subsection{A finite joint-symmetry audit}
 
-For a frozen $2\times4$ incidence instance with $k=3$, $\lambda=5$, and
-$\mu=10$,
+For the frozen eight-base incidence instance generated from a $2\times4$
+vertex grid and specified explicitly in Appendix~\ref{app:d4-catalyst}, take
+$k=3$, $\lambda=5$, and $\mu=10$.  Its effective incidence group is
 $G_B\simeq D_4$, where $D_4$ is the order-eight dihedral group, and the
 $S_3\times D_4$ fixed quotient has dimension $22$,
-compared with $512$ in the valid ordered space.  Cyclic closure from
+compared with $512$ in the ordered address space.  Cyclic closure from
 $\ket u$ also has dimension $22$, as determined independently by the
 generator algebra.  The uncatalysed path has a fixed-space rank closure at
 $s=7/15$, showing that joint symmetry alone does not guarantee a rank-one
@@ -76,59 +155,51 @@ where $\chi\in\mathbb R$ is the dimensionless catalyst strength.
 The operator $C_2$ commutes with both $S_k$ and $G_B$, and its envelope
 vanishes at $s=0,1$.  At $\chi=2$, a crossing between different $D_4$
 irreps occurs at $s\simeq0.806454$, while the $D_4$-trivial gap there is
-approximately $0.258$.  This diagnostic is not used in the asymptotic
-theorem.  Appendix~\ref{app:d4-catalyst} specifies its numerical protocol,
+approximately $0.258$.  The reduced-branch slope difference is
+approximately $-4.54$, so the crossing is transverse.  This diagnostic is
+not used in the asymptotic theorem.  Appendix~\ref{app:d4-catalyst}
+specifies its numerical protocol,
 minimum-gap scan, and residuals.
 
-\subsection{An exact multiplicity closure on the even-cycle family}
+\subsection{Even cycles as a cover-transitive illustration}
 
-The asymptotic witness is analytic.  Express minimum vertex cover on the
-even cycle $C_n$, $n=2k$, as set cover: bases are vertices, tasks are edges,
-and each base covers its two incident edges.  The only minimum covers are
-the two alternating subsets, which form one orbit of $D_n$.
-Here $D_n$ denotes the dihedral group generated by the rotations and
-reflections of $C_n$.
+Express minimum vertex cover on the even cycle $C_n$, $n=2k$, as set cover:
+bases are vertices, tasks are edges, and each base covers its two incident
+edges.  The only minimum covers are the two alternating subsets.  They are
+exchanged by a one-site rotation and hence form one orbit of the dihedral
+group $D_n$.  Thus this family is cover-transitive, with
+$N_F=2$ and $\mathcal N_F=1$.
 
-For this family $n_B=n$.  Consider the original ordered-register linear path
-$H(s)$ in Eq.~\eqref{eq:cycle-linear-rewrite}.
-The off-diagonal coefficient of each single-register complete-graph move is
+Assume
 \begin{equation}
- -\frac{1-s}{n}+\frac{s}{n-1},
+ \mu\geq\lambda>0.
+ \label{eq:cycle-penalty-hypothesis}
 \end{equation}
-and vanishes exactly at
+Any repeated $k$-tuple uses fewer than $k=k^\star$ distinct bases and
+therefore leaves at least one edge uncovered; its penalty is at least
+$\lambda+\mu$.  A distinct noncover has penalty at least $\lambda$, and
+this value is attained by
 \begin{equation}
- s_c=\frac{n-1}{2n-1}.
- \label{eq:cycle-cancel-rewrite}
+ S_\star=\{1\}\cup\{2j:1\leq j\leq k-1\},
 \end{equation}
-At this point the Hamiltonian is diagonal up to a scalar.  All $2k!$
-ordered representatives of the two alternating covers are global ground
-states, whereas their normalized orbit is the unique ground vector in the
-$S_k\times D_n$ fixed space.  Assuming $\mu\geq\lambda$, every other orbit
-has diagonal penalty at least $\lambda$.  This lower bound is attained: the
-distinct-base subset
-\begin{equation}
- S_\star=\{1\}\cup\{2j:1\leq j\leq k-1\}
-\end{equation}
-has exactly one uncovered edge and no duplicate.  Its joint orbit state
-therefore lies exactly $\lambda s_c$ above the ground energy.  Write
-$g_0^{\rm global}$ and $g_0^{\rm sym}$ for the ranks of the global and
-joint-fixed ground projectors, and write $\Delta_{\rm sym}$ for the
-joint-fixed excitation gap $\Delta_{\rm exc}^{\mathcal H_{\rm sym}}$
-defined in Section~\ref{sec:rewrite-gaps}.  Consequently,
+which leaves exactly one edge uncovered.  Theorem
+\ref{thm:orbit-resolved-cancellation} therefore gives
 \begin{align}
- g_0^{\rm global}(s_c)&=2k!,&
- g_0^{\rm sym}(s_c)&=1,\\
- \Delta_{\rm sym}(s_c)&=\lambda\frac{n-1}{2n-1}.
+ s_c&=\frac{n-1}{2n-1},&
+ g_0^{\rm addr}(s_c)&=2\cdot k!,\\
+ g_0^{\rm sym}(s_c)&=g_0^{\mathcal K}(s_c)=1,&
+ \Delta_{\rm exc}^{\mathcal H_{\rm sym}}(s_c)
+ &=\lambda\frac{n-1}{2n-1}.
  \label{eq:cycle-dark-closure-rewrite}
 \end{align}
-Thus the global multiplicity gap closes exactly while the joint-fixed gap
-is bounded below by a constant.  The multiplicity closure is dynamically
-dark for the uniform initial state and the symmetry-preserving path.  No
-transversality of the coincident branches is asserted here.
+The fixed-sector excitation gap is therefore bounded below by
+$\lambda/2$ at the single point $s_c$, while the global ground
+multiplicity becomes $2\cdot k!$.  This is a diagonal,
+permutation-induced multiplicity closure, not a transverse two-branch
+crossing; Theorem~\ref{thm:dark-crossing-stability} does not assert its
+stability under a general symmetry-preserving perturbation.
 
-Equation~\eqref{eq:cycle-dark-closure-rewrite} controls the closure point,
-not the minimum gap on every part of the linear path.  The next section
-introduces a different, explicit parent path on the same family and proves
-a uniform polynomial bound.  Keeping these statements separate avoids
-turning a pointwise multiplicity-closure statement into an unsupported
-adiabatic claim.
+Equation~\eqref{eq:cycle-dark-closure-rewrite} is pointwise and does not
+bound the minimum gap along the retained-walk linear interpolation.  The next
+section studies a different parent path on the same family.  Its endpoint,
+initial state, and generator algebra are distinct from those above.

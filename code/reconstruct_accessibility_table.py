@@ -746,6 +746,13 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
         )
 
     Hcancel = (1 - cancellation_s) * H0q + cancellation_s * Hpq
+    cancellation_identity_residual = float(
+        np.linalg.norm(
+            Hcancel
+            - cancellation_s * (k * np.eye(len(orbits)) + np.diag(penalties)),
+            ord=2,
+        )
+    )
     cancel_values, _, cancel_residuals = eigensystem(Hcancel)
     cancel_summary = residual_level_summary(
         cancel_values, cancel_residuals, matrix_scale(Hcancel)
@@ -814,6 +821,7 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
         },
         "linear_path_cancellation": {
             "s": cancellation_s,
+            "orbit_resolved_identity_residual": cancellation_identity_residual,
             "joint_fixed": cancel_summary,
             "ground_rank_matches_optimal_cover_orbits": bool(
                 cancel_summary["ground_rank"] == n_cover_orbits
@@ -857,7 +865,7 @@ def render_tables(rows: list[dict[str, Any]]) -> str:
         r"\small",
         r"\begin{tabular}{lrrrrrr}",
         r"\hline",
-        r"instance & $k$ & $|G_B|$ & $\dim\mathcal H_{\rm valid}$ & "
+        r"instance & $k$ & $|G_B|$ & $\dim\mathcal H_{\rm addr}$ & "
         r"$\dim\mathcal H_{\rm sym}$ & $\dim\mathcal K_u$ & cover orbits\\",
         r"\hline",
     ]
@@ -884,7 +892,8 @@ def render_tables(rows: list[dict[str, Any]]) -> str:
         r"The symmetric and cyclic endpoint ground states are unique in every row; "
         r"the last column is the joint-fixed ground rank at the hopping-cancellation point.}",
         r"\label{tab:finite-endpoints}",
-        r"\small",
+        r"\scriptsize",
+        r"\setlength{\tabcolsep}{3pt}",
         r"\begin{tabular}{llrrrrrrrr}",
         r"\hline",
         r"instance & ground $S_k$ content & $g_0^{\rm full}$ & $\Delta_{\rm full}$ & "

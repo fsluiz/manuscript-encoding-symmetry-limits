@@ -2,7 +2,9 @@
 \label{sec:rewrite-localization}
 
 Let $P$ project onto the span of computational-basis tuples that use
-distinct bases and cover every task, and put $Q=I-P$.  Write
+distinct bases and cover every task, and put $Q=I-P$.  By
+Lemma~\ref{lem:orbit-invariance}, both projectors commute with the joint
+group.  Write
 $V=\lambda H_{\rm cov}+\mu H_{\rm excl}$,
 $m=\min\{\lambda,\mu\}$ for the minimum single-constraint penalty, and
 $\kappa=k/(n_B-1)$ for the magnitude of the lowest possible $k$-register
@@ -21,9 +23,10 @@ sector's kinetic floor.
 
 \begin{proposition}[Sector localization]
 \label{prop:sector-localization-rewrite}
-Let $\gamma$ label a symmetry sector and let $\Pi_\gamma$ be its projector,
-commuting with
-$H_{\rm prob}$, $H_{\rm walk}$, $V$, and $P$, and suppose
+Let $\gamma=(\alpha,\beta)$ label an isotypic component in the joint
+decomposition of Eq.~\eqref{eq:commutant-rewrite}, or more generally let
+$\Pi_\gamma$ be any reducing sector projector commuting with
+$H_{\rm prob}$, $H_{\rm walk}$, $V$, and $P$.  Suppose
 $P_\gamma=P\Pi_\gamma\ne0$.  Define the invalid-sector projector
 $Q_\gamma$, the feasible-to-invalid coupling $B_\gamma$, and the sector
 kinetic floor $\eta_\gamma$ by
@@ -34,8 +37,10 @@ kinetic floor $\eta_\gamma$ by
  P_\gamma H_{\rm walk}P_\gamma|_{\Ran P_\gamma}\right).
 \end{align}
 If $Q_\gamma=0$, every state in the sector lies in $\Ran P$ and the leakage
-is identically zero.  Otherwise, let $E_0^\gamma$ be the lowest energy in the
-sector and define the compressed invalid-state separation
+is identically zero.  Otherwise, let
+$E_0^\gamma=\lambda_{\min}(H_{\rm prob}|_{\Ran\Pi_\gamma})$ be the lowest
+problem-Hamiltonian energy in the sector and define the compressed
+invalid-state separation
 \begin{equation}
  \Gamma_\gamma=\lambda_{\min}\!\left(
  Q_\gamma H_{\rm prob}Q_\gamma|_{\Ran Q_\gamma}\right)-E_0^\gamma.
@@ -61,7 +66,9 @@ $g_\gamma=m-\kappa-\eta_\gamma>0$.
 Physically, the certificate compares the energetic separation
 $\Gamma_\gamma$ protecting the feasible sector with the coupling
 $\|B_\gamma\|$ that leaks amplitude into invalid states.  The kinetic floor
-$\eta_\gamma$ accounts for delocalization within the chosen symmetry sector.
+$\eta_\gamma$ is required because a sector-projected cover is a
+superposition and need not have zero hopping expectation.  We do not claim
+that it changes the numerical certificate on every instance.
 The full proof and the cyclic-space caveat are in
 Appendix~\ref{app:sector-localization}.
 
@@ -71,6 +78,6 @@ $\Ran P$: for finite penalties Eq.~\eqref{eq:sector-bound-rewrite} controls,
 rather than eliminates, leakage.  Exact support occurs only in an infinite
 penalty limit or in special decoupled cases.
 
-The theorem applies to genuine commuting symmetry sectors.  A cyclic
+The proposition applies to genuine commuting symmetry sectors.  A cyclic
 projector need not commute with $P$, so cyclic-space solution probability is
 evaluated directly or through a separately constructed commuting projector.

@@ -3,8 +3,8 @@
 
 Inputs are frozen with identifiers and SHA-256 hashes.  Every reported gap
 is computed either in the full Hamiltonian or in an explicitly labelled
-exact orbit quotient; projected $PHP$, L\"owdin, and full-Hamiltonian values
-are never combined in one unlabeled column.  Numerical degeneracy is accepted
+exact orbit or cyclic restriction.  Values from different operators are
+never combined in one unlabeled column.  Numerical degeneracy is accepted
 only relative to eigenpair residuals and matrix scale.  Inside a degenerate
 manifold, let $P_0$ denote its spectral projector and let
 $\Pi_{\alpha\beta}$ project onto the joint irrep labelled by
@@ -15,13 +15,14 @@ $(\alpha,\beta)$.  The irrep content is obtained from
 not by assigning labels to solver-dependent individual eigenvectors.
 
 In the tables below, $g_0^{\rm full}$ and $g_0^{\rm acc}$ are the ranks of
-the ground projectors on $\mathcal H_{\rm valid}$ and $\mathcal K_u$,
+the ground projectors on $\mathcal H_{\rm addr}$ and $\mathcal K_u$,
 respectively.  A partition in square brackets labels the corresponding
 $S_k$ irrep.
 
 For sparse full-space calculations, the central class sum of register
-transpositions separates every $S_k$ irrep for $k\leq5$.  The orbit of a
-lowest vector constructs its complete Specht multiplet; deflation then tests
+transpositions separates every $S_k$ irrep for $k\leq5$.  Acting on a
+lowest vector with register permutations constructs its full representation
+multiplet; deflation then tests
 for further cospectral copies before $g_0^{\rm full}$ is assigned.  For the
 grid row, the two-dimensional global ground manifold is the $E$ irrep of
 $D_4$, whereas the accessible branch is $A_1$.  At the analytic
@@ -29,8 +30,16 @@ hopping-cancellation point, the joint-fixed ground rank agrees with the
 independently enumerated number of $G_B$-orbits of optimal covers in every
 row.
 
-The largest orbit-invariance residual is below $5\times10^{-13}$, the
-largest cyclic-invariance residual below $2\times10^{-9}$, and every
+The cyclic basis is constructed independently from the exact potential
+shells by Eq.~\eqref{eq:shell-cyclic-iteration}.  Its dimension is stable
+for relative singular-value tolerances $10^{-9}$, $10^{-11}$, and
+$10^{-13}$ in all eleven rows.  The smallest retained singular value is
+$4.4\times10^{-4}$, the largest discarded one is
+$1.1\times10^{-15}$, and the largest transport-invariance residual is
+$2.3\times10^{-14}$.  The direct residual of
+Eq.~\eqref{eq:cancellation-identity} is at most $2.2\times10^{-14}$ across
+the audit.  The largest orbit-invariance residual is below
+$5\times10^{-13}$, and every
 full-space eigenpair and class-sum residual used below is stored in the
 machine-readable output.  Eight rows are subinstances extracted from the
 OR-Library Set Cover benchmarks~\cite{Beasley1990,ORLib}; parent indices,

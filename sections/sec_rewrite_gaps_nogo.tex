@@ -1,4 +1,4 @@
-\subsection{Protocol-dependent gaps and conditional no-go statements}
+\subsection{Protocol-dependent gaps and initial-state dependence}
 \label{sec:rewrite-gaps}
 
 For an invariant space $\mathcal L$, let $P_0^{\mathcal L}(s)$ be the
@@ -19,7 +19,7 @@ exact coincidence between irreps is therefore not called a gap closure when
 Eq.~\eqref{eq:two-gaps-rewrite}'s second quantity stays positive.
 
 Let $E_0$, $E_0^{\rm sym}$, and $E_0^{\mathcal K}$ be the ground energies
-of $H(s)$ on $\mathcal H_{\rm valid}$, $\mathcal H_{\rm sym}$, and
+of $H(s)$ on $\mathcal H_{\rm addr}$, $\mathcal H_{\rm sym}$, and
 $\mathcal K_u$, respectively, at a common value of $s$.  The nested spaces
 in Eq.~\eqref{eq:nested-spaces-rewrite} define the accessibility costs
 \begin{align}
@@ -39,15 +39,24 @@ $P_{\rm track}(s)$ be a continuous isolated spectral projector on
 $\mathcal K_u$ whose range contains the initial ground state.  Set
 $H_{\mathcal K_u}(s)=H(s)|_{\mathcal K_u}$ and let
 $H_{\rm track}(s)$ be the compression of $H_{\mathcal K_u}(s)$ to
-$\Ran P_{\rm track}(s)$.  For finite real sets $A,B$, write
-$\operatorname{dist}(A,B)=\min_{a\in A,b\in B}|a-b|$.  Define
+$\Ran P_{\rm track}(s)$.  Its complementary compression is
+\begin{equation}
+ H_\perp(s)=H_{\mathcal K_u}(s)
+ \big|_{\Ran(I_{\mathcal K_u}-P_{\rm track}(s))},
+\end{equation}
+where $I_{\mathcal K_u}$ is the identity on $\mathcal K_u$.  For finite
+real sets $A,B$, write
+$\operatorname{dist}(A,B)=\min_{a\in A,b\in B}|a-b|$ and adopt the
+convention $\operatorname{dist}(A,\varnothing)=+\infty$.  Define
 \begin{multline}
  \Delta_{\rm ad}(s)=\operatorname{dist}\!\left(
  \spec H_{\rm track}(s),\right.\\
- \left.\spec H_{\mathcal K_u}(s)
- \setminus\spec H_{\rm track}(s)\right).
+ \left.\spec H_\perp(s)\right).
  \label{eq:adiabatic-gap-rewrite}
 \end{multline}
+This projector-based definition retains multiplicity: if a complementary
+eigenvector has the same numerical eigenvalue as the tracked band, then
+$\Delta_{\rm ad}=0$.
 An isolated continuous projector has constant rank.  If its intended rank
 changes, an isolation gap has closed and a nondegenerate adiabatic formula
 cannot simply be continued through that point.
@@ -71,33 +80,10 @@ space\\
 \end{tabular}
 \end{center}
 
-\paragraph{What fixed-Hamiltonian evolution does not prove.}
-
-For a time-independent Hamiltonian $H=\sum_jE_jP_j$, where $P_j$ projects
-onto the eigenspace of the distinct energy $E_j$, unitary evolution from
-$\psi(0)$ preserves every energy-eigenspace population,
-\begin{equation}
- \|P_j\psi(t)\|^2=\|P_j\psi(0)\|^2.
- \label{eq:eigenpopulation-rewrite}
-\end{equation}
-This rules out closed-system relaxation to a different eigenstate and fixes
-the diagonal ensemble.  It does \emph{not} imply that the probability of a
-computationally marked subspace is constant: interference between distinct
-energies can create transient concentration.  A finite time scan cannot
-prove that no later time does better.
-
-The statement is also initial-state dependent.  A solution eigenstate used
-as the initial state already has unit solution population; a state with
-appropriate coherences can reach a marked subspace transiently.  The exact
-symmetry obstruction is narrower and stronger:
-\begin{lemma}[Symmetry-conditioned inaccessibility]
-If $[H(t),\Pi_\gamma]=0$ for every $t$ and
-$\Pi_\gamma\psi(0)=\psi(0)$, then
-$\Pi_\gamma\psi(t)=\psi(t)$ for all $t$.  Any target vector orthogonal to
-$\Ran\Pi_\gamma$ has exactly zero transition amplitude.
-\end{lemma}
-Thus changing the initial state to one adapted to another irrep, or adding a
-generator with nonzero inter-sector matrix elements, changes the accessible
-spectrum and can evade the obstruction.  This is why our no-go claims are
-always indexed by an initial state, a generator algebra, and the symmetries
-preserved by the full path.
+The restriction is conditional on the protocol.  If
+$[H(t),\Pi_\gamma]=0$ and the initial state lies in $\Ran\Pi_\gamma$, its
+evolution remains there, but an initial state adapted to another irrep or a
+symmetry-breaking generator changes the accessible spectrum.  This statement
+does not forbid transient concentration in a computationally marked
+subspace: it forbids only transition amplitude into symmetry sectors
+orthogonal to the one selected by the initial state.

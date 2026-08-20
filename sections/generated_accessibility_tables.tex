@@ -6,7 +6,7 @@
 \small
 \begin{tabular}{lrrrrrr}
 \hline
-instance & $k$ & $|G_B|$ & $\dim\mathcal H_{\rm valid}$ & $\dim\mathcal H_{\rm sym}$ & $\dim\mathcal K_u$ & cover orbits\\
+instance & $k$ & $|G_B|$ & $\dim\mathcal H_{\rm addr}$ & $\dim\mathcal H_{\rm sym}$ & $\dim\mathcal K_u$ & cover orbits\\
 \hline
 grid-2x4 & 3 & 8 & 512 & 22 & 22 & 2\\
 rnd-b8-t7-p50-s002 & 3 & 1 & 512 & 120 & 101 & 12\\
@@ -27,7 +27,8 @@ scpe5-b8-t30 & 5 & 1 & 32768 & 792 & 792 & 2\\
 \centering
 \caption{Problem-endpoint spectra reconstructed from the full Hamiltonian and the exact joint-fixed and cyclic restrictions. Here $\Delta$ is the gap above the entire ground manifold, $\delta_{\rm sym}=E_0^{\rm sym}-E_0^{\rm full}$, $\delta_{\rm cyc}=E_0^{\mathcal K}-E_0^{\rm sym}$, and $p_{\rm opt}^{\min}$ is minimized over normalized cyclic ground states. The symmetric and cyclic endpoint ground states are unique in every row; the last column is the joint-fixed ground rank at the hopping-cancellation point.}
 \label{tab:finite-endpoints}
-\small
+\scriptsize
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{llrrrrrrrr}
 \hline
 instance & ground $S_k$ content & $g_0^{\rm full}$ & $\Delta_{\rm full}$ & $\delta_{\rm sym}$ & $\delta_{\rm cyc}$ & $\Delta_{\rm sym}$ & $\Delta_{\rm cyc}$ & $p_{\rm opt}^{\min}$ & $g_0^{\rm sym}(s_c)$\\

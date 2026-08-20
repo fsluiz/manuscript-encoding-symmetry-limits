@@ -8,7 +8,7 @@ kernel, and the faithfully represented group is
 $G_B\simeq G_A/\ker\rho$.  Since the $S_k$ register action commutes with the
 $G_B$ base action, complete reducibility gives
 \begin{equation}
- \mathcal H_{\rm valid}\simeq
+ \mathcal H_{\rm addr}\simeq
  \bigoplus_{\alpha,\beta}
  V_\alpha^{S_k}\otimes V_\beta^{G_B}\otimes
  \mathcal M_{\alpha\beta}.
@@ -18,6 +18,24 @@ Every invariant Hamiltonian lies in the commutant and hence has the form in
 Eq.~\eqref{eq:commutant-rewrite}.  The identity factors generate Schur
 multiplicities; equality of eigenvalues belonging to different
 $(\alpha,\beta)$ blocks is not enforced by this statement.
+
+\subsection{Orbit invariance and enumeration}
+
+Register permutations leave the multiset
+$\{\!\{b_1,\ldots,b_k\}\!\}$ unchanged, so they preserve both $U$ and
+$D$.  A base automorphism $g\in G_B$ is a bijection; hence
+$b_r=b_s$ if and only if $g(b_r)=g(b_s)$, proving invariance of $D$.
+For $U$, choose any task permutation $\pi_T$ such that
+$(g,\pi_T)\in G_A$.  If $S$ is the underlying set of selected bases, write
+\begin{equation}
+ \mathcal U(S)=\{t\in\mathcal T:A_{bt}=0\ \text{for every }b\in S\}.
+\end{equation}
+The incidence-automorphism identity gives
+$\mathcal U(gS)=\pi_T\mathcal U(S)$, so the two uncovered-task sets have
+the same cardinality.  This proves Lemma~\ref{lem:orbit-invariance}.  The
+cardinality is independent of which compatible $\pi_T$ is chosen, as it
+must be because only the faithfully represented base action enters the
+Hilbert space.
 
 For completeness, let $\mathcal O$ and $\mathcal O'$ be computational-basis
 orbits of the joint action and choose $x\in\mathcal O$.  Invariance gives
@@ -32,15 +50,100 @@ which proves Eq.~\eqref{eq:orbit-quotient-rewrite}.  The orbit states are
 therefore an exact orthonormal basis of the fixed space, not an effective
 approximation.
 
-After quotienting by register permutations, basis vectors are weak
-multisets of size $k$ over the bases.  If $g\in G_B$ has $c_\ell(g)$ cycles
+After quotienting by register permutations, basis vectors are multisets of
+size $k$ over the bases.  If $g\in G_B$ has $c_\ell(g)$ cycles
 of length $\ell$, the trace of $g$ on
 the symmetric tensor power $\operatorname{Sym}^k(\mathbb C^{n_B})$ is the
 coefficient
 \begin{equation}
  [z^k]\prod_{\ell\geq1}(1-z^\ell)^{-c_\ell(g)}.
 \end{equation}
-Averaging this character over $G_B$ projects onto the trivial irrep and
-gives Eq.~\eqref{eq:burnside-rewrite}.  This counts
+The Cauchy--Frobenius orbit-counting lemma, equivalently the
+P\'olya--Redfield cycle-index evaluation for multisets, averages this
+character over $G_B$ and projects onto the trivial irrep.  This gives
+Eq.~\eqref{eq:polya-rewrite}.  It counts
 $\mathcal H_{\rm sym}$ only.  Whether $\ket u$ is cyclic for the restricted
 endpoint algebra is a separate closure calculation.
+
+\subsection{Proof of the shell-resolved cyclic closure}
+
+The endpoint operators satisfy
+\begin{equation}
+ H_{\rm init}=kI-\frac{M}{n_B},
+ \qquad
+ H_{\rm walk}=\frac{M-kI}{n_B-1}.
+ \label{eq:app-two-generator-identities}
+\end{equation}
+Thus $M=n_B(kI-H_{\rm init})$ belongs to the endpoint algebra,
+$H_{\rm walk}$ follows from $M$, and
+$V=H_{\rm prob}-H_{\rm walk}$ also belongs to it.  Conversely,
+Eq.~\eqref{eq:app-two-generator-identities} reconstructs both endpoints
+from $M,V,I$.  This proves Lemma~\ref{lem:two-generator-reduction}.
+
+Because $\widehat V=\sum_j\varphi_jR_j$, invariance under $\widehat V$ is
+equivalent to invariance under every $R_j$: each $R_j$ is a Lagrange
+interpolation polynomial in $\widehat V$.  The initial shell vectors belong
+to the cyclic space since
+\begin{equation}
+ \widehat V^iw=\sum_{j=1}^p\varphi_j^iR_jw,
+ \qquad 0\leq i<p,
+\end{equation}
+and the Vandermonde matrix of the distinct $\varphi_j$ is invertible.
+Every $R_jw$ is nonzero by Eq.~\eqref{eq:uniform-orbit-coordinates}.
+The iteration in Eq.~\eqref{eq:shell-cyclic-iteration} therefore begins
+inside $\mathcal K_u$, remains there, and stabilises after finitely many
+steps.  Its limit contains $w$ and is invariant under every $R_j$ and under
+$\widehat M$, hence under $\widehat V$ and the complete endpoint algebra.
+Minimality of the cyclic space proves equality.  The $p$ nonzero shell
+vectors are mutually orthogonal, which proves
+Eq.~\eqref{eq:shell-lower-bound}.  If every shell is a singleton, those
+vectors are nonzero multiples of all orbit-basis vectors, proving the
+injectivity criterion and its contrapositive.
+
+It remains to prove Eq.~\eqref{eq:zero-cyclic-cost-before-cancellation}.
+For $s$ below the unique zero of $c(s)$, every off-diagonal entry of the
+computational-basis Hamiltonian is nonpositive.  Equation
+\eqref{eq:orbit-quotient-rewrite} preserves that sign, and the orbit hopping
+graph is connected: a sequence of one-register substitutions connects any
+two size-$k$ multisets.  After a sufficiently large scalar shift,
+Perron--Frobenius therefore gives a simple symmetric ground vector
+$\psi_0(s)$ with strictly positive orbit coordinates.  Its overlap with
+$w$ is nonzero.  The rank-one spectral projector onto $\psi_0(s)$ is a
+polynomial in the finite-dimensional quotient Hamiltonian, which belongs
+to the algebra generated by $\widehat M$ and $\widehat V$.  Applying that
+projector to $w$ proves $\psi_0(s)\in\mathcal K_u$.
+
+At the zero of $c(s)$, the Hamiltonian is a scalar plus a positive multiple
+of $\widehat V$.  If $R_{\min}$ denotes its lowest nonempty potential shell,
+then $R_{\min}w\ne0$ and belongs to $\mathcal K_u$.  It is a ground vector,
+so the symmetric and cyclic ground energies again agree.  Continuity also
+covers $s=0$.  This completes the proof of
+Theorem~\ref{thm:shell-cyclic-closure}.
+
+\subsection{Proof of the cancellation theorem}
+
+Substitution of Eq.~\eqref{eq:app-two-generator-identities} into the linear
+path gives Eq.~\eqref{eq:path-transport-decomposition}.  Solving $c(s)=0$
+gives $s=s_c$, and direct evaluation gives $a(s_c)=ks_c$ and
+$s_cV$ for the remaining potential term.  This proves
+Eq.~\eqref{eq:cancellation-identity}.
+
+In the computational basis, $V$ is diagonal with entries $\Phi$; by
+Lemma~\ref{lem:orbit-invariance}, each potential shell is a union of joint
+orbits.  Therefore every $\varphi_j$ occurs in the full and fixed-space
+spectra.  It also occurs in the cyclic restriction because the nonzero
+vector $R_jw$ belongs to $\mathcal K_u$ and is an eigenvector of
+$H(s_c)$.  No other eigenvalue is possible in any restriction, proving
+Eqs.~\eqref{eq:cancellation-levels} and
+\eqref{eq:cancellation-gap}.  If there is no second shell, the excitation
+gap is assigned the convention $+\infty$.
+
+For a feasible exact-$k$ subset, all $k!$ orderings are distinct
+computational-basis ground vectors.  Conversely, zero potential requires
+an exact-$k$ cover with no repeated bases, so this accounts for the complete
+full ground rank.  Register quotienting turns those tuples into subsets,
+and quotienting by $G_B$ leaves one fixed-space vector per feasible-cover
+orbit.  Finally, $R_1w$ supplies at least one cyclic ground vector, while
+$\mathcal K_u\subseteq\mathcal H_{\rm sym}$ gives the upper rank bound.
+This proves Eq.~\eqref{eq:cancellation-ranks} and
+Theorem~\ref{thm:orbit-resolved-cancellation}.

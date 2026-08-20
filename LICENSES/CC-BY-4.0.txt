@@ -22,8 +22,8 @@ summary; the legal code at the canonical URL governs the license.
 
 Requested attribution:
 
-    Fabrício de Souza Luiz, "Joint symmetry and dynamical accessibility in
-    compact Hamiltonian encodings of set cover" (2026), licensed under
+    Fabrício de Souza Luiz, "Orbit-resolved spectra and dynamical
+    accessibility in multi-register covering Hamiltonians" (2026), licensed under
     CC BY 4.0.
 
 Please include the associated article citation and version-specific archival

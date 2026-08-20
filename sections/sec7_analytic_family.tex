@@ -1,13 +1,15 @@
 % Analytically controlled family and an exact accessible-gap reduction.
 
-\section{Parent path and accessible gap}
+\section{A separate parent path and its accessible gap}
 \label{sec:analytic-family}
 
-The distinction between a global gap and a dynamically accessible gap is not
-only a finite-instance effect.  We now give an even-cycle family for which
-the symmetry reduction, the solution manifold, and an entire
-parent-Hamiltonian path can be controlled.  The purpose of the family is a
-separation theorem, not a claim that vertex cover on a cycle is classically
+We now change protocols while retaining the same even-cycle covering
+instances.  The parent Hamiltonians below do not interpolate between
+$H_{\rm init}$ and $H_{\rm prob}$: their state space, initial state,
+endpoint, and generator algebra are specified independently.  This second
+construction controls an entire accessible path rather than the single
+cancellation point of Section~\ref{sec:rewrite-crossings}.  Its purpose is a
+gap certificate, not a claim that vertex cover on a cycle is classically
 difficult.
 
 \subsection{Even-cycle set cover and its joint symmetry}
@@ -31,16 +33,17 @@ At half filling, $U(S)$ is also the number of adjacent occupied pairs.  Thus
 $U=0$ exactly on the two minimum covers.
 
 For a dimensionless annealing parameter $a\geq0$, consider the
-continuous-time Metropolis generator with a Johnson-graph proposal.  For
-distinct $k$-subsets $S,T$, its off-diagonal transition rate is
+continuous-time Metropolis generator with a Johnson-graph proposal.  The
+Johnson graph $J(n,k)$ has the $k$-subsets of $[n]$ as vertices and joins
+$S$ to $T$ exactly when $|S\mathbin\triangle T|=2$, i.e., one selected
+vertex is replaced.  For distinct adjacent $S,T$, the transition rate is
 \begin{equation}
  q_a(S,T)=\frac1n
  \min\{1,n^{-a[U(T)-U(S)]}\},
  \qquad |S\mathbin\triangle T|=2,
  \label{eq:johnson-metropolis}
 \end{equation}
-and $q_a(S,T)=0$ otherwise; $|S\mathbin\triangle T|=2$ means that one
-selected vertex is replaced.  Its reversible measure is
+and $q_a(S,T)=0$ otherwise.  Its reversible measure is
 \begin{equation}
  \pi_a(S)=Z_a^{-1}n^{-aU(S)}.
  \label{eq:cycle-gibbs}
@@ -65,7 +68,8 @@ It is frustration free and has the known ground state
  \label{eq:cycle-parent-ground}
 \end{equation}
 At $a=0$, this is the Dicke state
-$\ket{J_{n,k}}=\binom nk^{-1/2}\sum_{|S|=k}\ket S$, and the parent
+$\ket{J_{n,k}}=\binom nk^{-1/2}\sum_{|S|=k}\ket S$
+\cite{BartschiEidenbenz2019}, and the parent
 Hamiltonian $H_{a=0}$ is exactly the Johnson-graph Laplacian at rate $1/n$.
 It should not be confused with the restriction of $H_{\rm init}$ from
 Eq.~\eqref{eq:hinit-rewrite}, which agrees with a Johnson Laplacian only up
@@ -204,26 +208,24 @@ $1-O(n^{-5})-O(\epsilon)$.  This runtime excludes the costs of preparing the
 Dicke state and realizing or simulating $H_{a(s)}$.
 \end{corollary}
 
-Physically, the polynomial cyclic gap prevents dark global crossings from
-setting the preparation time of this protocol.  The large runtime exponent
+Physically, only the isolation gap inside $\mathcal K_J^{\rm par}$ enters
+the adiabatic theorem; spectral branches in orthogonal symmetry sectors do
+not set the preparation time of this protocol.  The large runtime exponent
 instead reflects deliberately conservative derivative and inverse-gap
 bounds and does not include Hamiltonian-simulation or state-preparation
 costs.  The complete adiabatic and measurement estimates are in
 Appendix~\ref{app:parent-adiabatic}.
 
 Exact $D_n$-orbit quotients for $n=6,8,\ldots,18$ show finite-size gaps much
-larger than the conservative theorem, but are not used to infer scaling.
-The grid and all intermediate values are reported in
+larger than the conservative theorem, but are not used to infer scaling.  At
+$n=6$ and $a=7$, for example, the certificate is
+$1024\,6^{-13}=7.84\times10^{-8}$ whereas the reconstructed gap is
+$0.166670$, a factor $2.1\times10^6$ larger.  The analytical bottleneck is
+the uniform mean-field estimate $2n^{-a}k^{-3}$; the additional $2/n$
+update normalization and cycle transport factor are displayed separately in
+Eq.~\eqref{eq:cycle-zrp-reduction}.  The grid and all intermediate values are reported in
 Appendix~\ref{app:numerical-protocol} and the archived data.
 
-The path also clarifies what is and is not inherited from the original
-multi-register Hamiltonian.  Its endpoint ground state has the same
-solution-producing measurement objective, but the initial ground state is
-the injective Dicke state rather than the product-register uniform state,
-and the endpoint is the frustration-free Gibbs parent $H_{a_f}$ rather than
-the original $H_{\mathrm{prob}}$.  No interpolation between these two
-endpoints is assumed.  The exact dark multiplicity closure of the original
-linear interpolation and the uniformly polynomially gapped parent path are
-therefore complementary statements
-about the same symmetric instance family, not two descriptions of one
-protocol.
+The two constructions share only the instance family, the cover-measurement
+objective, and the orbital language.  No dynamical interpolation or
+complexity transfer between them is assumed.

@@ -9,15 +9,15 @@ by the endpoint Hamiltonians may act cyclically only on a proper subspace of
 the joint fixed space.  A small global gap can then describe a crossing that
 the protocol neither couples to nor detects.
 
-Set Cover admits the usual one-binary-variable-per-base Ising formulation,
+Set Cover, whose minimum-cardinality version is NP-hard
+\cite{karp1972reducibility}, admits the usual one-binary-variable-per-base Ising formulation,
 and it also appears among the constrained examples motivating quantum
 alternating-operator ansatzes~\cite{Lucas2014,Hadfield2019}.  Separately,
 qubit-efficient variational encodings show that logarithmic or otherwise
 compressed register counts are not by themselves a novelty
 claim~\cite{TanEncoding2021,GlosKrawiecZimboras2022,Chancellor2019}.  Our
-multi-register address encoding belongs to this broad compact-encoding
-line; the contribution claimed here is spectral rather than a new qubit
-count.
+multi-register address encoding belongs to this broad line; no result below
+depends on claiming a new qubit count.
 
 Classical objective symmetries can confine quantum approximate optimization
 algorithm (QAOA) dynamics and impose equal measurement probabilities on
@@ -34,8 +34,11 @@ Finally, symmetric discriminants of reversible Markov chains and annealing
 paths with Gibbs-amplitude ground states are established tools in quantum
 walk and quantum simulated-annealing constructions
 \cite{Szegedy2004,SommaBoixoBarnumKnill2008}.  Quantitative adiabatic
-statements require an isolated spectral band together with derivative and
-gap control~\cite{JansenRuskaiSeiler2007}.  We use the discriminant only to
+computation originates with the interpolation framework of
+Farhi~et~al.~\cite{Farhi2000}; modern reviews emphasize that runtime claims
+require a specified path and access model~\cite{AlbashLidar2018}.
+Quantitative statements require an isolated spectral band together with
+derivative and gap control~\cite{JansenRuskaiSeiler2007}.  We use the discriminant only to
 construct a rigorously gapped witness path and make no speedup claim.
 
 Minimum Set Cover (MSC) provides a concrete setting in which these three
@@ -52,20 +55,18 @@ path.
 This work makes that distinction its central question.  Its three main
 contributions are:
 \begin{enumerate}
-\item the faithful joint symmetry $S_k\times G_B$, exact orbit quotients,
-and a strict distinction between the symmetry-allowed space
-$\mathcal H_{\rm sym}$ and the protocol-cyclic space $\mathcal K_u$, where
-$G_B$ denotes the faithfully represented group of base automorphisms,
-$\mathcal H_{\rm sym}$ the subspace fixed by $S_k\times G_B$, and
-$\mathcal K_u$ the cyclic space generated from the uniform initial state by
-the endpoint Hamiltonians; precise definitions are given in
-Section~\ref{sec:rewrite-framework};
-\item a sector-localization theorem with the necessary kinetic floor,
-together with a gap taxonomy and stable inter-sector crossings that are
-globally visible but dynamically dark; and
-\item an even-cycle family with an exact dark multiplicity closure and a
-distinct parent path whose accessible gap is uniformly polynomial, yielding
-a conditional polynomial-time adiabatic corollary.
+\item an orbit description of the $k$-register encoding under
+$S_k\times G_B$, where $G_B$ is the faithfully represented group of base
+automorphisms; this gives invariant covering penalties, exact
+P\'olya--Redfield counts, and a constructive distinction between the fixed
+space $\mathcal H_{\rm sym}$ and the protocol-cyclic space $\mathcal K_u$;
+\item a sector-localization proposition with its kinetic floor, together
+with a general orbit-resolved hopping-cancellation theorem and a separate
+stability theorem for transverse inter-sector crossings; and
+\item an even-cycle illustration of the cancellation theorem and,
+separately, a Johnson--Metropolis parent protocol whose accessible gap is
+uniformly polynomial, yielding a conditional polynomial-time adiabatic
+corollary.
 \end{enumerate}
 
 The last result is purposely about accessibility rather than computational
@@ -74,11 +75,11 @@ exponent is conservative.  Its role is to separate the gap question cleanly
 into symmetry, geometry, and kinetics, without inferring asymptotic behavior
 from finite-size data.
 
-Neither orbit reduction, compact addressing, nor a Markov discriminant is
-claimed as new in isolation.  The contribution is their use in a single
-protocol-dependent theory that separates global, group-fixed, and cyclic
-spectra and proves that these distinctions persist in an analytically
-controlled family.
+Neither orbit reduction, P\'olya enumeration, compact addressing, nor a
+Markov discriminant is claimed as new in isolation.  The contribution is
+the protocol-dependent link between orbit potentials, group-fixed spectra,
+cyclic closure, sector localization, and dark multiplicity, together with a
+separately controlled parent path.
 
 We use the following notation throughout.  For an operator $X$,
 $\Ran X$ and $\spec X$ denote its range and spectrum.  The symbol

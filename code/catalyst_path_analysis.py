@@ -141,11 +141,29 @@ def analyse() -> dict[str, Any]:
             if crossings and abs(root - crossings[-1]["s"]) < 1e-9:
                 continue
             derivative = Hprob - H0 + 4 * SELECTED_GAMMA * (1 - 2 * root) * C2
+            path_a = path_matrix(H0a, Hpa, C2a, SELECTED_GAMMA, root)
+            path_o = path_matrix(H0o, Hpo, C2o, SELECTED_GAMMA, root)
+            values_a, vectors_a = la.eigh(path_a, subset_by_index=[0, 1])
+            values_o, vectors_o = la.eigh(path_o, subset_by_index=[0, 3])
+            derivative_a = quotient(derivative, S)
+            derivative_o = np.asarray(R.T @ (derivative @ R))
+            slope_a = float(vectors_a[:, 0].T @ derivative_a @ vectors_a[:, 0])
+            ground_rank_o = int(np.sum(np.abs(values_o - values_o[0]) <= 1e-10))
+            ground_vectors_o = vectors_o[:, :ground_rank_o]
+            slope_matrix_o = ground_vectors_o.T @ derivative_o @ ground_vectors_o
+            slopes_o = la.eigvalsh(slope_matrix_o)
+            slope_o = float(np.mean(slopes_o))
             crossings.append({
                 "s": root,
-                "energy": floor(path_matrix(H0a, Hpa, C2a, SELECTED_GAMMA, root)),
-                "A1_gap": lowest_gap(H0a, Hpa, C2a, SELECTED_GAMMA, root),
+                "energy": float(values_a[0]),
+                "A1_gap": float(values_a[1] - values_a[0]),
+                "nontrivial_ground_rank": ground_rank_o,
+                "nontrivial_complement_excitation_gap": float(values_o[ground_rank_o] - values_o[0]),
                 "branch_difference": branch_difference(root),
+                "A1_branch_slope": slope_a,
+                "nontrivial_branch_slope": slope_o,
+                "nontrivial_slope_spread": float(slopes_o[-1] - slopes_o[0]),
+                "transverse_slope_difference": slope_o - slope_a,
                 "cross_sector_derivative_coupling_norm": float(np.linalg.norm(R.T @ derivative @ S, ord=2)),
             })
 

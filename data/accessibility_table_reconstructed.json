@@ -57,6 +57,7 @@
           "off_diagonal_norm": 1.138646658896781e-15,
           "scale_bound": 27.066666666666666
         },
+        "orbit_resolved_identity_residual": 8.896061770981984e-15,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -356,6 +357,7 @@
           "off_diagonal_norm": 5.523224674397832e-16,
           "scale_bound": 27.066666666666666
         },
+        "orbit_resolved_identity_residual": 3.714135757153832e-15,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -603,6 +605,7 @@
           "off_diagonal_norm": 1.481313240327751e-15,
           "scale_bound": 43.86666666666667
         },
+        "orbit_resolved_identity_residual": 7.220515966664087e-15,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -931,6 +934,7 @@
           "off_diagonal_norm": 1.481313240327751e-15,
           "scale_bound": 57.86666666666667
         },
+        "orbit_resolved_identity_residual": 1.2465229774404785e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -1252,6 +1256,7 @@
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
         },
+        "orbit_resolved_identity_residual": 2.1321422361519536e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -1605,6 +1610,7 @@
           "off_diagonal_norm": 1.481313240327751e-15,
           "scale_bound": 57.86666666666667
         },
+        "orbit_resolved_identity_residual": 1.246488281888643e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -1931,6 +1937,7 @@
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
         },
+        "orbit_resolved_identity_residual": 2.1319597252258054e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -2291,6 +2298,7 @@
           "off_diagonal_norm": 5.523224674397832e-16,
           "scale_bound": 43.4
         },
+        "orbit_resolved_identity_residual": 1.0716297274775945e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -2511,6 +2519,7 @@
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
         },
+        "orbit_resolved_identity_residual": 2.1320921318121683e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -2866,6 +2875,7 @@
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 91.0
         },
+        "orbit_resolved_identity_residual": 2.131988802656262e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {
@@ -3218,6 +3228,7 @@
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
         },
+        "orbit_resolved_identity_residual": 2.1321574311898324e-14,
         "s": 0.4666666666666667
       },
       "linear_path_cyclic_cost": {

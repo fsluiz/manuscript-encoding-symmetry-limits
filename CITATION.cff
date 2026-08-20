@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software or its data, please cite the archived release and the associated article."
-title: "Joint symmetry and dynamical accessibility in compact Hamiltonian encodings of set cover"
+title: "Orbit-resolved spectra and dynamical accessibility in multi-register covering Hamiltonians"
 type: software
 license: MIT
 authors:
@@ -14,5 +14,5 @@ preferred-citation:
     - family-names: "Luiz"
       given-names: "Fabrício de Souza"
       orcid: "https://orcid.org/0000-0002-6375-0939"
-  title: "Joint symmetry and dynamical accessibility in compact Hamiltonian encodings of set cover"
+  title: "Orbit-resolved spectra and dynamical accessibility in multi-register covering Hamiltonians"
   year: 2026

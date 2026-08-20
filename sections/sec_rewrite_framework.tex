@@ -1,15 +1,23 @@
-\section{Encoding, joint symmetry, and cyclic accessibility}
+\section{Encoding, orbit structure, and cyclic accessibility}
 \label{sec:rewrite-framework}
 
-Let $n_B$ and $n_T$ be the numbers of bases and tasks, respectively, and
-fix a positive integer $k$ of address registers.  The incidence matrix is
-$A\in\{0,1\}^{n_B\times n_T}$, with $A_{bt}=1$ when base $b$ covers task
-$t$.  We first work in the physical address space
+Let $\mathcal T=\{1,\ldots,n_T\}$ be a task universe and let
+$\mathcal B_b\subseteq\mathcal T$, $1\leq b\leq n_B$, be the candidate
+bases.  Equivalently, $A\in\{0,1\}^{n_B\times n_T}$ is their incidence
+matrix, with $A_{bt}=1$ exactly when $t\in\mathcal B_b$.  Minimum Set Cover
+asks for
 \begin{equation}
- \mathcal H_{\rm valid}=(\mathbb C^{n_B})^{\otimes k};
- \label{eq:valid-space-rewrite}
+ k^\star=\min\bigl\{|S|:S\subseteq[n_B],\quad
+ \textstyle\bigcup_{b\in S}\mathcal B_b=\mathcal T\bigr\}.
+ \label{eq:msc-definition}
 \end{equation}
-the embedding into $2^{\lceil\log_2n_B\rceil}$ levels and its dynamically
+We fix $1\leq k\leq n_B$ address registers and first work in the physical
+address space
+\begin{equation}
+ \mathcal H_{\rm addr}=(\mathbb C^{n_B})^{\otimes k}.
+ \label{eq:addr-space-rewrite}
+\end{equation}
+The embedding into $2^{\lceil\log_2n_B\rceil}$ levels and its dynamically
 disconnected padding block are implementation details.
 
 Write $\ket{\boldsymbol b}=\ket{b_1}\otimes\cdots\otimes\ket{b_k}$ for a
@@ -22,7 +30,13 @@ base pairs are
  &=\sum_{1\leq r<s\leq k}\mathbf 1[b_r=b_s],
 \end{align}
 respectively, where $\mathbf 1[\cdot]$ is the indicator of the enclosed
-condition.  Let $\ket e=\sum_{b=1}^{n_B}\ket b$ and let $I_B$ be the
+condition.  Thus $U(\boldsymbol b)=D(\boldsymbol b)=0$ exactly when a
+measurement returns an exact-$k$ cover with distinct bases.  When
+$k=k^\star$, every such outcome solves MSC; for other $k$, the Hamiltonian
+encodes the fixed-cardinality covering problem rather than minimum
+cardinality itself.
+
+Let $\ket e=\sum_{b=1}^{n_B}\ket b$ and let $I_B$ be the
 identity on one address register.  The normalized complete-graph hopping
 matrix and its $k$-register lift are
 \begin{equation}
@@ -57,7 +71,7 @@ penalty of $\ket{\boldsymbol b}$.  An explicit initial Hamiltonian is
  \label{eq:hinit-rewrite}
 \end{equation}
 with unique ground state $\ket u=\ket{u_B}^{\otimes k}$ and initial gap one.
-The original linear interpolation is parameterized by $s\in[0,1]$ as
+The retained-walk linear interpolation is parameterized by $s\in[0,1]$ as
 \begin{equation}
  H(s)=(1-s)H_{\rm init}+sH_{\rm prob}.
  \label{eq:cycle-linear-rewrite}
@@ -73,7 +87,7 @@ The colour-preserving incidence automorphism group is
  \end{split}
 \end{equation}
 where $S_d$ denotes the symmetric group on $d$ labels.
-Only its base component acts on Eq.~\eqref{eq:valid-space-rewrite}.  We
+Only its base component acts on Eq.~\eqref{eq:addr-space-rewrite}.  We
 therefore use the effective group
 \begin{equation}
  G_B=\operatorname{pr}_B(G_A)\simeq G_A/\ker\rho,
@@ -92,7 +106,7 @@ Every term in Eqs.~\eqref{eq:hprob-rewrite} and \eqref{eq:hinit-rewrite}
 commutes with $G$.  Consequently, any Hamiltonian $H$ commuting with $G$
 has the block structure
 \begin{align}
- \mathcal H_{\rm valid}
+ \mathcal H_{\rm addr}
  &\simeq\bigoplus_{\alpha,\beta}
  V_\alpha^{S_k}\otimes V_\beta^{G_B}\otimes\mathcal M_{\alpha\beta},\\
  H&\simeq\bigoplus_{\alpha,\beta}
@@ -126,7 +140,7 @@ This is the symmetry-allowed invariant space, not automatically the space
 filled by the protocol.  Let
 $\mathfrak A=\operatorname{alg}^*(H_{\rm init},H_{\rm prob},I)$ be the
 smallest unital algebra containing the endpoints and closed under adjoints;
-here $I$ is the identity on $\mathcal H_{\rm valid}$.  The dynamically
+here $I$ is the identity on $\mathcal H_{\rm addr}$.  The dynamically
 accessible cyclic space is
 \begin{multline}
  \mathcal K_u=\mathfrak A\ket u\\
@@ -138,7 +152,7 @@ It is the smallest common reducing subspace that contains the initial state,
 and in general
 \begin{equation}
  \mathcal K_u\subseteq\mathcal H_{\rm sym}
- \subseteq\mathcal H_{\rm valid}.
+ \subseteq\mathcal H_{\rm addr}.
  \label{eq:nested-spaces-rewrite}
 \end{equation}
 The first inclusion can be strict; padding makes it strict automatically if
@@ -160,7 +174,7 @@ multiplicity gap without closing the isolation gap seen by the protocol.
   \node[draw,rounded corners,fill=blue!14,minimum width=2.9cm,
         minimum height=1.05cm] (cyc) at ([yshift=-0.25cm]sym.center) {};
   \node[anchor=north west] at ([xshift=0.12cm,yshift=-0.12cm]valid.north west)
-        {\bfseries(a) $\mathcal H_{\rm valid}$};
+        {\bfseries(a) $\mathcal H_{\rm addr}$};
   \node[anchor=north west] at ([xshift=0.12cm,yshift=-0.12cm]sym.north west)
         {$\mathcal H_{\rm sym}$};
   \node at (cyc.center) {$\mathcal K_u$};
@@ -168,15 +182,19 @@ multiplicity gap without closing the isolation gap seen by the protocol.
         {symmetry allows $\mathcal H_{\rm sym}$;\\the protocol generates $\mathcal K_u$};
 
   \begin{scope}[xshift=6.0cm,yshift=-1.90cm]
-    \draw[->] (0,0) -- (5.2,0) node[right] {$s$};
+    \draw[->] (0,0) -- (5.2,0) node[below] {$s$};
     \draw[->] (0,0) -- (0,3.2) node[left] {energy};
     \node[anchor=west] at (0.25,3.35) {\bfseries(b) Dark global crossing};
     \draw[very thick,blue] (0.25,0.55) .. controls (2.0,0.75) and
-          (3.5,1.10) .. (4.85,1.25) node[right,blue] {$\gamma$};
+          (3.5,1.10) .. (4.85,1.25)
+          node[right,blue,align=left] {tracked ground\\($\gamma$)};
     \draw[very thick,blue,dashed] (0.25,2.55) .. controls (2.0,2.35) and
-          (3.5,2.25) .. (4.85,2.15);
+          (3.5,2.25) .. (4.85,2.15)
+          node[right,blue,align=left] {tracked excitation\\($\gamma$)};
     \draw[very thick,red!75!black] (0.25,2.35) .. controls (1.8,1.65) and
-          (3.2,0.75) .. (4.85,0.25) node[right,red!75!black] {$\gamma'$};
+          (3.2,0.75) .. (4.85,0.25)
+          node[right,red!75!black,align=left,yshift=0.12cm]
+          {dark branch\\($\gamma'$)};
     \fill (3.05,1.00) circle (1.7pt);
     \draw[<->,blue] (2.25,0.86) -- (2.25,2.30)
           node[midway,right,align=left] {$\Delta_{\rm ad}>0$\\inside $\mathcal K_u$};
@@ -189,19 +207,73 @@ is only symmetry allowed; the cyclic space also depends on the initial state
 and generated algebra.  (b) The labels $\gamma$ and $\gamma'$ denote
 inequivalent symmetry sectors.  A branch in the latter can cross the followed
 branch and close a global multiplicity gap while the tracked band remains
-isolated within the cyclic space.}
+isolated within the cyclic space.  Solid blue is the tracked ground branch,
+dashed blue its in-sector excitation, and red an inequivalent dark branch.}
 \label{fig:accessible-spectrum}
 \end{figure*}
 
-\subsection{Exact orbit quotient}
+\subsection{Orbit invariants and exact quotient}
+
+For $\boldsymbol b=(b_1,\ldots,b_k)$, the joint action is
+\begin{equation}
+ \begin{aligned}
+ (\sigma,g)\boldsymbol b
+ &=\bigl(g(b_{\sigma^{-1}(1)}),\ldots,
+ g(b_{\sigma^{-1}(k)})\bigr),\\
+ &\hspace{4.5em}(\sigma,g)\in S_k\times G_B.
+ \end{aligned}
+ \label{eq:joint-tuple-action}
+\end{equation}
+The following elementary observation connects this representation directly
+to the covering problem.
+
+\begin{lemma}[Orbit invariance of the covering penalties]
+\label{lem:orbit-invariance}
+The functions $U$ and $D$ are constant on every orbit of the action in
+Eq.~\eqref{eq:joint-tuple-action}.  Consequently,
+\begin{equation}
+ \Phi(\boldsymbol b)=\lambda U(\boldsymbol b)+\mu D(\boldsymbol b)
+ \label{eq:orbit-potential}
+\end{equation}
+is an orbit function, the feasible set $\{U=D=0\}$ is a union of orbits,
+and its projector $P$ commutes with $G$.
+\end{lemma}
+
+A register-permutation orbit is a size-$k$ multiset of bases.  A joint
+$G$-orbit is therefore a $G_B$-equivalence class of such multisets: an
+unlabelled candidate $k$-cover, which may still be infeasible or contain
+repetitions.  The Cauchy--Frobenius lemma and its P\'olya--Redfield
+cycle-index formulation~\cite{Burnside1911,Redfield1927,Polya1937} give
+their number as
+\begin{proposition}[Orbit classification and count]
+\label{prop:orbit-count}
+Let $c_\ell(g)$ be the number of length-$\ell$ cycles of $g\in G_B$ in its
+base action.  Then
+\begin{equation}
+ \dim\mathcal H_{\rm sym}
+ =\frac1{|G_B|}\sum_{g\in G_B}[z^k]
+ \prod_{\ell\geq1}(1-z^\ell)^{-c_\ell(g)}.
+ \label{eq:polya-rewrite}
+\end{equation}
+Here $[z^k]$ extracts the coefficient of $z^k$.  Equivalently, the
+right-hand side is the cycle index of the base action evaluated on the
+generating functions for multisets.
+\end{proposition}
+
+Equation~\eqref{eq:polya-rewrite} counts basis states in the group-fixed
+space, not all vectors in the full quantum Hilbert space and not all states
+that a particular protocol can prepare.  The latter question requires the
+cyclic space below.
 
 Orbit quotients of symmetry-confined quantum walks are established
 constructions~\cite{KroviBrun2007}; we use the joint action here to retain
-the exact Hamiltonian matrix elements relevant to the present encoding.
-For a $G$-orbit $\mathcal O$ in the computational basis, define
-$\ket{\mathcal O}=|\mathcal O|^{-1/2}\sum_{x\in\mathcal O}\ket x$.
-These orbit states are an orthonormal basis of $\mathcal H_{\rm sym}$.  If
-$H$ is invariant, $x\in\mathcal O$, and
+the exact Hamiltonian matrix elements.  For an orbit $\mathcal O$, define
+\begin{equation}
+ \ket{\mathcal O}=|\mathcal O|^{-1/2}
+ \sum_{x\in\mathcal O}\ket x.
+\end{equation}
+These vectors are an orthonormal basis of $\mathcal H_{\rm sym}$.  If $H$
+commutes with $G$, $x\in\mathcal O$, and
 $H_{yx}:=\langle y|H|x\rangle$, then
 \begin{equation}
  \langle\mathcal O'|H|\mathcal O\rangle
@@ -209,17 +281,110 @@ $H_{yx}:=\langle y|H|x\rangle$, then
  \sum_{y\in\mathcal O'}H_{yx}.
  \label{eq:orbit-quotient-rewrite}
 \end{equation}
-The sum is independent of the representative.  The orbit-counting
-(Burnside) lemma~\cite{Burnside1911} gives
+The sum is independent of the representative $x$.  Lemma
+\ref{lem:orbit-invariance} makes the penalty term diagonal in this basis:
 \begin{equation}
- \dim\mathcal H_{\rm sym}
- =\frac1{|G_B|}\sum_{g\in G_B}[z^k]
- \prod_{\ell\geq1}(1-z^\ell)^{-c_\ell(g)},
- \label{eq:burnside-rewrite}
+ \langle\mathcal O'|V|\mathcal O\rangle
+ =\delta_{\mathcal O\mathcal O'}\Phi(\mathcal O).
+ \label{eq:orbit-potential-diagonal}
 \end{equation}
-where $G_B$ is the faithful base group in
-Eq.~\eqref{eq:faithful-base-group}, $[z^k]$ extracts the coefficient of
-$z^k$, and $c_\ell(g)$ counts length-$\ell$ cycles in the base action.  Orbit
-states need not span $\mathcal K_u$ minimally; cyclic closure must be tested
-separately.  Appendix~\ref{app:joint-representation} derives
-Eq.~\eqref{eq:burnside-rewrite} from the joint action.
+
+Thus the quotient is a single-particle hopping problem.  Its sites are
+unlabelled candidate covers, $\Phi$ is the on-site potential, and the
+off-diagonal entries of Eq.~\eqref{eq:orbit-quotient-rewrite} are hopping
+amplitudes with orbit-multiplicity factors.  The graph is connected because
+one-register changes connect any two size-$k$ multisets.  Reachability of a
+solution site is therefore not the obstruction: the protocol must
+redistribute the state's amplitude into the fixed solution subspace
+\begin{equation}
+ \Ran P\cap\mathcal H_{\rm sym}
+ =\operatorname{span}\{\ket{\mathcal O}:\Phi(\mathcal O)=0\}.
+ \label{eq:solution-orbit-span}
+\end{equation}
+An individual computational solution need not be group fixed, but its
+uniform orbit state always lies in Eq.~\eqref{eq:solution-orbit-span}.
+Nontrivial combinations within the same solution orbit belong to other
+irreps and can be inaccessible from $\ket u$.
+Away from a hopping-cancellation point, orbit potentials are not spectral
+gaps because eigenvectors are generally delocalized across several sites.
+Moreover, nontrivial irreps have no site in this quotient; this is precisely
+why inter-sector partners of dark crossings are absent from the dynamics
+shown by the orbit graph.
+
+\subsection{Cyclic accessibility in orbit coordinates}
+
+Let
+\begin{equation}
+ M=\sum_{r=1}^k\ket e\!\bra e_{(r)},
+ \qquad V=\lambda H_{\rm cov}+\mu H_{\rm excl}.
+ \label{eq:transport-potential-generators}
+\end{equation}
+The endpoint algebra has only these two nontrivial generators.
+
+\begin{lemma}[Two-generator reduction]
+\label{lem:two-generator-reduction}
+\begin{equation}
+ \operatorname{alg}^*(H_{\rm init},H_{\rm prob},I)
+ =\operatorname{alg}^*(M,V,I).
+ \label{eq:two-generator-reduction}
+\end{equation}
+\end{lemma}
+
+Let $\widehat M$ and $\widehat V$ be the orbit quotients of $M$ and $V$.
+Write $\varphi_1<\cdots<\varphi_p$ for the distinct values of $\Phi$ on
+the orbits and let $R_j$ project onto the corresponding potential shell.
+The initial vector has strictly positive orbit coordinates
+\begin{equation}
+ w_{\mathcal O}=\langle\mathcal O|u\rangle
+ =\sqrt{|\mathcal O|/n_B^k}>0.
+ \label{eq:uniform-orbit-coordinates}
+\end{equation}
+Thus every orbit has nonzero amplitude initially, but this does not imply
+that the individual basis vector $\ket{\mathcal O}$ can be prepared by the
+protocol.  A strict cyclic inclusion excludes linear combinations---patterns
+of relative amplitudes and phases across orbit sites---rather than deleting
+particular sites from the graph.
+
+\begin{theorem}[Shell-resolved cyclic closure]
+\label{thm:shell-cyclic-closure}
+In orbit coordinates, $\mathcal K_u$ is the smallest subspace containing
+$w$ and invariant under $\widehat M$ and $\widehat V$.  It is obtained by
+the stabilising iteration
+\begin{align}
+ \mathcal K^{(0)}&=\operatorname{span}\{R_jw:1\leq j\leq p\},\\
+ \mathcal K^{(r+1)}&=\mathcal K^{(r)}+
+ \sum_{j=1}^pR_j\widehat M\mathcal K^{(r)}.
+ \label{eq:shell-cyclic-iteration}
+\end{align}
+Consequently,
+\begin{equation}
+ \dim\mathcal K_u\geq p,
+ \label{eq:shell-lower-bound}
+\end{equation}
+and $\mathcal K_u=\mathcal H_{\rm sym}$ whenever $\Phi$ is injective on
+orbits.  Conversely, a strict inclusion
+$\mathcal K_u\subsetneq\mathcal H_{\rm sym}$ requires two distinct orbits
+to share a potential value.
+
+For the linear path in Eq.~\eqref{eq:cycle-linear-rewrite}, let
+\begin{equation}
+ c(s)=\frac{s}{n_B-1}-\frac{1-s}{n_B}.
+ \label{eq:hopping-coefficient}
+\end{equation}
+Whenever $c(s)\leq0$, the symmetric and cyclic ground energies agree:
+\begin{equation}
+ E_0^{\mathcal K}(s)=E_0^{\rm sym}(s).
+ \label{eq:zero-cyclic-cost-before-cancellation}
+\end{equation}
+\end{theorem}
+
+The last statement follows physically from the sign-free, connected orbit
+hopping problem.  Before cancellation, Perron--Frobenius gives a unique
+strictly positive symmetric ground vector, which has nonzero overlap with
+$w$ and hence belongs to the cyclic space.  At cancellation, a nonzero
+projection of $w$ remains in the lowest potential shell.  Strict dimension
+reduction therefore need not incur a ground-energy cost; the numerical
+audit in Section~\ref{sec:numerical-reconstruction} finds precisely this
+behaviour in four of the five strict inclusions.  Proofs of the orbit
+statements and Theorem~\ref{thm:shell-cyclic-closure} are given in
+Appendix~\ref{app:joint-representation}.

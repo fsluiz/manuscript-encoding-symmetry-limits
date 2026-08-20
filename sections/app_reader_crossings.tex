@@ -3,8 +3,10 @@
 \subsection{Proof of the stability theorem}
 \label{app:dark-stability}
 
-Simple isolated eigenvalues of a differentiable Hermitian family define
-differentiable local branches.  Apply the implicit-function theorem to
+Simple isolated reduced eigenvalues of a differentiable Hermitian family
+define differentiable local branches; the identity factor on an irrep may
+replicate such a branch without changing its scalar energy.  Apply the
+implicit-function theorem to
 $F(s,\varepsilon)=E_a(s,\varepsilon)-E_b(s,\varepsilon)$ and use
 Eq.~\eqref{eq:transverse-dark-hypothesis}.  This gives a unique nearby root
 $s_\star(\varepsilon)=s_\star+O(|\varepsilon|)$.  Commutation with the
@@ -18,10 +20,28 @@ Theorem~\ref{thm:dark-crossing-stability}.
 \subsection{Catalyst and numerical audit}
 \label{app:d4-catalyst}
 
-For the frozen $2\times4$ incidence instance with $k=3$, the faithful base
-group is $D_4$.  The $S_3\times D_4$ fixed quotient and the cyclic closure
-from $\ket u$ both have dimension $22$, compared with $512$ in the valid
-ordered space.  The latter equality is an output of the closure calculation,
+The frozen instance has bases and tasks labelled $0,\ldots,7$ and incidence
+matrix
+\begin{equation}
+ A=\begin{pmatrix}
+ 1&1&0&0&1&0&0&0\\
+ 1&1&1&0&0&1&0&0\\
+ 0&1&1&1&0&0&1&0\\
+ 0&0&1&1&0&0&0&1\\
+ 1&0&0&0&1&1&0&0\\
+ 0&1&0&0&1&1&1&0\\
+ 0&0&1&0&0&1&1&1\\
+ 0&0&0&1&0&0&1&1
+ \end{pmatrix}.
+ \label{eq:d4-incidence-matrix}
+\end{equation}
+It is the closed-neighbourhood incidence relation of the $2\times4$ vertex
+grid.  Because task labels may be permuted independently of base labels,
+its effective incidence group has order eight and is isomorphic to $D_4$;
+this need not equal the geometric automorphism group obtained by forcing the
+same permutation on both colours.  For $k=3$, the $S_3\times D_4$ fixed
+quotient and the cyclic closure from $\ket u$ both have dimension $22$,
+compared with $512$ in the ordered address space.  The latter equality is an output of the closure calculation,
 not an assumption based on symmetry.  The orbit-isometry,
 endpoint-invariance, and cyclic-invariance residuals are below $10^{-13}$.
 
@@ -29,8 +49,11 @@ For the catalyst in Eqs.~\eqref{eq:d4-catalyst-operator}--
 \eqref{eq:d4-catalyst-path}, set $\chi=2$.  The remaining global crossing
 is at $s\simeq0.806454$.  The two branches belong to different $D_4$ irreps,
 Eq.~\eqref{eq:dark-coupling-rewrite} has residual
-$4.7\times10^{-14}$, and the $D_4$-trivial gap there is approximately
-$0.258$.  The trivial-sector gap was evaluated on a uniform 2001-point grid
+$4.7\times10^{-14}$, the reduced-branch slope difference is approximately
+$-4.54$, and the $D_4$-trivial gap there is approximately $0.258$.  The
+nontrivial branch is a rank-two $E$ multiplet; the derivative restricted to
+that multiplet is scalar to numerical precision.  The trivial-sector gap
+was evaluated on a uniform 2001-point grid
 and locally minimized in every grid bracket; its minimum is $0.0414$ at
 $s\simeq0.874587$.  The crossing between the trivial floor and the
 orthogonal-complement floor was bracketed on 401 points and refined by a

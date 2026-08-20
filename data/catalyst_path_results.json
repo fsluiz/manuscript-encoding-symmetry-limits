@@ -87,11 +87,17 @@
   "selected_path": {
     "global_A1_vs_nontrivial_crossings": [
       {
+        "A1_branch_slope": 1.6865515002648854,
         "A1_gap": 0.25813582917695693,
         "branch_difference": -6.2450045135165055e-15,
         "cross_sector_derivative_coupling_norm": 4.650370983961795e-14,
-        "energy": 0.23262142416461568,
-        "s": 0.806453941930387
+        "energy": 0.23262142416461845,
+        "nontrivial_branch_slope": -2.852619430514417,
+        "nontrivial_complement_excitation_gap": 0.005780063492391213,
+        "nontrivial_ground_rank": 2,
+        "nontrivial_slope_spread": 2.220446049250313e-15,
+        "s": 0.806453941930387,
+        "transverse_slope_difference": -4.539170930779302
       }
     ],
     "minimum_A1_gap": {
