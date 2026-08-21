@@ -1011,7 +1011,7 @@ def render_figure(rows: list[dict[str, Any]]) -> str | None:
         r"    \draw[red!75!black,thick] (4.05,0.52) -- (3.75,0.78);",
         r"    \node[red!75!black,align=center] at (4.25,0.25) {ground vector\\absent from $\mathcal K_u$};",
         r"    \draw[<->] (2.75,0.67) -- (2.75,1.63) node[midway,right] {$\delta_{\rm cyc}$};",
-        r"    \node[align=center] at (2.9,2.35) {$|\langle E_1^{\rm sym}|E_0^{\mathcal K}\rangle|^2=1+O(10^{-15})$};",
+        r"    \node[align=center] at (2.9,2.35) {$\bigl||\langle E_1^{\rm sym}|E_0^{\mathcal K}\rangle|^2-1\bigr|<10^{-14}$};",
         r"  \end{scope}",
         r"  \begin{scope}[xshift=9.0cm]",
         r"    \node[anchor=west,font=\bfseries] at (0,3.65) {(b) Global ground-rank amplification};",
