@@ -119,7 +119,7 @@ representations; $\mathcal M_{\alpha\beta}$ is their multiplicity space;
 and $h_{\alpha\beta}$ is the reduced action on that space.  The symbols
 $I_{V_\alpha}$ and
 $I_{V_\beta}$ denote the corresponding identities.  This is the source of
-Schur multiplicities; an equality of eigenvalues in
+Schur multiplicities~\cite{Serre1977}; an equality of eigenvalues in
 different blocks is a separate phenomenon.  The full representation and
 the role of the kernel of $G_A$ are detailed in
 Appendix~\ref{app:joint-representation}.
@@ -158,9 +158,10 @@ and in general
 The first inclusion can be strict; padding makes it strict automatically if
 one defines the symmetry on the full qubit space.
 
-Figure~\ref{fig:accessible-spectrum} summarizes the two distinctions used
-throughout the paper.  Group invariance identifies an allowed space, while
-the initial state and generator algebra select the smaller cyclic space.
+Figure~\ref{fig:accessible-spectrum} schematically summarizes the two
+distinctions used throughout the paper.  Group invariance identifies an
+allowed space, while the initial state and generator algebra select the
+smaller cyclic space.
 An eigenvalue coincidence in another irrep may then close the global
 multiplicity gap without closing the isolation gap seen by the protocol.
 
@@ -208,7 +209,8 @@ and generated algebra.  (b) The labels $\gamma$ and $\gamma'$ denote
 inequivalent symmetry sectors.  A branch in the latter can cross the followed
 branch and close a global multiplicity gap while the tracked band remains
 isolated within the cyclic space.  Solid blue is the tracked ground branch,
-dashed blue its in-sector excitation, and red an inequivalent dark branch.}
+dashed blue its in-sector excitation, and red an inequivalent dark branch.
+The diagram is not to scale.}
 \label{fig:accessible-spectrum}
 \end{figure*}
 
@@ -356,6 +358,15 @@ the stabilising iteration
  \sum_{j=1}^pR_j\widehat M\mathcal K^{(r)}.
  \label{eq:shell-cyclic-iteration}
 \end{align}
+Moreover, the accessible and inaccessible directions decompose shell by
+shell:
+\begin{align}
+ \mathcal K_u&=\bigoplus_{j=1}^pR_j\mathcal K_u,\\
+ \mathcal K_u^\perp\cap\mathcal H_{\rm sym}
+ &=\bigoplus_{j=1}^p
+ \left(\operatorname{Ran}R_j\ominus R_j\mathcal K_u\right).
+ \label{eq:shell-complement-decomposition}
+\end{align}
 Consequently,
 \begin{equation}
  \dim\mathcal K_u\geq p,
@@ -379,12 +390,15 @@ Whenever $c(s)\leq0$, the symmetric and cyclic ground energies agree:
 \end{theorem}
 
 The last statement follows physically from the sign-free, connected orbit
-hopping problem.  Before cancellation, Perron--Frobenius gives a unique
+hopping problem.  Before cancellation, Perron--Frobenius~\cite{HornJohnson2012}
+gives a unique
 strictly positive symmetric ground vector, which has nonzero overlap with
 $w$ and hence belongs to the cyclic space.  At cancellation, a nonzero
 projection of $w$ remains in the lowest potential shell.  Strict dimension
 reduction therefore need not incur a ground-energy cost; the numerical
-audit in Section~\ref{sec:numerical-reconstruction} finds precisely this
-behaviour in four of the five strict inclusions.  Proofs of the orbit
+audit in Section~\ref{sec:numerical-reconstruction} verifies the theorem on
+the path grid through $s_c$.  At the problem endpoint $s=1$, outside the
+theorem's sign regime, four of the five strict inclusions still have zero
+cyclic cost empirically.  Proofs of the orbit
 statements and Theorem~\ref{thm:shell-cyclic-closure} are given in
 Appendix~\ref{app:joint-representation}.

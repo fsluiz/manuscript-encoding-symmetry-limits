@@ -41,7 +41,7 @@ hash.
 
 | Manuscript result | Command | Machine-readable output |
 |---|---|---|
-| Tables 1 and 2 | `python3 code/reconstruct_accessibility_table.py` | `data/accessibility_table_reconstructed.json`, `sections/generated_accessibility_tables.tex` |
+| Tables 1 and 2 and finite diagnostics | `python3 code/reconstruct_accessibility_table.py` | `data/accessibility_table_reconstructed.json`, `sections/generated_accessibility_tables.tex`, `sections/generated_accessibility_figure.tex` |
 | Shell-resolved cyclic-space audit | `python3 code/orbit_cyclic_audit.py --write` | `data/orbit_cyclic_audit.json` |
 | Finite joint-symmetry audit | `python3 code/d4_sector_analysis.py` | `data/d4_sector_comparison.json` |
 | Endpoint-vanishing catalyst | `python3 code/catalyst_path_analysis.py` | `data/catalyst_path_results.json` |

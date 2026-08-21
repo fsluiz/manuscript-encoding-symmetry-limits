@@ -40,6 +40,7 @@ from symmetry_analysis import find_base_automorphisms
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "data" / "accessibility_table_reconstructed.json"
 TABLE_OUTPUT = ROOT / "sections" / "generated_accessibility_tables.tex"
+FIGURE_OUTPUT = ROOT / "sections" / "generated_accessibility_figure.tex"
 LAM, MU, NU = 5.0, 10.0, 50.0
 RESIDUAL_FACTOR = 50.0
 
@@ -610,6 +611,17 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
         transport_q, penalties, uniform_q, relative_tol=1e-11
     )
     growth = cyclic_audit["growth"]
+    shell_records = []
+    for potential in np.unique(penalties):
+        shell_indices = np.flatnonzero(penalties == potential)
+        shell_singular = np.linalg.svd(cyclic[shell_indices, :], compute_uv=False)
+        shell_rank = int(np.sum(shell_singular > 1e-10))
+        shell_records.append({
+            "potential": float(potential),
+            "orbit_dimension": int(len(shell_indices)),
+            "cyclic_dimension": shell_rank,
+            "deficit": int(len(shell_indices) - shell_rank),
+        })
     print(f"  cyclic closure: {growth}", flush=True)
     cyclic_residuals = {
         "H0": float(np.linalg.norm((np.eye(len(orbits)) - cyclic @ cyclic.T) @ H0q @ cyclic, ord=2)),
@@ -688,6 +700,27 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
     acc_summary["max_ground_residual"] = float(acc_residuals[:acc_rank].max())
     acc_summary["max_reported_residual"] = float(acc_residuals.max())
     acc_summary["solver"] = "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+
+    closest_symmetric_level = int(np.argmin(abs(sym_values - acc_values[0])))
+    cyclic_ground_in_orbit_space = cyclic @ acc_vectors[:, 0]
+    cyclic_ground_embedding = {
+        "symmetric_level_index_zero_based": closest_symmetric_level,
+        "symmetric_level_energy": float(sym_values[closest_symmetric_level]),
+        "cyclic_ground_energy": float(acc_values[0]),
+        "energy_difference": float(
+            acc_values[0] - sym_values[closest_symmetric_level]
+        ),
+        "eigenvector_overlap_squared": float(
+            abs(
+                sym_vectors[:, closest_symmetric_level]
+                @ cyclic_ground_in_orbit_space
+            ) ** 2
+        ),
+        "symmetric_ground_weight_in_cyclic_space": float(
+            np.linalg.norm(cyclic.T @ sym_vectors[:, 0]) ** 2
+        ),
+        "represented_irrep": f"trivial S_{k} x G_B",
+    }
 
     energy_tolerance = RESIDUAL_FACTOR * (
         full_summary["max_ground_residual"]
@@ -784,6 +817,11 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
             "symmetric_before_GB": math.comb(n_b + k - 1, k),
             "joint_fixed": len(orbits),
             "cyclic": int(cyclic.shape[1]),
+            "cyclic_deficit": int(len(orbits) - cyclic.shape[1]),
+        },
+        "potential_shells": {
+            "count": int(len(shell_records)),
+            "records": shell_records,
         },
         "optimal_covers": {
             "count": int(record["n_optimal_cardinality_covers"]),
@@ -806,6 +844,7 @@ def analyse_instance(instance_id: str) -> dict[str, Any]:
             "full": full_summary,
             "symmetric": sym_summary,
             "accessible": acc_summary,
+            "cyclic_ground_embedding": cyclic_ground_embedding,
             "delta_symmetry": delta_symmetry,
             "delta_symmetry_tolerance": float(symmetry_tolerance),
             "delta_cyclic": delta_cyclic,
@@ -860,13 +899,17 @@ def render_tables(rows: list[dict[str, Any]]) -> str:
         r"\begin{table*}[t]",
         r"\centering",
         r"\caption{Exact structural reduction for the frozen finite instances. "
-        r"All dimensions refer to the physical, unpadded address space.}",
+        r"All dimensions refer to the physical, unpadded address space; $p$ is "
+        r"the number of potential shells and $d_{\rm miss}=\dim\mathcal H_{\rm sym}"
+        r"-\dim\mathcal K_u$.}",
         r"\label{tab:finite-structure}",
-        r"\small",
-        r"\begin{tabular}{lrrrrrr}",
+        r"\scriptsize",
+        r"\setlength{\tabcolsep}{3pt}",
+        r"\begin{tabular}{lrrrrrrrr}",
         r"\hline",
         r"instance & $k$ & $|G_B|$ & $\dim\mathcal H_{\rm addr}$ & "
-        r"$\dim\mathcal H_{\rm sym}$ & $\dim\mathcal K_u$ & cover orbits\\",
+        r"$\dim\mathcal H_{\rm sym}$ & $p$ & $\dim\mathcal K_u$ & "
+        r"$d_{\rm miss}$ & cover orbits\\",
         r"\hline",
     ]
     for row in rows:
@@ -874,7 +917,9 @@ def render_tables(rows: list[dict[str, Any]]) -> str:
         lines.append(
             f"{latex_label(row['instance_id'])} & {row['k_star']} & "
             f"{row['represented_group']['base_group_order']} & "
-            f"{dims['full_valid']} & {dims['joint_fixed']} & {dims['cyclic']} & "
+            f"{dims['full_valid']} & {dims['joint_fixed']} & "
+            f"{row['potential_shells']['count']} & {dims['cyclic']} & "
+            f"{dims['cyclic_deficit']} & "
             f"{row['optimal_covers']['G_B_orbit_count']}\\\\"
         )
     lines.extend([
@@ -927,6 +972,79 @@ def render_tables(rows: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
+def render_figure(rows: list[dict[str, Any]]) -> str | None:
+    """Render the two finite diagnostics highlighted in the main text."""
+    by_id = {row["instance_id"]: row for row in rows}
+    required = {"random-b8-t7-p50-s002-v1", "grid-2x4-v1"}
+    if not required.issubset(by_id):
+        return None
+    random_row = by_id["random-b8-t7-p50-s002-v1"]
+    grid_row = by_id["grid-2x4-v1"]
+    random_endpoint = random_row["problem_endpoint"]
+    e_sym_0 = random_endpoint["symmetric"]["E0"]
+    e_sym_1 = e_sym_0 + random_endpoint["symmetric"]["excitation_gap"]
+    e_cyc_0 = random_endpoint["accessible"]["E0"]
+    grid_cancel_rank = math.factorial(grid_row["k_star"]) * grid_row[
+        "optimal_covers"
+    ]["count"]
+    grid_endpoint_rank = grid_row["problem_endpoint"]["full"]["ground_rank"]
+    return "\n".join([
+        "% Generated by code/reconstruct_accessibility_table.py; do not edit.",
+        r"\begin{figure*}[t]",
+        r"\centering",
+        r"\resizebox{0.97\textwidth}{!}{%",
+        r"\begin{tikzpicture}[font=\small,>=Latex]",
+        r"  \begin{scope}",
+        r"    \node[anchor=west,font=\bfseries] at (0,3.65) {(a) Cyclic exclusion within the fixed sector};",
+        r"    \draw[->] (0.35,0.25) -- (0.35,3.05);",
+        r"    \node at (0.15,3.08) {$E$};",
+        r"    \node at (1.65,2.95) {$\mathcal H_{\rm sym}$};",
+        r"    \node at (4.15,2.95) {$\mathcal K_u$};",
+        r"    \draw[gray!75!black,very thick] (0.85,0.65) -- (2.45,0.65);",
+        rf"    \node[left] at (0.82,0.65) {{$E_0^{{\rm sym}}={e_sym_0:.6f}$}};",
+        r"    \draw[blue,very thick] (0.85,1.65) -- (2.45,1.65);",
+        rf"    \node[left,blue] at (0.82,1.65) {{$E_1^{{\rm sym}}={e_sym_1:.6f}$}};",
+        r"    \draw[blue,very thick] (3.35,1.65) -- (4.95,1.65);",
+        rf"    \node[right,blue] at (4.98,1.65) {{$E_0^{{\mathcal K}}={e_cyc_0:.6f}$}};",
+        r"    \draw[blue,dashed] (2.45,1.65) -- (3.35,1.65);",
+        r"    \draw[red!75!black,thick] (3.75,0.52) -- (4.05,0.78);",
+        r"    \draw[red!75!black,thick] (4.05,0.52) -- (3.75,0.78);",
+        r"    \node[red!75!black,align=center] at (4.25,0.25) {ground vector\\absent from $\mathcal K_u$};",
+        r"    \draw[<->] (2.75,0.67) -- (2.75,1.63) node[midway,right] {$\delta_{\rm cyc}$};",
+        r"    \node[align=center] at (2.9,2.35) {$|\langle E_1^{\rm sym}|E_0^{\mathcal K}\rangle|^2=1+O(10^{-15})$};",
+        r"  \end{scope}",
+        r"  \begin{scope}[xshift=9.0cm]",
+        r"    \node[anchor=west,font=\bfseries] at (0,3.65) {(b) Global ground-rank amplification};",
+        r"    \draw[->] (0.55,0.35) -- (0.55,3.05);",
+        r"    \node[rotate=90,align=center] at (-0.10,1.75) {ground rank (log scale)};",
+        r"    \draw (0.48,0.55) -- (0.62,0.55) node[left=2pt] {$1$};",
+        r"    \draw (0.48,1.55) -- (0.62,1.55) node[left=2pt] {$10$};",
+        r"    \draw (0.48,2.55) -- (0.62,2.55) node[left=2pt] {$100$};",
+        r"    \draw[dotted,gray] (0.62,0.55) -- (4.65,0.55);",
+        r"    \draw[dotted,gray] (0.62,1.55) -- (4.65,1.55);",
+        r"    \draw[dotted,gray] (0.62,2.55) -- (4.65,2.55);",
+        r"    \fill[blue] (1.25,0.55) circle (2pt);",
+        r"    \node[above,blue] at (1.25,0.55) {$1$};",
+        r"    \node[below,align=center] at (1.25,0.30) {$s<s_c$};",
+        r"    \draw[very thick,red!75!black] (2.65,0.55) -- (2.65,2.407);",
+        r"    \fill[red!75!black] (2.65,2.407) circle (2pt);",
+        rf"    \node[above,red!75!black] at (2.65,2.407) {{${grid_cancel_rank}$}};",
+        r"    \node[below,align=center] at (2.65,0.30) {$s=s_c$};",
+        r"    \draw[very thick,blue] (4.05,0.55) -- (4.05,0.851);",
+        r"    \fill[blue] (4.05,0.851) circle (2pt);",
+        rf"    \node[above,blue] at (4.05,0.851) {{${grid_endpoint_rank}$}};",
+        r"    \node[below,align=center] at (4.05,0.30) {$s=1$};",
+        r"    \node[align=center] at (2.65,-0.35) {\texttt{grid-2x4}: $1\to72\to2$};",
+        r"  \end{scope}",
+        r"\end{tikzpicture}",
+        r"}",
+        r"\caption{Two finite diagnostics of cyclic accessibility. (a) At the problem endpoint of \texttt{rnd-b8-t7-p50-s002}, the symmetric ground vector has negligible projection onto $\mathcal K_u$, while the cyclic ground state coincides, within residual-based precision, with the first symmetric excitation. (b) For \texttt{grid-2x4}, irreducible stoquasticity gives global ground rank one for $s<s_c$, hopping cancellation raises it to $3!\times12=72$ at $s_c=7/15$, and the endpoint rank is two. Panel (b) uses a logarithmic rank axis.}",
+        r"\label{fig:finite-cyclic-diagnostics}",
+        r"\end{figure*}",
+        "",
+    ])
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -959,7 +1077,7 @@ def main() -> None:
         )
 
     document = {
-        "schema_version": 1,
+        "schema_version": 2,
         "scope": "frozen candidate-primary unweighted instances",
         "method": (
             "full sparse/dense Hamiltonian plus exact S_k x G_B orbit quotient; "
@@ -970,17 +1088,26 @@ def main() -> None:
     }
     json_text = json.dumps(document, indent=2, sort_keys=True) + "\n"
     table_text = render_tables(rows)
+    figure_text = render_figure(rows)
     if args.check:
         if not OUTPUT.exists() or OUTPUT.read_text() != json_text:
             raise SystemExit(f"{OUTPUT.relative_to(ROOT)} is absent or stale")
         if not TABLE_OUTPUT.exists() or TABLE_OUTPUT.read_text() != table_text:
             raise SystemExit(f"{TABLE_OUTPUT.relative_to(ROOT)} is absent or stale")
+        if figure_text is not None and (
+            not FIGURE_OUTPUT.exists() or FIGURE_OUTPUT.read_text() != figure_text
+        ):
+            raise SystemExit(f"{FIGURE_OUTPUT.relative_to(ROOT)} is absent or stale")
         print("Reconstruction outputs verified byte-for-byte.")
     else:
         OUTPUT.write_text(json_text)
         TABLE_OUTPUT.write_text(table_text)
+        if figure_text is not None:
+            FIGURE_OUTPUT.write_text(figure_text)
         print(f"Wrote {OUTPUT.relative_to(ROOT)}")
         print(f"Wrote {TABLE_OUTPUT.relative_to(ROOT)}")
+        if figure_text is not None:
+            print(f"Wrote {FIGURE_OUTPUT.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

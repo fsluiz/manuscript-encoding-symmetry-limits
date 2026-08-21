@@ -35,6 +35,7 @@
       ],
       "dimensions": {
         "cyclic": 22,
+        "cyclic_deficit": 0,
         "full_valid": 512,
         "joint_fixed": 22,
         "symmetric_before_GB": 120
@@ -137,6 +138,65 @@
         "nu": 50.0
       },
       "payload_sha256": "662a99dbb6d86cc84838a440228c22e1daed574935891b44f582050a5a147c5d",
+      "potential_shells": {
+        "count": 9,
+        "records": [
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 55.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.039539433225908985,
@@ -152,6 +212,15 @@
           "multiplicity_gap": 0.31460780380627223,
           "scale_bound": 56.81935263678683,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.039539433225908985,
+          "eigenvector_overlap_squared": 0.9999999999999987,
+          "energy_difference": -1.514760539222948e-14,
+          "represented_irrep": "trivial S_3 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999996,
+          "symmetric_level_energy": -0.03953943322589384,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.2709190133895447,
         "delta_accessible_tolerance": 3.6222479465531104e-12,
@@ -325,6 +394,7 @@
       ],
       "dimensions": {
         "cyclic": 101,
+        "cyclic_deficit": 19,
         "full_valid": 512,
         "joint_fixed": 120,
         "symmetric_before_GB": 120
@@ -437,6 +507,65 @@
         "nu": 50.0
       },
       "payload_sha256": "2c14b4da242024bcf62509417c80cebc5c225ec3769b7ed2f78094decef77e39",
+      "potential_shells": {
+        "count": 9,
+        "records": [
+          {
+            "cyclic_dimension": 10,
+            "deficit": 2,
+            "orbit_dimension": 12,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 26,
+            "deficit": 7,
+            "orbit_dimension": 33,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 11,
+            "deficit": 0,
+            "orbit_dimension": 11,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 4,
+            "orbit_dimension": 18,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 4,
+            "orbit_dimension": 22,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 2,
+            "orbit_dimension": 16,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 4,
+            "deficit": 0,
+            "orbit_dimension": 4,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 55.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.37043050862572635,
@@ -452,6 +581,15 @@
           "multiplicity_gap": 0.127587200256919,
           "scale_bound": 57.95332150977034,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.37043050862572635,
+          "eigenvector_overlap_squared": 1.0000000000000004,
+          "energy_difference": -2.7200464103316335e-15,
+          "represented_irrep": "trivial S_3 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 3.490826411865854e-28,
+          "symmetric_level_energy": -0.37043050862572363,
+          "symmetric_level_index_zero_based": 1
         },
         "delta_accessible": 0.058140919945708636,
         "delta_accessible_tolerance": 3.1601683216241694e-12,
@@ -578,6 +716,7 @@
       ],
       "dimensions": {
         "cyclic": 324,
+        "cyclic_deficit": 6,
         "full_valid": 4096,
         "joint_fixed": 330,
         "symmetric_before_GB": 330
@@ -685,6 +824,101 @@
         "nu": 50.0
       },
       "payload_sha256": "18a0b3806a7b0df1b278a70cec092c6f72512026436105dac46994859136e4aa",
+      "potential_shells": {
+        "count": 15,
+        "records": [
+          {
+            "cyclic_dimension": 7,
+            "deficit": 0,
+            "orbit_dimension": 7,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 35,
+            "deficit": 0,
+            "orbit_dimension": 35,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 21,
+            "deficit": 0,
+            "orbit_dimension": 21,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 43,
+            "deficit": 0,
+            "orbit_dimension": 43,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 69,
+            "deficit": 6,
+            "orbit_dimension": 75,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 33,
+            "deficit": 0,
+            "orbit_dimension": 33,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 28,
+            "deficit": 0,
+            "orbit_dimension": 28,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 13,
+            "deficit": 0,
+            "orbit_dimension": 13,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 31,
+            "deficit": 0,
+            "orbit_dimension": 31,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 0,
+            "orbit_dimension": 14,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 80.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 85.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 90.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.2960802735940506,
@@ -700,6 +934,15 @@
           "multiplicity_gap": 0.029683068961202652,
           "scale_bound": 92.8143839316969,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.2960802735940506,
+          "eigenvector_overlap_squared": 1.0000000000000004,
+          "energy_difference": -5.88418203051333e-15,
+          "represented_irrep": "trivial S_4 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 1.0,
+          "symmetric_level_energy": -0.2960802735940447,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.027352794913679535,
         "delta_accessible_tolerance": 4.053275574150208e-07,
@@ -906,6 +1149,7 @@
       ],
       "dimensions": {
         "cyclic": 328,
+        "cyclic_deficit": 2,
         "full_valid": 4096,
         "joint_fixed": 330,
         "symmetric_before_GB": 330
@@ -1014,6 +1258,125 @@
         "nu": 50.0
       },
       "payload_sha256": "fb8bb96d53181586105b67dca446d502318b3bd00acf2ca4eb901f9dc57131e0",
+      "potential_shells": {
+        "count": 19,
+        "records": [
+          {
+            "cyclic_dimension": 8,
+            "deficit": 0,
+            "orbit_dimension": 8,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 0,
+            "orbit_dimension": 14,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 28,
+            "deficit": 0,
+            "orbit_dimension": 28,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 38,
+            "deficit": 0,
+            "orbit_dimension": 38,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 31,
+            "deficit": 0,
+            "orbit_dimension": 31,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 52,
+            "deficit": 2,
+            "orbit_dimension": 54,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 30,
+            "deficit": 0,
+            "orbit_dimension": 30,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 0,
+            "orbit_dimension": 14,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 9,
+            "deficit": 0,
+            "orbit_dimension": 9,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 11,
+            "deficit": 0,
+            "orbit_dimension": 11,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 19,
+            "deficit": 0,
+            "orbit_dimension": 19,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 19,
+            "deficit": 0,
+            "orbit_dimension": 19,
+            "potential": 60.0
+          },
+          {
+            "cyclic_dimension": 15,
+            "deficit": 0,
+            "orbit_dimension": 15,
+            "potential": 65.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 70.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 110.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 115.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 120.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.3057382896244895,
@@ -1029,6 +1392,15 @@
           "multiplicity_gap": 0.0017827703539832762,
           "scale_bound": 123.861485477792,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.3057382896244895,
+          "eigenvector_overlap_squared": 1.0000000000000004,
+          "energy_difference": -1.049160758270773e-14,
+          "represented_irrep": "trivial S_4 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 1.0,
+          "symmetric_level_energy": -0.305738289624479,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.010302413161265789,
         "delta_accessible_tolerance": 2.415080804609208e-09,
@@ -1235,6 +1607,7 @@
       ],
       "dimensions": {
         "cyclic": 792,
+        "cyclic_deficit": 0,
         "full_valid": 32768,
         "joint_fixed": 792,
         "symmetric_before_GB": 792
@@ -1336,6 +1709,191 @@
         "nu": 50.0
       },
       "payload_sha256": "8713960484f56292cac2e8b3cf9eacaa6b34ddf79e86e80cf52109bc59683c86",
+      "potential_shells": {
+        "count": 30,
+        "records": [
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 16,
+            "deficit": 0,
+            "orbit_dimension": 16,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 19,
+            "deficit": 0,
+            "orbit_dimension": 19,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 22,
+            "deficit": 0,
+            "orbit_dimension": 22,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 53,
+            "deficit": 0,
+            "orbit_dimension": 53,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 56,
+            "deficit": 0,
+            "orbit_dimension": 56,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 84,
+            "deficit": 0,
+            "orbit_dimension": 84,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 62,
+            "deficit": 0,
+            "orbit_dimension": 62,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 39,
+            "deficit": 0,
+            "orbit_dimension": 39,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 24,
+            "deficit": 0,
+            "orbit_dimension": 24,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 60,
+            "deficit": 0,
+            "orbit_dimension": 60,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 57,
+            "deficit": 0,
+            "orbit_dimension": 57,
+            "potential": 60.0
+          },
+          {
+            "cyclic_dimension": 81,
+            "deficit": 0,
+            "orbit_dimension": 81,
+            "potential": 65.0
+          },
+          {
+            "cyclic_dimension": 48,
+            "deficit": 0,
+            "orbit_dimension": 48,
+            "potential": 70.0
+          },
+          {
+            "cyclic_dimension": 36,
+            "deficit": 0,
+            "orbit_dimension": 36,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 9,
+            "deficit": 0,
+            "orbit_dimension": 9,
+            "potential": 80.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 85.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 90.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 95.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 100.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 105.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 110.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 115.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 120.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 125.0
+          },
+          {
+            "cyclic_dimension": 4,
+            "deficit": 0,
+            "orbit_dimension": 4,
+            "potential": 130.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 185.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 190.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 195.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.06264525110528062,
@@ -1351,6 +1909,15 @@
           "multiplicity_gap": 4.8659737838867905,
           "scale_bound": 199.4377445940331,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.06264525110528062,
+          "eigenvector_overlap_squared": 1.0000000000000004,
+          "energy_difference": 6.1201044232461754e-15,
+          "represented_irrep": "trivial S_5 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 1.0000000000000004,
+          "symmetric_level_energy": -0.06264525110528674,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.0,
         "delta_accessible_tolerance": 5.185294745053328e-09,
@@ -1587,6 +2154,7 @@
       ],
       "dimensions": {
         "cyclic": 328,
+        "cyclic_deficit": 2,
         "full_valid": 4096,
         "joint_fixed": 330,
         "symmetric_before_GB": 330
@@ -1690,6 +2258,125 @@
         "nu": 50.0
       },
       "payload_sha256": "dc6ae8ffa2a9956d9ccd6f1520f51daa4e46bbf0cc67564bd8cb6e17a0cea7f7",
+      "potential_shells": {
+        "count": 19,
+        "records": [
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 25,
+            "deficit": 0,
+            "orbit_dimension": 25,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 22,
+            "deficit": 0,
+            "orbit_dimension": 22,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 29,
+            "deficit": 0,
+            "orbit_dimension": 29,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 52,
+            "deficit": 0,
+            "orbit_dimension": 52,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 52,
+            "deficit": 2,
+            "orbit_dimension": 54,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 21,
+            "deficit": 0,
+            "orbit_dimension": 21,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 19,
+            "deficit": 0,
+            "orbit_dimension": 19,
+            "potential": 60.0
+          },
+          {
+            "cyclic_dimension": 15,
+            "deficit": 0,
+            "orbit_dimension": 15,
+            "potential": 65.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 70.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 105.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 115.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 120.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.2346411514511754,
@@ -1705,6 +2392,15 @@
           "multiplicity_gap": 0.1796877275742493,
           "scale_bound": 124.0818550299256,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.2346411514511754,
+          "eigenvector_overlap_squared": 1.0,
+          "energy_difference": 5.495603971894525e-15,
+          "represented_irrep": "trivial S_4 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 1.0,
+          "symmetric_level_energy": -0.2346411514511809,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.006737080825422431,
         "delta_accessible_tolerance": 5.623763246785318e-07,
@@ -1909,6 +2605,7 @@
       ],
       "dimensions": {
         "cyclic": 792,
+        "cyclic_deficit": 0,
         "full_valid": 32768,
         "joint_fixed": 792,
         "symmetric_before_GB": 792
@@ -2017,6 +2714,185 @@
         "nu": 50.0
       },
       "payload_sha256": "11ab5d33546d30f437af5e2840bfeda5c4e9cf913c5f511c7e839ae3e9663eb8",
+      "potential_shells": {
+        "count": 29,
+        "records": [
+          {
+            "cyclic_dimension": 8,
+            "deficit": 0,
+            "orbit_dimension": 8,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 31,
+            "deficit": 0,
+            "orbit_dimension": 31,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 74,
+            "deficit": 0,
+            "orbit_dimension": 74,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 65,
+            "deficit": 0,
+            "orbit_dimension": 65,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 80,
+            "deficit": 0,
+            "orbit_dimension": 80,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 30,
+            "deficit": 0,
+            "orbit_dimension": 30,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 34,
+            "deficit": 0,
+            "orbit_dimension": 34,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 51,
+            "deficit": 0,
+            "orbit_dimension": 51,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 57,
+            "deficit": 0,
+            "orbit_dimension": 57,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 87,
+            "deficit": 0,
+            "orbit_dimension": 87,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 51,
+            "deficit": 0,
+            "orbit_dimension": 51,
+            "potential": 60.0
+          },
+          {
+            "cyclic_dimension": 48,
+            "deficit": 0,
+            "orbit_dimension": 48,
+            "potential": 65.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 70.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 4,
+            "deficit": 0,
+            "orbit_dimension": 4,
+            "potential": 80.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 85.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 90.0
+          },
+          {
+            "cyclic_dimension": 22,
+            "deficit": 0,
+            "orbit_dimension": 22,
+            "potential": 95.0
+          },
+          {
+            "cyclic_dimension": 8,
+            "deficit": 0,
+            "orbit_dimension": 8,
+            "potential": 100.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 105.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 110.0
+          },
+          {
+            "cyclic_dimension": 22,
+            "deficit": 0,
+            "orbit_dimension": 22,
+            "potential": 115.0
+          },
+          {
+            "cyclic_dimension": 4,
+            "deficit": 0,
+            "orbit_dimension": 4,
+            "potential": 120.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 130.0
+          },
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 185.0
+          },
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 190.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 195.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.38279276562848513,
@@ -2032,6 +2908,15 @@
           "multiplicity_gap": 0.08292624766289697,
           "scale_bound": 199.2022615632654,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.38279276562848513,
+          "eigenvector_overlap_squared": 1.0000000000000018,
+          "energy_difference": 1.9206858326015208e-14,
+          "represented_irrep": "trivial S_5 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999991,
+          "symmetric_level_energy": -0.38279276562850434,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.0316412587119449,
         "delta_accessible_tolerance": 5.573979935602305e-09,
@@ -2276,6 +3161,7 @@
       ],
       "dimensions": {
         "cyclic": 119,
+        "cyclic_deficit": 1,
         "full_valid": 512,
         "joint_fixed": 120,
         "symmetric_before_GB": 120
@@ -2378,6 +3264,95 @@
         "nu": 50.0
       },
       "payload_sha256": "83cacaeed67f981843c1254d2a901f5248198a588fa874f34960004f43efb051",
+      "potential_shells": {
+        "count": 14,
+        "records": [
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 15,
+            "deficit": 0,
+            "orbit_dimension": 15,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 13,
+            "deficit": 0,
+            "orbit_dimension": 13,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 13,
+            "deficit": 0,
+            "orbit_dimension": 13,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 0,
+            "orbit_dimension": 14,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 11,
+            "deficit": 1,
+            "orbit_dimension": 12,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 85.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 90.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.16837035583935417,
@@ -2393,6 +3368,15 @@
           "multiplicity_gap": 0.2557362947194017,
           "scale_bound": 92.2474682219309,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.16837035583935417,
+          "eigenvector_overlap_squared": 1.0000000000000018,
+          "energy_difference": -2.6922908347160046e-15,
+          "represented_irrep": "trivial S_3 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 1.0000000000000009,
+          "symmetric_level_energy": -0.16837035583935148,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.0049889409561948705,
         "delta_accessible_tolerance": 4.350135671468447e-12,
@@ -2495,6 +3479,7 @@
       ],
       "dimensions": {
         "cyclic": 792,
+        "cyclic_deficit": 0,
         "full_valid": 32768,
         "joint_fixed": 792,
         "symmetric_before_GB": 792
@@ -2599,6 +3584,197 @@
         "nu": 50.0
       },
       "payload_sha256": "efa65316413a09128ac287260a6be9b0b0c375c18b00e2f3d0defe35402ec8b2",
+      "potential_shells": {
+        "count": 31,
+        "records": [
+          {
+            "cyclic_dimension": 4,
+            "deficit": 0,
+            "orbit_dimension": 4,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 11,
+            "deficit": 0,
+            "orbit_dimension": 11,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 7,
+            "deficit": 0,
+            "orbit_dimension": 7,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 35,
+            "deficit": 0,
+            "orbit_dimension": 35,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 35,
+            "deficit": 0,
+            "orbit_dimension": 35,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 27,
+            "deficit": 0,
+            "orbit_dimension": 27,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 89,
+            "deficit": 0,
+            "orbit_dimension": 89,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 75,
+            "deficit": 0,
+            "orbit_dimension": 75,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 49,
+            "deficit": 0,
+            "orbit_dimension": 49,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 39,
+            "deficit": 0,
+            "orbit_dimension": 39,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 46,
+            "deficit": 0,
+            "orbit_dimension": 46,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 60,
+            "deficit": 0,
+            "orbit_dimension": 60,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 69,
+            "deficit": 0,
+            "orbit_dimension": 69,
+            "potential": 60.0
+          },
+          {
+            "cyclic_dimension": 57,
+            "deficit": 0,
+            "orbit_dimension": 57,
+            "potential": 65.0
+          },
+          {
+            "cyclic_dimension": 42,
+            "deficit": 0,
+            "orbit_dimension": 42,
+            "potential": 70.0
+          },
+          {
+            "cyclic_dimension": 21,
+            "deficit": 0,
+            "orbit_dimension": 21,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 80.0
+          },
+          {
+            "cyclic_dimension": 8,
+            "deficit": 0,
+            "orbit_dimension": 8,
+            "potential": 85.0
+          },
+          {
+            "cyclic_dimension": 8,
+            "deficit": 0,
+            "orbit_dimension": 8,
+            "potential": 90.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 95.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 100.0
+          },
+          {
+            "cyclic_dimension": 16,
+            "deficit": 0,
+            "orbit_dimension": 16,
+            "potential": 105.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 110.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 115.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 0,
+            "orbit_dimension": 14,
+            "potential": 120.0
+          },
+          {
+            "cyclic_dimension": 8,
+            "deficit": 0,
+            "orbit_dimension": 8,
+            "potential": 125.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 130.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 180.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 185.0
+          },
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 190.0
+          },
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 195.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.3108479241210638,
@@ -2614,6 +3790,15 @@
           "multiplicity_gap": 0.2472901277954101,
           "scale_bound": 199.3846313381606,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.3108479241210638,
+          "eigenvector_overlap_squared": 0.9999999999999993,
+          "energy_difference": -3.552713678800501e-15,
+          "represented_irrep": "trivial S_5 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 1.0,
+          "symmetric_level_energy": -0.31084792412106027,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.008639042853017975,
         "delta_accessible_tolerance": 6.596533510896064e-07,
@@ -2854,6 +4039,7 @@
       ],
       "dimensions": {
         "cyclic": 792,
+        "cyclic_deficit": 0,
         "full_valid": 32768,
         "joint_fixed": 792,
         "symmetric_before_GB": 792
@@ -2955,6 +4141,191 @@
         "nu": 50.0
       },
       "payload_sha256": "7b439e341169e756be266e19f953ab6a3ddf6da693fc6de7172181d61bccd58a",
+      "potential_shells": {
+        "count": 30,
+        "records": [
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 0,
+            "orbit_dimension": 14,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 17,
+            "deficit": 0,
+            "orbit_dimension": 17,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 22,
+            "deficit": 0,
+            "orbit_dimension": 22,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 57,
+            "deficit": 0,
+            "orbit_dimension": 57,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 72,
+            "deficit": 0,
+            "orbit_dimension": 72,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 76,
+            "deficit": 0,
+            "orbit_dimension": 76,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 64,
+            "deficit": 0,
+            "orbit_dimension": 64,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 29,
+            "deficit": 0,
+            "orbit_dimension": 29,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 54,
+            "deficit": 0,
+            "orbit_dimension": 54,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 57,
+            "deficit": 0,
+            "orbit_dimension": 57,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 96,
+            "deficit": 0,
+            "orbit_dimension": 96,
+            "potential": 60.0
+          },
+          {
+            "cyclic_dimension": 48,
+            "deficit": 0,
+            "orbit_dimension": 48,
+            "potential": 65.0
+          },
+          {
+            "cyclic_dimension": 45,
+            "deficit": 0,
+            "orbit_dimension": 45,
+            "potential": 70.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 5,
+            "deficit": 0,
+            "orbit_dimension": 5,
+            "potential": 80.0
+          },
+          {
+            "cyclic_dimension": 8,
+            "deficit": 0,
+            "orbit_dimension": 8,
+            "potential": 85.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 90.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 95.0
+          },
+          {
+            "cyclic_dimension": 14,
+            "deficit": 0,
+            "orbit_dimension": 14,
+            "potential": 100.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 105.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 110.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 115.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 120.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 125.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 130.0
+          },
+          {
+            "cyclic_dimension": 1,
+            "deficit": 0,
+            "orbit_dimension": 1,
+            "potential": 180.0
+          },
+          {
+            "cyclic_dimension": 4,
+            "deficit": 0,
+            "orbit_dimension": 4,
+            "potential": 185.0
+          },
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 190.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.06543469492931069,
@@ -2970,6 +4341,15 @@
           "multiplicity_gap": 4.799406851916648,
           "scale_bound": 194.13448461666982,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.06543469492931069,
+          "eigenvector_overlap_squared": 0.9999999999999982,
+          "energy_difference": -4.9432680171435095e-14,
+          "represented_irrep": "trivial S_5 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999984,
+          "symmetric_level_energy": -0.06543469492926125,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.0,
         "delta_accessible_tolerance": 2.6276903468945008e-08,
@@ -3206,6 +4586,7 @@
       ],
       "dimensions": {
         "cyclic": 792,
+        "cyclic_deficit": 0,
         "full_valid": 32768,
         "joint_fixed": 792,
         "symmetric_before_GB": 792
@@ -3308,6 +4689,185 @@
         "nu": 50.0
       },
       "payload_sha256": "d4c71a4c6bacde6f569383c41168216ec9162136656b128820f3e5665e048a44",
+      "potential_shells": {
+        "count": 29,
+        "records": [
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 0.0
+          },
+          {
+            "cyclic_dimension": 10,
+            "deficit": 0,
+            "orbit_dimension": 10,
+            "potential": 5.0
+          },
+          {
+            "cyclic_dimension": 11,
+            "deficit": 0,
+            "orbit_dimension": 11,
+            "potential": 10.0
+          },
+          {
+            "cyclic_dimension": 28,
+            "deficit": 0,
+            "orbit_dimension": 28,
+            "potential": 15.0
+          },
+          {
+            "cyclic_dimension": 31,
+            "deficit": 0,
+            "orbit_dimension": 31,
+            "potential": 20.0
+          },
+          {
+            "cyclic_dimension": 34,
+            "deficit": 0,
+            "orbit_dimension": 34,
+            "potential": 25.0
+          },
+          {
+            "cyclic_dimension": 63,
+            "deficit": 0,
+            "orbit_dimension": 63,
+            "potential": 30.0
+          },
+          {
+            "cyclic_dimension": 92,
+            "deficit": 0,
+            "orbit_dimension": 92,
+            "potential": 35.0
+          },
+          {
+            "cyclic_dimension": 58,
+            "deficit": 0,
+            "orbit_dimension": 58,
+            "potential": 40.0
+          },
+          {
+            "cyclic_dimension": 22,
+            "deficit": 0,
+            "orbit_dimension": 22,
+            "potential": 45.0
+          },
+          {
+            "cyclic_dimension": 42,
+            "deficit": 0,
+            "orbit_dimension": 42,
+            "potential": 50.0
+          },
+          {
+            "cyclic_dimension": 36,
+            "deficit": 0,
+            "orbit_dimension": 36,
+            "potential": 55.0
+          },
+          {
+            "cyclic_dimension": 84,
+            "deficit": 0,
+            "orbit_dimension": 84,
+            "potential": 60.0
+          },
+          {
+            "cyclic_dimension": 69,
+            "deficit": 0,
+            "orbit_dimension": 69,
+            "potential": 65.0
+          },
+          {
+            "cyclic_dimension": 48,
+            "deficit": 0,
+            "orbit_dimension": 48,
+            "potential": 70.0
+          },
+          {
+            "cyclic_dimension": 39,
+            "deficit": 0,
+            "orbit_dimension": 39,
+            "potential": 75.0
+          },
+          {
+            "cyclic_dimension": 3,
+            "deficit": 0,
+            "orbit_dimension": 3,
+            "potential": 80.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 85.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 90.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 95.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 100.0
+          },
+          {
+            "cyclic_dimension": 18,
+            "deficit": 0,
+            "orbit_dimension": 18,
+            "potential": 105.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 110.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 115.0
+          },
+          {
+            "cyclic_dimension": 20,
+            "deficit": 0,
+            "orbit_dimension": 20,
+            "potential": 120.0
+          },
+          {
+            "cyclic_dimension": 12,
+            "deficit": 0,
+            "orbit_dimension": 12,
+            "potential": 125.0
+          },
+          {
+            "cyclic_dimension": 4,
+            "deficit": 0,
+            "orbit_dimension": 4,
+            "potential": 130.0
+          },
+          {
+            "cyclic_dimension": 2,
+            "deficit": 0,
+            "orbit_dimension": 2,
+            "potential": 190.0
+          },
+          {
+            "cyclic_dimension": 6,
+            "deficit": 0,
+            "orbit_dimension": 6,
+            "potential": 195.0
+          }
+        ]
+      },
       "problem_endpoint": {
         "accessible": {
           "E0": -0.1902320525213796,
@@ -3323,6 +4883,15 @@
           "multiplicity_gap": 0.2417701447200541,
           "scale_bound": 199.75882839145157,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
+        },
+        "cyclic_ground_embedding": {
+          "cyclic_ground_energy": -0.1902320525213796,
+          "eigenvector_overlap_squared": 1.0,
+          "energy_difference": 1.5654144647214707e-14,
+          "represented_irrep": "trivial S_5 x G_B",
+          "symmetric_ground_weight_in_cyclic_space": 1.0000000000000004,
+          "symmetric_level_energy": -0.19023205252139525,
+          "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.007485800434631651,
         "delta_accessible_tolerance": 2.345481016828689e-08,
@@ -3529,6 +5098,6 @@
   ],
   "method": "full sparse/dense Hamiltonian plus exact S_k x G_B orbit quotient; no PHP or Lowdin values",
   "residual_factor": 50.0,
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "frozen candidate-primary unweighted instances"
 }

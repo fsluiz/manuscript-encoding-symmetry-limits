@@ -8,6 +8,7 @@ authors:
     given-names: "Fabrício de Souza"
     orcid: "https://orcid.org/0000-0002-6375-0939"
 version: 0.9.0
+url: "https://arxiv.org/abs/2608.11503"
 preferred-citation:
   type: article
   authors:
@@ -16,3 +17,4 @@ preferred-citation:
       orcid: "https://orcid.org/0000-0002-6375-0939"
   title: "Orbit-resolved spectra and dynamical accessibility in multi-register covering Hamiltonians"
   year: 2026
+  url: "https://arxiv.org/abs/2608.11503"

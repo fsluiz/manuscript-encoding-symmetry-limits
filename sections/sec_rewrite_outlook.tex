@@ -1,13 +1,12 @@
+\input{sections/generated_accessibility_figure}
+
 \section{Finite-instance cyclic audit}
 \label{sec:numerical-reconstruction}
 
-Table~\ref{tab:representative-endpoints} separates the two reductions at the
-problem endpoint.  The grid pays only a symmetry cost.  The random row has
-trivial $G_B$ but pays a strictly cyclic cost: its symmetric ground state is
-absent from $\mathcal K_u$.  The final row has neither cost, yet its cyclic
-excitation gap is hundreds of times larger than the full gap.  Thus a
-dimension deficit, a ground-energy cost, and a spectral-gap change are
-logically distinct.
+Figure~\ref{fig:finite-cyclic-diagnostics} isolates the two strongest finite
+diagnostics.  They show separately that cyclic exclusion can occur inside
+the trivial symmetry sector and that the cancellation point can amplify the
+global ground rank without changing the rank followed by the protocol.
 All finite-instance Hamiltonians reported here and in
 Appendix~\ref{app:numerical-protocol} use the penalty energies $\lambda=5$
 and $\mu=10$ in
@@ -27,35 +26,38 @@ the cyclic ground eigenspace, define its worst-case cover probability by
 where $P$ is the feasible-cover projector from
 Section~\ref{sec:rewrite-localization}.
 
-\begin{table*}[t]
-\centering
-\caption{Representative problem-endpoint reconstructions.  Dimensions and
-spectra are computed in the physical full Hamiltonian and exact cyclic
-restriction.  The complete eleven-instance audit is in
-Appendix~\ref{app:numerical-protocol}.}
-\label{tab:representative-endpoints}
-\small
-\begin{tabular}{lrrrrrrrr}
-\hline
-instance & $\dim\mathcal H_{\rm sym}$ & $\dim\mathcal K_u$ &
-$\delta_{\rm sym}$ & $\delta_{\rm cyc}$ & $\Delta_{\rm full}$ &
-$\Delta_{\rm sym}$ & $\Delta_{\rm cyc}$ & $p_{\rm opt}^{\min}$\\
-\hline
-grid-2x4 & 22 & 22 & 0.271 & 0 & 0.000382 & 0.315 & 0.315 & 0.9944\\
-rnd-b8-t7-p50-s002 & 120 & 101 & 0 & 0.0581 & 0.0563 & 0.0581 & 0.128 & 0.9986\\
-scpe1-b8-t30 & 792 & 792 & 0 & 0 & 0.00591 & 4.87 & 4.87 & 0.9949\\
-\hline
-\end{tabular}
-\end{table*}
+For \texttt{rnd-b8-t7-p50-s002}, the endpoint calculation gives
+\begin{equation}
+ \begin{aligned}
+ E_0^{\mathcal K}-E_1^{\rm sym}&=-2.7\times10^{-15},\\
+ |\langle E_1^{\rm sym}|E_0^{\mathcal K}\rangle|^2
+ &=1+O(10^{-15}).
+ \end{aligned}
+ \label{eq:cyclic-ground-first-symmetric-excitation}
+\end{equation}
+The symmetric ground-vector weight in $\mathcal K_u$ is
+$3.5\times10^{-28}$.  Because $G_B$ is trivial here, both symmetric levels
+carry the trivial $S_3$ irrep $[3]$: the exclusion is caused by cyclic
+closure, not by a further symmetry sector.  The 19 missing directions may
+be chosen shell-local by Eq.~\eqref{eq:shell-complement-decomposition};
+their deficits at $\Phi=0,5,15,20,25$ are respectively $2,7,4,4,2$.
+
+For \texttt{grid-2x4}, the global ground rank is one for $s<s_c$, becomes
+$3!\times12=72$ at $s_c=7/15$, and is two at the problem endpoint.  This
+$1\to72\to2$ comparison collects the rank information that otherwise sits
+in separate path and endpoint tables.
 
 Across all eleven frozen instances, five have
 $\mathcal K_u\subsetneq\mathcal H_{\rm sym}$, but only one has
 $\delta_{\rm cyc}(1)>0$; eight have $\delta_{\rm sym}(1)>0$ and nine have
 $\delta_{\rm acc}(1)>0$.  On the audited path grid,
 $|\delta_{\rm cyc}(s)|\leq1.2\times10^{-14}$ for every $s\leq s_c$, as
-predicted by Theorem~\ref{thm:shell-cyclic-closure}.  Every cyclic endpoint
-ground state is rank one with $p_{\rm opt}^{\min}\geq0.9944$.  These are
-finite diagnostics, not scaling evidence.  Appendix
+predicted by Theorem~\ref{thm:shell-cyclic-closure}.  The only positive
+endpoint cyclic cost occurs above $s_c$, where the hopping coefficient has
+changed sign and the Perron--Frobenius argument no longer applies.  Every
+cyclic endpoint ground state is rank one with
+$p_{\rm opt}^{\min}\geq0.9944$.  These are finite diagnostics, not scaling
+evidence.  Appendix
 \ref{app:numerical-protocol} gives the full tables, shell-closure
 conditioning, residual-based degeneracy rule, irrep classification, and
 OR-Library provenance.
@@ -84,7 +86,8 @@ irreducible sectors that are dark to the symmetric protocol.  At the
 hopping-cancellation point, the original interpolation has an exact global
 multiplicity closure for every feasible fixed-cardinality instance.  The
 even cycle is a cover-transitive illustration whose fixed excitation gap is
-at least $\lambda/2$ at that point.  A distinct Johnson--Metropolis parent
+at least $3\lambda/7$ and approaches $\lambda/2$ from below at that point.
+A distinct Johnson--Metropolis parent
 path has a uniformly polynomial cyclic
 gap bounded below by $1024\,n^{-13}$ along the path, and consequently a
 conditional polynomial adiabatic runtime in the abstract

@@ -57,7 +57,8 @@ bash code/reproduce_manuscript.sh --full
 The full command verifies all 32 frozen records, reconstructs the 11 primary
 finite-instance rows, independently audits the shell-resolved cyclic closure,
 regenerates the four other auxiliary numerical audits and
-LaTeX tables, and compiles the manuscript. A faster structural test is:
+the LaTeX tables and finite-diagnostic figure, and compiles the manuscript.
+A faster structural test is:
 
 ```bash
 bash code/reproduce_manuscript.sh --quick
@@ -65,6 +66,16 @@ bash code/reproduce_manuscript.sh --quick
 
 See `REPRODUCIBILITY.md` for individual commands, output names, numerical
 acceptance rules, and the reference hashes.
+
+### Numerical correction recorded for the revised manuscript
+
+An earlier draft reported
+$\dim\mathcal K_u=326$ for `random-b8-t8-p42-s014-v1`.  Closing the cyclic
+space independently inside every exact potential shell corrects this value
+to $324$.  The result is unchanged at relative rank tolerances
+$10^{-9}$, $10^{-11}$, and $10^{-13}$; the complete conditioning record is
+stored in `data/orbit_cyclic_audit.json`.  This is a correction of the
+previous closure calculation, not a change to the frozen instance.
 
 ## Numerical scope
 
@@ -97,5 +108,6 @@ covered as described in `LICENSE`.
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`. The public release will add
-the arXiv identifier, GitHub release URL, and version-specific Zenodo DOI.
+Citation metadata are provided in `CITATION.cff`.  The associated preprint is
+[arXiv:2608.11503](https://arxiv.org/abs/2608.11503).  The public repository
+release will add its GitHub release URL and version-specific Zenodo DOI.

@@ -51,15 +51,17 @@ if $p>1$,
  \Delta_{\rm exc}(s_c)=s_c(\varphi_2-\varphi_1).
  \label{eq:cancellation-gap}
 \end{equation}
+For $p=1$, we adopt the convention $\Delta_{\rm exc}(s_c)=+\infty$.
 
 Assume that at least one exact-$k$ cover with distinct bases exists.  Let
-$N_F$ be the number of such base subsets and let $\mathcal N_F$ be the
+$N_F$ be the number of such base subsets and let $N_{\rm orb}$ be the
 number of their $G_B$-orbits.  Then $\varphi_1=0$ and
 \begin{align}
  g_0^{\rm addr}(s_c)&=k!N_F,&
- g_0^{\rm sym}(s_c)&=\mathcal N_F,\\
- 1&\leq g_0^{\mathcal K}(s_c)\leq\mathcal N_F.
- \label{eq:cancellation-ranks}
+ g_0^{\rm sym}(s_c)&=N_{\rm orb},
+ \label{eq:cancellation-full-ranks}\\
+ 1&\leq g_0^{\mathcal K}(s_c)\leq N_{\rm orb}.
+ \label{eq:cancellation-cyclic-rank}
 \end{align}
 When $k=k^\star$, these are minimum-cover counts; otherwise they count
 feasible exact-$k$ covers.
@@ -67,13 +69,14 @@ feasible exact-$k$ covers.
 
 At cancellation, and only there along this path, the potential separation
 between orbit sites is exactly a spectral separation.  For $s<s_c$ the full
-Hamiltonian is an irreducible stoquastic matrix and has a unique ground
-state, whereas Eq.~\eqref{eq:cancellation-ranks} is degenerate for every
+Hamiltonian is an irreducible stoquastic matrix~\cite{BravyiEtAl2008Stoquastic}
+and has a unique ground
+state, whereas Eq.~\eqref{eq:cancellation-full-ranks} is degenerate for every
 feasible instance with $k\geq2$.  The resulting global multiplicity closure
 contains nontrivial $S_k$ components that are dark to the uniform state.
 The symmetric ground space can itself be degenerate when
-$\mathcal N_F>1$, so only a cover-transitive instance
-($\mathcal N_F=1$) has a unique fixed-sector solution orbit.
+$N_{\rm orb}>1$, so only a cover-transitive instance
+($N_{\rm orb}=1$) has a unique fixed-sector solution orbit.
 
 The interior cancellation is a feature of the endpoint choice
 $H_{\rm prob}=H_{\rm walk}+V$.  We retain the walk because this endpoint is
@@ -168,7 +171,7 @@ bases are vertices, tasks are edges, and each base covers its two incident
 edges.  The only minimum covers are the two alternating subsets.  They are
 exchanged by a one-site rotation and hence form one orbit of the dihedral
 group $D_n$.  Thus this family is cover-transitive, with
-$N_F=2$ and $\mathcal N_F=1$.
+$N_F=2$ and $N_{\rm orb}=1$.
 
 Assume
 \begin{equation}
@@ -192,8 +195,9 @@ which leaves exactly one edge uncovered.  Theorem
  &=\lambda\frac{n-1}{2n-1}.
  \label{eq:cycle-dark-closure-rewrite}
 \end{align}
-The fixed-sector excitation gap is therefore bounded below by
-$\lambda/2$ at the single point $s_c$, while the global ground
+The fixed-sector excitation gap therefore increases monotonically from
+$3\lambda/7$ at $n=4$ towards $\lambda/2$ as $n\to\infty$, without
+attaining that limit, while the global ground
 multiplicity becomes $2\cdot k!$.  This is a diagonal,
 permutation-induced multiplicity closure, not a transverse two-branch
 crossing; Theorem~\ref{thm:dark-crossing-stability} does not assert its

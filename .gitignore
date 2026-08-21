@@ -42,6 +42,7 @@
 !/sections/app_reader_parent.tex
 !/sections/app_reader_numerics.tex
 !/sections/generated_accessibility_tables.tex
+!/sections/generated_accessibility_figure.tex
 
 # Reproduction code and its direct local dependencies.
 !/code/
