@@ -12,6 +12,12 @@ export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export MPLCONFIGDIR="${TMPDIR:-/tmp}/set-cover-repro-matplotlib"
 
+# Make the compiled PDF byte-reproducible.  The default epoch is noon UTC on
+# the manuscript date; callers may override it when archiving a later version.
+export SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-1786449600}"
+export FORCE_SOURCE_DATE="${FORCE_SOURCE_DATE:-1}"
+export TZ="UTC"
+
 python3 code/freeze_instances.py --check
 
 if [[ "${repro_mode}" == "--full" ]]; then

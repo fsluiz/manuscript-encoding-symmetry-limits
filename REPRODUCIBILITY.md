@@ -24,6 +24,13 @@ export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 ```
 
+The wrapper also fixes `SOURCE_DATE_EPOCH=1786449600` (August 11, 2026 at
+12:00 UTC), `FORCE_SOURCE_DATE=1`, and `TZ=UTC` by default.  This removes the
+pdfTeX build timestamp from the reproducibility surface, so identical release
+sources produce a byte-identical PDF.  A later archival version may override
+`SOURCE_DATE_EPOCH` explicitly while retaining it as part of that version's
+recorded environment.
+
 ## Frozen inputs
 
 The machine-readable registry is `instances/manifest.json`.  Every manuscript
