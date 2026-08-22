@@ -40,13 +40,15 @@ do not relicense third-party material:
 - `quantumarticle.cls` is copyright its stated authors and is distributed
   under the LaTeX Project Public License, version 1.3c or later, as specified
   in its file header.
-- Files in `orlib_instances/` originate from J. E. Beasley's OR-Library and
-  retain the terms and provenance of that source.
-- In `instances/frozen/scp*.json` and `instances/frozen/scpe*.json`, the
+- Files in `orlib_instances/` and the OR-Library-derived incidence and cost
+  values identified in `instances/frozen/` originate from J. E. Beasley's
+  OR-Library.  They are distributed under the OR-Library MIT notice reproduced
+  in `LICENSES/ORLIB-MIT.txt` and retain their source provenance.
+- In the OR-Library-derived records under `instances/frozen/`, the
   project-authored selection indices, hashes, provenance metadata,
   annotations, and computed optima are covered by CC BY 4.0 to the extent
-  copyright or database rights subsist in them. The underlying OR-Library
-  incidence and cost values are not relicensed by this repository.
+  copyright or database rights subsist in them.  The underlying OR-Library
+  incidence and cost values remain covered by the OR-Library MIT notice.
 - Bibliographic metadata, cited works, and any other material carrying its
   own notice remain subject to their respective terms.
 

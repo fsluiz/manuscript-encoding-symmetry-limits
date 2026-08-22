@@ -102,7 +102,8 @@ precise scope.
 
 The repository does not relicense third-party material. In particular,
 `quantumarticle.cls` remains under LPPL 1.3c or later, while OR-Library source
-files and their incidence/cost values retain the terms of their source.
+files and their incidence/cost values retain J. E. Beasley's MIT notice,
+reproduced in `LICENSES/ORLIB-MIT.txt`.
 Project-authored provenance, selection metadata, and numerical analyses are
 covered as described in `LICENSE`.
 

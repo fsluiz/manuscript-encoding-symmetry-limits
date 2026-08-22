@@ -79,6 +79,6 @@ pdflatex -interaction=nonstopmode -halt-on-error main_rewrite.tex
 The archived release must contain the generated PDF, all frozen inputs, the
 six current output JSON files listed above, the generated table source, and
 the exact source revision. It must also retain the top-level dual-license
-notice and both files in `LICENSES/`. The GitHub release tag and
-version-specific Zenodo DOI must be recorded in the final Code and data
-availability statement.
+notice and every applicable notice in `LICENSES/`, including the OR-Library
+MIT attribution. The GitHub release tag and version-specific Zenodo DOI must
+be recorded in the final Code and data availability statement.

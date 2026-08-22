@@ -18,11 +18,12 @@ legacy label such as `scpe5-n8m29s0` is not sufficient provenance.
 Project-generated grid and random instances, together with the registry,
 project-authored provenance, annotations, and computed optima, are made
 available under CC BY 4.0. For frozen records whose `provenance.kind` begins
-with `orlib_`, the underlying incidence and cost values originate from the
-OR-Library and are not relicensed by this repository. The selection indices,
-hashes, annotations, and derived numerical results produced by this project
-are covered by CC BY 4.0 to the extent rights subsist in them. See the
-top-level `LICENSE` for the controlling scope statement.
+with `orlib_`, the underlying incidence and cost values originate from J. E.
+Beasley's OR-Library and retain its MIT notice, reproduced in
+`LICENSES/ORLIB-MIT.txt`. The selection indices, hashes, annotations, and
+derived numerical results produced by this project are covered by CC BY 4.0
+to the extent rights subsist in them. See the top-level `LICENSE` for the
+controlling scope statement.
 
 Create the registry once and validate it subsequently with:
 
