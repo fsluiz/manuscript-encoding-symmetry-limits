@@ -1,0 +1,32 @@
+{
+  "title": "Orbit-resolved spectra and dynamical accessibility in multi-register covering Hamiltonians",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "other-open",
+  "creators": [
+    {
+      "name": "Luiz, Fabrício de Souza",
+      "affiliation": "Instituto de Física Gleb Wataghin, Universidade Estadual de Campinas",
+      "orcid": "0000-0002-6375-0939"
+    }
+  ],
+  "description": "<p>Reproducibility artifact for the associated theory manuscript on orbit-resolved spectra and dynamical accessibility in multi-register covering Hamiltonians. The release contains the manuscript source and PDF, frozen and hashed Set Cover instances, exact and residual-aware numerical audits, generated tables, and the code required to reproduce them.</p><p>The artifact has scope-specific open licenses: original software in <code>code/</code> is MIT; original manuscript material, documentation, generated results, and project-authored data are CC BY 4.0; redistributed OR-Library material retains J. E. Beasley's MIT notice; and <code>quantumarticle.cls</code> retains LPPL 1.3c or later. See the top-level <code>LICENSE</code> and <code>LICENSES/</code> for the controlling notices.</p>",
+  "notes": "No quantum-speedup, NISQ-feasibility, or total hardware-resource claim is made. Finite numerical results are diagnostics; the asymptotic claim rests on the analytic theorem in the associated preprint.",
+  "keywords": [
+    "quantum adiabatic computation",
+    "Set Cover",
+    "symmetry",
+    "orbit quotient",
+    "cyclic subspace",
+    "spectral gap",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "arxiv",
+      "identifier": "2608.11503",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-preprint"
+    }
+  ]
+}

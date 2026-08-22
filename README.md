@@ -26,6 +26,8 @@ made.
 
 - `main_rewrite.tex` and `main_rewrite.pdf` — current manuscript source and
   compiled PDF;
+- `CITATION.cff` and `.zenodo.json` — GitHub citation metadata and
+  scope-aware Zenodo deposit metadata;
 - `sections/` and `refs.bib` — manuscript sections and bibliography;
 - `code/` — the exact reconstruction and analytic-audit programs;
 - `instances/` — immutable, hashed input registry;
@@ -109,6 +111,8 @@ covered as described in `LICENSE`.
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`.  The associated preprint is
+Citation metadata are provided in `CITATION.cff`; `.zenodo.json` records the
+scope-specific licensing required by the mixed software/data archive.  The
+associated preprint is
 [arXiv:2608.11503](https://arxiv.org/abs/2608.11503).  The public repository
 release will add its GitHub release URL and version-specific Zenodo DOI.
