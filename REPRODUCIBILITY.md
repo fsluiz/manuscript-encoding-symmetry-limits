@@ -85,9 +85,10 @@ pdflatex -interaction=nonstopmode -halt-on-error main_rewrite.tex
 
 The archived release must contain the generated PDF, all frozen inputs, the
 six current output JSON files listed above, the generated table source, and
-the exact source revision. It must also retain the top-level dual-license
-notice and every applicable notice in `LICENSES/`, including the OR-Library
-MIT attribution. It must also retain `CITATION.cff` for GitHub citation and
-`.zenodo.json` for the scope-aware archival metadata. The GitHub release tag
-and version-specific Zenodo DOI must be recorded in the final Code and data
-availability statement.
+the exact source revision. It must include the exact `quantumarticle.cls` and
+`quantum.bst` files used by the build. It must also retain the top-level
+dual-license notice and every applicable notice in `LICENSES/`, including the
+OR-Library MIT attribution. It must also retain `CITATION.cff` for GitHub
+citation and `.zenodo.json` for the scope-aware archival metadata. The GitHub
+release tag and version-specific Zenodo DOI must be recorded in the final Code
+and data availability statement.

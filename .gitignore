@@ -25,6 +25,7 @@
 !/main_rewrite.pdf
 !/refs.bib
 !/quantumarticle.cls
+!/quantum.bst
 
 # Current manuscript sections only.
 !/sections/

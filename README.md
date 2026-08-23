@@ -29,6 +29,8 @@ made.
 - `CITATION.cff` and `.zenodo.json` — GitHub citation metadata and
   scope-aware Zenodo deposit metadata;
 - `sections/` and `refs.bib` — manuscript sections and bibliography;
+- `quantumarticle.cls` and `quantum.bst` — the exact official Quantum class
+  and bibliography style used by the archived build;
 - `code/` — the exact reconstruction and analytic-audit programs;
 - `instances/` — immutable, hashed input registry;
 - `orlib_instances/` — only the OR-Library parent files needed to reconstruct
@@ -102,10 +104,11 @@ manuscript material, documentation, generated results, and project-authored
 data are released under CC BY 4.0. See `LICENSE` and `LICENSES/` for the
 precise scope.
 
-The repository does not relicense third-party material. In particular,
-`quantumarticle.cls` remains under LPPL 1.3c or later, while OR-Library source
-files and their incidence/cost values retain J. E. Beasley's MIT notice,
-reproduced in `LICENSES/ORLIB-MIT.txt`.
+The repository does not relicense third-party material. In particular, the
+official `quantumarticle.cls` and `quantum.bst` package files remain under
+LPPL 1.3c, while OR-Library source files and their incidence/cost values
+retain J. E. Beasley's MIT notice, reproduced in
+`LICENSES/ORLIB-MIT.txt`.
 Project-authored provenance, selection metadata, and numerical analyses are
 covered as described in `LICENSE`.
 
