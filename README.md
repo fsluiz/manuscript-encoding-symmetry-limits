@@ -68,6 +68,19 @@ A faster structural test is:
 bash code/reproduce_manuscript.sh --quick
 ```
 
+After a successful manuscript build, create and independently compile the
+minimal arXiv source package with:
+
+```bash
+python3 code/build_arxiv_bundle.py --verify
+```
+
+The resulting deterministic archive is written to
+`dist/arxiv_source_candidate.tar.gz`. It contains only the recursive TeX
+dependency closure, generated `.bbl`, bibliography provenance, and the exact
+Quantum class/style; repository code, data, notes, and the compiled PDF are
+excluded.
+
 See `REPRODUCIBILITY.md` for individual commands, output names, numerical
 acceptance rules, and the reference hashes.
 

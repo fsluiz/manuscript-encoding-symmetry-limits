@@ -63,6 +63,7 @@
 !/code/mean_field_zrp_gap_audit.py
 !/code/orbit_cyclic.py
 !/code/orbit_cyclic_audit.py
+!/code/build_arxiv_bundle.py
 !/code/orlib_parse.py
 !/code/orlib_subextract.py
 
