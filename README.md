@@ -48,8 +48,9 @@ repository.
 
 ## Reproduce the manuscript
 
-The reference environment is Python 3.11.2 with the exact packages in
-`requirements-repro.txt`.
+The reference environment is CPython 3.11.2 on Linux x86-64 with the three
+pinned scientific packages in `requirements-repro.txt`. The archived programs
+do not require Matplotlib, Qiskit, or their dependency trees.
 
 ```bash
 python3 -m venv .venv

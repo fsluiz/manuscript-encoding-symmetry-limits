@@ -1,12 +1,13 @@
 # Reproducing the current manuscript
 
 This document applies to `main_rewrite.tex` and excludes the superseded
-algorithmic experiments retained for provenance.  The current paper uses only
-NumPy, SciPy, NetworkX, and Matplotlib; Qiskit is not required.
+algorithmic experiments retained for provenance. The current paper uses only
+NumPy, SciPy, and NetworkX; Matplotlib and Qiskit are not required.
 
 ## Environment
 
-The reference environment is Python 3.11.2 with the exact package versions in
+The reference outputs were generated with CPython 3.11.2 on Linux x86-64 and
+the PyPI binary distributions of the package versions pinned in
 `requirements-repro.txt`.
 
 ```bash
@@ -23,6 +24,12 @@ export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 ```
+
+Different BLAS/LAPACK builds may change the last displayed digits of raw
+eigenvalues, residuals, or the representative selected among numerically tied
+diagnostics. Structural dimensions and manuscript-level rounded quantities
+must remain unchanged; all acceptance decisions use the residual- and
+scale-aware rules stored with the outputs.
 
 The wrapper also fixes `SOURCE_DATE_EPOCH=1786449600` (August 11, 2026 at
 12:00 UTC), `FORCE_SOURCE_DATE=1`, and `TZ=UTC` by default.  This removes the

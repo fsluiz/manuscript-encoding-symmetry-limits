@@ -10,7 +10,6 @@ fi
 export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
-export MPLCONFIGDIR="${TMPDIR:-/tmp}/set-cover-repro-matplotlib"
 
 # Make the compiled PDF byte-reproducible.  The default epoch is noon UTC on
 # the manuscript date; callers may override it when archiving a later version.

@@ -47,31 +47,31 @@
       "multiplicity": 22,
       "path_points": {
         "s0": {
-          "E0": 9.71445146547012e-17,
-          "excitation_gap": 1.0000000000000018,
+          "E0": 1.4901274658640773e-15,
+          "excitation_gap": 0.9999999999999977,
           "ground_cover_probability_max": 0.14062500000000003,
           "ground_cover_probability_min": 0.14062500000000003,
           "ground_rank": 1,
-          "max_eigenpair_residual": 4.1403339717045194e-15,
-          "threshold": 1.7893603516368266e-13
+          "max_eigenpair_residual": 7.26423042028098e-15,
+          "threshold": 3.0389189310674107e-13
         },
         "s1": {
-          "E0": -0.03953943322589759,
-          "excitation_gap": 0.31460780380627557,
-          "ground_cover_probability_max": 0.9943950436892763,
-          "ground_cover_probability_min": 0.9943950436892763,
+          "E0": -0.03953943322589967,
+          "excitation_gap": 0.3146078038062673,
+          "ground_cover_probability_max": 0.9943950436892766,
+          "ground_cover_probability_min": 0.9943950436892766,
           "ground_rank": 1,
-          "max_eigenpair_residual": 4.8163962349058335e-14,
-          "threshold": 2.1708685553824816e-12
+          "max_eigenpair_residual": 3.790090095496547e-14,
+          "threshold": 1.7603460996187671e-12
         },
         "s_cancel": {
-          "E0": 1.3999999999999968,
-          "excitation_gap": 2.333333333333333,
-          "ground_cover_probability_max": 1.0000000000000009,
-          "ground_cover_probability_min": 1.0000000000000002,
+          "E0": 1.3999999999999937,
+          "excitation_gap": 2.333333333333338,
+          "ground_cover_probability_max": 1.000000000000001,
+          "ground_cover_probability_min": 0.9999999999999994,
           "ground_rank": 2,
-          "max_eigenpair_residual": 1.7094526788164277e-14,
-          "threshold": 8.039812176593213e-13
+          "max_eigenpair_residual": 2.3427301785538713e-14,
+          "threshold": 1.0572922175542988e-12
         }
       },
       "projector_idempotence_residual": 4.440892098500627e-16,
@@ -90,38 +90,38 @@
       "multiplicity": 8,
       "path_points": {
         "s0": {
-          "E0": 2.0,
-          "excitation_gap": 0.9999999999999987,
-          "ground_cover_probability_max": 0.12500000000000017,
-          "ground_cover_probability_min": 0.12500000000000017,
+          "E0": 2.0000000000000013,
+          "excitation_gap": 0.999999999999996,
+          "ground_cover_probability_max": 0.12499999999999961,
+          "ground_cover_probability_min": 0.12499999999999961,
           "ground_rank": 1,
-          "max_eigenpair_residual": 2.0385827876854517e-15,
-          "threshold": 9.486598780291995e-14
+          "max_eigenpair_residual": 3.05536864167759e-15,
+          "threshold": 1.3553742196260549e-13
         },
         "s1": {
-          "E0": -0.2999816079596654,
-          "excitation_gap": 4.87141017938824,
-          "ground_cover_probability_max": 0.9978075152366885,
-          "ground_cover_probability_min": 0.9978075152366885,
+          "E0": -0.299981607959666,
+          "excitation_gap": 4.871410179388237,
+          "ground_cover_probability_max": 0.997807515236688,
+          "ground_cover_probability_min": 0.997807515236688,
           "ground_rank": 1,
-          "max_eigenpair_residual": 1.6523042952752145e-14,
-          "threshold": 7.726472466660023e-13
+          "max_eigenpair_residual": 1.895759441996769e-14,
+          "threshold": 8.700293053546241e-13
         },
         "s_cancel": {
-          "E0": 1.4000000000000001,
-          "excitation_gap": 2.333333333333332,
-          "ground_cover_probability_max": 1.0000000000000007,
-          "ground_cover_probability_min": 1.0000000000000007,
+          "E0": 1.400000000000005,
+          "excitation_gap": 2.333333333333327,
+          "ground_cover_probability_max": 1.0000000000000009,
+          "ground_cover_probability_min": 1.0000000000000009,
           "ground_rank": 1,
-          "max_eigenpair_residual": 7.498642027507298e-15,
-          "threshold": 3.579733378540335e-13
+          "max_eigenpair_residual": 5.473098820442883e-15,
+          "threshold": 2.7695160957145693e-13
         }
       },
       "projector_idempotence_residual": 4.4408920985006257e-16,
       "simple_ground_gap_diagnostic": {
-        "at_s": 0.08133097469968138,
+        "at_s": 0.08133097732220312,
         "grid_points": 2001,
-        "minimum_E1_minus_E0": 0.45738521192469506,
+        "minimum_E1_minus_E0": 0.4573852119246946,
         "qualification": "scale-aware endpoint checks plus numerical one-dimensional minimization; not interval arithmetic",
         "rank_one_at_all_three_exact_points": true
       }
@@ -134,31 +134,31 @@
       "multiplicity": 22,
       "path_points": {
         "s0": {
-          "E0": 0.9999999999999989,
-          "excitation_gap": 1.0000000000000007,
-          "ground_cover_probability_max": 0.20942381620988804,
-          "ground_cover_probability_min": 0.009326183790111776,
+          "E0": 0.9999999999999988,
+          "excitation_gap": 1.0000000000000009,
+          "ground_cover_probability_max": 0.20942381620988837,
+          "ground_cover_probability_min": 0.009326183790111742,
           "ground_rank": 2,
-          "max_eigenpair_residual": 4.165788808131994e-15,
-          "threshold": 1.7995422862078166e-13
+          "max_eigenpair_residual": 6.417648829080237e-15,
+          "threshold": 2.7002862945871133e-13
         },
         "s1": {
-          "E0": -0.16766179405537543,
-          "excitation_gap": 0.36138722212313856,
-          "ground_cover_probability_max": 0.9965363454180705,
-          "ground_cover_probability_min": 0.9965363454180705,
+          "E0": -0.16766179405537102,
+          "excitation_gap": 0.36138722212313,
+          "ground_cover_probability_max": 0.99653634541807,
+          "ground_cover_probability_min": 0.99653634541807,
           "ground_rank": 1,
-          "max_eigenpair_residual": 4.743152435660214e-14,
-          "threshold": 2.141570746916438e-12
+          "max_eigenpair_residual": 4.11191542275606e-14,
+          "threshold": 1.8890759417547763e-12
         },
         "s_cancel": {
-          "E0": 1.399999999999999,
-          "excitation_gap": 2.33333333333333,
-          "ground_cover_probability_max": 1.0000000000000004,
-          "ground_cover_probability_min": 0.999999999999999,
+          "E0": 1.4000000000000032,
+          "excitation_gap": 2.333333333333326,
+          "ground_cover_probability_max": 0.9999999999999988,
+          "ground_cover_probability_min": 0.9999999999999978,
           "ground_rank": 2,
-          "max_eigenpair_residual": 2.3101232461060844e-14,
-          "threshold": 1.044249444575184e-12
+          "max_eigenpair_residual": 1.3679956892575067e-14,
+          "threshold": 6.673984218357529e-13
         }
       },
       "projector_idempotence_residual": 4.440892098500627e-16,
@@ -177,31 +177,31 @@
       "multiplicity": 8,
       "path_points": {
         "s0": {
-          "E0": 1.9999999999999996,
-          "excitation_gap": 0.9999999999999987,
-          "ground_cover_probability_max": 0.3749999999999996,
-          "ground_cover_probability_min": -1.3885324976233704e-17,
+          "E0": 2.0000000000000004,
+          "excitation_gap": 0.9999999999999978,
+          "ground_cover_probability_max": 0.37500000000000133,
+          "ground_cover_probability_min": -3.053822772861595e-17,
           "ground_rank": 3,
-          "max_eigenpair_residual": 2.831068712794149e-15,
-          "threshold": 1.2656542480726787e-13
+          "max_eigenpair_residual": 1.7944789959805767e-15,
+          "threshold": 8.510183613472496e-14
         },
         "s1": {
-          "E0": -0.02359724067452522,
+          "E0": -0.023597240674529833,
           "excitation_gap": 4.745079548475888,
-          "ground_cover_probability_max": 0.9969206021159981,
-          "ground_cover_probability_min": 0.9969206021159981,
+          "ground_cover_probability_max": 0.9969206021159979,
+          "ground_cover_probability_min": 0.9969206021159979,
           "ground_rank": 1,
-          "max_eigenpair_residual": 1.1568775749669383e-14,
-          "threshold": 5.744765698160624e-13
+          "max_eigenpair_residual": 1.4107087386454678e-14,
+          "threshold": 6.760090352874741e-13
         },
         "s_cancel": {
-          "E0": 1.4000000000000004,
-          "excitation_gap": 2.333333333333332,
-          "ground_cover_probability_max": 1.0000000000000007,
-          "ground_cover_probability_min": 1.0000000000000007,
+          "E0": 1.4000000000000006,
+          "excitation_gap": 2.3333333333333295,
+          "ground_cover_probability_max": 1.0000000000000002,
+          "ground_cover_probability_min": 1.0000000000000002,
           "ground_rank": 1,
-          "max_eigenpair_residual": 1.0506373594362808e-14,
-          "threshold": 4.782826005282539e-13
+          "max_eigenpair_residual": 7.266274431920194e-15,
+          "threshold": 3.486786340305493e-13
         }
       },
       "projector_idempotence_residual": 4.4408920985006257e-16,
@@ -220,31 +220,31 @@
       "multiplicity": 30,
       "path_points": {
         "s0": {
-          "E0": 0.9999999999999993,
-          "excitation_gap": 0.9999999999999967,
+          "E0": 1.0000000000000004,
+          "excitation_gap": 0.9999999999999978,
           "ground_cover_probability_max": 0.18750000000000014,
-          "ground_cover_probability_min": 0.031249999999999972,
+          "ground_cover_probability_min": 0.031249999999999927,
           "ground_rank": 4,
-          "max_eigenpair_residual": 6.06736644782235e-15,
-          "threshold": 2.560173342083959e-13
+          "max_eigenpair_residual": 6.95438180594392e-15,
+          "threshold": 2.9149794853325867e-13
         },
         "s1": {
-          "E0": -0.31045844661545996,
-          "excitation_gap": 0.1419728285645142,
-          "ground_cover_probability_max": 0.9964257246679786,
-          "ground_cover_probability_min": 0.9964257246679779,
+          "E0": -0.3104584466154505,
+          "excitation_gap": 0.14197282856450677,
+          "ground_cover_probability_max": 0.9964257246679782,
+          "ground_cover_probability_min": 0.9964257246679773,
           "ground_rank": 2,
-          "max_eigenpair_residual": 5.584673210047485e-14,
-          "threshold": 2.478178923831219e-12
+          "max_eigenpair_residual": 4.6537863022712406e-14,
+          "threshold": 2.105824160720721e-12
         },
         "s_cancel": {
-          "E0": 1.3999999999999937,
-          "excitation_gap": 2.3333333333333326,
-          "ground_cover_probability_max": 1.0000000000000009,
-          "ground_cover_probability_min": 0.9999999999999991,
+          "E0": 1.3999999999999957,
+          "excitation_gap": 2.333333333333325,
+          "ground_cover_probability_max": 1.0000000000000007,
+          "ground_cover_probability_min": 0.9999999999999986,
           "ground_rank": 6,
-          "max_eigenpair_residual": 2.753423889774346e-14,
-          "threshold": 1.2215697020424887e-12
+          "max_eigenpair_residual": 3.578692896162859e-14,
+          "threshold": 1.551677304597894e-12
         }
       },
       "projector_idempotence_residual": 2.220446049250314e-16,
