@@ -101,6 +101,11 @@ directory, performs three pdfLaTeX passes without BibTeX, rejects unresolved
 citations/references or overfull boxes, and requires a byte-for-byte match with
 the release PDF. It then regenerates the bibliography and requires the
 included `.bbl` to match, preventing submission of stale bibliography output.
+The main source does not force `\pdfoutput`; select PDFLaTeX when the arXiv
+submission interface asks for a processor, as recommended by arXiv's current
+TeX-submission instructions. The official Quantum class still checks for the
+legacy `\pdfoutput=1` workaround, so the source uses its documented
+`nopdfoutputerror` option solely to disable that obsolete check.
 
 The archived release must contain the generated PDF, all frozen inputs, the
 six current output JSON files listed above, the generated table source, and
