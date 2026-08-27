@@ -56,7 +56,8 @@ hash.
 | Manuscript result | Command | Machine-readable output |
 |---|---|---|
 | Tables 1 and 2 and finite diagnostics | `python3 code/reconstruct_accessibility_table.py` | `data/accessibility_table_reconstructed.json`, `sections/generated_accessibility_tables.tex`, `sections/generated_accessibility_figure.tex` |
-| Shell-resolved cyclic-space audit | `python3 code/orbit_cyclic_audit.py --write` | `data/orbit_cyclic_audit.json` |
+| Shell-resolved cyclic-envelope audit | `python3 code/orbit_cyclic_audit.py --write` | `data/orbit_cyclic_audit.json` |
+| Sector-localisation certificate | `python3 code/sector_localization_audit.py` | `data/sector_localization_audit.json`, `sections/generated_sector_localization_table.tex` |
 | Finite joint-symmetry audit | `python3 code/d4_sector_analysis.py` | `data/d4_sector_comparison.json` |
 | Endpoint-vanishing catalyst | `python3 code/catalyst_path_analysis.py` | `data/catalyst_path_results.json` |
 | Exact even-cycle quotients | `python3 code/hard_core_parent_path.py` | `data/hard_core_parent_path_results.json` |
@@ -115,7 +116,7 @@ legacy `\pdfoutput=1` workaround, so the source uses its documented
 `nopdfoutputerror` option solely to disable that obsolete check.
 
 The archived release must contain the generated PDF, all frozen inputs, the
-six current output JSON files listed above, the generated table source, and
+seven current output JSON files listed above, the generated table sources, and
 the exact source revision. It must include the exact `quantumarticle.cls` and
 `quantum.bst` files used by the build. It must also retain the top-level
 dual-license notice and every applicable notice in `LICENSES/`, including the

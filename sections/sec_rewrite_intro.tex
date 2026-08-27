@@ -6,8 +6,10 @@ does not determine which eigenstates a protocol can occupy.  If an initial
 state is fixed by every preserved symmetry, evolution is confined to the
 joint fixed space.  Even that statement can be loose: the algebra generated
 by the endpoint Hamiltonians may act cyclically only on a proper subspace of
-the joint fixed space.  A small global gap can then describe a crossing that
-the protocol neither couples to nor detects.
+the joint fixed space.  This cyclic subspace is a common invariant envelope,
+not a claim that every vector in it is reachable under one prescribed
+schedule.  A small global gap can then describe a crossing that the protocol
+neither couples to nor detects.
 
 Set Cover, whose minimum-cardinality version is NP-hard
 \cite{karp1972reducibility}, admits the usual one-binary-variable-per-base Ising formulation,
@@ -26,9 +28,18 @@ symmetry-related strings
 quotients likewise identify a smaller invariant evolution for suitable
 initial states~\cite{KroviBrun2007}, while Krylov methods use repeated
 generator action to identify a minimal dynamical subspace
-\cite{Saad1992}.  These ideas motivate, but do not identify with one another,
-the two spaces used below: the group-fixed orbit space and the generally
-smaller cyclic space of the full protocol algebra.
+\cite{Saad1992}.  In adiabatic computation, symmetry-adapted path design was
+studied by Schaller and Sch\"utzhold~\cite{SchallerSchuetzhold2010}, and
+symmetry-restricted effective gaps of stoquastic Hamiltonians were connected
+to classical simulability by Bringewatt and Jarret
+\cite{BringewattJarret2020}.  These results make an effective sector
+physically relevant but do not identify the joint fixed space with the
+smaller endpoint-algebra envelope considered here.  Conversely, modern
+time-dependent Krylov constructions adapt the basis directly to a driven
+trajectory~\cite{TakahashiDelCampo2025}.  We use a different, exact object:
+the common invariant envelope of the endpoint family.  A specified schedule
+traces a potentially smaller subset of it, so no controllability converse is
+assumed.
 
 Finally, symmetric discriminants of reversible Markov chains and annealing
 paths with Gibbs-amplitude ground states are established tools in quantum
@@ -46,30 +57,34 @@ spaces differ.  With $n_B$ candidate bases, a $k$-register encoding
 represents an ordered candidate by $k\lceil\log_2n_B\rceil$ address qubits.
 Permuting the registers gives an action of the symmetric group $S_k$, while
 colour-preserving automorphisms of the incidence relation permute the base
-labels.  Register symmetry alone and a
+labels~\cite{McKayPiperno2014}.  Register symmetry alone and a
 final-Hamiltonian sector gap are insufficient for an adiabatic or otherwise
-path-dependent statement: one must use the faithful joint action, the
-protocol's cyclic space, and the minimum isolation gap along an explicit
-path.
+path-dependent statement: one must use the faithful joint action, the common
+cyclic envelope selected by the initial state, and the minimum isolation gap
+of the band tracked along an explicit path.
 
 This work makes that distinction its central question.  Its three main
 contributions are:
 \begin{enumerate}
 \item an orbit description of the $k$-register encoding under
 $S_k\times G_B$, where $G_B$ is the faithfully represented group of base
-automorphisms; this gives invariant covering penalties, exact
-P\'olya--Redfield counts, and a constructive distinction between the fixed
-space $\mathcal H_{\rm sym}$ and the protocol-cyclic space $\mathcal K_u$;
+automorphisms, $\mathcal H_{\rm sym}$ is the subspace fixed by this joint
+action, and $\mathcal K_u$ is the common invariant cyclic envelope generated
+from the uniform initial state by the endpoint algebra; this gives invariant covering
+penalties, exact P\'olya--Redfield orbit counts
+\cite{Redfield1927,Polya1937}, and a constructive distinction between these
+two spaces;
 \item a sector-localization proposition with its kinetic floor, together
 with a general orbit-resolved hopping-cancellation theorem and a separate
 stability theorem for transverse inter-sector crossings; and
 \item an even-cycle illustration of the cancellation theorem and,
-separately, a Johnson--Metropolis parent protocol whose accessible gap is
-uniformly polynomial, yielding a conditional polynomial-time adiabatic
+separately, a parent protocol built from Metropolis rates on Johnson-graph
+moves~\cite{Metropolis1953,BrouwerCohenNeumaier1989}, whose cyclic-envelope gap
+is uniformly polynomial, yielding a conditional polynomial-time adiabatic
 corollary.
 \end{enumerate}
 
-The last result is purposely about accessibility rather than computational
+The last result concerns a protocol-dependent invariant gap, not computational
 advantage.  The controlled cycle family is classically easy, and the proven
 exponent is conservative.  Its role is to separate the gap question cleanly
 into symmetry, geometry, and kinetics, without inferring asymptotic behavior
@@ -78,8 +93,8 @@ from finite-size data.
 Neither orbit reduction, P\'olya enumeration, compact addressing, nor a
 Markov discriminant is claimed as new in isolation.  The contribution is
 the protocol-dependent link between orbit potentials, group-fixed spectra,
-cyclic closure, sector localization, and dark multiplicity, together with a
-separately controlled parent path.
+cyclic-envelope closure, tracked bands, sector localization, and dark
+multiplicity, together with a separately controlled parent path.
 
 We use the following notation throughout.  For an operator $X$,
 $\Ran X$ and $\spec X$ denote its range and spectrum.  The symbol

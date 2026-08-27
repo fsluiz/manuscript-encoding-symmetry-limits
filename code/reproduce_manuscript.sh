@@ -25,6 +25,7 @@ if [[ "${repro_mode}" == "--full" ]]; then
 fi
 
 python3 code/d4_sector_analysis.py
+python3 code/sector_localization_audit.py
 python3 code/catalyst_path_analysis.py
 python3 code/hard_core_parent_path.py
 python3 code/mean_field_zrp_gap_audit.py

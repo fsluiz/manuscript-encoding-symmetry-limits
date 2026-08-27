@@ -202,17 +202,17 @@
   "three_box": [
     {
       "largest_nonconstant_positive_eigenvalue": {
-        "mu_max_nonconstant": 0.33333333333333404,
-        "mu_min": -0.49999999999999933,
-        "three_box_heat_bath_gap": 0.444444444444444,
-        "total": 47
+        "mu_max_nonconstant": 0.33333333333333415,
+        "mu_min": -0.5000000000000007,
+        "three_box_heat_bath_gap": 0.4444444444444439,
+        "total": 59
       },
       "max_total_checked": 80,
       "smallest_three_box_heat_bath_gap": {
-        "mu_max_nonconstant": 0.33333333333333404,
-        "mu_min": -0.49999999999999933,
-        "three_box_heat_bath_gap": 0.444444444444444,
-        "total": 47
+        "mu_max_nonconstant": 0.33333333333333415,
+        "mu_min": -0.5000000000000007,
+        "three_box_heat_bath_gap": 0.4444444444444439,
+        "total": 59
       },
       "target_gap_lower_bound": 0.3333333333333333,
       "target_mu_upper_bound": 0.5,

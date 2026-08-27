@@ -7,14 +7,15 @@ initial state and interpolation preserve joint symmetries.
 The current manuscript contributes:
 
 - orbit-invariant penalties, P\'olya--Redfield counts, the exact joint orbit
-  quotient, and the distinction between $\mathcal H_{\rm sym}$ and the
-  protocol-generated cyclic space $\mathcal K_u$;
+  quotient, and the distinction between $\mathcal H_{\rm sym}$, the common
+  invariant cyclic envelope $\mathcal K_u$, and the smaller trajectory set
+  of any specified schedule;
 - a sector-resolved Schur-complement localisation theorem containing the
   sector kinetic floor;
 - an orbit-resolved hopping-cancellation theorem and a separate stability
   theorem for transverse symmetry-dark crossings;
 - an even-cycle parent path with endpoint cover probability
-  $1-O(n^{-5})$ and the explicit uniform accessible-gap lower bound
+  $1-O(n^{-5})$ and the explicit uniform cyclic-envelope-gap lower bound
   $1024n^{-13}$; and
 - a frozen 11-instance reconstruction using full Hamiltonians,
   residual-aware degeneracy tests, and exact cyclic restrictions.
@@ -35,9 +36,9 @@ made.
 - `instances/` — immutable, hashed input registry;
 - `orlib_instances/` — only the OR-Library parent files needed to reconstruct
   the frozen registry;
-- `data/` — the six machine-readable outputs used by the current manuscript;
+- `data/` — the seven machine-readable outputs used by the current manuscript;
 - `examples/` — a standalone MathJax worked example that expands a five-set
-  Hamiltonian and applies the symmetry, cyclic-accessibility, localisation,
+  Hamiltonian and applies the symmetry, cyclic-envelope, localisation,
   and gap analysis;
 - `reports/` — provenance and full-reproduction audit reports; and
 - `REPRODUCIBILITY.md` — pinned environment and command-level instructions.
@@ -60,8 +61,9 @@ bash code/reproduce_manuscript.sh --full
 ```
 
 The full command verifies all 32 frozen records, reconstructs the 11 primary
-finite-instance rows, independently audits the shell-resolved cyclic closure,
-regenerates the four other auxiliary numerical audits and
+finite-instance rows, independently audits the shell-resolved cyclic closure
+and the sector-localisation certificate, regenerates the four other auxiliary
+numerical audits and
 the LaTeX tables and finite-diagnostic figure, and compiles the manuscript.
 A faster structural test is:
 
@@ -103,6 +105,7 @@ The current manuscript uses these machine-readable outputs:
 |---|---|---|
 | Finite structural and endpoint tables | `code/reconstruct_accessibility_table.py` | `data/accessibility_table_reconstructed.json` |
 | Independent shell-resolved cyclic closure | `code/orbit_cyclic_audit.py` | `data/orbit_cyclic_audit.json` |
+| Sector-localisation certificate | `code/sector_localization_audit.py` | `data/sector_localization_audit.json` |
 | $D_4$ sector audit | `code/d4_sector_analysis.py` | `data/d4_sector_comparison.json` |
 | Endpoint-vanishing catalyst | `code/catalyst_path_analysis.py` | `data/catalyst_path_results.json` |
 | Even-cycle orbit quotients | `code/hard_core_parent_path.py` | `data/hard_core_parent_path_results.json` |

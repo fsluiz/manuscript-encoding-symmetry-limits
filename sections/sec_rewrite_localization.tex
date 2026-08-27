@@ -1,10 +1,18 @@
 \section{Sector localization and relevant gaps}
 \label{sec:rewrite-localization}
 
-Let $P$ project onto the span of computational-basis tuples that use
+Let $P=P_k$ project onto the span of computational-basis tuples that use
 distinct bases and cover every task, and put $Q=I-P$.  By
 Lemma~\ref{lem:orbit-invariance}, both projectors commute with the joint
-group.  Write
+group.  For a normalized state $\psi$, define the exact-cardinality cover
+success probability
+\begin{equation}
+ p_{{\rm cov},k}(\psi)=\langle\psi|P_k|\psi\rangle.
+ \label{eq:fixed-k-cover-probability}
+\end{equation}
+Only when $k=k^\star$ do we write this operational quantity as
+$p_{\rm opt}(\psi)$, because then every feasible exact-$k$ outcome is a
+minimum cover.  Write
 $V=\lambda H_{\rm cov}+\mu H_{\rm excl}$,
 $m=\min\{\lambda,\mu\}$ for the minimum single-constraint penalty, and
 $\kappa=k/(n_B-1)$ for the magnitude of the lowest possible $k$-register
@@ -69,8 +77,24 @@ $\|B_\gamma\|$ that leaks amplitude into invalid states.  The kinetic floor
 $\eta_\gamma$ is required because a sector-projected cover is a
 superposition and need not have zero hopping expectation.  We do not claim
 that it changes the numerical certificate on every instance.
-The full proof and the cyclic-space caveat are in
+The full proof and the cyclic-envelope caveat are in
 Appendix~\ref{app:sector-localization}.
+
+The archived audit evaluates every term directly in symmetry sectors of the
+full problem Hamiltonian.  For example, in the
+$S_3$-trivial $\times D_4$-$E$ sector of \texttt{grid-2x4},
+\begin{equation}
+ \eta_\gamma=-\frac{2}{7},\quad
+ \Gamma_\gamma=4.88189,\quad
+ \|B_\gamma\|=0.889694.
+ \label{eq:sector-audit-example}
+\end{equation}
+The worst ground-manifold leakage is $0.0035743$, below both the exact bound
+$0.032145$ and the kinetic-floor bound $0.032463$.  Thus the sector kinetic
+term is numerically nonzero and changes the certified separation from the
+unjustified naive quantity $m-\kappa=32/7$ to
+$g_\gamma=34/7$.  Appendix~\ref{app:numerical-protocol} reports all five
+$D_4$ sectors and an independent asymmetric instance.
 
 This statement certifies the solution content of the lowest-energy state
 within a sector.  It does not say that the ground vector has exact support on
@@ -79,5 +103,5 @@ rather than eliminates, leakage.  Exact support occurs only in an infinite
 penalty limit or in special decoupled cases.
 
 The proposition applies to genuine commuting symmetry sectors.  A cyclic
-projector need not commute with $P$, so cyclic-space solution probability is
+envelope projector need not commute with $P$, so its solution probability is
 evaluated directly or through a separately constructed commuting projector.

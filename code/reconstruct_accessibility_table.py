@@ -1038,7 +1038,7 @@ def render_figure(rows: list[dict[str, Any]]) -> str | None:
         r"  \end{scope}",
         r"\end{tikzpicture}",
         r"}",
-        r"\caption{Two finite diagnostics of cyclic accessibility. (a) At the problem endpoint of \texttt{rnd-b8-t7-p50-s002}, the symmetric ground vector has negligible projection onto $\mathcal K_u$, while the cyclic ground state coincides, within residual-based precision, with the first symmetric excitation. (b) For \texttt{grid-2x4}, irreducible stoquasticity gives global ground rank one for $s<s_c$, hopping cancellation raises it to $3!\times12=72$ at $s_c=7/15$, and the endpoint rank is two. Panel (b) uses a logarithmic rank axis.}",
+        r"\caption{Two finite diagnostics of cyclic restriction. (a) At the problem endpoint of \texttt{rnd-b8-t7-p50-s002}, the symmetric ground vector has negligible projection onto $\mathcal K_u$, while the cyclic-envelope ground state coincides, within residual-based precision, with the first symmetric excitation. (b) For \texttt{grid-2x4}, irreducible stoquasticity gives global ground rank one for $s<s_c$, hopping cancellation raises it to $3!\times12=72$ at $s_c=7/15$, and the endpoint rank is two. Panel (b) uses a logarithmic rank axis.}",
         r"\label{fig:finite-cyclic-diagnostics}",
         r"\end{figure*}",
         "",

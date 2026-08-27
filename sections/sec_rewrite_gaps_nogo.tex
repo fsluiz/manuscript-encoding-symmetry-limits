@@ -25,8 +25,9 @@ Eq.~\eqref{eq:two-gaps-rewrite}'s second quantity stays positive.
 
 Let $E_0$, $E_0^{\rm sym}$, and $E_0^{\mathcal K}$ be the ground energies
 of $H(s)$ on $\mathcal H_{\rm addr}$, $\mathcal H_{\rm sym}$, and
-$\mathcal K_u$, respectively, at a common value of $s$.  The nested spaces
-in Eq.~\eqref{eq:nested-spaces-rewrite} define the accessibility costs
+$\mathcal K_u$, respectively, at a common value of $s$.  The nested
+invariant spaces in Eq.~\eqref{eq:nested-spaces-rewrite} define the
+restriction costs
 \begin{align}
  \delta_{\rm sym}&=E_0^{\rm sym}-E_0,\quad\quad
  \delta_{\rm cyc}=E_0^{\mathcal K}-E_0^{\rm sym},\\
@@ -34,8 +35,11 @@ in Eq.~\eqref{eq:nested-spaces-rewrite} define the accessibility costs
  =\delta_{\rm sym}+\delta_{\rm cyc}.
  \label{eq:accessibility-cost-rewrite}
 \end{align}
-A positive $\delta_{\rm acc}$ says that the protocol follows a globally
-excited branch.  That branch can nevertheless have high cover probability.
+A positive $\delta_{\rm acc}$ proves that the common cyclic envelope excludes
+the global ground branch.  If an isolated band is then followed inside that
+envelope, it is globally excited but can nevertheless have high cover
+probability.  Conversely, zero restriction cost does not prove that a
+particular schedule prepares the corresponding ground vector.
 
 For adiabatic evolution, the relevant object is an isolated spectral band,
 not merely the first distinct final eigenvalue
@@ -77,18 +81,18 @@ quantity & physical meaning\\
 $\delta_{\rm mult}$ & splitting inside the lowest manifold; zero for a
 degenerate ground energy\\
 $\Delta_{\rm exc}$ & excitation gap above the entire lowest manifold\\
-$\delta_{\rm acc}$ & energy cost of confinement to the protocol-cyclic
-space\\
+$\delta_{\rm acc}$ & energy cost of confinement to the common cyclic
+envelope\\
 $\Delta_{\rm ad}$ & isolation of the spectral band followed inside that
 space\\
 \hline
 \end{tabular}
 \end{center}
 
-The restriction is conditional on the protocol.  If
+Both the envelope and the tracked band are conditional on the protocol.  If
 $[H(t),\Pi_\gamma]=0$ and the initial state lies in $\Ran\Pi_\gamma$, its
 evolution remains there, but an initial state adapted to another irrep or a
-symmetry-breaking generator changes the accessible spectrum.  This statement
+symmetry-breaking generator changes the invariant and tracked spectra.  This statement
 does not forbid transient concentration in a computationally marked
 subspace: it forbids only transition amplitude into symmetry sectors
 orthogonal to the one selected by the initial state.

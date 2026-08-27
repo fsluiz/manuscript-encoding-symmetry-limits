@@ -1,6 +1,8 @@
 {
   "title": "Orbit-resolved spectra and dynamical accessibility in multi-register covering Hamiltonians",
   "upload_type": "software",
+  "version": "1.0.0",
+  "publication_date": "2026-08-27",
   "access_right": "open",
   "license": "other-open",
   "creators": [
@@ -17,7 +19,7 @@
     "Set Cover",
     "symmetry",
     "orbit quotient",
-    "cyclic subspace",
+    "cyclic envelope",
     "spectral gap",
     "reproducibility"
   ],

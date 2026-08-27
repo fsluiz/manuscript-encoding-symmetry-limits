@@ -45,6 +45,7 @@
 !/sections/app_reader_numerics.tex
 !/sections/generated_accessibility_tables.tex
 !/sections/generated_accessibility_figure.tex
+!/sections/generated_sector_localization_table.tex
 
 # Reproduction code and its direct local dependencies.
 !/code/
@@ -63,6 +64,7 @@
 !/code/mean_field_zrp_gap_audit.py
 !/code/orbit_cyclic.py
 !/code/orbit_cyclic_audit.py
+!/code/sector_localization_audit.py
 !/code/build_arxiv_bundle.py
 !/code/orlib_parse.py
 !/code/orlib_subextract.py
@@ -95,9 +97,11 @@
 !/data/hard_core_parent_path_results.json
 !/data/mean_field_zrp_gap_audit.json
 !/data/orbit_cyclic_audit.json
+!/data/sector_localization_audit.json
 
 # Reproduction and provenance reports intended for the public artifact.
 !/reports/
 /reports/*
 !/reports/instance_audit.md
-!/reports/reproduction_full_2026-08-11.md
+!/reports/reproduction_full_2026-08-27.md
+!/reports/revision_execution_2026-08-27.md

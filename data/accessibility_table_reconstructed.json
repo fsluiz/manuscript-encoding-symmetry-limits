@@ -3,8 +3,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 1.4715559625134536e-15,
-          "Hprob": 1.1327847201374436e-14
+          "H0": 2.045781859023239e-15,
+          "Hprob": 1.127754822588458e-14
         },
         "orbit_isometry_error": 6.661338147750939e-16,
         "potential_identity_residual": 1.7790494321812365e-14,
@@ -14,7 +14,7 @@
         },
         "shell_cyclic_closure": {
           "dimension": 22,
-          "gram_error": 5.815072361856171e-16,
+          "gram_error": 7.135754317386134e-16,
           "growth": [
             9,
             20,
@@ -22,9 +22,9 @@
           ],
           "iterations": 2,
           "maximum_discarded_singular_value": 7.946456700745124e-17,
-          "minimum_kept_singular_value": 0.03386530320174668,
+          "minimum_kept_singular_value": 0.03386530320174669,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 5.58314267577768e-15,
+          "transport_invariance_residual": 6.4488129115731924e-15,
           "transport_scale": 23.999999999999996
         }
       },
@@ -46,14 +46,14 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 1.4000000000000001,
+          "E0": 1.400000000000001,
           "comparison_thresholds": [
-            4.748197215877404e-13,
-            1.0562039207209379e-12
+            8.43264068008109e-13,
+            9.146808856504468e-13
           ],
-          "excitation_gap": 2.3333333333333206,
+          "excitation_gap": 2.3333333333333233,
           "ground_rank": 2,
-          "max_ground_residual": 1.939201589206121e-15,
+          "max_ground_residual": 7.816366346682737e-15,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 1.138646658896781e-15,
           "scale_bound": 27.066666666666666
@@ -64,15 +64,15 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 1.4046035305567247e-16,
+            "E0_cyclic": 1.7127466918016387e-16,
             "E0_symmetric": -1.5275538832985387e-16,
-            "delta_cyclic": 2.9321574138552634e-16,
+            "delta_cyclic": 3.2403005751001775e-16,
             "s": 0.0
           },
           {
-            "E0_cyclic": 1.160233723576366,
+            "E0_cyclic": 1.1602337235763656,
             "E0_symmetric": 1.1602337235763662,
-            "delta_cyclic": -2.220446049250313e-16,
+            "delta_cyclic": -6.661338147750939e-16,
             "s": 0.11666666666666667
           },
           {
@@ -82,49 +82,49 @@
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 1.5833229887881912,
+            "E0_cyclic": 1.5833229887881917,
             "E0_symmetric": 1.5833229887881934,
-            "delta_cyclic": -2.220446049250313e-15,
+            "delta_cyclic": -1.7763568394002505e-15,
             "s": 0.35
           },
           {
-            "E0_cyclic": 1.3999999999999972,
+            "E0_cyclic": 1.3999999999999995,
             "E0_symmetric": 1.4000000000000026,
-            "delta_cyclic": -5.329070518200751e-15,
+            "delta_cyclic": -3.1086244689504383e-15,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.1170996901797396,
+            "E0_cyclic": 1.117099690179737,
             "E0_symmetric": 1.1170996901797323,
-            "delta_cyclic": 7.327471962526033e-15,
+            "delta_cyclic": 4.6629367034256575e-15,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 0.830403340153049,
+            "E0_cyclic": 0.8304033401530502,
             "E0_symmetric": 0.8304033401530468,
-            "delta_cyclic": 2.1094237467877974e-15,
+            "delta_cyclic": 3.3306690738754696e-15,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.541583805961281,
+            "E0_cyclic": 0.5415838059612781,
             "E0_symmetric": 0.541583805961289,
-            "delta_cyclic": -7.993605777301127e-15,
+            "delta_cyclic": -1.0880185641326534e-14,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.25145474885002606,
+            "E0_cyclic": 0.25145474885002184,
             "E0_symmetric": 0.2514547488500244,
-            "delta_cyclic": 1.6653345369377348e-15,
+            "delta_cyclic": -2.55351295663786e-15,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.0395394332259003,
+            "E0_cyclic": -0.03953943322590725,
             "E0_symmetric": -0.03953943322590215,
-            "delta_cyclic": 1.85268467234323e-15,
+            "delta_cyclic": -5.100087019371813e-15,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 5.329070518200751e-15
+        "max_abs_delta_at_or_below_cancellation": 3.1086244689504383e-15
       },
       "n_B": 8,
       "n_T": 8,
@@ -199,44 +199,44 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.039539433225884,
+          "E0": -0.039539433225909915,
           "comparison_thresholds": [
-            1.832547995585942e-12
+            1.4963566951565312e-12
           ],
-          "cover_probability_max": 0.994395043689276,
-          "cover_probability_min": 0.994395043689276,
-          "excitation_gap": 0.31460780380624737,
+          "cover_probability_max": 0.994395043689277,
+          "cover_probability_min": 0.994395043689277,
+          "excitation_gap": 0.31460780380627323,
           "ground_rank": 1,
-          "max_ground_residual": 2.259523160520896e-14,
-          "max_reported_residual": 3.498162764751155e-14,
-          "multiplicity_gap": 0.31460780380624737,
+          "max_ground_residual": 1.6388025356921122e-14,
+          "max_reported_residual": 4.834881914258866e-14,
+          "multiplicity_gap": 0.31460780380627323,
           "scale_bound": 56.81935263678683,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.039539433225884,
-          "eigenvector_overlap_squared": 0.9999999999999978,
-          "energy_difference": 2.2593038551121936e-14,
+          "cyclic_ground_energy": -0.039539433225909915,
+          "eigenvector_overlap_squared": 1.0000000000000009,
+          "energy_difference": -2.0365653607967715e-14,
           "represented_irrep": "trivial S_3 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999998,
-          "symmetric_level_energy": -0.03953943322590659,
+          "symmetric_ground_weight_in_cyclic_space": 1.0,
+          "symmetric_level_energy": -0.03953943322588955,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.27091901338957564,
-        "delta_accessible_tolerance": 4.026506699300916e-12,
+        "delta_accessible": 0.27091901338954877,
+        "delta_accessible_tolerance": 3.743494609330757e-12,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 2.860250270760386e-12,
-        "delta_symmetry": 0.27091901338955304,
-        "delta_symmetry_tolerance": 3.996412274123839e-12,
+        "delta_cyclic_tolerance": 2.4365159472976497e-12,
+        "delta_symmetry": 0.27091901338956914,
+        "delta_symmetry_tolerance": 3.9103864855197254e-12,
         "full": {
-          "E0": -0.3104584466154596,
+          "E0": -0.3104584466154587,
           "comparison_thresholds": [
-            3.852662334738575e-12,
-            3.964413322793692e-12
+            4.076291051178248e-12,
+            5.298813253729869e-12
           ],
-          "cover_probability_max": 0.9964257246679782,
-          "cover_probability_min": 0.996425724667978,
-          "excitation_gap": 0.00038201492772360623,
+          "cover_probability_max": 0.9964257246679781,
+          "cover_probability_min": 0.9964257246679777,
+          "excitation_gap": 0.0003820149277263263,
           "ground_irreps": [
             {
               "multiplicity_space_ground_rank": 2,
@@ -247,25 +247,25 @@
             }
           ],
           "ground_rank": 2,
-          "max_ground_residual": 4.505631529515756e-14,
-          "max_reported_residual": 1.1844864793588962e-13,
+          "max_ground_residual": 4.56032797440422e-14,
+          "max_reported_residual": 1.0986197988990354e-13,
           "multiplicity_gap": 0.0,
           "reported_eigenpairs": 512,
           "scale_bound": 58.00000000000002,
           "solver": "numpy.linalg.eigh(full dense spectrum)"
         },
         "symmetric": {
-          "E0": -0.03953943322590659,
+          "E0": -0.03953943322588955,
           "comparison_thresholds": [
-            2.710930476490255e-12
+            2.68773588138009e-12
           ],
-          "cover_probability_max": 0.9943950436892766,
-          "cover_probability_min": 0.9943950436892766,
-          "excitation_gap": 0.31460780380626907,
+          "cover_probability_max": 0.9943950436892763,
+          "cover_probability_min": 0.9943950436892763,
+          "excitation_gap": 0.31460780380626574,
           "ground_rank": 1,
-          "max_ground_residual": 2.1993343101667394e-14,
-          "max_reported_residual": 3.402253414426763e-14,
-          "multiplicity_gap": 0.31460780380626907,
+          "max_ground_residual": 1.9725862880700498e-14,
+          "max_reported_residual": 4.517498225916704e-14,
+          "multiplicity_gap": 0.31460780380626574,
           "scale_bound": 56.44216170118185,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -360,8 +360,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 2.426157580378342e-15,
-          "Hprob": 2.110019679910222e-14
+          "H0": 2.796235563342791e-15,
+          "Hprob": 1.8666978378825047e-14
         },
         "orbit_isometry_error": 2.220446049250313e-16,
         "potential_identity_residual": 7.398391208924372e-15,
@@ -371,7 +371,7 @@
         },
         "shell_cyclic_closure": {
           "dimension": 101,
-          "gram_error": 9.66168180754185e-16,
+          "gram_error": 1.1124376219669466e-15,
           "growth": [
             9,
             41,
@@ -379,10 +379,10 @@
             101
           ],
           "iterations": 4,
-          "maximum_discarded_singular_value": 6.652059382230601e-16,
+          "maximum_discarded_singular_value": 4.400788108470096e-16,
           "minimum_kept_singular_value": 0.008153554292065003,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.6879009960247442e-14,
+          "transport_invariance_residual": 1.2640731484146011e-14,
           "transport_scale": 23.99999999999999
         }
       },
@@ -405,24 +405,24 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 1.399999999999994,
+          "E0": 1.3999999999999975,
           "comparison_thresholds": [
-            1.2418048224367577e-12,
-            1.3522066027098283e-12,
-            9.341961645239395e-13,
-            8.928401359347277e-13,
-            1.0542298631947602e-12,
-            1.2499482916803216e-12,
-            1.0018807802433093e-12,
-            1.5823624401459958e-12,
-            9.765124804824175e-13,
-            1.016009229457358e-12,
-            1.5960832987330831e-12,
-            1.2681728602203834e-12
+            1.5337355496498756e-12,
+            1.2258133504543638e-12,
+            1.2495427852131194e-12,
+            1.2942762607075585e-12,
+            1.1721500659934952e-12,
+            1.0910934385513255e-12,
+            1.5713806904468244e-12,
+            1.1991494060204356e-12,
+            1.496480082679173e-12,
+            1.2466403619818354e-12,
+            1.1207372084321246e-12,
+            1.3976573177997532e-12
           ],
-          "excitation_gap": 2.333333333333332,
+          "excitation_gap": 2.3333333333333313,
           "ground_rank": 12,
-          "max_ground_residual": 1.7056724320097202e-14,
+          "max_ground_residual": 1.3074812211013493e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 5.523224674397835e-16,
           "scale_bound": 27.066666666666666
@@ -433,15 +433,15 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 7.698513902261273e-16,
+            "E0_cyclic": 5.33839440547669e-16,
             "E0_symmetric": 9.250465316238295e-16,
-            "delta_cyclic": -1.551951413977022e-16,
+            "delta_cyclic": -3.9120709107616053e-16,
             "s": 0.0
           },
           {
-            "E0_cyclic": 1.1327493974806002,
+            "E0_cyclic": 1.1327493974806007,
             "E0_symmetric": 1.1327493974806007,
-            "delta_cyclic": -4.440892098500626e-16,
+            "delta_cyclic": 0.0,
             "s": 0.11666666666666667
           },
           {
@@ -451,27 +451,27 @@
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 1.558132171036838,
+            "E0_cyclic": 1.5581321710368363,
             "E0_symmetric": 1.5581321710368392,
-            "delta_cyclic": -1.1102230246251565e-15,
+            "delta_cyclic": -2.886579864025407e-15,
             "s": 0.35
           },
           {
-            "E0_cyclic": 1.399999999999994,
+            "E0_cyclic": 1.3999999999999932,
             "E0_symmetric": 1.3999999999999972,
-            "delta_cyclic": -3.3306690738754696e-15,
+            "delta_cyclic": -3.9968028886505635e-15,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.0470633527961497,
+            "E0_cyclic": 1.0470633527961484,
             "E0_symmetric": 1.0342857142857167,
-            "delta_cyclic": 0.01277763851043301,
+            "delta_cyclic": 0.012777638510431677,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 0.693230530593422,
+            "E0_cyclic": 0.6932305305934262,
             "E0_symmetric": 0.6685714285714303,
-            "delta_cyclic": 0.02465910202199173,
+            "delta_cyclic": 0.02465910202199595,
             "s": 0.6799999999999999
           },
           {
@@ -481,19 +481,19 @@
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": -0.01566323724084443,
+            "E0_cyclic": -0.01566323724085112,
             "E0_symmetric": -0.06285714285713807,
-            "delta_cyclic": 0.04719390561629364,
+            "delta_cyclic": 0.04719390561628695,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.37043050862571825,
+            "E0_cyclic": -0.3704305086257149,
             "E0_symmetric": -0.42857142857142805,
-            "delta_cyclic": 0.0581409199457098,
+            "delta_cyclic": 0.05814091994571313,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 3.3306690738754696e-15
+        "max_abs_delta_at_or_below_cancellation": 3.9968028886505635e-15
       },
       "n_B": 8,
       "n_T": 7,
@@ -568,48 +568,48 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.37043050862571536,
+          "E0": -0.37043050862571286,
           "comparison_thresholds": [
-            3.167804550096966e-12
+            2.8183150002382753e-12
           ],
-          "cover_probability_max": 0.9986332358593235,
-          "cover_probability_min": 0.9986332358593235,
-          "excitation_gap": 0.1275872002569184,
+          "cover_probability_max": 0.9986332358593232,
+          "cover_probability_min": 0.9986332358593232,
+          "excitation_gap": 0.12758720025691675,
           "ground_rank": 1,
-          "max_ground_residual": 2.7956462743431196e-14,
-          "max_reported_residual": 4.4823543760596396e-14,
-          "multiplicity_gap": 0.1275872002569184,
+          "max_ground_residual": 2.455201738421062e-14,
+          "max_reported_residual": 4.536744514261679e-14,
+          "multiplicity_gap": 0.12758720025691675,
           "scale_bound": 57.95332150977034,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.37043050862571536,
-          "eigenvector_overlap_squared": 1.0000000000000009,
+          "cyclic_ground_energy": -0.37043050862571286,
+          "eigenvector_overlap_squared": 0.9999999999999996,
           "energy_difference": 5.551115123125783e-15,
           "represented_irrep": "trivial S_3 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 1.4298353903908755e-27,
-          "symmetric_level_energy": -0.3704305086257209,
+          "symmetric_ground_weight_in_cyclic_space": 1.4128689129902558e-27,
+          "symmetric_level_energy": -0.3704305086257184,
           "symmetric_level_index_zero_based": 1
         },
-        "delta_accessible": 0.05814091994571674,
-        "delta_accessible_tolerance": 2.99399379634006e-12,
-        "delta_cyclic": 0.05814091994570192,
-        "delta_cyclic_tolerance": 3.397376147721176e-12,
+        "delta_accessible": 0.05814091994572207,
+        "delta_accessible_tolerance": 2.9485912713035802e-12,
+        "delta_cyclic": 0.05814091994571541,
+        "delta_cyclic_tolerance": 2.953045523640413e-12,
         "delta_symmetry": 0.0,
-        "delta_symmetry_tolerance": 2.952312550781602e-12,
+        "delta_symmetry_tolerance": 2.803023937586417e-12,
         "full": {
-          "E0": -0.4285714285714321,
+          "E0": -0.42857142857143493,
           "comparison_thresholds": [
-            2.4249640768974575e-12,
-            2.4377726949701453e-12,
-            2.3004762172399527e-12,
-            2.3928778693288463e-12,
-            2.5115311400119417e-12,
-            2.337694123721788e-12
+            2.2902456580359273e-12,
+            2.6729446947687277e-12,
+            2.310740924077105e-12,
+            2.420396210973596e-12,
+            2.631336321179765e-12,
+            2.4367057571740914e-12
           ],
-          "cover_probability_max": 1.0,
-          "cover_probability_min": 0.9999999999999996,
-          "excitation_gap": 0.05633921683647186,
+          "cover_probability_max": 1.0000000000000004,
+          "cover_probability_min": 0.9999999999999998,
+          "excitation_gap": 0.056339216836480854,
           "ground_irreps": [
             {
               "multiplicity_space_ground_rank": 1,
@@ -637,25 +637,25 @@
             }
           ],
           "ground_rank": 6,
-          "max_ground_residual": 1.9044826097718178e-14,
-          "max_reported_residual": 9.818878210953162e-14,
+          "max_ground_residual": 2.1541220956209164e-14,
+          "max_reported_residual": 9.797168983065916e-14,
           "multiplicity_gap": 0.0,
           "reported_eigenpairs": 512,
           "scale_bound": 58.00000000000001,
           "solver": "numpy.linalg.eigh(full dense spectrum)"
         },
         "symmetric": {
-          "E0": -0.4285714285714173,
+          "E0": -0.42857142857142827,
           "comparison_thresholds": [
-            2.9745685755220878e-12
+            2.49130319963689e-12
           ],
-          "cover_probability_max": 1.0,
-          "cover_probability_min": 1.0,
-          "excitation_gap": 0.05814091994569637,
+          "cover_probability_max": 0.9999999999999999,
+          "cover_probability_min": 0.9999999999999999,
+          "excitation_gap": 0.05814091994570986,
           "ground_rank": 1,
-          "max_ground_residual": 2.712283783226205e-14,
-          "max_reported_residual": 4.848607610717085e-14,
-          "multiplicity_gap": 0.05814091994569637,
+          "max_ground_residual": 2.1640670709867365e-14,
+          "max_reported_residual": 4.897845151197433e-14,
+          "multiplicity_gap": 0.05814091994570986,
           "scale_bound": 56.732050807568875,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -680,8 +680,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 4.508790350483221e-15,
-          "Hprob": 4.543093732693992e-14
+          "H0": 4.35412567639828e-15,
+          "Hprob": 4.457567300873578e-14
         },
         "orbit_isometry_error": 3.3306690738754696e-16,
         "potential_identity_residual": 1.7815252811039688e-14,
@@ -691,7 +691,7 @@
         },
         "shell_cyclic_closure": {
           "dimension": 324,
-          "gram_error": 1.2111559005385355e-15,
+          "gram_error": 1.1087225092317512e-15,
           "growth": [
             15,
             91,
@@ -700,10 +700,10 @@
             324
           ],
           "iterations": 5,
-          "maximum_discarded_singular_value": 1.1505040517087754e-15,
-          "minimum_kept_singular_value": 0.0012712465470975502,
+          "maximum_discarded_singular_value": 9.807913496300602e-16,
+          "minimum_kept_singular_value": 0.0012712465470975506,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.8376943608829888e-14,
+          "transport_invariance_residual": 1.5594999707706236e-14,
           "transport_scale": 31.999999999999982
         }
       },
@@ -727,19 +727,19 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 1.8666666666666558,
+          "E0": 1.8666666666666605,
           "comparison_thresholds": [
-            3.302384687529604e-12,
-            1.6819090368864346e-12,
-            1.868000941948273e-12,
-            2.0176481923906724e-12,
-            1.7496347637988083e-12,
-            2.230323731239898e-12,
-            2.3633666942271586e-12
+            1.719602492453805e-12,
+            1.413243782896033e-12,
+            1.6584858347528045e-12,
+            1.4835594102806826e-12,
+            1.6697254105244164e-12,
+            2.0700137850977606e-12,
+            2.1032396869261055e-12
           ],
-          "excitation_gap": 2.3333333333333357,
+          "excitation_gap": 2.33333333333333,
           "ground_rank": 7,
-          "max_ground_residual": 3.74440646443351e-14,
+          "max_ground_residual": 1.811805898267979e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 1.481313240327751e-15,
           "scale_bound": 43.86666666666667
@@ -750,67 +750,67 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 3.259299883648449e-15,
+            "E0_cyclic": 2.673780471101341e-15,
             "E0_symmetric": 3.1326815937258484e-15,
-            "delta_cyclic": 1.266182899226005e-16,
+            "delta_cyclic": -4.589011226245073e-16,
             "s": 0.0
           },
           {
-            "E0_cyclic": 1.7493090431309146,
+            "E0_cyclic": 1.7493090431309133,
             "E0_symmetric": 1.749309043130916,
-            "delta_cyclic": -1.3322676295501878e-15,
+            "delta_cyclic": -2.6645352591003757e-15,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 2.281866587235055,
+            "E0_cyclic": 2.281866587235057,
             "E0_symmetric": 2.2818665872350596,
-            "delta_cyclic": -4.440892098500626e-15,
+            "delta_cyclic": -2.6645352591003757e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.148660267709979,
+            "E0_cyclic": 2.1486602677099786,
             "E0_symmetric": 2.1486602677099813,
-            "delta_cyclic": -2.220446049250313e-15,
+            "delta_cyclic": -2.6645352591003757e-15,
             "s": 0.35
           },
           {
-            "E0_cyclic": 1.8666666666666627,
+            "E0_cyclic": 1.8666666666666658,
             "E0_symmetric": 1.866666666666658,
-            "delta_cyclic": 4.6629367034256575e-15,
+            "delta_cyclic": 7.771561172376096e-15,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.4386318148504995,
+            "E0_cyclic": 1.4386318148504893,
             "E0_symmetric": 1.4386318148505004,
-            "delta_cyclic": -8.881784197001252e-16,
+            "delta_cyclic": -1.1102230246251565e-14,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.0070856067082197,
+            "E0_cyclic": 1.0070856067082083,
             "E0_symmetric": 1.007085606708217,
-            "delta_cyclic": 2.6645352591003757e-15,
+            "delta_cyclic": -8.659739592076221e-15,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.5736749014185542,
+            "E0_cyclic": 0.5736749014185587,
             "E0_symmetric": 0.5736749014185605,
-            "delta_cyclic": -6.328271240363392e-15,
+            "delta_cyclic": -1.7763568394002505e-15,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.13915448998819427,
+            "E0_cyclic": 0.13915448998819335,
             "E0_symmetric": 0.1391544899881863,
-            "delta_cyclic": 7.965850201685498e-15,
+            "delta_cyclic": 7.049916206369744e-15,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.296080273594031,
+            "E0_cyclic": -0.29608027359404154,
             "E0_symmetric": -0.2960802735940452,
-            "delta_cyclic": 1.4210854715202004e-14,
+            "delta_cyclic": 3.6637359812630166e-15,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 4.6629367034256575e-15
+        "max_abs_delta_at_or_below_cancellation": 7.771561172376096e-15
       },
       "n_B": 8,
       "n_T": 8,
@@ -921,35 +921,35 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.2960802735940327,
+          "E0": -0.2960802735940431,
           "comparison_thresholds": [
-            5.13988412059304e-12
+            5.517645099128482e-12
           ],
-          "cover_probability_max": 0.995506231190258,
-          "cover_probability_min": 0.995506231190258,
-          "excitation_gap": 0.029683068961180392,
+          "cover_probability_max": 0.9955062311902573,
+          "cover_probability_min": 0.9955062311902573,
+          "excitation_gap": 0.029683068961228465,
           "ground_rank": 1,
-          "max_ground_residual": 2.863815265561027e-14,
-          "max_reported_residual": 8.797275667511668e-14,
-          "multiplicity_gap": 0.029683068961180392,
-          "scale_bound": 92.81438393169694,
+          "max_ground_residual": 2.9279437816045314e-14,
+          "max_reported_residual": 9.147210268151054e-14,
+          "multiplicity_gap": 0.029683068961228465,
+          "scale_bound": 92.8143839316969,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.2960802735940327,
-          "eigenvector_overlap_squared": 0.9999999999999996,
-          "energy_difference": 4.440892098500626e-16,
+          "cyclic_ground_energy": -0.2960802735940431,
+          "eigenvector_overlap_squared": 1.0000000000000009,
+          "energy_difference": -5.384581669432009e-15,
           "represented_irrep": "trivial S_4 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999991,
-          "symmetric_level_energy": -0.29608027359403316,
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999993,
+          "symmetric_level_energy": -0.2960802735940377,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.02735279491369741,
-        "delta_accessible_tolerance": 4.0532667460755116e-07,
+        "delta_accessible": 0.02735279491368703,
+        "delta_accessible_tolerance": 4.053267066718092e-07,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 4.261128343000559e-12,
-        "delta_symmetry": 0.027352794913696965,
-        "delta_symmetry_tolerance": 4.0532704147396804e-07,
+        "delta_cyclic_tolerance": 4.392661051482863e-12,
+        "delta_symmetry": 0.027352794913692413,
+        "delta_symmetry_tolerance": 4.053271409424185e-07,
         "full": {
           "E0": -0.3234330685077301,
           "cover_probability_max": 0.9931534631348811,
@@ -1080,17 +1080,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.29608027359403316,
+          "E0": -0.2960802735940377,
           "comparison_thresholds": [
-            4.751142482380412e-12
+            4.6946441750573e-12
           ],
-          "cover_probability_max": 0.9955062311902583,
-          "cover_probability_min": 0.9955062311902583,
-          "excitation_gap": 0.029683068961185888,
+          "cover_probability_max": 0.995506231190258,
+          "cover_probability_min": 0.995506231190258,
+          "excitation_gap": 0.02968306896120282,
           "ground_rank": 1,
-          "max_ground_residual": 3.597548099292709e-14,
-          "max_reported_residual": 1.2793484455102447e-13,
-          "multiplicity_gap": 0.029683068961185888,
+          "max_ground_residual": 3.796485000213813e-14,
+          "max_reported_residual": 1.2850026957888103e-13,
+          "multiplicity_gap": 0.02968306896120282,
           "scale_bound": 92.00000000000004,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -1115,8 +1115,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 5.796688197803884e-15,
-          "Hprob": 5.760832165726105e-14
+          "H0": 5.005085046568558e-15,
+          "Hprob": 7.566221736390479e-14
         },
         "orbit_isometry_error": 3.3306690738754696e-16,
         "potential_identity_residual": 2.4924729318609235e-14,
@@ -1126,7 +1126,7 @@
         },
         "shell_cyclic_closure": {
           "dimension": 328,
-          "gram_error": 1.4452391843210585e-15,
+          "gram_error": 1.4727376195133813e-15,
           "growth": [
             19,
             182,
@@ -1134,10 +1134,10 @@
             328
           ],
           "iterations": 4,
-          "maximum_discarded_singular_value": 1.437060689165058e-16,
-          "minimum_kept_singular_value": 0.00173449245162768,
+          "maximum_discarded_singular_value": 1.9331222237836913e-16,
+          "minimum_kept_singular_value": 0.0017344924516276802,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.2246216855322362e-14,
+          "transport_invariance_residual": 1.3510713993505223e-14,
           "transport_scale": 31.999999999999982
         }
       },
@@ -1160,20 +1160,20 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 1.8666666666666605,
+          "E0": 1.8666666666666596,
           "comparison_thresholds": [
-            1.822004560862148e-12,
-            2.079554755452553e-12,
-            1.6959254114681017e-12,
-            1.868620115442469e-12,
-            1.844092308305074e-12,
-            2.8443688912173938e-12,
-            3.1026939751613142e-12,
-            2.0256191734208915e-12
+            2.2773365016444363e-12,
+            2.108418404946812e-12,
+            2.0722044267013148e-12,
+            1.9801414179691026e-12,
+            2.6507986414549993e-12,
+            2.8723370550105066e-12,
+            2.9927454933329872e-12,
+            2.5984043277322398e-12
           ],
-          "excitation_gap": 2.3333333333333326,
+          "excitation_gap": 2.333333333333331,
           "ground_rank": 8,
-          "max_ground_residual": 3.481004930013579e-14,
+          "max_ground_residual": 2.8036004409793796e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 1.481313240327751e-15,
           "scale_bound": 57.86666666666667
@@ -1184,67 +1184,67 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 3.2905815040755793e-15,
+            "E0_cyclic": 2.0759945105238108e-15,
             "E0_symmetric": 3.1326815937258484e-15,
-            "delta_cyclic": 1.578999103497309e-16,
+            "delta_cyclic": -1.0566870832020376e-15,
             "s": 0.0
           },
           {
-            "E0_cyclic": 1.9304209283586578,
+            "E0_cyclic": 1.9304209283586564,
             "E0_symmetric": 1.93042092835866,
-            "delta_cyclic": -2.220446049250313e-15,
+            "delta_cyclic": -3.552713678800501e-15,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 2.234357278497736,
+            "E0_cyclic": 2.2343572784977357,
             "E0_symmetric": 2.234357278497738,
-            "delta_cyclic": -1.7763568394002505e-15,
+            "delta_cyclic": -2.220446049250313e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.100009376693748,
+            "E0_cyclic": 2.1000093766937487,
             "E0_symmetric": 2.100009376693749,
-            "delta_cyclic": -8.881784197001252e-16,
+            "delta_cyclic": -4.440892098500626e-16,
             "s": 0.35
           },
           {
-            "E0_cyclic": 1.866666666666659,
+            "E0_cyclic": 1.8666666666666565,
             "E0_symmetric": 1.8666666666666574,
-            "delta_cyclic": 1.5543122344752192e-15,
+            "delta_cyclic": -8.881784197001252e-16,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.4347259771236132,
+            "E0_cyclic": 1.4347259771236047,
             "E0_symmetric": 1.434725977123621,
-            "delta_cyclic": -7.771561172376096e-15,
+            "delta_cyclic": -1.6209256159527285e-14,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.0008612570279527,
+            "E0_cyclic": 1.0008612570279727,
             "E0_symmetric": 1.00086125702795,
-            "delta_cyclic": 2.6645352591003757e-15,
+            "delta_cyclic": 2.2648549702353193e-14,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.5659178906718917,
+            "E0_cyclic": 0.5659178906719103,
             "E0_symmetric": 0.5659178906719263,
-            "delta_cyclic": -3.4638958368304884e-14,
+            "delta_cyclic": -1.5987211554602254e-14,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.1303093391400108,
+            "E0_cyclic": 0.13030933913999818,
             "E0_symmetric": 0.13030933914000165,
-            "delta_cyclic": 9.159339953157541e-15,
+            "delta_cyclic": -3.469446951953614e-15,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.30573828962448224,
+            "E0_cyclic": -0.3057382896244909,
             "E0_symmetric": -0.3057382896245071,
-            "delta_cyclic": 2.4868995751603507e-14,
+            "delta_cyclic": 1.6209256159527285e-14,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 2.220446049250313e-15
+        "max_abs_delta_at_or_below_cancellation": 3.552713678800501e-15
       },
       "n_B": 8,
       "n_T": 20,
@@ -1379,35 +1379,35 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.30573828962449023,
+          "E0": -0.30573828962451016,
           "comparison_thresholds": [
-            7.767864894779075e-12
+            7.59345225049062e-12
           ],
-          "cover_probability_max": 0.9982538111884157,
-          "cover_probability_min": 0.9982538111884157,
-          "excitation_gap": 0.0017827703539763373,
+          "cover_probability_max": 0.9982538111884154,
+          "cover_probability_min": 0.9982538111884154,
+          "excitation_gap": 0.001782770354007146,
           "ground_rank": 1,
-          "max_ground_residual": 4.5426731146580306e-14,
-          "max_reported_residual": 1.1130987163456009e-13,
-          "multiplicity_gap": 0.0017827703539763373,
+          "max_ground_residual": 5.490315967307982e-14,
+          "max_reported_residual": 1.0185241204005618e-13,
+          "multiplicity_gap": 0.001782770354007146,
           "scale_bound": 123.861485477792,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.30573828962449023,
-          "eigenvector_overlap_squared": 0.9999999999999984,
-          "energy_difference": 1.1879386363489175e-14,
+          "cyclic_ground_energy": -0.30573828962451016,
+          "eigenvector_overlap_squared": 0.9999999999999989,
+          "energy_difference": -2.0872192862952943e-14,
           "represented_irrep": "trivial S_4 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999998,
-          "symmetric_level_energy": -0.3057382896245021,
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999984,
+          "symmetric_level_energy": -0.3057382896244893,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.010302413161265067,
-        "delta_accessible_tolerance": 2.4150339885254863e-09,
+        "delta_accessible": 0.010302413161245139,
+        "delta_accessible_tolerance": 2.415507809951811e-09,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 5.80832590533996e-12,
-        "delta_symmetry": 0.010302413161253188,
-        "delta_symmetry_tolerance": 2.414924502585751e-09,
+        "delta_cyclic_tolerance": 6.398394215992733e-12,
+        "delta_symmetry": 0.01030241316126601,
+        "delta_symmetry_tolerance": 2.415040749470079e-09,
         "full": {
           "E0": -0.3160407027857553,
           "cover_probability_max": 0.9957836833505881,
@@ -1540,17 +1540,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.3057382896245021,
+          "E0": -0.3057382896244893,
           "comparison_thresholds": [
-            5.470134563969238e-12
+            5.259713843656397e-12
           ],
-          "cover_probability_max": 0.9982538111884154,
-          "cover_probability_min": 0.9982538111884154,
-          "excitation_gap": 0.0017827703539930462,
+          "cover_probability_max": 0.9982538111884156,
+          "cover_probability_min": 0.9982538111884156,
+          "excitation_gap": 0.0017827703539813333,
           "ground_rank": 1,
-          "max_ground_residual": 4.323701235187507e-14,
-          "max_reported_residual": 1.432971246181496e-13,
-          "multiplicity_gap": 0.0017827703539930462,
+          "max_ground_residual": 4.556195003843101e-14,
+          "max_reported_residual": 1.2488544952822974e-13,
+          "multiplicity_gap": 0.0017827703539813333,
           "scale_bound": 122.00000000000003,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -1575,8 +1575,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 7.624669379995265e-15,
-          "Hprob": 1.2921582424921285e-13
+          "H0": 7.92555603599135e-15,
+          "Hprob": 1.2556095945720114e-13
         },
         "orbit_isometry_error": 2.6645352591003757e-15,
         "potential_identity_residual": 5.685030811936193e-14,
@@ -1586,7 +1586,7 @@
         },
         "shell_cyclic_closure": {
           "dimension": 792,
-          "gram_error": 1.5769124854122672e-15,
+          "gram_error": 1.5616135850533663e-15,
           "growth": [
             30,
             319,
@@ -1594,9 +1594,9 @@
           ],
           "iterations": 2,
           "maximum_discarded_singular_value": 9.536827706681282e-17,
-          "minimum_kept_singular_value": 0.0007260499263847971,
+          "minimum_kept_singular_value": 0.0007260499263847969,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.942094907145824e-14,
+          "transport_invariance_residual": 1.9514118207320207e-14,
           "transport_scale": 39.99999999999997
         }
       },
@@ -1618,14 +1618,14 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 2.3333333333333384,
+          "E0": 2.3333333333333153,
           "comparison_thresholds": [
-            5.388757067437521e-12
+            5.780743373788777e-12
           ],
-          "excitation_gap": 2.3333333333333,
+          "excitation_gap": 2.3333333333333446,
           "ground_rank": 1,
-          "max_ground_residual": 4.5415409628969443e-14,
-          "multiplicity_gap": 2.3333333333333,
+          "max_ground_residual": 4.7830403902398014e-14,
+          "multiplicity_gap": 2.3333333333333446,
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
         },
@@ -1635,27 +1635,27 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 4.907048629477605e-15,
+            "E0_cyclic": 5.376034981153537e-15,
             "E0_symmetric": 6.1990282076298615e-15,
-            "delta_cyclic": -1.2919795781522568e-15,
+            "delta_cyclic": -8.229932264763246e-16,
             "s": 0.0
           },
           {
-            "E0_cyclic": 3.0846896813884426,
+            "E0_cyclic": 3.084689681388449,
             "E0_symmetric": 3.084689681388451,
-            "delta_cyclic": -8.43769498715119e-15,
+            "delta_cyclic": -2.220446049250313e-15,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 3.2766958428609274,
+            "E0_cyclic": 3.2766958428609256,
             "E0_symmetric": 3.276695842860928,
-            "delta_cyclic": -4.440892098500626e-16,
+            "delta_cyclic": -2.220446049250313e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.8332486131111496,
+            "E0_cyclic": 2.833248613111156,
             "E0_symmetric": 2.833248613111137,
-            "delta_cyclic": 1.2434497875801753e-14,
+            "delta_cyclic": 1.865174681370263e-14,
             "s": 0.35
           },
           {
@@ -1665,37 +1665,37 @@
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.8619548651805733,
+            "E0_cyclic": 1.8619548651805875,
             "E0_symmetric": 1.861954865180593,
-            "delta_cyclic": -1.9761969838327786e-14,
+            "delta_cyclic": -5.551115123125783e-15,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.3845558714133688,
+            "E0_cyclic": 1.3845558714133617,
             "E0_symmetric": 1.3845558714133792,
-            "delta_cyclic": -1.0436096431476471e-14,
+            "delta_cyclic": -1.7541523789077473e-14,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.9038941794407559,
+            "E0_cyclic": 0.9038941794407572,
             "E0_symmetric": 0.903894179440775,
-            "delta_cyclic": -1.9095836023552692e-14,
+            "delta_cyclic": -1.7763568394002505e-14,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.42126415697019803,
+            "E0_cyclic": 0.42126415697017877,
             "E0_symmetric": 0.42126415697020536,
-            "delta_cyclic": -7.327471962526033e-15,
+            "delta_cyclic": -2.65898414397725e-14,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.06264525110528238,
+            "E0_cyclic": -0.06264525110527858,
             "E0_symmetric": -0.06264525110525697,
-            "delta_cyclic": -2.541022947610827e-14,
+            "delta_cyclic": -2.160771561676711e-14,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 1.2434497875801753e-14
+        "max_abs_delta_at_or_below_cancellation": 1.865174681370263e-14
       },
       "n_B": 8,
       "n_T": 30,
@@ -1896,35 +1896,35 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.06264525110528063,
+          "E0": -0.06264525110528057,
           "comparison_thresholds": [
-            6.690985282026443e-12
+            7.87622081334898e-12
           ],
           "cover_probability_max": 0.9949491060935495,
           "cover_probability_min": 0.9949491060935495,
-          "excitation_gap": 4.865973783886775,
+          "excitation_gap": 4.865973783886835,
           "ground_rank": 1,
-          "max_ground_residual": 9.6726928041978e-16,
-          "max_reported_residual": 1.775607943068436e-13,
-          "multiplicity_gap": 4.865973783886775,
-          "scale_bound": 199.43774459403323,
+          "max_ground_residual": 1.0578799125284938e-15,
+          "max_reported_residual": 1.6413456635146631e-13,
+          "multiplicity_gap": 4.865973783886835,
+          "scale_bound": 199.43774459403315,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.06264525110528063,
-          "eigenvector_overlap_squared": 0.9999999999999991,
-          "energy_difference": -2.8727020762175925e-14,
+          "cyclic_ground_energy": -0.06264525110528057,
+          "eigenvector_overlap_squared": 1.0000000000000009,
+          "energy_difference": -1.582067810090848e-14,
           "represented_irrep": "trivial S_5 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999996,
-          "symmetric_level_energy": -0.0626452511052519,
+          "symmetric_ground_weight_in_cyclic_space": 1.0000000000000009,
+          "symmetric_level_energy": -0.06264525110526475,
           "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.0,
-        "delta_accessible_tolerance": 5.185305466976391e-09,
+        "delta_accessible_tolerance": 5.185309997507996e-09,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 9.254552644918007e-12,
+        "delta_cyclic_tolerance": 7.793017815690334e-12,
         "delta_symmetry": 0.0,
-        "delta_symmetry_tolerance": 5.19224908893299e-09,
+        "delta_symmetry_tolerance": 5.190783023572157e-09,
         "full": {
           "E0": -0.06264525110522048,
           "cover_probability_max": 0.9949491060935589,
@@ -2087,17 +2087,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.0626452511052519,
+          "E0": -0.06264525110526475,
           "comparison_thresholds": [
-            1.4461866405890648e-11
+            1.207001757011368e-11
           ],
-          "cover_probability_max": 0.9949491060935493,
-          "cover_probability_min": 0.9949491060935493,
-          "excitation_gap": 4.865973783886788,
+          "cover_probability_max": 0.9949491060935495,
+          "cover_probability_min": 0.9949491060935495,
+          "excitation_gap": 4.8659737838867905,
           "ground_rank": 1,
-          "max_ground_residual": 1.3983970841241894e-13,
-          "max_reported_residual": 2.0840626268050963e-13,
-          "multiplicity_gap": 4.865973783886788,
+          "max_ground_residual": 1.1051840119575681e-13,
+          "max_reported_residual": 2.1325692313048236e-13,
+          "multiplicity_gap": 4.8659737838867905,
           "scale_bound": 197.2360679774998,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -2122,8 +2122,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 4.955574386775009e-15,
-          "Hprob": 1.0372238605335577e-13
+          "H0": 4.833470087371613e-15,
+          "Hprob": 7.087787028543676e-14
         },
         "orbit_isometry_error": 3.3306690738754696e-16,
         "potential_identity_residual": 2.4923835448756337e-14,
@@ -2133,17 +2133,17 @@
         },
         "shell_cyclic_closure": {
           "dimension": 328,
-          "gram_error": 1.2495799632770936e-15,
+          "gram_error": 1.2544592697587553e-15,
           "growth": [
             19,
             171,
             328
           ],
           "iterations": 3,
-          "maximum_discarded_singular_value": 1.5359791806717827e-16,
+          "maximum_discarded_singular_value": 1.5140209707329182e-16,
           "minimum_kept_singular_value": 0.0010695635213760163,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.292030425757979e-14,
+          "transport_invariance_residual": 1.2383787951228455e-14,
           "transport_scale": 31.999999999999982
         }
       },
@@ -2165,15 +2165,15 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 1.8666666666666563,
+          "E0": 1.8666666666666687,
           "comparison_thresholds": [
-            2.433807017858258e-12,
-            2.0240281705387306e-12,
-            3.565170202545232e-12
+            2.1384361301723306e-12,
+            2.7471515626462677e-12,
+            1.8626899417866317e-12
           ],
-          "excitation_gap": 2.333333333333324,
+          "excitation_gap": 2.3333333333333197,
           "ground_rank": 3,
-          "max_ground_residual": 2.1807685216165465e-14,
+          "max_ground_residual": 3.6228887963634496e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 1.481313240327751e-15,
           "scale_bound": 57.86666666666667
@@ -2184,67 +2184,67 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 1.6783361059186848e-15,
+            "E0_cyclic": 2.521668468271697e-15,
             "E0_symmetric": 3.1326815937258484e-15,
-            "delta_cyclic": -1.4543454878071636e-15,
+            "delta_cyclic": -6.110131254541514e-16,
             "s": 0.0
           },
           {
-            "E0_cyclic": 2.0675487563794137,
+            "E0_cyclic": 2.0675487563794124,
             "E0_symmetric": 2.0675487563794137,
-            "delta_cyclic": 0.0,
+            "delta_cyclic": -1.3322676295501878e-15,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 2.4656912744902586,
+            "E0_cyclic": 2.4656912744902577,
             "E0_symmetric": 2.4656912744902644,
-            "delta_cyclic": -5.773159728050814e-15,
+            "delta_cyclic": -6.661338147750939e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.2140279188560283,
+            "E0_cyclic": 2.21402791885603,
             "E0_symmetric": 2.214027918856032,
-            "delta_cyclic": -3.552713678800501e-15,
+            "delta_cyclic": -1.7763568394002505e-15,
             "s": 0.35
           },
           {
-            "E0_cyclic": 1.8666666666666627,
+            "E0_cyclic": 1.866666666666665,
             "E0_symmetric": 1.8666666666666647,
-            "delta_cyclic": -1.9984014443252818e-15,
+            "delta_cyclic": 2.220446049250313e-16,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.450477444526069,
+            "E0_cyclic": 1.4504774445260633,
             "E0_symmetric": 1.4504774445260646,
-            "delta_cyclic": 4.440892098500626e-15,
+            "delta_cyclic": -1.3322676295501878e-15,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.0311544019415018,
+            "E0_cyclic": 1.031154401941491,
             "E0_symmetric": 1.0311544019414964,
-            "delta_cyclic": 5.329070518200751e-15,
+            "delta_cyclic": -5.329070518200751e-15,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.6101303267649667,
+            "E0_cyclic": 0.6101303267649758,
             "E0_symmetric": 0.6101303267649651,
-            "delta_cyclic": 1.5543122344752192e-15,
+            "delta_cyclic": 1.0658141036401503e-14,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.1880788106194388,
+            "E0_cyclic": 0.1880788106194132,
             "E0_symmetric": 0.18807881061942633,
-            "delta_cyclic": 1.2462253451417382e-14,
+            "delta_cyclic": -1.3128387266192476e-14,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.23464115145118658,
+            "E0_cyclic": -0.2346411514511907,
             "E0_symmetric": -0.2346411514511616,
-            "delta_cyclic": -2.4980018054066022e-14,
+            "delta_cyclic": -2.90878432451791e-14,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 5.773159728050814e-15
+        "max_abs_delta_at_or_below_cancellation": 6.661338147750939e-15
       },
       "n_B": 8,
       "n_T": 20,
@@ -2379,35 +2379,35 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.23464115145119016,
+          "E0": -0.23464115145118364,
           "comparison_thresholds": [
-            4.960013576443944e-12
+            5.1939243249976726e-12
           ],
           "cover_probability_max": 0.9965884497646862,
           "cover_probability_min": 0.9965884497646862,
-          "excitation_gap": 0.17968772757427426,
+          "excitation_gap": 0.17968772757425008,
           "ground_rank": 1,
-          "max_ground_residual": 3.8265947444159084e-14,
-          "max_reported_residual": 1.2361746192019837e-13,
-          "multiplicity_gap": 0.17968772757427426,
-          "scale_bound": 124.08185502992569,
+          "max_ground_residual": 3.8630869817681676e-14,
+          "max_reported_residual": 1.3629673886682725e-13,
+          "multiplicity_gap": 0.17968772757425008,
+          "scale_bound": 124.0818550299256,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.23464115145119016,
-          "eigenvector_overlap_squared": 0.9999999999999971,
-          "energy_difference": -1.3850032232198828e-14,
+          "cyclic_ground_energy": -0.23464115145118364,
+          "eigenvector_overlap_squared": 0.9999999999999982,
+          "energy_difference": -1.1934897514720433e-14,
           "represented_irrep": "trivial S_4 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 0.999999999999998,
-          "symmetric_level_energy": -0.2346411514511763,
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999989,
+          "symmetric_level_energy": -0.2346411514511717,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.006737080825407665,
-        "delta_accessible_tolerance": 5.623759074765271e-07,
+        "delta_accessible": 0.006737080825414188,
+        "delta_accessible_tolerance": 5.623759257226458e-07,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 7.73956654281758e-12,
-        "delta_symmetry": 0.006737080825421515,
-        "delta_symmetry_tolerance": 5.623784419542282e-07,
+        "delta_cyclic_tolerance": 6.127703099907894e-12,
+        "delta_symmetry": 0.006737080825426123,
+        "delta_symmetry_tolerance": 5.623768118446666e-07,
         "full": {
           "E0": -0.24137823227659783,
           "cover_probability_max": 0.9945333387163605,
@@ -2538,17 +2538,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.2346411514511763,
+          "E0": -0.2346411514511717,
           "comparison_thresholds": [
-            9.282397347811185e-12
+            7.552468517607915e-12
           ],
           "cover_probability_max": 0.9965884497646862,
           "cover_probability_min": 0.9965884497646862,
-          "excitation_gap": 0.17968772757424972,
+          "excitation_gap": 0.1796877275742626,
           "ground_rank": 1,
-          "max_ground_residual": 8.897367693370765e-14,
-          "max_reported_residual": 1.3476566264323125e-13,
-          "multiplicity_gap": 0.17968772757424972,
+          "max_ground_residual": 5.6371485701991373e-14,
+          "max_reported_residual": 1.0930726782303924e-13,
+          "multiplicity_gap": 0.1796877275742626,
           "scale_bound": 122.00000000000004,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -2573,8 +2573,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 7.535255381330005e-15,
-          "Hprob": 1.0429152557870692e-13
+          "H0": 6.6623687736466086e-15,
+          "Hprob": 1.2899329653544266e-13
         },
         "orbit_isometry_error": 2.6645352591003757e-15,
         "potential_identity_residual": 5.684792560396205e-14,
@@ -2584,7 +2584,7 @@
         },
         "shell_cyclic_closure": {
           "dimension": 792,
-          "gram_error": 1.5698706815357241e-15,
+          "gram_error": 1.422432042818192e-15,
           "growth": [
             29,
             296,
@@ -2594,7 +2594,7 @@
           "maximum_discarded_singular_value": 9.432946982687747e-17,
           "minimum_kept_singular_value": 0.0009095532216413589,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.8062432180102396e-14,
+          "transport_invariance_residual": 1.9440831407037935e-14,
           "transport_scale": 39.99999999999997
         }
       },
@@ -2616,20 +2616,20 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 2.333333333333324,
+          "E0": 2.333333333333316,
           "comparison_thresholds": [
-            2.7883073693987145e-12,
-            2.8906352558164117e-12,
-            3.3236030350521276e-12,
-            4.771242551338728e-12,
-            3.499991457880549e-12,
-            4.629468803419662e-12,
-            5.640949843787917e-12,
-            4.652195212274198e-12
+            4.9611851776148026e-12,
+            4.659835886469347e-12,
+            4.540007326600815e-12,
+            4.456722282216889e-12,
+            6.519268403854572e-12,
+            4.891600737431818e-12,
+            5.843354260496946e-12,
+            5.690156194208295e-12
           ],
-          "excitation_gap": 2.333333333333311,
+          "excitation_gap": 2.3333333333333357,
           "ground_rank": 8,
-          "max_ground_residual": 6.995838740375927e-14,
+          "max_ground_residual": 5.517210202485124e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
@@ -2640,67 +2640,67 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 4.4321555229852215e-15,
+            "E0_cyclic": 4.381660169957126e-15,
             "E0_symmetric": 6.1990282076298615e-15,
-            "delta_cyclic": -1.76687268464464e-15,
+            "delta_cyclic": -1.817368037672736e-15,
             "s": 0.0
           },
           {
-            "E0_cyclic": 2.4702395258972203,
+            "E0_cyclic": 2.4702395258972194,
             "E0_symmetric": 2.470239525897223,
-            "delta_cyclic": -2.6645352591003757e-15,
+            "delta_cyclic": -3.552713678800501e-15,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 2.9337609258769417,
+            "E0_cyclic": 2.9337609258769506,
             "E0_symmetric": 2.9337609258769386,
-            "delta_cyclic": 3.1086244689504383e-15,
+            "delta_cyclic": 1.199040866595169e-14,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.7053628635429874,
+            "E0_cyclic": 2.705362863542984,
             "E0_symmetric": 2.7053628635429847,
-            "delta_cyclic": 2.6645352591003757e-15,
+            "delta_cyclic": -8.881784197001252e-16,
             "s": 0.35
           },
           {
-            "E0_cyclic": 2.333333333333317,
+            "E0_cyclic": 2.333333333333324,
             "E0_symmetric": 2.3333333333333197,
-            "delta_cyclic": -2.6645352591003757e-15,
+            "delta_cyclic": 4.440892098500626e-15,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.7931323946717268,
+            "E0_cyclic": 1.7931323946717233,
             "E0_symmetric": 1.7931323946717315,
-            "delta_cyclic": -4.6629367034256575e-15,
+            "delta_cyclic": -8.215650382226158e-15,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.2506236540257258,
+            "E0_cyclic": 1.2506236540257012,
             "E0_symmetric": 1.2506236540257207,
-            "delta_cyclic": 5.10702591327572e-15,
+            "delta_cyclic": -1.9539925233402755e-14,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.7068407773208011,
+            "E0_cyclic": 0.7068407773208156,
             "E0_symmetric": 0.7068407773208105,
-            "delta_cyclic": -9.43689570931383e-15,
+            "delta_cyclic": 5.10702591327572e-15,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.16227938240114448,
+            "E0_cyclic": 0.16227938240112239,
             "E0_symmetric": 0.16227938240112016,
-            "delta_cyclic": 2.4313884239290928e-14,
+            "delta_cyclic": 2.220446049250313e-15,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.38279276562849396,
+            "E0_cyclic": -0.3827927656284823,
             "E0_symmetric": -0.38279276562846487,
-            "delta_cyclic": -2.90878432451791e-14,
+            "delta_cyclic": -1.7430501486614958e-14,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 3.1086244689504383e-15
+        "max_abs_delta_at_or_below_cancellation": 1.199040866595169e-14
       },
       "n_B": 8,
       "n_T": 30,
@@ -2895,35 +2895,35 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.38279276562849457,
+          "E0": -0.38279276562846115,
           "comparison_thresholds": [
-            1.3911960410475132e-11
+            1.3278936824378615e-11
           ],
-          "cover_probability_max": 0.9981520820738579,
-          "cover_probability_min": 0.9981520820738579,
-          "excitation_gap": 0.08292624766289342,
+          "cover_probability_max": 0.9981520820738573,
+          "cover_probability_min": 0.9981520820738573,
+          "excitation_gap": 0.08292624766290352,
           "ground_rank": 1,
-          "max_ground_residual": 1.1806280727330522e-13,
-          "max_reported_residual": 1.9562972011677678e-13,
-          "multiplicity_gap": 0.08292624766289342,
+          "max_ground_residual": 1.072575750254962e-13,
+          "max_reported_residual": 1.7390149098652877e-13,
+          "multiplicity_gap": 0.08292624766290352,
           "scale_bound": 199.2022615632654,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.38279276562849457,
-          "eigenvector_overlap_squared": 1.0000000000000009,
-          "energy_difference": -4.218847493575595e-15,
+          "cyclic_ground_energy": -0.38279276562846115,
+          "eigenvector_overlap_squared": 0.9999999999999996,
+          "energy_difference": 7.771561172376096e-16,
           "represented_irrep": "trivial S_5 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 1.0,
-          "symmetric_level_energy": -0.38279276562849035,
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999998,
+          "symmetric_level_energy": -0.38279276562846193,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.031641258711946896,
-        "delta_accessible_tolerance": 8.91645082764176e-09,
+        "delta_accessible": 0.031641258711980313,
+        "delta_accessible_tolerance": 8.91591056602937e-09,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 1.2723486371995213e-11,
-        "delta_symmetry": 0.031641258711951115,
-        "delta_symmetry_tolerance": 8.915156443912975e-09,
+        "delta_cyclic_tolerance": 1.1658789740527318e-11,
+        "delta_symmetry": 0.031641258711979536,
+        "delta_symmetry_tolerance": 8.914632008893898e-09,
         "full": {
           "E0": -0.41443402434044146,
           "cover_probability_max": 0.9944870413928661,
@@ -3094,17 +3094,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.38279276562849035,
+          "E0": -0.38279276562846193,
           "comparison_thresholds": [
-            1.1746127488294926e-11
+            1.080281011853423e-11
           ],
-          "cover_probability_max": 0.9981520820738575,
-          "cover_probability_min": 0.9981520820738575,
-          "excitation_gap": 0.08292624766291667,
+          "cover_probability_max": 0.9981520820738579,
+          "cover_probability_min": 0.9981520820738579,
+          "excitation_gap": 0.0829262476629205,
           "ground_rank": 1,
-          "max_ground_residual": 9.217513269761101e-14,
-          "max_reported_residual": 1.9639928622220997e-13,
-          "multiplicity_gap": 0.08292624766291667,
+          "max_ground_residual": 8.168643231606211e-14,
+          "max_reported_residual": 2.0053917309281814e-13,
+          "multiplicity_gap": 0.0829262476629205,
           "scale_bound": 197.23606797749977,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -3129,8 +3129,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 2.8574860807579105e-15,
-          "Hprob": 5.566231442573421e-14
+          "H0": 3.6753569703764085e-15,
+          "Hprob": 5.866649862188063e-14
         },
         "orbit_isometry_error": 2.220446049250313e-16,
         "potential_identity_residual": 1.4415167461702017e-14,
@@ -3140,17 +3140,17 @@
         },
         "shell_cyclic_closure": {
           "dimension": 119,
-          "gram_error": 9.899053218887426e-16,
+          "gram_error": 1.3196401067363594e-15,
           "growth": [
             14,
             103,
             119
           ],
           "iterations": 3,
-          "maximum_discarded_singular_value": 1.2365226659830426e-16,
-          "minimum_kept_singular_value": 0.003580613259817275,
+          "maximum_discarded_singular_value": 9.665079751033945e-17,
+          "minimum_kept_singular_value": 0.0035806132598172748,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 8.557926689731074e-15,
+          "transport_invariance_residual": 8.997534000802743e-15,
           "transport_scale": 23.99999999999999
         }
       },
@@ -3172,14 +3172,14 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 1.4000000000000001,
+          "E0": 1.3999999999999913,
           "comparison_thresholds": [
-            1.7279571756001745e-12,
-            2.585263927519718e-12
+            1.4930012758083317e-12,
+            2.298800610059879e-12
           ],
-          "excitation_gap": 2.3333333333333144,
+          "excitation_gap": 2.3333333333333286,
           "ground_rank": 2,
-          "max_ground_residual": 1.5778193831797188e-14,
+          "max_ground_residual": 1.1840283468513199e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 5.523224674397835e-16,
           "scale_bound": 43.4
@@ -3190,9 +3190,9 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 3.7979745973500633e-16,
+            "E0_cyclic": 6.514133864775351e-16,
             "E0_symmetric": 9.250465316238295e-16,
-            "delta_cyclic": -5.452490718888232e-16,
+            "delta_cyclic": -2.7363314514629435e-16,
             "s": 0.0
           },
           {
@@ -3202,55 +3202,55 @@
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 1.8832222220043389,
+            "E0_cyclic": 1.8832222220043402,
             "E0_symmetric": 1.8832222220043389,
-            "delta_cyclic": 0.0,
+            "delta_cyclic": 1.3322676295501878e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 1.6657895859346856,
+            "E0_cyclic": 1.6657895859346892,
             "E0_symmetric": 1.6657895859346894,
-            "delta_cyclic": -3.774758283725532e-15,
+            "delta_cyclic": -2.220446049250313e-16,
             "s": 0.35
           },
           {
-            "E0_cyclic": 1.3999999999999955,
+            "E0_cyclic": 1.399999999999996,
             "E0_symmetric": 1.3999999999999972,
-            "delta_cyclic": -1.7763568394002505e-15,
+            "delta_cyclic": -1.3322676295501878e-15,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.0895336672455391,
+            "E0_cyclic": 1.089533667245542,
             "E0_symmetric": 1.0895336672455394,
-            "delta_cyclic": -2.220446049250313e-16,
+            "delta_cyclic": 2.6645352591003757e-15,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 0.7766144625987295,
+            "E0_cyclic": 0.7766144625987437,
             "E0_symmetric": 0.7766144625987346,
-            "delta_cyclic": -5.10702591327572e-15,
+            "delta_cyclic": 9.103828801926284e-15,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.4623460085157066,
+            "E0_cyclic": 0.46234600851570995,
             "E0_symmetric": 0.4623460085157061,
-            "delta_cyclic": 4.996003610813204e-16,
+            "delta_cyclic": 3.83026943495679e-15,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.14725629852187216,
+            "E0_cyclic": 0.14725629852188027,
             "E0_symmetric": 0.1472562985218862,
-            "delta_cyclic": -1.404432126150823e-14,
+            "delta_cyclic": -5.9396931817445875e-15,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.16837035583936094,
+            "E0_cyclic": -0.16837035583935897,
             "E0_symmetric": -0.16837035583934423,
-            "delta_cyclic": -1.6708856520608606e-14,
+            "delta_cyclic": -1.4738210651898953e-14,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 3.774758283725532e-15
+        "max_abs_delta_at_or_below_cancellation": 1.3322676295501878e-15
       },
       "n_B": 8,
       "n_T": 20,
@@ -3355,44 +3355,44 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.1683703558393718,
+          "E0": -0.16837035583935953,
           "comparison_thresholds": [
-            2.729962047337411e-12
+            3.447850527083017e-12
           ],
-          "cover_probability_max": 0.9969076719299564,
-          "cover_probability_min": 0.9969076719299564,
-          "excitation_gap": 0.25573629471941933,
+          "cover_probability_max": 0.9969076719299562,
+          "cover_probability_min": 0.9969076719299562,
+          "excitation_gap": 0.2557362947194071,
           "ground_rank": 1,
-          "max_ground_residual": 3.236604750884237e-14,
-          "max_reported_residual": 7.718272850291528e-14,
-          "multiplicity_gap": 0.25573629471941933,
-          "scale_bound": 92.24746822193089,
+          "max_ground_residual": 4.647354985324293e-14,
+          "max_reported_residual": 7.778055277546871e-14,
+          "multiplicity_gap": 0.2557362947194071,
+          "scale_bound": 92.2474682219309,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.1683703558393718,
-          "eigenvector_overlap_squared": 1.0000000000000004,
-          "energy_difference": -2.5091040356528538e-14,
+          "cyclic_ground_energy": -0.16837035583935953,
+          "eigenvector_overlap_squared": 1.0,
+          "energy_difference": -2.2065682614424986e-14,
           "represented_irrep": "trivial S_3 x G_B",
           "symmetric_ground_weight_in_cyclic_space": 0.9999999999999998,
-          "symmetric_level_energy": -0.1683703558393467,
+          "symmetric_level_energy": -0.16837035583933746,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.004988940956186377,
-        "delta_accessible_tolerance": 5.308909431158749e-12,
+        "delta_accessible": 0.004988940956206889,
+        "delta_accessible_tolerance": 6.1580839100835015e-12,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 6.4791581927749685e-12,
-        "delta_symmetry": 0.004988940956211468,
-        "delta_symmetry_tolerance": 7.52731024121583e-12,
+        "delta_cyclic_tolerance": 7.342466443809793e-12,
+        "delta_symmetry": 0.004988940956228954,
+        "delta_symmetry_tolerance": 7.829042736735351e-12,
         "full": {
-          "E0": -0.17335929679555817,
+          "E0": -0.17335929679556641,
           "comparison_thresholds": [
-            5.662794221471745e-12,
-            5.3972457077211294e-12
+            6.476292860900847e-12,
+            5.854931968150839e-12
           ],
-          "cover_probability_max": 0.9958983411039201,
-          "cover_probability_min": 0.9958983411039194,
-          "excitation_gap": 0.0006578744293519734,
+          "cover_probability_max": 0.9958983411039202,
+          "cover_probability_min": 0.9958983411039191,
+          "excitation_gap": 0.0006578744293412042,
           "ground_irreps": [
             {
               "multiplicity_space_ground_rank": 1,
@@ -3404,25 +3404,25 @@
             }
           ],
           "ground_rank": 2,
-          "max_ground_residual": 5.316199285630471e-14,
-          "max_reported_residual": 1.3605205722087642e-13,
+          "max_ground_residual": 5.6037980090399185e-14,
+          "max_reported_residual": 1.4495562712373116e-13,
           "multiplicity_gap": 0.0,
           "reported_eigenpairs": 512,
           "scale_bound": 93.0,
           "solver": "numpy.linalg.eigh(full dense spectrum)"
         },
         "symmetric": {
-          "E0": -0.1683703558393467,
+          "E0": -0.16837035583933746,
           "comparison_thresholds": [
-            7.794410698501512e-12
+            8.042998151462792e-12
           ],
-          "cover_probability_max": 0.9969076719299568,
-          "cover_probability_min": 0.9969076719299568,
-          "excitation_gap": 0.25573629471939663,
+          "cover_probability_max": 0.9969076719299569,
+          "cover_probability_min": 0.9969076719299569,
+          "excitation_gap": 0.255736294719389,
           "ground_rank": 1,
-          "max_ground_residual": 7.673406370998398e-14,
-          "max_reported_residual": 1.0729683766847235e-13,
-          "multiplicity_gap": 0.25573629471939663,
+          "max_ground_residual": 7.989272638627992e-14,
+          "max_reported_residual": 8.701765168973794e-14,
+          "multiplicity_gap": 0.255736294719389,
           "scale_bound": 91.73205080756888,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -3447,8 +3447,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 8.324645503369032e-15,
-          "Hprob": 1.028835544718677e-13
+          "H0": 8.132396384715157e-15,
+          "Hprob": 1.3832195215200336e-13
         },
         "orbit_isometry_error": 2.6645352591003757e-15,
         "potential_identity_residual": 5.684931009109764e-14,
@@ -3458,17 +3458,17 @@
         },
         "shell_cyclic_closure": {
           "dimension": 792,
-          "gram_error": 1.7193568330144114e-15,
+          "gram_error": 1.6817898844868169e-15,
           "growth": [
             31,
             346,
             792
           ],
           "iterations": 2,
-          "maximum_discarded_singular_value": 9.166265610984294e-17,
-          "minimum_kept_singular_value": 0.0004683684275166659,
+          "maximum_discarded_singular_value": 9.166265610984309e-17,
+          "minimum_kept_singular_value": 0.00046836842751666577,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.906718972142268e-14,
+          "transport_invariance_residual": 2.0419782522753157e-14,
           "transport_scale": 39.99999999999997
         }
       },
@@ -3490,16 +3490,16 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 2.333333333333317,
+          "E0": 2.333333333333333,
           "comparison_thresholds": [
-            6.019546869872919e-12,
-            6.711867849149376e-12,
-            6.388537079736866e-12,
-            7.014955928199127e-12
+            6.237831987548298e-12,
+            3.2612525345934476e-12,
+            3.5121223172874095e-12,
+            4.562372443954728e-12
           ],
-          "excitation_gap": 2.3333333333333233,
+          "excitation_gap": 2.333333333333302,
           "ground_rank": 4,
-          "max_ground_residual": 8.253623950386573e-14,
+          "max_ground_residual": 7.600133459485486e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
@@ -3510,67 +3510,67 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 5.2414533474543634e-15,
+            "E0_cyclic": 6.505350787026177e-15,
             "E0_symmetric": 6.1990282076298615e-15,
-            "delta_cyclic": -9.57574860175498e-16,
+            "delta_cyclic": 3.0632257939631566e-16,
             "s": 0.0
           },
           {
-            "E0_cyclic": 2.757736522098626,
+            "E0_cyclic": 2.7577365220986243,
             "E0_symmetric": 2.7577365220986287,
-            "delta_cyclic": -2.6645352591003757e-15,
+            "delta_cyclic": -4.440892098500626e-15,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 3.0788139206943237,
+            "E0_cyclic": 3.078813920694321,
             "E0_symmetric": 3.0788139206943113,
-            "delta_cyclic": 1.2434497875801753e-14,
+            "delta_cyclic": 9.769962616701378e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.760593449323591,
+            "E0_cyclic": 2.7605934493235935,
             "E0_symmetric": 2.760593449323591,
-            "delta_cyclic": 0.0,
+            "delta_cyclic": 2.6645352591003757e-15,
             "s": 0.35
           },
           {
-            "E0_cyclic": 2.333333333333332,
+            "E0_cyclic": 2.3333333333333277,
             "E0_symmetric": 2.3333333333333197,
-            "delta_cyclic": 1.2434497875801753e-14,
+            "delta_cyclic": 7.993605777301127e-15,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.807691810800141,
+            "E0_cyclic": 1.8076918108001405,
             "E0_symmetric": 1.807691810800136,
-            "delta_cyclic": 4.884981308350689e-15,
+            "delta_cyclic": 4.440892098500626e-15,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.2796358766646878,
+            "E0_cyclic": 1.2796358766646834,
             "E0_symmetric": 1.279635876664703,
-            "delta_cyclic": -1.509903313490213e-14,
+            "delta_cyclic": -1.9539925233402755e-14,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.7502206387403106,
+            "E0_cyclic": 0.7502206387403063,
             "E0_symmetric": 0.7502206387402885,
-            "delta_cyclic": 2.2093438190040615e-14,
+            "delta_cyclic": 1.7763568394002505e-14,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.2199645353275277,
+            "E0_cyclic": 0.21996453532752852,
             "E0_symmetric": 0.2199645353275542,
-            "delta_cyclic": -2.6506574712925612e-14,
+            "delta_cyclic": -2.5673907444456745e-14,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.3108479241210589,
+            "E0_cyclic": -0.3108479241210774,
             "E0_symmetric": -0.31084792412102946,
-            "delta_cyclic": -2.942091015256665e-14,
+            "delta_cyclic": -4.796163466380676e-14,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 1.2434497875801753e-14
+        "max_abs_delta_at_or_below_cancellation": 9.769962616701378e-15
       },
       "n_B": 8,
       "n_T": 30,
@@ -3777,35 +3777,35 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.31084792412107,
+          "E0": -0.31084792412106677,
           "comparison_thresholds": [
-            1.3687789174998985e-11
+            1.208777979009022e-11
           ],
-          "cover_probability_max": 0.9984623995154119,
-          "cover_probability_min": 0.9984623995154119,
-          "excitation_gap": 0.24729012779537735,
+          "cover_probability_max": 0.9984623995154116,
+          "cover_probability_min": 0.9984623995154116,
+          "excitation_gap": 0.24729012779538917,
           "ground_rank": 1,
-          "max_ground_residual": 8.54000355124665e-14,
-          "max_reported_residual": 3.5412131576313024e-13,
-          "multiplicity_gap": 0.24729012779537735,
+          "max_ground_residual": 9.156978436094156e-14,
+          "max_reported_residual": 2.2732749209383943e-13,
+          "multiplicity_gap": 0.24729012779538917,
           "scale_bound": 199.38463133816066,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.31084792412107,
-          "eigenvector_overlap_squared": 0.9999999999999976,
-          "energy_difference": -1.404432126150823e-14,
+          "cyclic_ground_energy": -0.31084792412106677,
+          "eigenvector_overlap_squared": 0.9999999999999993,
+          "energy_difference": -1.3378187446733136e-14,
           "represented_irrep": "trivial S_5 x G_B",
           "symmetric_ground_weight_in_cyclic_space": 0.9999999999999996,
-          "symmetric_level_energy": -0.31084792412105594,
+          "symmetric_level_energy": -0.3108479241210534,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.008639042853011814,
-        "delta_accessible_tolerance": 6.59652507677411e-07,
+        "delta_accessible": 0.008639042853015033,
+        "delta_accessible_tolerance": 6.596528161648533e-07,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 1.2514283443967953e-11,
-        "delta_symmetry": 0.008639042853025858,
-        "delta_symmetry_tolerance": 6.596542683432189e-07,
+        "delta_cyclic_tolerance": 1.1685257918920743e-11,
+        "delta_symmetry": 0.008639042853028411,
+        "delta_symmetry_tolerance": 6.596531308302515e-07,
         "full": {
           "E0": -0.3194869669740818,
           "cover_probability_max": 0.9967570683372449,
@@ -3972,17 +3972,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.31084792412105594,
+          "E0": -0.3108479241210534,
           "comparison_thresholds": [
-            1.2977668119834707e-11
+            1.1837481949467393e-11
           ],
-          "cover_probability_max": 0.9984623995154116,
-          "cover_probability_min": 0.9984623995154116,
-          "excitation_gap": 0.24729012779536108,
+          "cover_probability_max": 0.9984623995154115,
+          "cover_probability_min": 0.9984623995154115,
+          "excitation_gap": 0.24729012779540005,
           "ground_rank": 1,
-          "max_ground_residual": 1.2061335167328767e-13,
-          "max_reported_residual": 3.1399555440599574e-13,
-          "multiplicity_gap": 0.24729012779536108,
+          "max_ground_residual": 9.786309232386842e-14,
+          "max_reported_residual": 2.7245384900141545e-13,
+          "multiplicity_gap": 0.24729012779540005,
           "scale_bound": 197.2360679774998,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -4007,8 +4007,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 7.745389407778096e-15,
-          "Hprob": 1.4808901466315767e-13
+          "H0": 7.102097440887766e-15,
+          "Hprob": 1.604538645339362e-13
         },
         "orbit_isometry_error": 2.6645352591003757e-15,
         "potential_identity_residual": 5.684815225077884e-14,
@@ -4018,17 +4018,17 @@
         },
         "shell_cyclic_closure": {
           "dimension": 792,
-          "gram_error": 1.7446952660614384e-15,
+          "gram_error": 1.5154020217777079e-15,
           "growth": [
             30,
             301,
             792
           ],
           "iterations": 2,
-          "maximum_discarded_singular_value": 8.996891210604847e-17,
-          "minimum_kept_singular_value": 0.0008366339117828406,
+          "maximum_discarded_singular_value": 8.996891210604844e-17,
+          "minimum_kept_singular_value": 0.0008366339117828408,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 1.9683331364446557e-14,
+          "transport_invariance_residual": 1.965902453760045e-14,
           "transport_scale": 39.99999999999997
         }
       },
@@ -4050,14 +4050,14 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 2.333333333333366,
+          "E0": 2.333333333333352,
           "comparison_thresholds": [
-            6.979364572780877e-12
+            4.761114720831614e-12
           ],
-          "excitation_gap": 2.333333333333287,
+          "excitation_gap": 2.333333333333289,
           "ground_rank": 1,
-          "max_ground_residual": 5.03127922497425e-14,
-          "multiplicity_gap": 2.333333333333287,
+          "max_ground_residual": 4.27545506062976e-14,
+          "multiplicity_gap": 2.333333333333289,
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 91.0
         },
@@ -4067,27 +4067,27 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 4.753112639964836e-15,
+            "E0_cyclic": 3.473599514119675e-15,
             "E0_symmetric": 6.1990282076298615e-15,
-            "delta_cyclic": -1.4459155676650258e-15,
+            "delta_cyclic": -2.7254286935101865e-15,
             "s": 0.0
           },
           {
-            "E0_cyclic": 3.0817785041051953,
+            "E0_cyclic": 3.081778504105197,
             "E0_symmetric": 3.081778504105193,
-            "delta_cyclic": 2.220446049250313e-15,
+            "delta_cyclic": 3.9968028886505635e-15,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 3.271418169254696,
+            "E0_cyclic": 3.271418169254693,
             "E0_symmetric": 3.27141816925469,
-            "delta_cyclic": 6.217248937900877e-15,
+            "delta_cyclic": 3.1086244689504383e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.8326445388575365,
+            "E0_cyclic": 2.832644538857532,
             "E0_symmetric": 2.832644538857531,
-            "delta_cyclic": 5.329070518200751e-15,
+            "delta_cyclic": 8.881784197001252e-16,
             "s": 0.35
           },
           {
@@ -4097,37 +4097,37 @@
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.8617227436063544,
+            "E0_cyclic": 1.8617227436063661,
             "E0_symmetric": 1.8617227436063573,
-            "delta_cyclic": -2.886579864025407e-15,
+            "delta_cyclic": 8.881784197001252e-15,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.3838231185948224,
+            "E0_cyclic": 1.3838231185947971,
             "E0_symmetric": 1.3838231185948096,
-            "delta_cyclic": 1.2878587085651816e-14,
+            "delta_cyclic": -1.2434497875801753e-14,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.9025347709596547,
+            "E0_cyclic": 0.9025347709596603,
             "E0_symmetric": 0.902534770959643,
-            "delta_cyclic": 1.176836406102666e-14,
+            "delta_cyclic": 1.7319479184152442e-14,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.41921000582305534,
+            "E0_cyclic": 0.41921000582306533,
             "E0_symmetric": 0.41921000582305123,
-            "delta_cyclic": 4.107825191113079e-15,
+            "delta_cyclic": 1.4099832412739488e-14,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.06543469492932011,
+            "E0_cyclic": -0.06543469492930143,
             "E0_symmetric": -0.06543469492926676,
-            "delta_cyclic": -5.334621633323877e-14,
+            "delta_cyclic": -3.466671394392051e-14,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 6.217248937900877e-15
+        "max_abs_delta_at_or_below_cancellation": 4.884981308350689e-15
       },
       "n_B": 8,
       "n_T": 29,
@@ -4330,33 +4330,33 @@
         "accessible": {
           "E0": -0.06543469492931067,
           "comparison_thresholds": [
-            7.664403896618717e-12
+            7.2637672151994206e-12
           ],
           "cover_probability_max": 0.9944780215566348,
           "cover_probability_min": 0.9944780215566348,
-          "excitation_gap": 4.799406851916648,
+          "excitation_gap": 4.799406851916627,
           "ground_rank": 1,
-          "max_ground_residual": 1.3267649516961835e-15,
-          "max_reported_residual": 3.4093808365459926e-13,
-          "multiplicity_gap": 4.799406851916648,
+          "max_ground_residual": 8.694611319494763e-16,
+          "max_reported_residual": 2.378925189481486e-13,
+          "multiplicity_gap": 4.799406851916627,
           "scale_bound": 194.1344846166698,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
           "cyclic_ground_energy": -0.06543469492931067,
-          "eigenvector_overlap_squared": 0.9999999999999987,
-          "energy_difference": -1.1726730697603216e-14,
+          "eigenvector_overlap_squared": 0.9999999999999991,
+          "energy_difference": -1.84297022087776e-14,
           "represented_irrep": "trivial S_5 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999987,
-          "symmetric_level_energy": -0.06543469492929894,
+          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999998,
+          "symmetric_level_energy": -0.06543469492929224,
           "symmetric_level_index_zero_based": 0
         },
         "delta_accessible": 0.0,
-        "delta_accessible_tolerance": 2.6276923166533827e-08,
+        "delta_accessible_tolerance": 2.6276900301342842e-08,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 1.0494383255101015e-11,
+        "delta_cyclic_tolerance": 1.0490311947510564e-11,
         "delta_symmetry": 0.0,
-        "delta_symmetry_tolerance": 2.6285129547546808e-08,
+        "delta_symmetry_tolerance": 2.6285148341430204e-08,
         "full": {
           "E0": -0.06543469492925182,
           "cover_probability_max": 0.9944780215566354,
@@ -4519,17 +4519,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.06543469492929894,
+          "E0": -0.06543469492929224,
           "comparison_thresholds": [
-            1.5853149218625472e-11
+            1.5580526938303826e-11
           ],
-          "cover_probability_max": 0.994478021556635,
-          "cover_probability_min": 0.994478021556635,
-          "excitation_gap": 4.799406851916605,
+          "cover_probability_max": 0.9944780215566348,
+          "cover_probability_min": 0.9944780215566348,
+          "excitation_gap": 4.799406851916614,
           "ground_rank": 1,
-          "max_ground_residual": 1.6545438521129108e-13,
-          "max_reported_residual": 2.2839910439508424e-13,
-          "multiplicity_gap": 4.799406851916605,
+          "max_ground_residual": 1.6583026287922877e-13,
+          "max_reported_residual": 2.123225250138596e-13,
+          "multiplicity_gap": 4.799406851916614,
           "scale_bound": 192.23606797749974,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
@@ -4554,8 +4554,8 @@
     {
       "checks": {
         "cyclic_invariance_residual": {
-          "H0": 8.912414934739886e-15,
-          "Hprob": 1.6458475201327166e-13
+          "H0": 7.564610464343308e-15,
+          "Hprob": 1.02912126550735e-13
         },
         "orbit_isometry_error": 2.6645352591003757e-15,
         "potential_identity_residual": 5.685055573584035e-14,
@@ -4565,17 +4565,17 @@
         },
         "shell_cyclic_closure": {
           "dimension": 792,
-          "gram_error": 1.7915643543754642e-15,
+          "gram_error": 1.535121880216361e-15,
           "growth": [
             29,
             321,
             792
           ],
           "iterations": 2,
-          "maximum_discarded_singular_value": 9.404718008854566e-17,
-          "minimum_kept_singular_value": 0.00043713884073750295,
+          "maximum_discarded_singular_value": 9.404718008854565e-17,
+          "minimum_kept_singular_value": 0.00043713884073750306,
           "relative_tolerance": 1e-11,
-          "transport_invariance_residual": 2.044987085504509e-14,
+          "transport_invariance_residual": 2.118059904260079e-14,
           "transport_scale": 39.99999999999997
         }
       },
@@ -4597,14 +4597,14 @@
       "linear_path_cancellation": {
         "ground_rank_matches_optimal_cover_orbits": true,
         "joint_fixed": {
-          "E0": 2.3333333333333295,
+          "E0": 2.3333333333333286,
           "comparison_thresholds": [
-            5.995894787586393e-12,
-            6.251499695889054e-12
+            6.220633554008876e-12,
+            6.378934990423492e-12
           ],
-          "excitation_gap": 2.3333333333333286,
+          "excitation_gap": 2.333333333333311,
           "ground_rank": 2,
-          "max_ground_residual": 5.042907207259558e-14,
+          "max_ground_residual": 5.29793562339628e-14,
           "multiplicity_gap": 0.0,
           "off_diagonal_norm": 3.7179344304987676e-15,
           "scale_bound": 93.33333333333333
@@ -4615,67 +4615,67 @@
       "linear_path_cyclic_cost": {
         "grid": [
           {
-            "E0_cyclic": 2.7984400519513983e-15,
+            "E0_cyclic": 4.197968783774504e-15,
             "E0_symmetric": 6.1990282076298615e-15,
-            "delta_cyclic": -3.4005881556784632e-15,
+            "delta_cyclic": -2.0010594238553576e-15,
             "s": 0.0
           },
           {
-            "E0_cyclic": 2.8760910420099037,
+            "E0_cyclic": 2.8760910420099046,
             "E0_symmetric": 2.8760910420099037,
-            "delta_cyclic": 0.0,
+            "delta_cyclic": 8.881784197001252e-16,
             "s": 0.11666666666666667
           },
           {
-            "E0_cyclic": 3.1705790366439937,
+            "E0_cyclic": 3.170579036643999,
             "E0_symmetric": 3.1705790366439937,
-            "delta_cyclic": 0.0,
+            "delta_cyclic": 5.329070518200751e-15,
             "s": 0.23333333333333334
           },
           {
-            "E0_cyclic": 2.7965447048399934,
+            "E0_cyclic": 2.7965447048399996,
             "E0_symmetric": 2.796544704839997,
-            "delta_cyclic": -3.552713678800501e-15,
+            "delta_cyclic": 2.6645352591003757e-15,
             "s": 0.35
           },
           {
-            "E0_cyclic": 2.333333333333337,
+            "E0_cyclic": 2.333333333333335,
             "E0_symmetric": 2.3333333333333335,
-            "delta_cyclic": 3.552713678800501e-15,
+            "delta_cyclic": 1.3322676295501878e-15,
             "s": 0.4666666666666667
           },
           {
-            "E0_cyclic": 1.8345513091445624,
+            "E0_cyclic": 1.8345513091445567,
             "E0_symmetric": 1.8345513091445702,
-            "delta_cyclic": -7.771561172376096e-15,
+            "delta_cyclic": -1.354472090042691e-14,
             "s": 0.5733333333333334
           },
           {
-            "E0_cyclic": 1.3312152114622058,
+            "E0_cyclic": 1.3312152114622096,
             "E0_symmetric": 1.3312152114622142,
-            "delta_cyclic": -8.43769498715119e-15,
+            "delta_cyclic": -4.6629367034256575e-15,
             "s": 0.6799999999999999
           },
           {
-            "E0_cyclic": 0.825395380602252,
+            "E0_cyclic": 0.8253953806022565,
             "E0_symmetric": 0.825395380602277,
-            "delta_cyclic": -2.4980018054066022e-14,
+            "delta_cyclic": -2.0539125955565396e-14,
             "s": 0.7866666666666666
           },
           {
-            "E0_cyclic": 0.3180716095056143,
+            "E0_cyclic": 0.31807160950563684,
             "E0_symmetric": 0.31807160950561797,
-            "delta_cyclic": -3.6637359812630166e-15,
+            "delta_cyclic": 1.887379141862766e-14,
             "s": 0.8933333333333333
           },
           {
-            "E0_cyclic": -0.19023205252141745,
+            "E0_cyclic": -0.1902320525214145,
             "E0_symmetric": -0.19023205252141867,
-            "delta_cyclic": 1.2212453270876722e-15,
+            "delta_cyclic": 4.163336342344337e-15,
             "s": 1.0
           }
         ],
-        "max_abs_delta_at_or_below_cancellation": 3.552713678800501e-15
+        "max_abs_delta_at_or_below_cancellation": 5.329070518200751e-15
       },
       "n_B": 8,
       "n_T": 30,
@@ -4870,35 +4870,35 @@
       },
       "problem_endpoint": {
         "accessible": {
-          "E0": -0.19023205252132938,
+          "E0": -0.19023205252146888,
           "comparison_thresholds": [
-            7.537059140979564e-12
+            6.896737016878578e-12
           ],
-          "cover_probability_max": 0.9961937367694907,
-          "cover_probability_min": 0.9961937367694907,
-          "excitation_gap": 0.2417701447200038,
+          "cover_probability_max": 0.9961937367694904,
+          "cover_probability_min": 0.9961937367694904,
+          "excitation_gap": 0.24177014472014333,
           "ground_rank": 1,
-          "max_ground_residual": 1.0448997503738328e-13,
-          "max_reported_residual": 2.238138224896437e-13,
-          "multiplicity_gap": 0.2417701447200038,
-          "scale_bound": 199.75882839145177,
+          "max_ground_residual": 9.16122375784421e-14,
+          "max_reported_residual": 2.1557923632429914e-13,
+          "multiplicity_gap": 0.24177014472014333,
+          "scale_bound": 199.75882839145163,
           "solver": "exact orbit quotient + cyclic restriction + numpy.linalg.eigh"
         },
         "cyclic_ground_embedding": {
-          "cyclic_ground_energy": -0.19023205252132938,
-          "eigenvector_overlap_squared": 0.9999999999999969,
-          "energy_difference": 5.742628594873622e-14,
+          "cyclic_ground_energy": -0.19023205252146888,
+          "eigenvector_overlap_squared": 1.0000000000000004,
+          "energy_difference": -1.942890293094024e-16,
           "represented_irrep": "trivial S_5 x G_B",
-          "symmetric_ground_weight_in_cyclic_space": 0.9999999999999991,
-          "symmetric_level_energy": -0.1902320525213868,
+          "symmetric_ground_weight_in_cyclic_space": 1.0000000000000018,
+          "symmetric_level_energy": -0.1902320525214687,
           "symmetric_level_index_zero_based": 0
         },
-        "delta_accessible": 0.007485800434681861,
-        "delta_accessible_tolerance": 2.3456303999174212e-08,
+        "delta_accessible": 0.007485800434542361,
+        "delta_accessible_tolerance": 2.3455660112301262e-08,
         "delta_cyclic": 0.0,
-        "delta_cyclic_tolerance": 1.2121834533888076e-11,
-        "delta_symmetry": 0.0074858004346244345,
-        "delta_symmetry_tolerance": 2.3455759067697835e-08,
+        "delta_cyclic_tolerance": 1.2488230109842475e-11,
+        "delta_symmetry": 0.0074858004345425555,
+        "delta_symmetry_tolerance": 2.3456769350146737e-08,
         "full": {
           "E0": -0.19771785295601124,
           "cover_probability_max": 0.9946763678966214,
@@ -5063,17 +5063,17 @@
           "spectral_strategy": "one lowest Ritz value in every sector; S_k-orbit multiplet construction and deflation in every ground-energy sector"
         },
         "symmetric": {
-          "E0": -0.1902320525213868,
+          "E0": -0.1902320525214687,
           "comparison_thresholds": [
-            1.3254301947481054e-11
+            1.3431679816367088e-11
           ],
-          "cover_probability_max": 0.9961937367694906,
-          "cover_probability_min": 0.9961937367694906,
-          "excitation_gap": 0.24177014472006844,
+          "cover_probability_max": 0.9961937367694904,
+          "cover_probability_min": 0.9961937367694904,
+          "excitation_gap": 0.24177014472019562,
           "ground_rank": 1,
-          "max_ground_residual": 9.359134550991122e-14,
-          "max_reported_residual": 2.5217949500920265e-13,
-          "multiplicity_gap": 0.24177014472006844,
+          "max_ground_residual": 1.137969944879404e-13,
+          "max_reported_residual": 2.60837134657358e-13,
+          "multiplicity_gap": 0.24177014472019562,
           "scale_bound": 197.2360679774998,
           "solver": "exact joint orbit quotient + numpy.linalg.eigh"
         }
