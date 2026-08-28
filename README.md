@@ -134,5 +134,7 @@ covered as described in `LICENSE`.
 Citation metadata are provided in `CITATION.cff`; `.zenodo.json` records the
 scope-specific licensing required by the mixed software/data archive.  The
 associated preprint is
-[arXiv:2608.11503](https://arxiv.org/abs/2608.11503).  The public repository
-release will add its GitHub release URL and version-specific Zenodo DOI.
+[arXiv:2608.11503](https://arxiv.org/abs/2608.11503).  The reproducibility
+artifact is preserved as
+[GitHub release v1.0.0](https://github.com/fsluiz/manuscript-encoding-symmetry-limits/releases/tag/v1.0.0)
+and [Zenodo record 10.5281/zenodo.22142799](https://doi.org/10.5281/zenodo.22142799).

@@ -48,3 +48,18 @@ label, overfull box, or duplicate PDF destination.  The final terminology
 distinguishes the common invariant cyclic envelope from the smaller trajectory
 set of any prescribed schedule, and the retained-walk and Johnson--Metropolis
 protocols are compared explicitly in the main text.
+
+## Public archival closure
+
+Commit `6805c67e10355a98fadb6a96d34a1b963493182b` was published as GitHub
+release `v1.0.0`.  After enabling the release webhook, Zenodo archived that
+release as version DOI `10.5281/zenodo.22142799` (concept DOI
+`10.5281/zenodo.22142798`).  The release assets retain the verified PDF and
+arXiv-source hashes recorded in the full reproduction report.
+
+After inserting the DOI into the manuscript, the post-archive journal
+candidate was rebuilt in quick verification mode and its independent arXiv
+bundle was compiled successfully.  Their SHA-256 digests are, respectively,
+`a8dc37fca490ed34ac4b6580d78df1fec10debdf2f766e8db077b29eea2d74e5`
+and
+`b920051d6dd6e57607d6ca0c4d1a2672c5285904071c6b5b9294886e49b00d6b`.
